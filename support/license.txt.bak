@@ -1,0 +1,303 @@
+END USER LICENSE AGREEMENT (EULA)
+Licensor: 
+NetBrain Technologies, Inc. 
+121 Middlesex Turnpike 
+Burlington, MA 01803 USA
+
+ * * * PLEASE READ CAREFULLY * * * 
+This End User License Agreement ("EULA") is a legally binding agreement between you ("you" or the "Customer") and NetBrain Technologies, Inc., a Delaware corporation ("NetBrain").   By clicking the "I AGREE" button, you acknowledge that (1) you are authorized to enter into this EULA, and are doing so, and (2) you have read and understand and agree that you shall be bound by the terms and conditions of this EULA and the limited warranty and limitation of liability set out in it.  In addition, by downloading, installing, copying or otherwise using, for any purpose, any of the software programs from NetBrain (as more fully defined herein, "Program(s)"), you are agreeing to be bound by the terms and conditions of this EULA. If you are accepting these terms on behalf of another person or a company or other legal entity, you represent and warrant that you have full authority to act for and to bind that person, company, or legal entity to these terms. 
+
+IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, (1) CLICK ON THE "CANCEL" BUTTON BELOW AND INSTALLATION WILL TERMINATE; (2) do not download, install, copy or use the Program(s), and (3) Delete these materials from your computer and promptly (and in any event, within 14 days of receipt) return to NetBrain  any diskette or other media you have received from NetBrain and any other items provided that are part of this product.  
+
+
+SECTION 1.DEFINITIONS.
+
+	Whenever used in this EULA, the following terms will have the following specified meanings: 
+
+	1.1."Bypass" shall mean a procedure communicated by NetBrain to Customer, which permits Customer to avoid Error(s) by implementing the same when using the Program(s).
+	
+	1.2.A "Concurrent License" can be installed on any number of machines, but the total number of Concurrent Users operating the Program(s) at any single moment may not exceed the total authorized by this EULA.
+	
+	1.3."Documentation" means collectively: (a) all user, technical, support, and other manuals and all other written, printed, electronic, or other format materials published or otherwise made available by NetBrain that describe the functional, operational, and/or performance capabilities of the Program(s); and (b) any other deliverable that is not Program(s). Documentation shall not include source code.
+
+	1.4."Enhancement(s)" shall mean a modification to the Program(s) that alters the functionalities described in the Documentation without materially degrading the functionalities or performance of the Program(s) prescribed by the Documentation.
+
+	1.5."Error(s)" shall mean a failure of the Program(s) to conform to the Documentation.
+1.6."Error Report" shall mean the document to be created by NetBrain, pursuant to Article 3 hereof, each time that Customer reports an Error.
+
+	1.7."Fix(es)" shall mean the document to be created by NetBrain pursuant to this EULA in order to correct Errors.
+
+	1.8."Hardware" means any third-party manufactured computer equipment that has been modified by the installation of NetBrain Program(s) and sold to Customer hereunder.
+
+	1.9."License(s)" shall mean any license or licenses granted by NetBrain to Customer to use the Program(s) under this EULA.
+
+	1.10."Maintenance Services" shall mean the services to be provided under this EULA.
+
+	1.11."Object Code" shall mean the binary machine readable version of the Program(s).
+
+	1.12."Programs" means all of the programs and modules listed on the initial pages of this EULA, as they may be upgraded, enhanced, and/or modified by NetBrain, in machine-readable, Object Code form only. 
+
+	1.13. "Server" means a single production database server.
+
+	1.14. "Severity Level" shall mean the level of severity assigned to a reported Error with the Program(s), in accordance with the Severity Level definitions set forth in Exhibit A to this EULA.
+
+	1.15.A "Single Machine License" is locked to run on a single machine and only on that machine.
+
+	1.16."Site" shall mean a Customer computer facility located in one specific geographic location.
+
+	1.17."Update" shall mean a compendium of Fixes which NetBrain releases to the users of the Program(s) from time to time and which NetBrain shall supply to Customer pursuant to the terms of this EULA.
+
+	1.18."Upgrades" means all releases, Updates and corrections of the Program(s) licensed to Customer hereunder, specifically only those features and modules specified in Customer¡¯s order as licensed to Customer hereunder, in Object Code form, which are published and generally made commercially available by NetBrain to its licensees of the Program(s) with a change in the integer, tenths or hundredths digit of the version number (e.g., a change from version x.xx to y.xx or x.yx or x.xy).  Upgrades shall not include any release, Update or correction that has been customized by you.
+
+SECTION 2.PROGRAMS DELIVERY AND LICENSE.
+
+	2.1.PROGRAMS DELIVERABLES.  Upon acceptance of this EULA, Customer accepts the number of licenses as specified in Customer¡¯s order.
+
+	2.2.COMMERCIAL USE LICENSE GRANT.  Subject to the provisions of this EULA as well as the payment of all applicable license fees for the term of such license, NetBrain hereby grants Customer a nonexclusive, nontransferable, perpetual license to:
+
+		(a)Install and use the Program(s) ordered by Customer hereunder for internal processing requirements of Customer on the number of Customer's servers and/or users then authorized under this EULA.  The number of servers and/or users initially authorized hereunder is set forth in Customer¡¯s order.  Customer may increase the number of authorized servers and/or users from time to time in unit quantities and upon payment to NetBrain of the applicable amount as agreed by both parties.
+
+		(b)Reproduce the Documentation for the Program(s) ordered by Customer hereunder and/or incorporate all or any portion of the Documentation in training materials prepared by the Customer, in each case solely for the use of the Customer and provided that the copyright notices and other proprietary rights legends of NetBrain are included on each copy of the Documentation and such materials.   
+
+	2.3.EVALUATION LICENSE GRANT.  Subject to the provisions of this EULA, NetBrain may provide the demonstration versions of the Software at no charge to you, for evaluation purposes only. This evaluation Software is licensed to you with a limited license term, operability and/or functionality. You agree and acknowledge that NetBrain provides evaluation Software solely for demonstration purposes and not for long term use. On your accepted order, and payment of the applicable fee, NetBrain will provide a key or other mechanism to you for conversion of an evaluation limited license to a non-evaluation, full restricted license.
+
+	2.4.RESTRICTIONS.  Customer shall use the Program(s) and Documentation only for the purposes specified in section 2.2 and 2.3, and in accordance with the following:
+
+		(a)Customer shall not modify or prepare derivative works of the Program(s) or Documentation except as expressly permitted in Section 2.2;
+
+		(b)Customer shall not reverse engineer, disassemble or decompose the Program(s);
+		
+		(c)Customer shall not remove, obscure, or alter any notice of patent, copyright, trade secret, trademark, or other proprietary rights notices present on any Programs or Documentation; 
+
+		(d)Customer shall not sublicense, sell, lend, rent, lease, or otherwise transfer all or any portion of the Program(s) or the Documentation to any third party except as may be permitted in Section 9.6 hereof; and
+
+		(e)Customer shall not use the Program(s) or the Documentation to provide services to third parties, or otherwise use the same on a "service business" basis.
+
+	2.5.COMPLIANCE WITH LAWS.  NetBrain and Customer shall each comply with all applicable laws, regulations, rules, orders and other requirements, now or hereafter in effect, of any applicable governmental authority, in their performance of this EULA.  
+
+	2.6.PROPRIETARY RIGHTS.  The Program(s) and Documentation contain valuable patent, copyright, trade secret, trademark and other proprietary rights of NetBrain.  Except for the license granted under Section 2.2 and 2.3, NetBrain reserves all rights it has in the Program(s) and Documentation.  No title to or ownership of any Program(s) or proprietary rights related to the Program(s) or Documentation is transferred to Customer under this EULA.
+
+	2.7.PROTECTION AGAINST UNAUTHORIZED USE.  Customer shall promptly notify NetBrain of any unauthorized use of the Program(s) or Documentation licensed to the Customer hereunder which comes to Customer's attention.  In the event of any unauthorized use by any of Customer's employees, agents or representatives, Customer shall use its commercially reasonable efforts to terminate such unauthorized use and to retrieve any copy of the Program(s) or Documentation in the possession or control of the person or entity engaging in such unauthorized use.  NetBrain may, at its option and sole expense, monitor any such proceeding and, in such an event, Customer shall provide such information related to such proceeding as NetBrain may reasonably request. NetBrain reserves the right to electronically verify Customer¡¯s compliance with the license limitations set forth in this EULA.
+
+	2.8.RECORDS.  Customer shall ensure that each copy it makes of all or any portion of the Program(s) or the Documentation includes the notice of copyright or other proprietary rights legends appearing in or on the Program(s) or the Documentation delivered to Customer by NetBrain; Customer shall keep accurate records of the reproduction and location of each copy.  NetBrain may audit, at its sole expense and no more than once a year, Customer's use of the Program(s), provided that it gives Customer thirty (30) days prior written notice.  Any such audit shall be conducted during regular business hours at Customer's facilities and shall not unreasonably interfere with Customer's business activities.  All information disclosed by Customer during the course of the audit shall be Confidential Information subject to the provisions of Section 9.1.
+
+SECTION 3.MAINTENANCE SERVICES; TRAINING
+
+	3.1.MAINTENANCE SERVICES.  Provided that Customer has paid NetBrain the applicable Maintenance Fee specified in Customer¡¯s order, NetBrain will provide Customer with the Maintenance Services described in this Section 3, at the support levels set forth in Exhibit A.
+
+	3.2.NetBrain will provide: 
+
+		(a)Telephone Support.  NetBrain telephone support representative(s) shall be available to receive Customer¡¯s telephone calls between the hours of 9:00AM and 5:00PM EST, Monday through Friday, excluding public holidays. The telephone support line is 781-221-7199 or such other number as NetBrain notifies you from time to time. NetBrain¡¯s telephone support representative(s) shall serve as the Customer¡¯s interface with NetBrain and shall ensure that reported Errors are handled in a timely manner as specified in Exhibit A hereto. Reported Errors will be investigated by NetBrain, and if a reported Error relates to the Program(s), or is directly caused by the Program(s), (a) an Error Report shall be opened, (b) the Error shall be assigned a Severity Level as per the provisions of Exhibit A hereto, and (c) the Error shall be resolved in accordance with the procedures and processes set forth in Exhibit A hereto.
+
+		(b)E-mail support can be obtained at support@netbraintech.com.Customer can also submit a ticket at http://www.netbraintech.com/netbrain-support/submit-a-ticket.php.  NetBrain¡¯s support engineer will be able to look up Customer¡¯s license information based on Customer¡¯s company name and email address. 
+
+		(c)Installation Assistance. NetBrain shall provide Customer telephone assistance for the implementation or installation of Bypasses, Fixes, and Updates between the hours of 9:00AM and 5:00 PM EST, Monday through Friday, excluding public holidays.
+
+		(d)Bypasses. NetBrain shall provide Customer such Bypasses as are necessary to ensure the resolution of Errors that can be resolved by a Bypass.
+
+		(e)Fixes. NetBrain shall provide Customer such Fixes as are necessary to ensure the resolution of Errors that can be resolved by a Fix. 
+
+		(f)Updates. NetBrain shall, as soon as they are made available, provide Customer such Updates as it provides to other users for the Program(s) without additional charge from time to time. 
+
+		(g)Enhancements. NetBrain shall provide Customer such Enhancements as it provides to other users for the Program(s) without additional charge from time to time.
+
+		(h)Upgrades. Customer is entitled to free Upgrades to licensed Program(s), including major version Upgrades and device configuration Updates.  Upgrades are limited to only those features and modules which are licensed to Customer under this EULA.  Upgrades shall not include any release, Update or correction that has been customized for Customer. 
+
+		(i)Hardware Maintenance.  For hardware malfunction during the Maintenance period, NetBrain will replace the defective unit after inspection, free of charge within 7 business days. However, it is up to the Customer to back up necessary data or to re-create personal Workstation accounts. Customers will have access to NetBrain technicians to help guide Customer through new application installations. All defective hardware should be returned to NetBrain for further inspection within 7 business days after receiving a replacement, upon NetBrain¡¯s request and at NetBrain¡¯s cost.
+
+		(j)Regular Activity Reports.  Upon written request by Customer, NetBrain shall provide: (a) a status report of Error resolution activities; and (b) a status report of all outstanding Error Reports. Such status reports shall contain NetBrain¡¯s tracking number, Error description, Error resolution status, and a definitive resolution time frame and release number for all Errors.
+
+	3.3.WARRANTY ON MAINTENANCE.  All Maintenance Services performed by NetBrain under this EULA shall be performed by NetBrain in a professional manner in accordance with industry standards. If NetBrain receives notice of non-confirming Maintenance Services, NetBrain shall re-perform said Maintenance Services. NetBrain does not warrant that the Maintenance Services or Program(s) will be uninterrupted or error free.
+
+	3.4.LIMITATIONS ON MAINTENANCE SERVICES
+
+		(a)NetBrain shall not maintain or support any third party programs.
+
+		(b)NetBrain shall provide Maintenance Services only with respect to the two (2) most recent Upgrades of the Program(s).
+
+		(c)Any time incurred by NetBrain in diagnosing or fixing problems that are not caused by the Program(s), or are not covered by this EULA, are billable to Customer at NetBrain¡¯s then-existing rates with a one-hour minimum per call.
+
+		(d)Any travel and expenses incurred in conjunction with out-of-scope maintenance and support shall be billed to Customer at NetBrain¡¯s actual costs, provided all such travel and expenses shall be approved by Customer in advance.
+
+	3.5.INTELLECTUAL PROPERTY RIGHTS. Title to all Bypasses, Fixes, Updates, Enhancements, and Upgrades shall remain solely and exclusively with NetBrain. It is hereby acknowledged and agreed that the former shall be deemed to constitute Program(s) for purposes of the application of this EULA.
+
+	3.6.TRAINING SERVICES. Customer can access a wide range of resources to get the most out of NetBrain¡¯s products at the ¡®Support¡¯ section of NetBrain¡¯s website (http://www.netbraintech.com/netbrain-support/index.php).   Product manuals, video tutorials and sample configurations will be available for download free of charge.  Customer can also join NetBrain online forums to gain access to expert guidance and learn how others are using NetBrain products. Web-based training classes are available for $750 per 2-hour session.  Other interactive online training sessions are also available and can be tailored to your unique needs and schedule.  The fee for training may be adjusted by NetBrain from time to time with 30-day advanced notice to Customer. 
+
+	3.7.OTHER CONSULTING SERVICES. Customer may contact NetBrain and purchase additional Consulting Services to aid in the setup and customization of Programs, upon mutually agreeable terms.  NetBrain has no obligation to provide such consulting services to Customer unless agreed by both parties. 
+
+SECTION 4.COMPENSATION
+
+	4.1.LICENSE FEE.  The License Fee is due and payable upon acceptance of this EULA.  
+
+	4.2.FEES FOR MAINTENANCE SERVICES
+
+		(a)The Maintenance Fee for the initial Maintenance Term is due and payable upon acceptance of this EULA.  Customer may renew Maintenance Services described in Section 3 thereafter on an annual basis by payment of the applicable annual Maintenance Fee before the beginning of each new twelve (12) month period. After the end of the first twelve (12) month period after the Effective Date, NetBrain may increase the Maintenance Fee for subsequent Maintenance Periods. 
+
+		(b)NetBrain shall charge Customer its then existing rates for all services not included in this EULA.
+
+		(c)Lapsed Maintenance and the Reinstatement Fee.  Because of NetBrain¡¯s long-term commitment, and in the interest of fair play for all NetBrain customers, there is an additional charge to reinstate Maintenance Services if Customer allows Maintenance Services to lapse. After 12 months of lapsed coverage, NetBrain cannot offer reinstatement and Customer would need to repurchase the latest version of the Program(s) and an annual Maintenance commitment. If coverage has lapsed for less than 12 months, Maintenance Services can be reinstated by paying the applicable Maintenance Fee plus a reinstatement fee equal to 50% of the lapsed Maintenance fee. The Maintenance fee itself is the annual Maintenance Fee starting from the expiration date of the last Maintenance term. 
+
+	4.3.PAYMENT.  All fees, charges and other sums payable to NetBrain under this EULA will be due and payable on the dates specified in Customer¡¯s order, or within thirty (30) days after invoice date if no date is specified in Customer¡¯s order.  All monetary amounts shall be paid in the lawful currency of the United States of America.  Customer shall pay all amounts due under this EULA to NetBrain at the address set forth herein or such other location as NetBrain designates in writing.  Any amount not paid when due will bear interest at the rate of one and one half percent (1.5%) per month or, the maximum rate permitted by law, whichever is less, determined and compounded on a daily basis from the date due until the date paid.  All fees, charges and other sums payable to NetBrain under this EULA do not include any sales, use, excise or other applicable taxes, tariffs or duties (excluding any applicable federal and state taxes based on NetBrain's net income), payment of which shall be the sole responsibility of Customer.  Customer shall have the right to challenge, at its sole control and expense, the validity of all applicable taxes and NetBrain shall assist Customer as necessary, without any additional cost to NetBrain, in contesting such taxes.
+
+SECTION 5.TERM AND TERMINATION
+
+	5.1.Term.
+
+		(a)For "Commercial Use" licenses, the term of the license shall be perpetual in duration and can only be terminated as specifically set forth herein. 
+
+		(b)For "Evaluation" licenses, the term of the shall be for 30 days in duration and can be terminated as specifically set forth herein. 
+
+	5.2.The term of Maintenance Services shall continue for a one (1) year term. Thereafter, the term for such services shall continue on a year-to-year basis, until terminated by either party ninety (90) days prior to the applicable anniversary date of this EULA.
+	
+	5.3.TERMINATION BY CUSTOMER.  Customer may terminate this EULA and the license for any reason by providing NetBrain with ninety (90) days prior written notice.  No refunds of license fees will be provided for terminations by Customer.
+
+	5.4.TERMINATION FOR CAUSE.  If either party defaults in the performance of or compliance with any of its material obligations under this EULA, and such default has not been remedied or cured within thirty (30) days after the other party gives the breaching party written notice specifying the default or, if the nature of the default is such that more than thirty (30) days are required for the cure thereof, and the breaching party fails to commence its effort to cure such breach or default within such thirty (30) days and to diligently prosecute the same to completion thereafter to the other party's satisfaction in its sole discretion, then the other party may terminate this EULA and the license, in addition to its other rights and remedies under law.  In the case of termination due to breach by NetBrain, Customer shall receive a pro-rata refund of Maintenance Fees for the remaining Maintenance term paid for beyond the termination date.   
+
+	5.5.POST TERMINATION.  
+
+		(a)Upon termination of this EULA, Customer shall promptly cease the use of the Program(s) and Documentation, return any Hardware in its possession or control to NetBrain, and destroy (and in writing certify such destruction) or return to NetBrain all copies of the Program(s) and Documentation then in Customer's possession or control.
+
+		(b)All charges required under this EULA incurred prior to the date of the termination shall be fully paid by Customer, subject to Section 5.3.
+
+		(c)SURVIVAL.  Sections 2.6, 5, 7, 8 and 9 shall survive the termination of this EULA.  Customer shall pay NetBrain only for those fees still owing up until the date of termination.
+
+SECTION 6.WARRANTIES AND REMEDIES
+
+	6.1.PERFORMANCE WARRANTY AND REMEDY.  NetBrain warrants to Customer that, when operated in accordance with the Documentation and other instructions provided by NetBrain, the Program(s) will perform in all material respects in accordance with the functional specifications set forth in the Documentation (without the need for customization or modification, or delivery of additional services) for a period of ninety (90) days after the date of installation of the Program(s) at the Customer site (or 120 days after delivery to Customer, if sooner).  NetBrain also warrants that it shall promptly provide Customer with current, complete and accurate documentation and other user materials, and that all such documentation and user materials shall contain information sufficient to explain the operation of the Program(s) to a trained software professional.  If the Program(s) fails to comply with the warranty set forth in this Section 6.1, NetBrain will use reasonable commercial efforts to correct the noncompliance, provided that Customer promptly notifies NetBrain of the noncompliance of the Program(s) within the warranty period, and NetBrain is able to reproduce the noncompliance as communicated by Customer to NetBrain.  If after the expenditure of reasonable efforts, NetBrain is unable to correct any such noncompliance, NetBrain shall refund to Customer the license fee paid by Customer to NetBrain for such Programs in full satisfaction of Customer's claims relating to such noncompliance upon Customer's return of said Programs.
+
+	6.2.PERFORMANCE WARRANTY LIMITATIONS.  The warranties set forth in Section 6.1 do not apply to any noncompliance of the Program(s) resulting from misuse, casualty loss, use or combination of the Program(s) with any products, goods, services or other items furnished by anyone other than NetBrain (unless otherwise approved by NetBrain), any modification not made by or for NetBrain (unless otherwise approved by NetBrain), or any use of the Program(s) by Customer in contradiction of the terms of this EULA (unless otherwise approved by NetBrain).
+
+	6.3.ADDITIONAL PROGRAM WARRANTIES.  NetBrain further warrants that: (1) the NetBrain Programs shall be free from any and all defects in material of the media in which the Program(s) are delivered; and (2) NetBrain has checked for viruses in the Program(s) using commercially available virus checking Programs consistent with standard industry practice.  If the Program(s) fails to comply with the warranty set forth in this Section 6.3, NetBrain will use reasonable commercial efforts to correct the noncompliance.  If after the expenditure of reasonable efforts, NetBrain is unable to correct any such noncompliance, NetBrain, in addition to all other remedies that might be available, shall refund to Customer all or an equitable portion of the license fee paid by Customer to NetBrain for such Programs.  
+SECTION 7.INTELLECTUAL PROPERTY RIGHTS INDEMNITY
+
+	NetBrain agrees, at its own expense, to defend, indemnify and hold harmless Customer for, and at its opinion to settle, any and all claims, demands, litigation, liabilities or actions brought against Customer on the issue of infringement of any United States patent, copyright, trademark, trade secret or any other intellectual property right of any third party by the Program(s) as used within the scope of this EULA, and to pay all damages, expenses and costs, including reasonable attorney's fees, which may be assessed against Customer under any such claim, demand, litigation, liability or action.  NetBrain shall be released from the foregoing obligation unless Customer provides NetBrain with (i) prompt written notice after Customer first becomes aware of such a claim, demand, litigation, liability or action; (ii) sole control and authority over the defense or settlement thereof (Customer shall, at its sole expense, have the right to employ separate counsel to monitor the defense and settlement of the claim thereof); and (iii) proper and full information as is reasonable, and reasonable assistance to settle and/or defend any such claim or action.  Without limiting the forgoing, if a final injunction is, or NetBrain believes in its sole discretion is likely to be, entered prohibiting the use of the Program(s) by Customer as contemplated herein, NetBrain will, at its sole option and expense, either (a) procure for Customer the right to use the infringing Programs as provided herein or (b) replace the infringing Programs with non-infringing, functionally equivalent products, or (c) suitably modify the infringing Programs so that it is not infringing, with no loss of functionality; or (d) in the event (a), (b) and (c) are not commercially reasonable, terminate the license, accept return of the infringing Programs and refund to Customer the license fee paid therefor, reduced by an amount equal to the depreciated portion of the payments calculated on a five (5) year straight line basis.  Except as specified above, NetBrain will not be liable for any costs or expenses incurred without its prior written authorization, not to be unreasonably withheld.  Notwithstanding the foregoing, NetBrain assumes no liability for infringement claims arising solely from (i) combination of the Program(s) with the other products not provided by NetBrain, or (ii) any modifications to the Program(s).  
+
+	THE FOREGOING PROVISIONS OF THIS SECTION 7 STATE THE ENTIRE LIABILITY AND OBLIGATIONS OF NETBRAIN AND THE EXCLUSIVE REMEDY OF  CUSTOMER, WITH RESPECT TO ANY ACTUAL OR ALLEGED INFRINGEMENT OF ANY PATENT, COPYRIGHT, TRADE SECRET, TRADEMARK OR OTHER INTELLECTUAL PROPERTY RIGHT BY THE PROGRAMS.   
+
+SECTION 8.DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+
+	8.1.DISCLAIMER OF WARRANTIES.  EXCEPT AS SET FORTH IN THIS AGREEMENT AND ALL ATTACHMENTS REFERENCED HEREIN, NETBRAIN MAKES NO WARRANTIES WHETHER EXPRESSED, IMPLIED OR STATUTORY REGARDING OR RELATING THE PROGRAMS OR THE DOCUMENTATION OR ANY MATERIALS OR SERVICES FURNISHED OR PROVIDED TO CUSTOMER UNDER THIS AGREEMENT.   NETBRAIN SPECIFICALLY DISCLAIMS ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSES, AND SATISFACTORY QUALITY WITH RESPECT TO THE PROGRAMS, DOCUMENTATION AND ANY OTHER MATERIALS AND SERVICES PROVIDED BY NETBRAIN HEREUNDER, AND WITH RESPECT TO THE USE OF THE FORGOING.
+
+	8.2.LIMITATION OF LIABILITY.  IN NO EVENT WILL EITHER PARTY BE LIABLE FOR ANY LOSS OF PROFITS, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, COST TO RECOVER, OR FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES OF ANY KIND IN CONNECTION WITH OR ARISING OUT OF THE FURNISHING, PERFORMANCE OR USE OF THE PROGRAMS, DOCUMENTATION OR ANY MATERIALS OR SERVICES PERFORMED HEREUNDER, WHETHER ALLEGED AS A BREACH OF CONTRACT OR TORTUOUS CONDUCT, INCLUDING NEGLIGENCE, EVEN IF THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  EXCEPT AS SET FORTH IN SECTION 7, EACH PARTY'S LIABILITY UNDER THIS AGREEMENT FOR DAMAGES WILL NOT, IN ANY EVENT, EXCEED THE AGGREGATE AMOUNT PAID BY THE CUSTOMER TO NETBRAIN UNDER THIS AGREEMENT.
+
+SECTION 9.MISCELLANEOUS  
+
+	9.1.CONFIDENTIAL INFORMATION.  
+
+		(a)By virtue of this EULA, the parties may have access to information that is confidential to one another ("Confidential Information").  Confidential Information will include:  all technical and business information, including without limitation all Programs and Programs Updates provided by NetBrain, planning, pricing and offerings for products and services; other product  information including but not limited to configuration and packaging details;  terms and pricing under this EULA; all information clearly identified or  marked as confidential; and all information identified elsewhere in this  EULA as Confidential Information.  A party's Confidential Information will  not include information that: (i) is or becomes generally known to the public  through no act or omission of the other party; (ii) was in the other party's  lawful possession prior to the disclosure and had not been obtained by the other  party either directly or indirectly from the disclosing party; (iii) is lawfully  disclosed to the other party by a third party without restriction on disclosure;  or (iv) is independently developed by the other party without use of or  reference to the other party's Confidential  Information.  
+
+		(b)The parties agree to hold each other's Confidential Information in confidence during the term of this EULA and for a period of three (3) years after termination of this EULA.  Notwithstanding the foregoing, Customer will keep the Program(s) confidential indefinitely after termination of this EULA.  The parties agree, unless required by law, not to make each other's Confidential Information available in any form to any third party for any purpose except to the extent necessary to exercise its rights under this EULA and to treat Confidential Information of the other party with the same degree of care with which it would treat its own confidential information of a like nature, and in no case with less than a reasonable degree of care.  
+
+		(c)It shall not be a breach of this section if Confidential Information is disclosed pursuant to subpoena or other compulsory judicial or administrative process, provided the party served with such process promptly notifies the other party and provides reasonable assistance so that the other party may seek a protective order against public disclosure.  
+
+		(d)Each party agrees to limit the disclosure of Confidential Information to those of its employees and agents who have a need to know such Confidential Information, and each party agrees to take all reasonable steps to ensure that Confidential Information is not disclosed or distributed by its employees or agents in violation of the terms of this EULA.  
+
+		(e)Each party agrees not to use the other party's Confidential Information for any purpose other than the performance of this EULA.  Each party shall not disclose the terms of this EULA or the ongoing business relationship initiated by this EULA except as required by law or governmental regulation without the other party's prior written consent, except that each party may disclose the terms of this EULA on a confidential basis to its accountants, attorneys, parent organizations and financial advisors and lenders.
+
+	9.2.EXPORT REGULATIONS. Customer and NetBrain acknowledge that the Program(s) and all related technical information, documents, and materials may be subject to export controls under the U.S. Export Administration Regulations and, to the extent applicable, Customer and NetBrain shall (a) comply with all requirements set forth in such regulations, and (b) cooperate fully with each other in any official or unofficial audit or inspection that relates to such export requirements.
+
+	9.3.NON-SOLICITATION. Customer shall not directly or indirectly solicit, encourage or attempt to hire or engage any employee of NetBrain to become employed by Customer, or to become engaged as a contractor or subcontractor except through NetBrain, without NetBrain¡¯s prior written consent. 
+
+	9.4.NOTICES. All notices, demands, or other communications herein provided to be given or that may be given by any party to the other shall be deemed to have been duly given when made in writing and delivered in person, or upon receipt, if (a) deposited in the United States mail, postage prepaid, certified mail, return receipt requested, or (b) sent by reputable overnight courier addressed as follows:
+
+	Notices to NetBrain:	Notices to Customer:
+	NetBrain Technologies Inc.	The address provided on Customer¡¯s order form
+	121 Middlesex Turnpike
+	Burlington, MA 01803
+
+	9.5.AMENDMENTS, MODIFICATIONS, OR SUPPLEMENTS. Amendments, modifications, or supplements to this EULA shall be permitted, provided all such changes shall be in writing signed by the authorized representatives of both parties, and all such changes shall reference this EULA and identify the specific articles or sections of this EULA that is amended, modified, or supplemented.
+
+	9.6.ASSIGNMENT.  Each party shall not assign (directly, by operation of law or otherwise) this EULA or any of its rights under this EULA without the prior written consent of the other party, not to be unreasonably withheld, except that each party may assign all, but not part, of this EULA and the Program(s), and Documentation then in its possession or control to its successor in a merger or other similar corporate reorganization or to the purchaser of substantially all of such party¡¯s assets.  Subject to the foregoing, this EULA is binding upon, inures to the benefit of and is enforceable by the parties and their respective successors and assigns.
+
+	9.7.NONWAIVER.  Any failure of either party to insist upon or enforce performance by the other party of any of the provisions of this EULA or to exercise any rights or remedies under this EULA will not be interpreted or construed as a waiver or relinquishment of such party's right to assert or rely upon such provision, right or remedy in that or any other instance.
+
+	9.8.ENTIRE AGREEMENT.  This EULA and all of its exhibits referenced herein constitute the entire agreement, and supersede any and all prior agreements, between NetBrain and Customer relating to the Program(s), Documentation, services and other items subject to this EULA.  No amendment of this EULA will be valid unless set forth in a written instrument signed by both parties.
+
+	9.9.GOVERNING LAW, JURISDICTION ANDNON-BINDING MEDIATION.  The rights and obligations of the parties under this EULA shall not be governed by the 1980 UN Convention on Contracts for the International Sale of Goods, but instead shall be governed by and construed under the laws of The Commonwealth of Massachusetts, without reference to its conflict of laws principles.  In the event of any controversy, claim or dispute between the parties arising out of or relating to this EULA, such controversy, claim or dispute may be tried solely in a state or federal court for in The Commonwealth of Massachusetts, and the parties hereby irrevocably consent to the jurisdiction and venue of such courts.  Except as otherwise provided in this EULA, no civil action with respect to any dispute, claim or controversy arising out of or in connection with this EULA may be commenced until the matter has been submitted to JAMS/ENDISPUTE, or its successor, for mediation.  Either party may commence mediation by providing to JAMS/ENDISPUTE and the other party a written request for mediation, setting forth the subject of the dispute and the relief requested.  The parties will cooperate with JAMS/ENDISPUTE and each other in selecting a mediator from JAMS/ENDISPUTE's panel of neutrals, and in scheduling the mediation proceedings.   The parties agree to participate in the mediation in good faith, and to share equally its costs.  All conduct and statements, whether oral or written, made in the course of the mediation by any of the parties, their agents, employees, experts and attorneys, and by the mediator and any JAMS/ENDISPUTE employees, are confidential, privileged and inadmissible for any purpose, including impeachment, in any litigation or other proceeding between the parties, provided that evidence that is otherwise admissible or discoverable shall not be rendered inadmissible or non-discoverable as a result of its use in the mediation.   Notwithstanding the foregoing, either party may seek equitable relief from a court of competent jurisdiction prior to the mediation in order to protect its intellectual property rights and Confidential Information.  Except for such an action to obtain equitable relief, neither party may commence a civil action with respect to the matters submitted to mediation until after the completion of the initial mediation session, or 45 days after the date of filing the written request for mediation, whichever occurs first.  Mediation may continue after the commencement of a civil action, if the parties so agree.  The provisions of this Section 9.9 may be enforced by any court of competent jurisdiction, and the party seeking enforcement shall be entitled to an award of all costs, fees and expenses, including attorneys' fees, to be paid by the party against whom enforcement is ordered.  In any suit or proceeding between the parties, arising out of or involving this EULA, the prevailing party shall be entitled to recover its costs and expenses related to such suit or proceeding, including reasonable attorney's fees.  The provisions of this Section 9.9 shall survive expiration, cancellation or termination of this EULA.  
+
+	9.10.LANGUAGE.  This EULA is in the English language only, which language shall be controlling in all respects, and all versions hereof in any other language shall not be binding to the parties hereto.  All communications and notices to be made or given pursuant to this EULA shall be in the English language.
+
+	9.11.APPLICABILITY OF PROVISIONS LIMITING NETBRAIN¡¯S LIABILITY.  The provisions of this EULA under which the liability of each party is excluded or limited, shall not apply to the extent that such exclusions or limitations are declared illegal or void under any applicable laws, unless the illegality or invalidity is cured under such laws by the fact that the law of Massachusetts governs this EULA.
+
+	9.12.FORCE MAJEURE.  Neither party will be liable for, or be considered to be in breach of or default under this EULA as a result of any cause or condition beyond such party's reasonable control.   
+
+	9.13.SEVERABILITY.  In the event that any provision of this EULA (or any portion hereof) is determined by a court of competent jurisdiction to be illegal, invalid, or otherwise unenforceable, such provision (or part thereof) will be enforced to the extent possible consistent with the stated intention of the parties, or, if incapable of such enforcement, will be deemed to be severed and deleted from this EULA, while the remainder of this EULA will continue in full force and remain in effect according to its stated terms and conditions.
+
+	9.14.RELATIONSHIP OF THE PARTIES.  This EULA shall not be construed as creating an agency, partnership, joint venture or any other form of association, for tax purposes or otherwise, between the parties; the parties shall at all times be and remain independent contractors.  Except as expressly agreed by the parties in writing, neither party shall have any right or authority, express or implied, to assume or create any obligation of any kind, or to make any representation or warranty, on behalf of the other party or to bind the other party in any respect whatsoever.
+
+	9.15. TITLES AND HEADINGS/CLERICAL ERRORS.  The title and section headings of this EULA are inserted for convenience only and are not intended to affect the meaning or interpretation of this EULA.  Clerical errors are subject to correction by mutual agreement of the parties.
+
+
+EXHIBIT A
+ 
+Escalation Procedures and Processes for Programs Error Resolution
+
+Classification of Errors
+
+All Errors reported by Customer to NetBrain shall be assigned a Severity Level jointly agreed upon by Customer and NetBrain. The point of contact throughout this initial Error reporting procedure shall be the applicable NetBrain support representative available to Customer under the terms of this EULA.  Reported Errors shall be classified as follows:
+
+	Severity Level 1-Severity Level 1 implies that the Program(s) is not functioning. Some examples of Severity Level 1 Errors are as follows:
+	1.Production System down and will not restart;
+	2.Production Programs not able to communicate with external systems (including the network control center) that halts online and other processing and no Bypass is available; and
+	3.Production Programs is generating a data corruption condition that halts online and other processing and no Bypass is available.
+
+	Severity Level 2-Severity Level 2 implies that the Program(s) is running but that Customer is unable to use major portions of the Program(s), and no Bypass is available. Some examples of Severity Level 2 Errors are as follows:
+	1.Intermittent Error in a live, production system that continues processing with no Bypass; and
+	2.Major functional component is unavailable with no Bypass.
+
+	Severity Level 3-Severity Level 3 implies that the Program(s) is operating close to normal, but there is a non-critical Error for which an operational Bypass exists for such Error. Severity Level 3 Errors will be fixed in the next scheduled Update.
+
+	Severity Level 4-Severity Level 4 includes purely cosmetic Errors and documentation anomalies.
+
+	Out-of-Scope-A reported problem is out-of-scope when it is determined not to be related to the Program(s) and is beyond the bounds of NetBrain¡¯s responsibility. Examples of such unrelated problems include, but are not limited to, Customer host or applications Programs, Customer hardware and cabling, power or environmental conditions, and human error.
+
+Severity Level 1
+
+	Error Resolution-Immediate steps shall be taken toward solving the Error. NetBrain shall work to resolve Severity Level 1 Errors on a twenty-four (24) hour basis until the Error is resolved. If required, NetBrain staff shall be moved off of lower Severity Level Errors to service Severity Level 1 Errors.
+	Resource Commitment-When a Severity Level 1 Error is reported, NetBrain shall assign all resources required to correct the Error. Work on the Error shall be continuous until a Fix is found. If system access is required, Customer shall provide a contact available to NetBrain and access to its system and Programs for the duration of the Error correction procedures.
+	Completion Goal-The completion goal shall be to resolve one hundred percent (100%) of all Severity Level 1 Errors with a Fix or Bypass within eight (8) hours of receipt of the Error Report.
+	Escalation and Status Thresholds-When a Severity Level 1 Error Report is opened, the following escalation and status procedures shall be followed.
+	
+	Hour 1-Hour 3
+	1.The Error shall be resolved by NetBrain first line support; or
+	2.The Error will be referred to the maintenance engineering group. All log files and a description of the work done by NetBrain will be transferred to this group. The report will receive an Error Report number which will be entered into the SMS. The error will be passed to the maintenance engineering group via the SMS as well as by e-mail.
+	The Customer will be notified of the status of the Error.
+	
+	Hour 3
+	1.The maintenance engineering point of contact will resolve the Error; or
+	2.It will be decided that more resources are required to work on the Error.
+	The Customer will be notified of the status of the Error.
+	
+	Hour 4-Resolution
+	1.NetBrain shall continue to work on the Error, on a twenty-four (24) hour basis, until a resolution is found. All available resources shall be used to assist the person who is responsible for the resolution of the Error; and
+	2.The Project Manager and Operations Support Manager shall be notified that a Severity Level 1 Error has reached a critical time frame.
+
+Severity Level 2
+	Error Resolution-Severity Level 2 Errors will be analyzed in the order that they are reported.  Severity Level 1 Errors will take priority over Severity Level 2 Errors.
+	Resource Commitment-Appropriate technical resources will be assigned to Severity Level 2 issues as long as Severity Level 1 Errors are not open.
+	Completion Goal-The completion goal will be to resolve one hundred percent (100%) of all Severity Level 2 Errors with a Fix or Bypass within forty-eight (48) hours of receipt of the Error Report. If it is a Bypass, a Fix will be applied within sixty (60) days.
+	Escalation and Status Thresholds-When a Severity Level 2 Error Report is opened, the following escalation and status procedures will be followed.
+	
+	Hour 1-Hour 24
+	1.The Error shall be resolved by NetBrain; or
+	2.The maintenance point of contact person will be contacted. All log files and a description of the work done by NetBrain will be transferred to this group. An Error Report number will be assigned and entered in the trouble tracking system.
+	The Customer will be notified of the status at this stage.
+	
+	Hour 25-Hour 48
+	1.The maintenance engineering point of contact will resolve the Error; or
+	2.The maintenance engineer will continue working the Error until it is fixed.
+	3.A date will be estimated upon when this Error will be fixed.
+	The Customer will be notified of the status at this stage.
+
+Severity Level 3
+	Error Resolution-Severity Level 3 errors shall be researched after Severity Level 1 and Severity Level 2 Errors. The majority of the Severity Level 3 Errors shall be scheduled for correction and be resolved as part of the next scheduled Update.
+Resource Commitment-Severity Level 3 Fixes shall be included in the next scheduled Update.
+Completion Goal-The completion goal and objective shall be to correct Errors in the next scheduled Update.
+Escalation and Status Thresholds-The status of Severity Level 3 Errors shall be available on demand. A monthly report will be distributed that will reference any uncorrected Errors that are over ninety (90) days old.
+
+Severity Level 4
+	Error Resolution-Severity Level 4 Errors shall be addressed at NetBrain¡¯s discretion after Severity Level 1, Severity Level 2, and Severity Level 3 Errors are corrected. All Severity Level 4 Errors shall be scheduled for correction and be resolved as part of the next scheduled Update.
+	Resource Commitment-Severity Level 4 Fixes shall be included in the next scheduled Update.
+	Completion Goal-The completion goal and objective will be to correct issues in the next scheduled Update.
+	Escalation and Status Thresholds-The status of Severity Level 4 Errors shall be available on demand.
+

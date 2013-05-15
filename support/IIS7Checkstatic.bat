@@ -1,0 +1,1 @@
+@ServerManagerCmd -query %1

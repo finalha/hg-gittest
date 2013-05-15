@@ -1,0 +1,1 @@
+cacls %1 /E /T /P postgres:C

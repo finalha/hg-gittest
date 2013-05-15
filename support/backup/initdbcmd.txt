@@ -1,0 +1,1 @@
+\"D:\Program Files\Netbrain\Postgres8.2\bin\initdb.exe\" -D \"d:\db5\" -A md5 -E EUC_CN --locale=C --encoding=SQL_ASCII -U postgres --pwfile=\"c:\postgrespasswd.txt\"

@@ -1,0 +1,13 @@
+<root>
+	<GUID>{FC497978-CEE9-4d21-BA65-705A01DF6B21}</GUID>
+	<Description></Description>
+	<Version>100</Version>
+	<CLic>
+		<GUID></GUID>
+		<IP>127.0.0.1</IP>
+		<Port>80</Port>
+		<Https>0</Https>
+	</CLic>
+	<WorkspaceList>
+	</WorkspaceList>
+</root>

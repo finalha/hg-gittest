@@ -1,0 +1,1 @@
+RemovevrdirIis7.bat >> %1 %2 2>>^&1

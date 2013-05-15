@@ -1,0 +1,1 @@
+Removevrdir.bat >> %1 2>>^&1

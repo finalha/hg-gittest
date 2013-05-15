@@ -1,0 +1,14 @@
+<Project Name="New Obfuscator Project" UseRelativePaths="True" PropogateObfuscationSettings="True" PropogateWatermarkSettings="True" PropogateOutputSettings="True" PropogateAuthenticodeSettings="True" CheckVersionsWhileResolvingAssemblies="True" ID="{15e69643-ed5e-45df-9374-e2ccf1955f62}">
+  <SearchDirectories />
+  <OutputSettings OutputPath="." EncryptDependancies="False" CompressDependancies="False" MainAssemblyPath="" RunAssemblyPath="" SNPath="" SignToolPath="" LicensingDLLPath="" LicensingMergeAssemblyName="">
+    <AdditionalAssemblies />
+  </OutputSettings>
+  <ObfuscationSettings RenamingScheme="0" UseOverloadedFieldNames="False" UseOverloadedMethodNames="False" HonorObfuscationAttributes="True" ExcludeSerializedTypes="True" ProcessInlineStrings="True" />
+  <ObfuscationRules />
+  <Assembly Load="true" Path="..\..\ES\NBWSP\bin\NBWSP.dll" XapEntryName="" XAMLFilesPath="" KeyFilePath="" CertFilePath="" TimeStampURL="" Embed="True" PfxPassword="" PfxPasswordCert="">
+    <ObfuscationSettings EncryptStrings="True" SuppressReflector="True" ReduceMetaData="False" ObfuscationDisposition="1" FlowObfuscation="2" SuppressILDASM="True" SuppressReflection="False" CombineResources="True" EncryptResources="True" CompressResources="True" MarkAsSealed="False" EnableTamperDetection="False" EnableAntiDebugging="False" SymbolRenaming="True" HideExternalCalls="False" HideInternalCalls="False" GeneratePdbFile="True" ObfuscatePdbFileNames="True">
+      <Watermarks Watermark0="" Watermark1="" Watermark2="" Watermark3="" Watermark4="" Watermark5="" Watermark6="" Watermark7="" Watermark8="" Watermark9="" />
+    </ObfuscationSettings>
+  </Assembly>
+  <WarningSuppressions />
+</Project>

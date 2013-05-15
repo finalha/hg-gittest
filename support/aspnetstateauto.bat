@@ -1,0 +1,1 @@
+sc config aspnet_state start= auto >> %1 2>>^&1

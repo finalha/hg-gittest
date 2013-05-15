@@ -1,0 +1,1 @@
+cscript.exe /Nologo addusersright.vbs %2 %1 %3

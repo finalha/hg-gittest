@@ -1,0 +1,1133 @@
+//===========================================================================
+//
+//  File Name:    Setup.rul
+//
+//  Description:  Blank setup main script file
+//
+//  Comments:     Blank setup is an empty setup project. If you want to
+//				  create a new project via. step-by step instructions use the
+//				  Project Assistant.
+//
+//===========================================================================
+
+// Included header files ----------------------------------------------------
+#include "ifx.h"   
+#define LOGFILE_NAME "nbWPSinstall.log"   
+#define DEFAULTSITEINDEX "1"  
+#define DEFAULTSITENAME "Default Web Site" 
+
+#define MSG_ERR_BUILD_PDDB	 			"Failed to build postgres"
+#define MSG_INFO_STEP_OUT_BUILD_PDDB 		"Step out: build postgres"
+#define MSG_INFO_STEP_OUT_INSTALL_IIS 		"Step out: install IIS virtual folder."  
+
+STRING svWSHost,svWSPort,svWSSiteIndex,svWSSiteName,svWSDBname,svWSDBpwd,svWSInstalldir,svWSAppPool,svWSVdir,svWSDisableFolderList;
+
+STRING svPGHost,svPGUserName,svPGPassWord,svPGInstallDir,svPGDBdir;     
+
+BOOL	bMaintenanceMode, bUpdateMode;
+
+STRING LOGFILE;  
+STRING LOGFILE_PATH; 
+
+STRING workspace;  
+STRING InfoFile;
+
+NUMBER nResult;   
+
+STRING Log;   
+STRING svDBPwd;     
+STRING svDBUserName; 
+STRING svDBPort;      
+
+STRING NSfile,OEfile; 
+
+STRING WSsite;
+                               
+
+STRING DBName,AppPool,installdir,Vdir;
+
+prototype RunApplication( STRING , STRING, BOOL, BOOL);           
+prototype WriteLogFile( STRING ); 
+
+prototype STRING RecordTimeLog();    
+prototype EAPInstall();        
+prototype ReplaceLineOfFile( BOOL, STRING, STRING, STRING , STRING);
+
+prototype STRING GetValueFromCMDLINEByName(STRING);    
+prototype BenchmarklogUpdate();  
+prototype GetDefaultSiteIPPort();
+prototype STRING GetTestDefaultSiteReturnCode();    
+prototype AddOrReplaceLineOfFile( BOOL, STRING, STRING, STRING,STRING, STRING ) ;  
+prototype STRING GetEncyptConnStr(STRING);    
+prototype WriteConnectFile( STRING );     
+prototype STRING ReadConnectFile();   
+prototype ReplaceContentOfFile( STRING, STRING, STRING, STRING);
+
+
+#define REGNETFX35 "SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v3.5"                   
+//#define LOGFILE_PATH "c:\\"
+//#define LOGFILE_NAME "nbesinstall.log"   
+#define CONNECTFILE_SRC_NAME "consrc.dat"
+#define CONNECTFILE_DES_NAME "condes.dat" 
+#define DISKSPACE_G 1024
+                  
+#define REGPATH_WEBSERVER 	"SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer"
+#define REGKEY_INSTALLDIR 	"netbrainDir"
+#define REGPATH_DBINFO	 	"SOFTWARE\\NetBrain"
+#define REGKEY_PG_DATADIR 	"EAPPostgresDataDir"
+#define REGKEY_PG_USERNAME 	"EAPPostgresDataUserName"
+#define REGKEY_PG_PASSWORD 	"EAPPostgresDataPwd"
+#define REGKEY_PG_PORT 		"EAPPostgresDataPort"
+#define REGKEY_PG_SETTIME 	"EAPDataSetupTime"
+#define REGKEY_ROOTDIR 		"EAPDataDirRoot"
+#define REGKEY_ES_VERSION   "EAPCurrentVersion"
+
+#define MSG_ERR_UNINSTALL_FIRST 	"The NetBrain Enterprise Server has already been installed.\nPlease uninstall the old one fristly."
+#define MSG_ERR_NEED_2003SERVER 	"The NetBrain Enterprise Server can be only installed in the Windows 2003 Server. The installation will be terminated."
+#define MSG_ERR_NEED_IIS 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n Control Panel >> Add or Remove Programs >> Add/Remove Window Components \n check \"Application Server\" box)."
+#define MSG_ERR_NEED_IIS2008 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n My Computer >> right-click >> Manange >> Roles >> Add Roles >> Next >> \n check \"Webserver(IIS)\" box)."
+#define MSG_ERR_NEED_IISASPNET   "Failed to check IIS, please install ASP.NET feature in Web Server (IIS)"
+#define MSG_ERR_NEED_IISCommon   "Failed to check IIS, please reinstall Web Server (IIS)" //Common HTTP Features in 
+#define MSG_OK_CHECK_SYSTEM 		"Succeed to check operation system and IIS."
+#define MSG_INFO_NEED_INSTALLDATA 	"Need to install the data."
+#define MSG_INFO_OLDPATH_EXISTS 	"The old root path has already existed."
+#define MSG_INFO_BUILD_SETUPTIME 	"Need to save the timestamp of building data."
+#define MSG_INFO_FINISH_CHECK_OLDDATA 	"Finish to check the old data successfully."
+#define MSG_INFO_STEP_OUT_WELCOME 	"Step out: Welcome."
+#define MSG_ERRO_CHECK_ADMIN	 	"You don't have enough privilege to continue the installation, please contact the administrator. If this is Windows 2008, maybe you need rerun the installation program by menu 'Run as administrator'."
+#define MSG_ERRO_CHECK_SP_VER	 	"Your Windows Service Pack is not up to date, please update."
+#define MSG_INFO_STEP_OUT_SYSINFO 	"Step out: System information"
+#define MSG_INFO_STEP_OUT_LICENSE 	"Step out: License"
+#define MSG_INFO_STEP_OUT_CUSTOMERINFO 	"Step out: Customer information"
+#define MSG_ERR_PGINFO_EMPTY	 	"The Port,Username and Password cannot be empty."
+#define MSG_ERR_PGINFO_INVALID_CHAR	"A Password cannot contain any of the following characters: <>&\'\";"
+#define MSG_ERR_PGINFO_INVALID_CHAR_SPACE "A Password cannot contain spaces "
+#define MSG_ERR_PGINFO_PORT_INVALID	"The port: %s is in use, please enter another."
+#define MSG_INFO_STEP_OUT_INPUT_PGINFO 	"Step out: Input postgres info"
+#define MSG_ERR_PATH_FORMAT	 	"The specified folder:\n'%s'\n is invalid,incomplete or write protected.Please type a full path with drive letter;for example'C:\\XXXX'."
+#define MSG_INFO_STEP_OUT_INPUT_ROOTDIR 	"Step out: Input root dir"
+#define MSG_INFO_STEP_OUT_INPUT_PGDIR 		"Step out: Input postgres database dir"
+#define MSG_ERRO_CHECK_PG_ADMIN	 	"You are not authorized to install the postgresql, please select a different destination folder."
+#define MSG_INFO_STEP_OUT_STARTCOPY 		"Step out: Start Copy"
+#define MSG_INFO_STEP_OUT_INSTALLPG 		"Step out: Install postgresql"
+#define MSG_ERR_BUILD_PDDB	 			"Failed to build postgres"
+#define MSG_INFO_STEP_OUT_BUILD_PDDB 		"Step out: build postgres"
+#define MSG_ERR_EXE_SQL_WS3 			"Failed to execute the ws3.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3 		"Step out: execute the ws3.sql"
+#define MSG_ERR_EXE_SQL_WS3_1 			"Failed to execute the ws3-1.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_1 	"Step out: execute the ws3-1.sql"
+#define MSG_ERR_EXE_SQL_WS3_2 			"Failed to execute the ws3-2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_2 	"Step out: execute the ws3-2.sql"
+#define MSG_ERR_EXE_SQL_WS3_2_2 		"Failed to execute the ws3-2-2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_2_2 	"Step out: execute the ws3-2-2.sql"
+#define MSG_ERR_EXE_SQL_WS3_3 		"Failed to execute the ws3-3.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_3 	"Step out: execute the ws3-3.sql"
+#define MSG_ERR_EXE_SQL_WS3_4 		"Failed to execute the ws3-4.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_4 	"Step out: execute the ws3-4.sql"  
+#define MSG_ERR_EXE_SQL_WS311 		"Failed to execute the ws311.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS311 	"Step out: execute the ws311.sql"
+#define MSG_ERR_EXE_SQL_WS32 		"Failed to execute the ws3.2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS32 	"Step out: execute the ws3.2.sql"
+
+#define MSG_ERR_EXE_SQL_WSVM 		"Failed to execute the wsvm.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WSVM 	"Step out: execute the wsvm.sql"
+#define MSG_ERR_EXE_SQL_WS31c 		"Failed to execute the ws31c.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS31c 	"Step out: execute the ws31c.sql"
+#define MSG_ERR_CONF_FIX_GRAPHICS 		"Failed to replace fix_Graphics.ini"
+#define MSG_INFO_STEP_OUT_CONF_FIX_GRAPHICS 	"Step out: replace fix_Graphics.ini"
+#define MSG_ERR_CONF_WEB_CONFIG 		"Failed to replace web.config."
+#define MSG_INFO_STEP_OUT_CONF_WEB_CONFIG 	"Step out: replace web.config."
+#define MSG_ERR_CONF_FIX_LOG 			"Failed to replace fix_log.property."
+#define MSG_INFO_STEP_OUT_CONF_FIX_LOG 		"Step out: replace fix_log.property."
+#define MSG_ERR_CONF_ASPNET_STATE 		"Failed to set aspnet_state service status."
+#define MSG_INFO_STEP_OUT_ASPNET_STATE 		"Step out: set aspnet_state service status."
+#define MSG_INFO_STEP_OUT_INSTALL_USER 		"Step out: add full control of config files to current user."
+#define MSG_INFO_STEP_OUT_INSTALL_IIS 		"Step out: install IIS virtual folder."                  
+#define MSG_ERR_PGINFO_PORT_CONVERT 		"Failed to convert the port."
+#define MSG_ERR_PGINFO_PORT_DIGIT	 		"The port should be an integer."
+#define MSG_ERR_PGINFO_PORT_RANGE 		"The port should be in 100 ~ 65535."
+#define MSG_ERR_PGINFO_PWD_LEN 			"The length of password should be in 6 ~ 12."
+#define MSG_ERR_PGINFO_DATADIR_EMPTY			"The specified database data folder must be empty."
+#define MSG_INFO_STEP_OUT_INSTALL_NBKF 		"Step out: install nbkf check nb10002.ini."
+#define MSG_ERR_CONF_NBKF 		"Failed to install nbkf check nb10002.ini ."  
+#define MSG_INFO_STEP_OUT_ADDREGNETWORKSERVICE "Step out: add network service in reg clsid"
+#define MSG_ERR_ADDREGNETWORKSERVICE "Failed to add network service in reg clsid"
+#define MSG_ERR_RENAME_OLD_DIR "Failed to rename directory Enterprise Server 3.0 "
+#define MSG_ERR_NEED_2008SERVER 	"The NetBrain Enterprise Server can be only installed in the Windows 2003 or 2008 Server. The installation will be terminated."
+#define MSG_INFO_NETBRAINCHECKER "Step out:NetbrainChecker"
+#define MSG_INFO_STEP_OUT_INSTALL_IISISAPI "Step out: set IIS ISAPI." 
+#define MSG_ERR_INSTALLWIN7NETFX3 "Failed to ocsetup NetFx3"
+#define DISKSPACENOTENOUGH "There is not enough disk space(at least 1G )."
+#define MSG_ERR_NETFX35_NOTEXISTS "Error:No DotNetFrameWork35"      
+#define MSG_NETFX35_EXISTS "OK:DotNetFrameWork35 Exists"
+#define MSG_INFO_STEP_NETSTAT "Step out:Run netstat to check port"
+#define MSG_ERR_CONNFILE_WRITE "Failed to write Connect File!"
+#define MSG_ERR_ENCRYPT_CONNSTR "Failed to run EncryptFile !"
+#define MSG_INFO_STEP_OUT_REGKEY_START_ASPNET_STATE_CHECK "check or add reg aspnet_state key :start"
+#define MSG_STEP_BEFORE_RUN_TSCHMOD "Running Tschmod" 
+#define MSG_ERR_PGINFO_DATADIR_DISKROOT "The specified database data folder can not be the system root partition."
+#define MSG_ERR_MODIFYPGPWD "Failed to change postgres pwd."
+#define MSG_INFO_SETP_MODIFYPGPWD "Step out:change postgres pwd."   
+#define MSG_INFO_STEP_OUT_UPGRADE_DATADIR 		"Step out: Upgrade data dir."
+
+#define PGPWDDEFAULT "postgres"  
+#define PGHOSTDEFAULT "127.0.0.1" 
+
+#define DEFAULTSITEINDEX "1"  
+#define DEFAULTSITENAME "Default Web Site"  
+
+
+
+//---------------------------------------------------------------------------                                                                        
+// OnFirstUIBefore
+//
+// First Install UI Sequence - Before Move Data
+//
+// The OnFirstUIBefore event is called by OnShowUI when the setup is
+// running in first install mode. By default this event displays UI allowing
+// the end user to specify installation parameters.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnFirstUIBefore()
+    number  nResult, nLevel, nSize, nSetupType;
+    string  szTitle, szMsg, szOpt1, szOpt2, szLicenseFile;
+    string  szName, szCompany, szTargetPath, szDir, szFeatures;
+    BOOL    bLicenseAccepted;
+begin	
+
+    // Added in InstallShield 15 - Show an appropriate error message if
+    // -removeonly is specified and the product is not installed.
+    if( REMOVEONLY ) then
+        //Disable( DIALOGCACHE );
+		//szMsg = SdLoadString( IDS_IFX_ERROR_PRODUCT_NOT_INSTALLED_UNINST );
+   		//SdSubstituteProductInfo( szMsg );
+		//MessageBox( szMsg, SEVERE );
+		abort;
+    endif; 
+    
+    
+    if ( bMaintenanceMode ) then
+     abort;
+    endif;
+     
+    return 0;
+end;
+//---------------------------------------------------------------------------
+// OnFirstUIAfter
+//
+// First Install UI Sequence - After Move Data
+//
+// The OnFirstUIAfter event called by OnShowUI after the file transfer
+// of the setup when the setup is running in first install mode. By default
+// this event displays UI that informs the end user that the setup has been
+// completed successfully.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnFirstUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2;
+    NUMBER bvOpt1, bvOpt2;
+begin
+   //RegDBDeleteItem( REGDB_UNINSTALL_NAME ); 
+end; 
+
+function  RunApplication( cmd , param, bShow, bWait )
+    number nShowWindow;
+    number nOptions;
+begin                 
+	nShowWindow = SW_NORMAL;
+	nOptions = LAAW_OPTION_CHANGEDIRECTORY | LAAW_OPTION_FIXUP_PROGRAM;
+	if( bShow = FALSE ) then 
+		nShowWindow = SW_HIDE; 
+		nOptions |= LAAW_OPTION_HIDDEN;
+	endif;     
+	
+	if( bWait = TRUE ) then 
+		nOptions |= LAAW_OPTION_WAIT; 
+	else                           
+		nOptions |= LAAW_OPTION_NOWAIT; 
+	endif;
+	
+	LaunchApplication( cmd, param, "", nShowWindow, INFINITE, nOptions  );  
+	return LAAW_PARAMETERS.nLaunchResult;  
+	
+end;  
+
+
+function WriteLogFile( svContent )   
+ 	NUMBER   FileHandle;   
+	NUMBER   nResult;
+	STRING	 svResult;
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  LOGFILE_NAME, svResult ); 
+	
+	OpenFileMode (FILE_MODE_APPEND);  
+	if( nResult < 0 ) then
+		nResult = CreateFile(FileHandle, LOGFILE_PATH,  LOGFILE_NAME );  
+	else
+		nResult = OpenFile(FileHandle, LOGFILE_PATH,  LOGFILE_NAME );  
+	endif;
+	
+	if( nResult < 0 ) then  
+		return -1;
+	endif; 
+	//时间戳  
+	nResult = WriteLine(FileHandle,"");
+	nResult = WriteLine(FileHandle,RecordTimeLog());
+    //写入字符串   
+    nResult = WriteLine(FileHandle,svContent);     
+    CloseFile(FileHandle);    
+    return 0;
+end;   
+
+
+function STRING RecordTimeLog()
+	number  nvReturn1;
+	string  svResult1,szDateTimetmp;
+begin   	
+	   	GetSystemInfo( DATE, nvReturn1, svResult1 );  
+   		szDateTimetmp = svResult1;
+   		szDateTimetmp = szDateTimetmp + " ";
+   		GetSystemInfo( TIME, nvReturn1, svResult1 );
+   		szDateTimetmp = szDateTimetmp + svResult1; 
+   		return szDateTimetmp;
+   		//WriteLogFile(szDateTimetmp);     		
+end;
+//---------------------------------------------------------------------------
+// OnBegin
+//
+// The OnBegin event is called directly by the framework after the setup
+// initializes. Note that this event will be called AFTER "Initialization"
+// events (i.e.) OnSetTARGETDIR, OnCheckMediaPassword.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnBegin() 
+NUMBER nvType,nvSize;
+begin
+    // TODO: Perform custom initialization steps, check requirements, etc. 
+    StrSub (LOGFILE_PATH, WINDIR, 0, 3);   
+    
+    svWSSiteIndex=DEFAULTSITEINDEX;
+	svWSSiteName=DEFAULTSITENAME;
+	svWSHost="127.0.0.1";    
+	svDBPwd="123456";  
+	svDBUserName="postgres";  
+	svDBPort="54321";
+    
+    LOGFILE=LOGFILE_PATH^LOGFILE_NAME; 
+    nvType = REGDB_STRING;
+    RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE);
+    //RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_DATADIR,nvType,svPostgreDbDataDir,nvSize);
+ 	//RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_USERNAME,nvType,svDBUserName, nvSize);
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PASSWORD,nvType,svDBPwd,nvSize);
+   	//RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_SETTIME,nvType,svDataSetupTime,nvSize);
+   	//RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ROOTDIR,nvType,svDataDirRoot,nvSize);
+   	//RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ES_VERSION,nvType,svCurrentVersion,nvSize);
+ 	nvType = REGDB_NUMBER;
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PORT,nvType,svDBPort,nvSize);  
+       
+    DeleteFile(LOGFILE);
+end;
+
+//---------------------------------------------------------------------------
+// OnSetUpdateMode
+//
+// OnSetUpdateMode is called directly by the framework to set the UPDATEMODE
+// InstallShield system variable appropriately to control which UI events
+// are called by OnShowUI.
+//
+// Note: This event is called for all setups.
+//---------------------------------------------------------------------------
+function OnSetUpdateMode()
+	number	nIgnore, nMediaFlags, nInstalledVersion, nUpdateVersion, nResult;
+	string	szVersion, szIgnore, szMsg;
+begin
+	
+	UPDATEMODE = FALSE; // Non-update mode by default.
+
+	// Added 11.5 - Don't set UPDATEMODE when running from Add/Remove
+	if( ADDREMOVE ) then
+		return ISERR_SUCCESS;
+	endif;
+
+	// Added 11.5 - Don't set UPDATEMODE when REMOVEONLY is specified
+	if( REMOVEONLY ) then
+		return ISERR_SUCCESS;
+	endif;
+	
+	//TARGETDIR=GetValueFromCMDLINEByName("TARGETDIR");
+     
+end;
+//---------------------------------------------------------------------------
+// OnSetTARGETDIR
+//
+// OnSetTARGETDIR is called directly by the framework to initialize
+// TARGETDIR to it's default value.
+//
+// Note: This event is called for all setups.
+//---------------------------------------------------------------------------
+function OnSetTARGETDIR()
+number nId, nIgnore, nResult;
+string szId, szTARGETDIR;
+begin
+
+    // In maintenance mode the value of TARGETDIR is read from the log file.
+    if( MAINTENANCE ) then
+        return ISERR_SUCCESS;
+    endif;  
+    
+    //TARGETDIR=GetValueFromCMDLINEByName("TARGETDIR"); 
+    workspace=GetValueFromCMDLINEByName("workspace"); 
+    InfoFile=GetValueFromCMDLINEByName("InfoFile"); 
+
+end;
+
+//---------------------------------------------------------------------------
+// OnUpdateUIBefore
+//
+// Update UI Sequence - Before Move Data
+//
+// The OnUpdateUIBefore event is called when the setup is running in update
+// mode. By default this event displays UI that allows the end user to
+// update the application to the current version.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnUpdateUIBefore()
+	string szTitle, szMsg, szIgnore, szVersionInstalled, szVersionSupported, szVersionUpdate;
+	number nVersionInstalled;
+	number nIgnore, nId, nMediaFlags;
+	number nResult;
+begin
+
+end;
+
+ 
+function STRING GetValueFromCMDLINEByName(name)  
+	LIST ListID,list,listKEY,listValue; 
+ 	NUMBER nResult;   
+ 	STRING nvItem;
+begin 
+   
+   	ListID = ListCreate (STRINGLIST);  
+    StrGetTokens (ListID, CMDLINE, ";");
+		
+	listKEY=ListCreate (STRINGLIST);
+	listValue=ListCreate (STRINGLIST); 
+	
+	nResult = ListGetFirstString  (ListID, nvItem); 
+	//StrReplace (nvItem,"\"","",0);
+	while (nResult != END_OF_LIST)  
+		list=ListCreate (STRINGLIST);
+		StrGetTokens (list, nvItem, "="); 
+		ListGetFirstString(list,nvItem);
+		ListAddString ( listKEY, nvItem, AFTER ); 
+		ListGetNextString(list,nvItem); 
+		StrReplace (nvItem,"\"","",0);
+        ListAddString ( listValue, nvItem, AFTER );
+        ListDestroy (list);
+    nResult = ListGetNextString (ListID, nvItem); 
+    endwhile;  
+	
+	ListFindKeyValueString (listKEY,listValue,name,nvItem);   
+	
+	ListDestroy (listKEY); 
+	ListDestroy (listValue); 
+	ListDestroy (ListID);   
+	
+	StrTrim (nvItem);
+	
+	return nvItem;
+end;
+
+//---------------------------------------------------------------------------
+// OnShowUI
+//
+// This function drives the UI sequence and file transfer of the setup.
+// 
+// The OnShowUI event is called directly by the framework to initiate
+// the UI sequence and file transfer of the setup. By default this event
+// displays UI that informs the end user that the maintenance setup has been
+// completed successfully.
+// 
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnShowUI()
+
+string	szIgnore, szTitle;  
+NUMBER nvReturn;     
+STRING svReturn;
+begin
+		
+		// Enable dialog caching
+		Enable( DIALOGCACHE );
+		
+		// Determine what events to show.
+		bUpdateMode	= FALSE;
+		bMaintenanceMode = FALSE;
+	
+		// Remove this to disabled update mode.
+		if( UPDATEMODE ) then
+			bUpdateMode = TRUE;
+		endif;
+
+		// Remove this to disable maintenance mode.
+		if ( MAINTENANCE ) then
+			bMaintenanceMode = TRUE; 
+		endif;     
+		
+		
+		if ( CMDLINE % "Uninstall=Yes" )  then 
+			bMaintenanceMode = TRUE;
+		endif; 
+		
+		
+		
+		workspace=GetValueFromCMDLINEByName("WorkSpace");
+		TARGETDIR=GetValueFromCMDLINEByName("TargetDir"); 
+		//TARGETDIR=TARGETDIR^workspace; 
+    	InfoFile=GetValueFromCMDLINEByName("InfoFile"); 
+    	Log=GetValueFromCMDLINEByName("Log"); 
+    	DBName=GetValueFromCMDLINEByName("DBName");
+    	AppPool=GetValueFromCMDLINEByName("AppPool");
+    	installdir=GetValueFromCMDLINEByName("installdir");
+    	Vdir=GetValueFromCMDLINEByName("Vdir"); 
+    	OEfile=GetValueFromCMDLINEByName("OEfile"); 
+    	NSfile=GetValueFromCMDLINEByName("NSfile"); 
+    	WSsite=GetValueFromCMDLINEByName("WSsite");
+    	
+    	if !( bMaintenanceMode ) then   
+    		
+    		if (ExistsDir ( TARGETDIR ) !=  EXISTS ) then 
+    			nvReturn=CreateDir ( TARGETDIR );
+    			if ( nvReturn < 0) then  
+    				NumToStr(svReturn,nvReturn); 
+    				WriteLogFile("Failed to create: "+TARGETDIR+" "+svReturn);
+    			else
+    				WriteLogFile("Succeed in creating: "+TARGETDIR);
+    			endif;
+    			nvReturn=SetObjectPermissions ( TARGETDIR , IS_PERMISSIONS_TYPE_FOLDER , "" , "Network Service" , FILE_ALL_ACCESS , 0 );
+    			NumToStr(svReturn,nvReturn); 
+    			if ( ISERR_SUCCESS != nvReturn ) then 
+    				WriteLogFile("Failed to add Network Service right to: "+TARGETDIR+" "+svReturn);
+    			else 
+    				WriteLogFile("Succeed in adding Network Service right to: "+TARGETDIR+" "+svReturn);
+    			endif;
+    			
+    		endif;
+    		
+    	endif;
+    	
+    	//workspace=GetValueFromCMDLINEByName("xml");
+
+		// Show appropriate UI
+
+		// TODO: Enable if you want to enable background etc.
+		//if ( LoadStringFromStringTable( "TITLE_MAIN", szTitle ) < ISERR_SUCCESS ) then // Load the title string.
+		//	szTitle = IFX_SETUP_TITLE;
+		//endif;
+		//SetTitle( szTitle, 24, WHITE );
+		//Enable( FULLWINDOWMODE );						   
+		//Enable( BACKGROUND );
+		//SetColor( BACKGROUND, RGB( 0, 128, 128 ) );  
+		
+/*	if (bUpdateMode) then  
+		
+		RunApplication( SUPPORTDIR ^ "Setup.bat"," \"" +"-Uninstall"+"\" \""+workspace+"\" \""+TARGETDIR+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+		if (nResult != 0) then
+			WriteLogFile( "WS EAPUninstall.bat error!" ); 
+		endif;
+		
+	endif;	
+*/
+   
+   
+  			if ( bMaintenanceMode ) then
+				//OnMaintUIBefore(); 
+				 FeatureRemoveAllInMediaAndLog();
+			else
+				//OnFirstUIBefore();  
+				FeatureSelectItem (MEDIA, "DefaultFeature", TRUE);
+			endif;
+
+		
+		
+		
+ 
+/*	if( bUpdateMode ) then
+			//OnUpdateUIBefore(); 
+			FeatureSelectItem (MEDIA, "DefaultFeature", TRUE);
+		else
+			if ( bMaintenanceMode ) then
+				//OnMaintUIBefore(); 
+				 FeatureRemoveAllInMediaAndLog();
+			else
+				//OnFirstUIBefore();  
+				FeatureSelectItem (MEDIA, "DefaultFeature", TRUE);
+			endif;
+		endif;
+  */
+		// Move Data
+		OnMoveData(); 
+		
+		
+		
+			if ( bMaintenanceMode ) then
+				OnMaintUIAfter();
+			else
+				OnFirstUIAfter();
+			endif;
+	
+	
+	/*	if( bUpdateMode ) then
+			//OnUpdateUIAfter();  
+			FeatureSelectItem (MEDIA, "DefaultFeature", TRUE);
+		else
+			if ( bMaintenanceMode ) then
+				OnMaintUIAfter();
+			else
+				OnFirstUIAfter();
+			endif;
+		endif; 
+   */ 
+	
+	/*
+	if (bUpdateMode) then  
+		
+		SdShowMsg ("Installing WorkSpace Server, please wait...", TRUE);
+   		RunApplication( SUPPORTDIR ^ "Setup.bat"," \"" +"-install"+"\" \""+workspace+"\" \""+TARGETDIR+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);  	
+		SdShowMsg ("", FALSE); 
+		
+	endif;    */
+	
+		// Disable dialog caching
+	Disable(DIALOGCACHE);
+
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIAfter
+//
+// The OnMaintUIAfter event called by OnShowUI after the file transfer
+// of the setup when the setup is running in maintenance mode. By default
+// this event displays UI that informs the end user that the maintenance setup
+// has been completed successfully.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnMaintUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2;
+    NUMBER bvOpt1, bvOpt2; 
+    
+    NUMBER nResult; 
+    STRING szFileName;
+begin
+   /*
+    ShowObjWizardPages(NEXT);
+    
+    // Added - Version 9.5 - Use appropriate strings for complete
+    // uninstall.
+    if( REMOVEALLMODE ) then
+        szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
+        szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
+    else
+        szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
+        szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+    endif;
+
+	szMsg2 = "";    
+    szOpt1 = "";
+    szOpt2 = "";
+	bvOpt1   = FALSE;
+    bvOpt2   = FALSE;    
+   */
+   /*
+    if ( BATCH_INSTALL ) then
+    	SdFinishReboot ( szTitle , szMsg1 , SYS_BOOTMACHINE , szMsg2 , 0 );
+    else    
+       	SdFinish ( szTitle , szMsg1 , szMsg2 , szOpt1 , szOpt2 , bvOpt1 , bvOpt2 );
+    endif;  
+   */ 
+    
+    //RegDBDeleteItem( REGDB_UNINSTALL_NAME );  
+   
+   	if ( CMDLINE % "DelAll=Yes" )  then 
+		if (ExistsDir (TARGETDIR)=EXISTS) then 
+        	nResult=FindAllFiles(TARGETDIR,"*.*",szFileName,RESET);
+        	while(nResult = 0)
+	        	if (SetFileInfo( szFileName ,FILE_ATTRIBUTE , FILE_ATTR_NORMAL ,"" )<0) then
+	        		WriteLogFile("Unable to clear file attributes. FilePath: "+szFileName);
+	        	endif;
+	        	nResult=FindAllFiles(TARGETDIR,"*.*",szFileName,CONTINUE); 
+        	endwhile; 
+       
+       if (DeleteDir(TARGETDIR,ROOT)<0) then            //Bug 43034 
+       		WriteLogFile("Unable to delete "+TARGETDIR);   
+       endif;
+     endif;  		
+	endif;  
+       
+end;
+//---------------------------------------------------------------------------
+// OnEnd
+//
+// The OnEnd event is called at the end of the setup. This event is not
+// called if the setup is aborted.
+//---------------------------------------------------------------------------
+function OnEnd()
+begin   
+       DeleteDir ( SUPPORTDIR , ROOT );
+	   RegDBDeleteItem( REGDB_UNINSTALL_NAME );
+end;
+//---------------------------------------------------------------------------
+// OnMoveData
+//
+// The OnMoveData event is called by OnShowUI to initiate the file
+// transfer of the setup.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnMoveData()
+number	nResult, nMediaFlags;
+begin
+
+	// Don't install the DISK1COMPONENT if MAINT_OPTION_NONE was specified.
+	if( MAINT_OPTION = MAINT_OPTION_NONE ) then
+		FeatureSelectItem( MEDIA, DISK1COMPONENT, FALSE );
+	endif;
+
+    // Updated in 11.5, disable the cancel button during file transfer unless
+	// this is non-maintenance mode or repair mode.
+    if( MAINTENANCE && ( !REINSTALLMODE || UPDATEMODE ) ) then
+        Disable( CANCELBUTTON );
+    endif;
+
+    // Show Status
+	// Note: Start status window at 1 in case CreateInstallationInfo call
+	// is lengthy.
+	//SetStatusWindow( 1, "" );
+	//Enable ( STATUSEX );
+	Disable ( STATUSEX );  
+	
+	//StatusUpdate( ON, 100 );
+
+	// Create the uninstall infomation (after displaying the progress dialog)
+	// Don't create uninstall information if MAINT_OPTION_NONE was specified.
+	if( MAINT_OPTION != MAINT_OPTION_NONE ) then
+		CreateInstallationInfo();
+	endif;
+
+	// Move Data
+	nResult = FeatureTransferData( MEDIA );
+	
+    // Moved in 11.0, Check for failure before creating uninstall key.
+    // Handle move data error and abort if error occured.
+	if( nResult < ISERR_SUCCESS ) then
+		OnComponentError();
+		abort;
+	endif;	    
+
+	// Create uninstall key, if DISK1COMPONENT was installed.
+	if( IFX_DISK1INSTALLED ) then
+
+		// Store text-subs for maintenance mode later, only do this when
+		// disk 1 is installed. Note that any text-subs that are updated after
+        // this call will not be remembered during maintenance mode.
+		FeatureSaveTarget("");
+
+		// Write uninstall information.
+		MaintenanceStart();
+
+		// Customize Uninstall Information
+		OnCustomizeUninstInfo();
+
+	endif;
+
+    // Disable Status
+	Disable( STATUSEX );
+
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIBefore
+//
+// Maintenance UI Sequence - Before Move Data
+//
+// The OnMaintUIBefore event is called by OnShowUI when the setup is
+// running in maintenance mode. By default this event displays UI that
+// allows the end user to add or remove features, repair currently
+// installed features or uninstall the application.
+//
+// Note: This event will not be called automatically in a
+// program...endprogram style setup.
+//---------------------------------------------------------------------------
+function OnMaintUIBefore()
+    number	nResult, nType;
+    string	szTitle, szMsg;
+begin
+ 
+end;  
+
+
+
+
+
+function BenchmarklogUpdate()
+	string  szBenchmarklogDir;
+	string  szBenchmarklogDir2;  
+	string  szFoldername; 
+	string  szFoldernameOnly;   
+	string  szFoldernameNew;
+	number  nvReturn1;
+	LIST   listDirs;
+begin    
+	szBenchmarklogDir= TARGETDIR ^ "WebServer\\BenchmarkLog";
+	if (ExistsDir ( szBenchmarklogDir ) = 0)then    
+		szBenchmarklogDir2 = szBenchmarklogDir+"\\2"; 
+		if (ExistsDir ( szBenchmarklogDir2 ) = 0)then 
+			return 0; 
+		else
+			listDirs = ListCreate (STRINGLIST); 
+			nvReturn1 = FindAllDirs (szBenchmarklogDir, EXCLUDE_SUBDIR, listDirs);
+
+			if(CreateDir (szBenchmarklogDir2)<0) then
+				WriteLogFile("error :Create dir failed: "+szBenchmarklogDir2);
+			endif; 
+			szBenchmarklogDir2=szBenchmarklogDir2+"\\1"; 
+			if(CreateDir (szBenchmarklogDir2)<0) then
+			    WriteLogFile("error :Create dir failed: "+szBenchmarklogDir2);
+			endif;
+			
+			if ( nvReturn1>=0) then 		       		    		          
+		        nvReturn1 = ListGetFirstString (listDirs, szFoldername);
+		        // Loop while list items continue to be retrieved.
+		        while (nvReturn1 != END_OF_LIST) 
+		            szFoldernameOnly =  szFoldername;
+		            StrReplace ( szFoldernameOnly, szBenchmarklogDir, "", 0 );
+		            szFoldernameNew =  szBenchmarklogDir2 + szFoldernameOnly;
+                    //MessageBox (szFoldernameNew, INFORMATION);
+		            if(RenameFile ( szFoldername, szFoldernameNew )<0)  then  
+   	    				WriteLogFile( "error: move benchmarklog folder failed!" );
+   	    			endif; 
+		            // Get the next string in the list. 
+		            nvReturn1 = ListGetNextString (listDirs, szFoldername);
+		        endwhile;
+		    endif;
+			// Remove the list from memory. 
+			ListDestroy (listDirs);
+		    
+		endif;
+	endif;
+end;  
+
+
+
+/*
+function STRING GetTestDefaultSiteReturnCode() 
+STRING szUrlReturnCode;
+NUMBER nReturnCode;
+begin    
+	DeleteFile(SUPPORTDIR ^"urlreturncode.txt");      
+	//MessageBox("http://"+svDefaultSiteIP+":"+svDefaultSitePort +" \""+SUPPORTDIR ^"urlreturncode.txt\"",WARNING);	
+	RunApplication(SUPPORTDIR ^"GetUrlReturnCode.bat" ,"http://"+svDefaultSiteIP+":"+svDefaultSitePort +" \""+SUPPORTDIR ^"urlreturncode.txt\"",FALSE,TRUE);
+	szUrlReturnCode = ReadString(SUPPORTDIR,"urlreturncode.txt",FALSE);
+	StrTrim(szUrlReturnCode);
+	StrToNum ( nReturnCode, szUrlReturnCode );      
+	if(nReturnCode==200 )then
+		return  szUrlReturnCode;
+	else 
+		if StrLength(szUrlReturnCode)<1 then 
+			szUrlReturnCode	="0";
+		endif;                                                                                                             
+		WriteLogFile("Error at http://"+svDefaultSiteIP+":"+svDefaultSitePort+" return code:"+szUrlReturnCode);
+		MessageBox("Error at http://"+svDefaultSiteIP+":"+svDefaultSitePort+" return code:"+szUrlReturnCode,WARNING);
+	endif;                
+	return 	szUrlReturnCode ; 
+end; 
+
+function NUMBER GetTestNetbrainReturnCode() 
+STRING szUrlReturnCode;
+NUMBER nReturnCode;
+begin    
+	DeleteFile(SUPPORTDIR ^"urlreturncode.txt");      
+	//MessageBox("http://"+svDefaultSiteIP+":"+svDefaultSitePort +" \""+SUPPORTDIR ^"urlreturncode.txt\"",WARNING);	
+	RunApplication(SUPPORTDIR ^"GetUrlReturnCode.bat" ,"http://"+svDefaultSiteIP+":"+svDefaultSitePort +"/netbrain \""+SUPPORTDIR ^"urlreturncode.txt\"",FALSE,TRUE);
+	szUrlReturnCode = ReadString(SUPPORTDIR,"urlreturncode.txt",FALSE);
+	StrTrim(szUrlReturnCode);
+	StrToNum ( nReturnCode, szUrlReturnCode );      
+	if(nReturnCode==200 )then
+		return  nReturnCode;
+	else 
+		if StrLength(szUrlReturnCode)<1 then 
+			szUrlReturnCode	="0"; 
+			nReturnCode=0;
+		endif;		                                                                                                            
+		WriteLogFile("Error at http://"+svDefaultSiteIP+":"+svDefaultSitePort+"/netbrain return code:"+szUrlReturnCode);
+		//MessageBox("Error at http://"+svDefaultSiteIP+":"+svDefaultSitePort+" return code:"+szUrlReturnCode,WARNING);
+	endif;                
+	return 	nReturnCode ; 
+end;
+ */     
+ 
+///////////////////////////////////////////////////////////////////////////////
+function EAPInstall()
+	NUMBER nResult, nRet;
+	STRING svPath,svResult;
+	STRING svConnectionGraphics,svConnectionWeb;   
+begin 
+	nRet = 0;
+                 
+  	svConnectionGraphics ="Provider=PostgreSQL OLE DB Provider;Password="+svDBPwd+";User ID="+svDBUserName+ ";Data Source=127.0.0.1:"+ svDBPort +";Location="+DBName+";";
+  	   	
+  	svConnectionGraphics=GetEncyptConnStr(svConnectionGraphics);
+  	
+  	nResult = ReplaceLineOfFile( FALSE, TARGETDIR^"WebServer"^"Conf\\", "fix_Graphics.ini", "CONNStr=", "CONNStr=\""+svConnectionGraphics+"\"" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_GRAPHICS );
+ 		nRet = -1;
+	endif;
+	nResult = AddOrReplaceLineOfFile( FALSE, TARGETDIR^"WebServer"^"Conf\\", "fix_Graphics.ini", "CONNStrEn=", "CONNStr=", "CONNStrEn=1" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_GRAPHICS );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_FIX_GRAPHICS );
+
+    svConnectionWeb="server=127.0.0.1" + ";port=" + svDBPort + ";user id=" + svDBUserName + ";password=" + svDBPwd + ";database="+DBName+";commandtimeout=600;"; 
+  	
+  	svConnectionWeb=GetEncyptConnStr(svConnectionWeb);
+  	
+  	nResult = ReplaceLineOfFile( TRUE, TARGETDIR^"WebServer", "web.config", "<dbConn connectionStr=", "<dbConn connectionStr=\"" + svConnectionWeb + "\" dll=\"Npgsql\" type=\"Npgsql.NpgsqlConnection\" CONNStrEn=\"1\"/>" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_WEB_CONFIG );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_WEB_CONFIG );
+
+    nResult = ReplaceContentOfFile( TARGETDIR^"WebServer"^"Conf\\", "fix_log.property", "$(NB_ROOT)", TARGETDIR ^ "WebServer" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_LOG );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_FIX_LOG );
+        
+   	return nRet;
+end;  
+
+
+function ReplaceContentOfFile( FilePath, FileName, sOldStr, sNewStr )
+    STRING svResult, szAttributes; 
+    NUMBER nvResult; 
+    STRING svString; 
+    NUMBER nvFileHandle; 
+begin      
+    OpenFileMode (FILE_MODE_BINARY); 
+    if (OpenFile (nvFileHandle, FilePath, FileName) < 0) then 
+        return 1;
+    endif;  
+        
+    GetFileInfo ( FilePath + FileName, FILE_SIZE, nvResult, svResult ); 
+
+    // Read the next twenty-eight bytes into svString. 
+    if (ReadBytes (nvFileHandle, svString, 0, nvResult) < 0) then 
+        return 1;
+    endif; 
+    CloseFile (nvFileHandle); 
+    
+    DeleteFile(FilePath + FileName );
+          
+	OpenFileMode (FILE_MODE_BINARY);           
+    if (CreateFile(nvFileHandle, FilePath, FileName) < 0) then 
+        return 1;
+    endif;   
+    
+    StrReplace( svString, sOldStr, sNewStr, 0 );  
+    if( WriteBytes( nvFileHandle, svString, 0, StrLength(svString) ) < 0 ) then
+    	return 1;
+    endif;
+    CloseFile (nvFileHandle); 
+    return 0;
+end;
+ 
+
+
+
+
+function ReplaceLineOfFile( bIsUnicode, szPath, szFile, szKey, szContent )
+    STRING  svReturnLine, szMsg, szInsertLine,svResultInsert;
+    NUMBER  nvLineNUMBER, nvResult,nvFileHandle;
+    NUMBER  nResult,nResultInsert;
+begin
+	if( bIsUnicode ) then 
+		OpenFileMode(FILE_MODE_APPEND_UNICODE);
+	else
+    	OpenFileMode(FILE_MODE_APPEND);
+    endif;
+    nvResult = OpenFile(nvFileHandle, szPath, szFile );
+    if(nvResult<0)then
+    	WriteLogFile(szFile + " OpenFile() error.");
+    endif;
+    
+    nvResult = FileGrep ( szPath + "\\" + szFile, szKey,svReturnLine, nvLineNUMBER, RESTART);
+    szInsertLine = szContent;
+    switch(nvResult)
+        case 0:
+        	nResultInsert = 0;
+            nResultInsert = FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, REPLACE);            
+            if(nResultInsert<0)then  
+            	NumToStr (svResultInsert, nResultInsert); 
+    			WriteLogFile(szFile + " FileInsertLine() error:"+svResultInsert);
+    		endif;    		
+            CloseFile(nvFileHandle);
+            return 0;
+        case FILE_NOT_FOUND:   
+        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+        case FILE_LINE_LENGTH:
+            // Report error; then abort.
+			WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+        case OTHER_FAILURE:
+            // Report error; then abort. 
+            NumToStr (svResultInsert, nvResult);                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep."+svResultInsert );
+        default:
+            // Report error; then abort. 
+            NumToStr (svResultInsert, nvResult);                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + "Default unknown failure on call to FileGrep."+svResultInsert );
+    endswitch;
+        
+    CloseFile(nvFileHandle);
+    return 1;
+end;
+
+function AddOrReplaceLineOfFile( bIsUnicode, szPath, szFile, szKey,szKeyBefore, szContent )
+    STRING  svReturnLine, szMsg, szInsertLine;
+    NUMBER  nvLineNUMBER, nvResult,nvFileHandle,nvResultBefore;
+    NUMBER  nResult;
+begin
+	if( bIsUnicode ) then 
+		OpenFileMode(FILE_MODE_APPEND_UNICODE);
+	else
+    	OpenFileMode(FILE_MODE_APPEND);
+    endif;
+    OpenFile(nvFileHandle, szPath, szFile );
+    nvResult = FileGrep ( szPath + "\\" + szFile, szKey,svReturnLine, nvLineNUMBER, RESTART);
+    szInsertLine = szContent;
+    switch(nvResult)
+        case 0:
+            FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, REPLACE);
+            CloseFile(nvFileHandle);
+            return 0; 
+        case END_OF_FILE:
+        	 nvResultBefore = FileGrep ( szPath + "\\" + szFile, szKeyBefore,svReturnLine, nvLineNUMBER, RESTART);
+             switch(nvResultBefore)
+             	case 0:
+            		FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, BEFORE);
+            		CloseFile(nvFileHandle);
+            		return 0;
+		        case FILE_NOT_FOUND:   
+		        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+		        case FILE_LINE_LENGTH:
+					WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+		        case OTHER_FAILURE:                               
+		            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep." );
+		    endswitch;
+        case FILE_NOT_FOUND:   
+        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+        case FILE_LINE_LENGTH:
+            // Report error; then abort.
+			WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+        case OTHER_FAILURE:
+            // Report error; then abort.                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep." );
+    endswitch;
+        
+    CloseFile(nvFileHandle);
+    return 1;
+end;    
+ 
+//写入 加密 读取
+function STRING GetEncyptConnStr(svContent)
+STRING svLine;
+NUMBER nResult;
+begin
+	  if(0>WriteConnectFile(svContent)) then 
+	  		WriteLogFile(MSG_ERR_CONNFILE_WRITE);
+	   		return "";
+	   endif;
+	    
+	   nResult = RunApplication( SUPPORTDIR ^ "EncryptFile.exe"," "+LOGFILE_PATH+CONNECTFILE_SRC_NAME+" "+LOGFILE_PATH+CONNECTFILE_DES_NAME,FALSE,TRUE);
+	   if(nResult<0) then 
+	  		WriteLogFile(MSG_ERR_ENCRYPT_CONNSTR);
+	   		return "";        
+	   endif;	
+	   svLine= ReadConnectFile();
+	   
+	   DeleteFile ( LOGFILE_PATH + CONNECTFILE_SRC_NAME );
+       DeleteFile ( LOGFILE_PATH + CONNECTFILE_DES_NAME );
+       
+	   return svLine;
+end;   
+
+// 写入连接字符串到文件中
+function WriteConnectFile( svContent )
+	STRING	 svResult;  
+    NUMBER   nResult;   
+    NUMBER   nFileHandle;    
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  CONNECTFILE_SRC_NAME, svResult ); 
+	//todo
+	OpenFileMode (FILE_MODE_APPEND);
+	//OpenFileMode (FILE_MODE_BINARY);  
+	if( nResult >= 0 ) then
+		DeleteFile(LOGFILE_PATH+CONNECTFILE_SRC_NAME);
+	endif;
+	
+	nResult = CreateFile(nFileHandle, LOGFILE_PATH,  CONNECTFILE_SRC_NAME ); 
+	
+	if( nResult < 0 ) then  
+		return -1;
+	endif;
+	
+    //todo 写入字符串   
+    nResult = WriteLine(nFileHandle,svContent);
+	//nResult = WriteBytes(nFileHandle,svContent,0,StrLength(svContent));      
+    CloseFile(nFileHandle);  
+    
+	if( nResult < 0 ) then 
+		return -1;
+	endif;
+	  
+    return 0;
+end; 
+
+//从文件中读取连接字符串
+function STRING ReadConnectFile() 
+	STRING  svLine;
+	STRING  svResult;   
+    NUMBER   nFileHandle;  
+    NUMBER   nResult;  
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  CONNECTFILE_DES_NAME, svResult ); 
+	if(0>nResult) then
+		return "";
+	endif;
+	OpenFileMode (FILE_MODE_NORMAL);
+	if(0>OpenFile(nFileHandle,LOGFILE_PATH,CONNECTFILE_DES_NAME)) then
+		return "";                                                   		
+	endif;
+	if (GetLine (nFileHandle, svLine) != 0)  then 
+        svLine= "";    
+    endif;    
+    CloseFile (nFileHandle);    
+    return svLine;
+end; 
+
+
+#include "featureevents.rul"

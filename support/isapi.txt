@@ -1,0 +1,1 @@
+@%Systemroot%\system32\inetsrv\appcmd set config /section:system.webServer/security/isapiCgiRestriction /[path='%u0025windir%u0025\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll'].allowed:true

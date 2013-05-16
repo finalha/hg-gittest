@@ -2308,7 +2308,7 @@
 		<col def="S0">ExcludeFiles</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>DeviceType</td><td>&lt;WS_ROOT_WebServer_resource&gt;\devicetype</td><td>1</td><td>*.*</td><td/><td>2</td></row>
-		<row><td>ESData</td><td>&lt;WS_ROOT_ESData&gt;</td><td>1</td><td>*.*</td><td/><td>2</td></row>
+		<row><td>ESData</td><td>&lt;WS_ROOT_ESData&gt;</td><td>1</td><td>*.*</td><td>Thumbs.db</td><td>2</td></row>
 		<row><td>Help</td><td>&lt;WS_ROOT_WebServer_help&gt;</td><td>1</td><td>*.*</td><td>Thumbs.db</td><td>2</td></row>
 	</table>
 
@@ -2449,26 +2449,25 @@
 		<col def="S255">TestValue</col>
 		<col def="i4">Type</col>
 		<row><td>CommonFilesFolder</td><td/><td/><td>1</td></row>
-		<row><td>DiskName</td><td>I:</td><td/><td>2</td></row>
 		<row><td>ISPROJECTDIR</td><td/><td/><td>1</td></row>
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
-		<row><td>WS_ROOT</td><td>&lt;DiskName&gt;\Netbrain5.0c\Enterprise Server\WorkSpace</td><td/><td>2</td></row>
+		<row><td>WS_ROOT</td><td>&lt;ISProjectFolder&gt;..\..\ES</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_ESData</td><td>&lt;WS_ROOT&gt;\ESData</td><td/><td>2</td></row>
-		<row><td>WS_ROOT_WebServer</td><td>&lt;WS_ROOT&gt;\WebServer</td><td/><td>2</td></row>
+		<row><td>WS_ROOT_WebServer</td><td>&lt;WS_ROOT&gt;\NBWSP</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_UserData</td><td>&lt;WS_ROOT_WebServer&gt;\UserData</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_bin</td><td>&lt;WS_ROOT_WebServer&gt;\bin</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_checkupdate</td><td>&lt;WS_ROOT_WebServer&gt;\checkupdatefiles</td><td/><td>2</td></row>
-		<row><td>WS_ROOT_WebServer_conf</td><td>&lt;WS_ROOT_WebServer&gt;\conf</td><td/><td>2</td></row>
+		<row><td>WS_ROOT_WebServer_conf</td><td>&lt;WS_ROOT_WebServer&gt;\conf_setup</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_css</td><td>&lt;WS_ROOT_WebServer&gt;\css</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_help</td><td>&lt;WS_ROOT_WebServer&gt;\help</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_images</td><td>&lt;WS_ROOT_WebServer&gt;\images</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_resource</td><td>&lt;WS_ROOT_WebServer&gt;\resource</td><td/><td>2</td></row>
 		<row><td>WS_ROOT_WebServer_tools</td><td>&lt;WS_ROOT_WebServer&gt;\tools</td><td/><td>2</td></row>
-		<row><td>WS_SUPPORT</td><td>&lt;DiskName&gt;\Netbrain5.0c\ESInstall\support</td><td/><td>2</td></row>
+		<row><td>WS_SUPPORT</td><td>&lt;ISProjectFolder&gt;..\..\ESInstall\support</td><td/><td>2</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
 	</table>
 

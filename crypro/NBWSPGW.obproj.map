@@ -161,6 +161,8 @@
 <Entry OldName="NBWSPGW.WorkspaceServer._Description" NewName="NBWSPGW.WorkspaceServer.c8cb49fc15cf67b44051dee37f83ecfdc" />
 <Entry OldName="NBWSPGW.WorkspaceServer._Version" NewName="NBWSPGW.WorkspaceServer.c064f8b88706e6956292f667542c0717b" />
 <Entry OldName="NBWSPGW.WorkspaceServer._WorkspaceList" NewName="NBWSPGW.WorkspaceServer.c628c79b642282bdd2990ec4915441a16" />
+<Entry OldName="NBWSPGW.Global.log" NewName="NBWSPGW.Global.c32c5e1e254426a61e4fd1f94c924175b" />
+<Entry OldName="NBWSPGW.Global.CS$&lt;&gt;9__CachedAnonymousMethodDelegate1" NewName="NBWSPGW.Global.c6702b7b429d913d39821a2ac3b256ff0" />
 <Entry OldName="NBWSPGW.Workspace.&lt;GUID&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca3f5be29304a31bace12bed488ae41ff" />
 <Entry OldName="NBWSPGW.Workspace.&lt;Name&gt;k__BackingField" NewName="NBWSPGW.Workspace.c2bc3f3feb6cc93062f3699cd993d82a2" />
 <Entry OldName="NBWSPGW.Workspace.&lt;IISVirtualPathName&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca063a10a469471a4bee0e4c4b5b33f14" />
@@ -168,8 +170,6 @@
 <Entry OldName="NBWSPGW.Workspace.&lt;NodeCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cbf127720eb0add18a9f412bfc3154d25" />
 <Entry OldName="NBWSPGW.Workspace.&lt;MaxSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.c6cbcb34d4bfb9398117794d681bac964" />
 <Entry OldName="NBWSPGW.Workspace.&lt;MinSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cd328331014f52024e75b2a9e9f89382d" />
-<Entry OldName="NBWSPGW.Global.log" NewName="NBWSPGW.Global.c32c5e1e254426a61e4fd1f94c924175b" />
-<Entry OldName="NBWSPGW.Global.CS$&lt;&gt;9__CachedAnonymousMethodDelegate1" NewName="NBWSPGW.Global.c6702b7b429d913d39821a2ac3b256ff0" />
 <Entry OldName="NBWSPGW.clic.clwspinfo.GetLicenseServerGUIDOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.ca7cf028055cdd77b12495fc7a99dd469" />
 <Entry OldName="NBWSPGW.clic.clwspinfo.HWOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c06522108fe8634a48401678a1a0b5909" />
 <Entry OldName="NBWSPGW.clic.clwspinfo.GetLicWspsDataOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c6641008814482d72b48523e9079fcb05" />
@@ -198,6 +198,29 @@
 <Entry OldName="NBWSPGW.CustomLicenseServer.ip" NewName="NBWSPGW.CustomLicenseServer.c5339dfc6f39cff4a12a08823a394f1f9" />
 <Entry OldName="NBWSPGW.CustomLicenseServer.port" NewName="NBWSPGW.CustomLicenseServer.c8b9c18247b54c3f50d9a7b4cb7182851" />
 <Entry OldName="NBWSPGW.CustomLicenseServer.https" NewName="NBWSPGW.CustomLicenseServer.cf14804c7cb8818777761ac0e5bba5bc7" />
+<Entry OldName="NBWSPGW.gwwspinfo._wfi" NewName="NBWSPGW.gwwspinfo.c8e07192a8a8359eba8800d381af500e5" />
+<Entry OldName="NBWSPGW.gwwspinfo.CS$&lt;&gt;9__CachedAnonymousMethodDelegate2" NewName="NBWSPGW.gwwspinfo.c24e9569d91a9475fb25d06381ccca6d4" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.sGuid" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.sGuid" />
+<Entry OldName="NBWSPGW.SessionEndModule.m_strServerNBC" NewName="NBWSPGW.SessionEndModule.c0a494f23e81e542a0c773ac23a9ebb13" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.app" NewName="NBWSPGW.DeCompressionPageFilter.c279ee7d32831589254b2c55fbd4aa34a" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.sEncoding" NewName="NBWSPGW.DeCompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.sPwd" NewName="NBWSPGW.DeCompressionPageFilter.c1e562b365dbb59f5d3f9a6bc2319ec0c" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.zibBuffer" NewName="NBWSPGW.DeCompressionPageFilter.c5f0b33063bb99f822265583468dbf138" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.readBuffer" NewName="NBWSPGW.DeCompressionPageFilter.c7f19cfeb5c53a23545fd8f197510fe38" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.zlibHandle" NewName="NBWSPGW.DeCompressionPageFilter.c2cdc3c6ef89aeeb58a750ce40d664d3e" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.nZibCount" NewName="NBWSPGW.DeCompressionPageFilter.cd1c0fb9e7b92b55bc7b969ba16fdc0b7" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter.nZibIndex" NewName="NBWSPGW.DeCompressionPageFilter.c04aff1e6444b0350a4d97c0445720f4b" />
+<Entry OldName="NBWSPGW.DeCompressionPageFilter._sink" NewName="NBWSPGW.DeCompressionPageFilter.cbc81284d909df4bede7f846c3fa68c21" />
+<Entry OldName="NBWSPGW.CompressionPageFilter.strEndTag" NewName="NBWSPGW.CompressionPageFilter.c971683fe6645f2af87a84422772156d7" />
+<Entry OldName="NBWSPGW.CompressionPageFilter.zlibHandle" NewName="NBWSPGW.CompressionPageFilter.c2cdc3c6ef89aeeb58a750ce40d664d3e" />
+<Entry OldName="NBWSPGW.CompressionPageFilter.app" NewName="NBWSPGW.CompressionPageFilter.c279ee7d32831589254b2c55fbd4aa34a" />
+<Entry OldName="NBWSPGW.CompressionPageFilter.responseHtml" NewName="NBWSPGW.CompressionPageFilter.cb23af91707caf6d0d5203c4d9ce940b0" />
+<Entry OldName="NBWSPGW.CompressionPageFilter.sEncoding" NewName="NBWSPGW.CompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
+<Entry OldName="NBWSPGW.CompressionPageFilter._sink" NewName="NBWSPGW.CompressionPageFilter.cbc81284d909df4bede7f846c3fa68c21" />
+<Entry OldName="NBWSPGW.CompressionPageFilter._position" NewName="NBWSPGW.CompressionPageFilter.c0f757b15a6dbc6e278beee3251aee4c6" />
+<Entry OldName="NBWSPGW.gwwspop.log" NewName="NBWSPGW.gwwspop.c32c5e1e254426a61e4fd1f94c924175b" />
+<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;guid&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.ccda119456ee860d131f53aa45e632494" />
+<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;wsplist&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.c83ce1a9afe83bce64887cc5c6e3fffc0" />
 <Entry OldName="NBWSPGW.GlobalSet.syncobj" NewName="NBWSPGW.GlobalSet.c932efefb046bfe57c5eb823d35ec68c2" />
 <Entry OldName="NBWSPGW.GlobalSet._GlobalSet" NewName="NBWSPGW.GlobalSet.c736c637ad9130f25064abfce1b2b1755" />
 <Entry OldName="NBWSPGW.clicuser.HWCompletedEventArgs.results" NewName="NBWSPGW.clicuser.HWCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
@@ -226,29 +249,6 @@
 <Entry OldName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.gwwspinfo._wfi" NewName="NBWSPGW.gwwspinfo.c8e07192a8a8359eba8800d381af500e5" />
-<Entry OldName="NBWSPGW.gwwspinfo.CS$&lt;&gt;9__CachedAnonymousMethodDelegate2" NewName="NBWSPGW.gwwspinfo.c24e9569d91a9475fb25d06381ccca6d4" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.sGuid" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.sGuid" />
-<Entry OldName="NBWSPGW.SessionEndModule.m_strServerNBC" NewName="NBWSPGW.SessionEndModule.c0a494f23e81e542a0c773ac23a9ebb13" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.app" NewName="NBWSPGW.DeCompressionPageFilter.c279ee7d32831589254b2c55fbd4aa34a" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.sEncoding" NewName="NBWSPGW.DeCompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.sPwd" NewName="NBWSPGW.DeCompressionPageFilter.c1e562b365dbb59f5d3f9a6bc2319ec0c" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.zibBuffer" NewName="NBWSPGW.DeCompressionPageFilter.c5f0b33063bb99f822265583468dbf138" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.readBuffer" NewName="NBWSPGW.DeCompressionPageFilter.c7f19cfeb5c53a23545fd8f197510fe38" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.zlibHandle" NewName="NBWSPGW.DeCompressionPageFilter.c2cdc3c6ef89aeeb58a750ce40d664d3e" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.nZibCount" NewName="NBWSPGW.DeCompressionPageFilter.cd1c0fb9e7b92b55bc7b969ba16fdc0b7" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter.nZibIndex" NewName="NBWSPGW.DeCompressionPageFilter.c04aff1e6444b0350a4d97c0445720f4b" />
-<Entry OldName="NBWSPGW.DeCompressionPageFilter._sink" NewName="NBWSPGW.DeCompressionPageFilter.cbc81284d909df4bede7f846c3fa68c21" />
-<Entry OldName="NBWSPGW.CompressionPageFilter.strEndTag" NewName="NBWSPGW.CompressionPageFilter.c971683fe6645f2af87a84422772156d7" />
-<Entry OldName="NBWSPGW.CompressionPageFilter.zlibHandle" NewName="NBWSPGW.CompressionPageFilter.c2cdc3c6ef89aeeb58a750ce40d664d3e" />
-<Entry OldName="NBWSPGW.CompressionPageFilter.app" NewName="NBWSPGW.CompressionPageFilter.c279ee7d32831589254b2c55fbd4aa34a" />
-<Entry OldName="NBWSPGW.CompressionPageFilter.responseHtml" NewName="NBWSPGW.CompressionPageFilter.cb23af91707caf6d0d5203c4d9ce940b0" />
-<Entry OldName="NBWSPGW.CompressionPageFilter.sEncoding" NewName="NBWSPGW.CompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
-<Entry OldName="NBWSPGW.CompressionPageFilter._sink" NewName="NBWSPGW.CompressionPageFilter.cbc81284d909df4bede7f846c3fa68c21" />
-<Entry OldName="NBWSPGW.CompressionPageFilter._position" NewName="NBWSPGW.CompressionPageFilter.c0f757b15a6dbc6e278beee3251aee4c6" />
-<Entry OldName="NBWSPGW.gwwspop.log" NewName="NBWSPGW.gwwspop.c32c5e1e254426a61e4fd1f94c924175b" />
-<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;guid&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.ccda119456ee860d131f53aa45e632494" />
-<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;wsplist&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.c83ce1a9afe83bce64887cc5c6e3fffc0" />
 <Entry OldName="NBWSPGW.gwuseracc.get_UserAcc()" NewName="NBWSPGW.gwuseracc.get_cf6b7fdfe9d83b57937a33407be92c240()" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnHWOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.ce087cad8db992af0b3cff051de0bb6bf(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnHW2OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c79b0321ea6d7b50df3cafb3fead5880e(Object c41649b43911fed230d0a1304f5f8ab03)" />
@@ -283,8 +283,6 @@
 <Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_Compress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.c4911e892cfb5bd6b498ff2464509f8a4(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
 <Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_DeCompress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.cfaae65aeacbb6a523564585bac84b749(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
 <Entry OldName="NBWSPGW.WorkspaceServer.LoadWorkspace()" NewName="NBWSPGW.WorkspaceServer.c089b006803208c45516cd8d424343884()" />
-<Entry OldName="NBWSPGW.NBEnHttpRequestCreator.System.Net.IWebRequestCreate.Create(Uri uri)" NewName="NBWSPGW.NBEnHttpRequestCreator.c4dc29dc03e7dc832aa64fa8c14c758e3(Uri c8c2f06f35c194a7a188b4f16c22bfacb)" />
-<Entry OldName="NBWSPGW.Utils.FieldCopy(Object source, Object target)" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0.FieldCopy(Object source, Object target)" />
 <Entry OldName="NBWSPGW.Global.&lt;Application_Start&gt;b__0(Object A_0, X509Certificate A_1, X509Chain A_2, SslPolicyErrors A_3)" NewName="NBWSPGW.Global.cc9ef2a8485078e59e4c8a3d223c2af75(Object c504a4e45848e4eae5713800525a99b91, X509Certificate c4875760c49d6dc8d7021c6995a7d7042, X509Chain cde1b10b215f3be6af337a6b9efb61ec0, SslPolicyErrors c9f57a694ad2517a5876fb1dfb39d1636)" />
 <Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicenseServerGUIDOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cb4ce53a391bd577e3405afc6cfa077a8(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clic.clwspinfo.OnHWOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.ce087cad8db992af0b3cff051de0bb6bf(Object c41649b43911fed230d0a1304f5f8ab03)" />
@@ -298,6 +296,14 @@
 <Entry OldName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.CustomLicenseServer.SetValue(String key, String value)" NewName="NBWSPGW.CustomLicenseServer.c21b721bf01a3641d6d45fb9c7a914c86(String c9ab8319f5ba59033aee038e4fc0ec55b, String cea07bd1cae6a28c56ff7d9c78104cb64)" />
+<Entry OldName="NBWSPGW.gwwspinfo.get_LicWspInfo()" NewName="NBWSPGW.gwwspinfo.get_cb674b356a654d4caf74a59e910ab0397()" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;GetLicWspsData&gt;b__0(WorkspaceServer a)" NewName="NBWSPGW.gwwspinfo.c2c9791b3f9ff387c85f0ce5f0d622eb3(WorkspaceServer cb0a3c4c735584f25f7692ca7afc96145)" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3..ctor()" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd..ctor()" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.&lt;GetLicWspsData&gt;b__1(Workspace a)" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.&lt;GetLicWspsData&gt;b__1(Workspace a)" />
+<Entry OldName="NBWSPGW.SessionEndModule.m_HttpApplication_PostReleaseRequestState(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c2b6626cb4d1f532d1e48ed1f87992744(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
+<Entry OldName="NBWSPGW.SessionEndModule.OnPreRequestHandlerExecute(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c6a57d54888273c4e3f3fb00a0d0e6f01(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
+<Entry OldName="NBWSPGW.NBEnHttpRequestCreator.System.Net.IWebRequestCreate.Create(Uri uri)" NewName="NBWSPGW.NBEnHttpRequestCreator.c4dc29dc03e7dc832aa64fa8c14c758e3(Uri c8c2f06f35c194a7a188b4f16c22bfacb)" />
+<Entry OldName="NBWSPGW.Utils.FieldCopy(Object source, Object target)" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0.FieldCopy(Object source, Object target)" />
 <Entry OldName="NBWSPGW.clicuser.HWCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.HWCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.HW2CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.HW2CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
@@ -324,31 +330,25 @@
 <Entry OldName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.gwwspinfo.get_LicWspInfo()" NewName="NBWSPGW.gwwspinfo.get_cb674b356a654d4caf74a59e910ab0397()" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;GetLicWspsData&gt;b__0(WorkspaceServer a)" NewName="NBWSPGW.gwwspinfo.c2c9791b3f9ff387c85f0ce5f0d622eb3(WorkspaceServer cb0a3c4c735584f25f7692ca7afc96145)" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3..ctor()" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd..ctor()" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.&lt;GetLicWspsData&gt;b__1(Workspace a)" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.&lt;GetLicWspsData&gt;b__1(Workspace a)" />
-<Entry OldName="NBWSPGW.SessionEndModule.m_HttpApplication_PostReleaseRequestState(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c2b6626cb4d1f532d1e48ed1f87992744(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
-<Entry OldName="NBWSPGW.SessionEndModule.OnPreRequestHandlerExecute(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c6a57d54888273c4e3f3fb00a0d0e6f01(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1" NewName="A.c036420d1be0881c5648f11bbd6354124" />
-<Entry OldName="NBWSPGW.Utils" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0" />
 <Entry OldName="NBWSPGW.gwwspinfo+&lt;&gt;c__DisplayClass3" NewName="NBWSPGW.gwwspinfo+c0f460661776d23897910ab2af92d6ebd" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\gwuseracc.asmx.cs" NewName="File0" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\Web References\clicuser\Reference.cs" NewName="File1" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\PartialClass.cs" NewName="File2" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\NBAOPAttribute.cs" NewName="File3" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\CPlusPlus_Global.cs" NewName="File4" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\WorkspaceServer.cs" NewName="File5" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\NBEnHttpWebRequest.cs" NewName="File6" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\Default.aspx.cs" NewName="File7" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\NBEnHttpRequestCreator.cs" NewName="File8" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\Utils.cs" NewName="File9" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\Global.asax.cs" NewName="File10" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\Web References\clic\Reference.cs" NewName="File11" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\Properties\Settings.Designer.cs" NewName="File12" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\GlobalSet.cs" NewName="File13" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\gwwspinfo.asmx.cs" NewName="File14" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\SessionEndModule.cs" NewName="File15" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\gwwspop.asmx.cs" NewName="File16" />
-<Entry OldName="I:\Netbrain5.0c\ES\NBWSPGW\BackCode\NBEnHttpWebResponse.cs" NewName="File17" />
+<Entry OldName="NBWSPGW.Utils" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwuseracc.asmx.cs" NewName="File0" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\PartialClass.cs" NewName="File1" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Web References\clicuser\Reference.cs" NewName="File2" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBAOPAttribute.cs" NewName="File3" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\CPlusPlus_Global.cs" NewName="File4" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\WorkspaceServer.cs" NewName="File5" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Global.asax.cs" NewName="File6" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Default.aspx.cs" NewName="File7" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Web References\clic\Reference.cs" NewName="File8" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Properties\Settings.Designer.cs" NewName="File9" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwwspinfo.asmx.cs" NewName="File10" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\SessionEndModule.cs" NewName="File11" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwwspop.asmx.cs" NewName="File12" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpWebRequest.cs" NewName="File13" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpRequestCreator.cs" NewName="File14" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\Utils.cs" NewName="File15" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\GlobalSet.cs" NewName="File16" />
+<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpWebResponse.cs" NewName="File17" />
 </Mappings>

@@ -20,7 +20,7 @@ begin
    	//szOEpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"OESetup.exe";
    	//szNSpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"NSSetup.exe";  
    	
-   	nvReturn=RunApplication(WINDIR^"Microsoft.NET\\Framework\\v2.0.50727\\RegAsm.exe"," \""+TARGETDIR^"WebServer\\bin\\NBWSPLib.dll"+"\"",FALSE,TRUE);
+   	nvReturn=RunApplication(WINDIR^"Microsoft.NET\\Framework\\v2.0.50727\\RegAsm.exe"," \""+TARGETDIR^"WebServer\\bin\\NBWSPLib.dll"+"\""+" /codebase",FALSE,TRUE);
    	
    	NumToStr(svReturn,nvReturn);
    	

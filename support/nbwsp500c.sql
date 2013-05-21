@@ -1,4 +1,4 @@
-\connect :nbwsp
+\connect :nbwsp;
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -352,23 +352,6 @@ ALTER TABLE site_customized_borderinterfaceview OWNER TO postgres;
 
 
 
-
-CREATE OR REPLACE FUNCTION site_customized_borderinterface_delete(mid integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid=mid);
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION site_customized_borderinterface_delete(integer) OWNER TO postgres;
-
-
 CREATE OR REPLACE FUNCTION site_customized_borderinterface_update(r site_customized_borderinterface)
   RETURNS integer AS
 $BODY$
@@ -433,11 +416,11 @@ ALTER TABLE devicesitedeviceview2 OWNER TO postgres;
 
 
 
-CREATE OR REPLACE FUNCTION devicesitedevice_delete(mid integer)
+CREATE OR REPLACE FUNCTION devicesitedevice_delete(site_id integer)
   RETURNS boolean AS
 $BODY$
 BEGIN	 
-	delete from devicesitedevice where siteid in (select id from site where sitemanagerid=mid);
+	delete from devicesitedevice where siteid= site_id;
     RETURN true;
 EXCEPTION
     WHEN OTHERS THEN 
@@ -1141,7 +1124,7 @@ CREATE OR REPLACE FUNCTION site_olddelete(sitenames character varying[])
 $BODY$
 
 BEGIN
-	delete from sitecluster where "name" <> all(sitenames);	
+	delete from site where "name" <> all(sitenames);	
 	return true;
 EXCEPTION    
 	WHEN OTHERS THEN   
@@ -1153,7 +1136,102 @@ END;
   COST 100;
 ALTER FUNCTION site_olddelete(character varying[]) OWNER TO postgres;
 
+
+
+CREATE OR REPLACE FUNCTION sitecluster2device_delete(cluster_id integer)
+  RETURNS boolean AS
+$BODY$
+BEGIN	 
+	delete from sitecluster2device where siteclusterid =cluster_id;
+    RETURN true;
+EXCEPTION
+    WHEN OTHERS THEN 
+	RETURN false;    
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION sitecluster2device_delete(integer) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION site_customized_borderinterface_delete(site_id integer)
+  RETURNS boolean AS
+$BODY$
+BEGIN	 
+	delete from site_customized_borderinterface where siteid =site_id;
+    RETURN true;
+EXCEPTION
+    WHEN OTHERS THEN 
+	RETURN false;    
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_customized_borderinterface_delete(integer) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION site_customized_attribute_delete(site_id integer)
+  RETURNS boolean AS
+$BODY$
+BEGIN	 
+	delete from object_customized_attribute where objectid=5 and objectid=site_id;
+    RETURN true;
+EXCEPTION
+    WHEN OTHERS THEN 
+	RETURN false;    
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_customized_attribute_delete(integer) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION site2sitecluster_delete(site_id integer)
+  RETURNS boolean AS
+$BODY$
+BEGIN	 
+	delete from site2sitecluster where siteid=site_id;
+    RETURN true;
+EXCEPTION
+    WHEN OTHERS THEN 
+	RETURN false;    
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site2sitecluster_delete(integer) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION clustersite2site_delete(site_id integer)
+  RETURNS boolean AS
+$BODY$
+BEGIN	 
+	delete from clustersite2site where clustersiteid=site_id;
+    RETURN true;
+EXCEPTION
+    WHEN OTHERS THEN 
+	RETURN false;    
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION clustersite2site_delete(integer) OWNER TO postgres;
+
+
+
+
 INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, lasttimestamp)VALUES ( -1, 11, 0, 'SiteActionPane.xml', 'e61f01xfwg64a8aa17wefwtsg066e124.xml', now(), -1,now());
+
+
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'Serial;ATM;POS;Multilink;Dialer', now());
+
+
+ALTER TABLE sys_option ADD COLUMN op_strvalue character varying(256);
+ALTER TABLE sys_option ALTER COLUMN op_strvalue SET STORAGE EXTENDED;
+
+
+INSERT INTO sys_option(op_name, op_value, op_strvalue)VALUES ('startpageoption',0, '');
+
 
 
 update system_info set ver=503;

@@ -3178,8 +3178,8 @@
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpXmlPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cebb01543ef45d954074a5a1c466d2afd" />
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpZipPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cc11a83d67138afd9e77d4a36fafc9368" />
 <Entry OldName="NBWSP.fileportal.UploadData.mParameterObj" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.c6361e65a9801fe6c79a5dfeaae65e71b" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{136AA713-F5A5-4D17-A5E4-242B97541E95}.$$method0x6000297-1" NewName="A.c55c55dc0f77cfe6ab2dd4cffbbc638ea.c89e00b770d4143ebfcb71ce6d79e8337" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{136AA713-F5A5-4D17-A5E4-242B97541E95}.$$method0x6000e45-1" NewName="A.c55c55dc0f77cfe6ab2dd4cffbbc638ea.c84f845d8128c422d7e8c358b1dd89fd1" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}.$$method0x6000297-1" NewName="A.c78124e671651b44093e3dcacdabcc2e8.c89e00b770d4143ebfcb71ce6d79e8337" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}.$$method0x6000e45-1" NewName="A.c78124e671651b44093e3dcacdabcc2e8.c84f845d8128c422d7e8c358b1dd89fd1" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mXml" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mXml" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mTargetFolderPath" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mTargetFolderPath" />
 <Entry OldName="NBWSP.fileportal.EchoResult.&lt;Type&gt;k__BackingField" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.c55848145ef0682df7235dd508610a07b" />
@@ -3717,7 +3717,7 @@
 <Entry OldName="ap_site2sitecluster.&lt;&gt;c__DisplayClass3.siteid" NewName="ap_site2sitecluster.c01b4eba945f2534743ff28d824162244.siteid" />
 <Entry OldName="ap_site.&lt;&gt;c__DisplayClass2.parentid" NewName="ap_site.c931f5fd45f7a617d55d48a0fa48fab92.parentid" />
 <Entry OldName="ap_site.&lt;&gt;c__DisplayClass5.parentid" NewName="ap_site.c8423a41b0e5da23457f4542e03096bbe.parentid" />
-<Entry OldName="ap_site.&lt;&gt;c__DisplayClassb.item" NewName="ap_site.c78f72330d7b44bdefa986e00c2cf7efc.item" />
+<Entry OldName="ap_site.&lt;&gt;c__DisplayClass8.parentGuid" NewName="ap_site.cfb2a1ef94ba9b84be42d5a9d3a1c042a.parentGuid" />
 <Entry OldName="NBWSP.nbwslivedata.log" NewName="NBWSP.nbwslivedata.c32c5e1e254426a61e4fd1f94c924175b" />
 <Entry OldName="NBWSP.nbwslivedata.&lt;&gt;c__DisplayClass0.napID" NewName="NBWSP.nbwslivedata.caa329be5886699f2a63c091261ab1292.napID" />
 <Entry OldName="NBWSP.Default.log" NewName="NBWSP.Default.c32c5e1e254426a61e4fd1f94c924175b" />
@@ -4112,6 +4112,7 @@
 <Entry OldName="ap_site.ConvertStringGuidToInt(String guid)" NewName="ap_site.c647327bb7f2c74fd52f046fe2d49f1eb(String c304f0a1466851f61e352e46b26410fdf)" />
 <Entry OldName="ap_site.ConvertSiteView(ap_siteview siteview, Int32 parentid, Int32&amp; index, String parentguid)" NewName="ap_site.ca3582d51df7023bcd92dd666df44c35a(ap_siteview ceec1ab9798389a48a7d59475935c64a2, Int32 cae5fbf9fbb359ab862e75db7dfdb7837, Int32&amp; c0c7786f85c783871bbd8b33219c7ec26, String c68efc0d2369a6bc6faf5f12a3459637d)" />
 <Entry OldName="ap_site.BuildSubTree(List`1 siteviews, Int32 parentid, Int32&amp; index, String parentguid)" NewName="ap_site.cbdfc6b2e5ca8163ed56e92f10998f832(List`1 c73728591770563955bf76ae4749a9d1c, Int32 cae5fbf9fbb359ab862e75db7dfdb7837, Int32&amp; c0c7786f85c783871bbd8b33219c7ec26, String c68efc0d2369a6bc6faf5f12a3459637d)" />
+<Entry OldName="ap_site.UpdateSite(List`1 entites, Int32 siteManagerID, String parentGuid, Int32 parentID, ap_nbwsp nLinq)" NewName="ap_site.c2aabc1066ec59741ec2c5ec5bac07bb1(List`1 c6e8f444dd990519f845597de21877f98, Int32 c3e627b816fa42123b8f42b20b57e1b57, String c9b7dc8602001d6b9f38f3c14131f0c15, Int32 c1ad3fa85d6839b5b64a3bd9982639a81, ap_nbwsp cbbe083672a40ad36137720af093f1df8)" />
 <Entry OldName="ap_site.devicegroupsite_Attach(ap_devicegroupsite entity)" NewName="ap_site.c4523ec573725c370cd5a99de9108a661(ap_devicegroupsite c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.devicegroupsite_Detach(ap_devicegroupsite entity)" NewName="ap_site.cf5f2687989f28296ab2770be0748eea0(ap_devicegroupsite c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.devicesitedevice_Attach(ap_devicesitedevice entity)" NewName="ap_site.c3fad6cb04c08a07bf98398cb48c2239c(ap_devicesitedevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
@@ -4134,7 +4135,7 @@
 <Entry OldName="ap_site.clustersite2site_Detach(ap_clustersite2site entity)" NewName="ap_site.c85586cee368520c30a5a31eb9fffd1f8(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.clustersite2site1_Attach(ap_clustersite2site entity)" NewName="ap_site.ccf4969c0242d7064ab504d3815697f07(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.clustersite2site1_Detach(ap_clustersite2site entity)" NewName="ap_site.ce7a0652b010273901bcd7baeb210dc28(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.&lt;Update&gt;b__7(ap_site a)" NewName="ap_site.c07ddf6cc4f92db5e39382a141ff4f55f(ap_site cb0a3c4c735584f25f7692ca7afc96145)" />
+<Entry OldName="ap_site.&lt;Update&gt;b__a(ap_site a)" NewName="ap_site.c9716eba1fdc974c0f53f81a079dec4de(ap_site cb0a3c4c735584f25f7692ca7afc96145)" />
 <Entry OldName="NBWSP.nbwsgen.&lt;&gt;c__DisplayClass0..ctor()" NewName="NBWSP.nbwsgen.cb0cdf5ba22378ebd4c3a66f7a1062c2c..ctor()" />
 <Entry OldName="ap_nompappliance.devicesetting_Attach(ap_devicesetting entity)" NewName="ap_nompappliance.cdfc53fb003a86be616a0bd99de4d4eed(ap_devicesetting c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_nompappliance.devicesetting_Detach(ap_devicesetting entity)" NewName="ap_nompappliance.c74058db1682b55d6c86e12920a07eb8c(ap_devicesetting c86d6b1444a6c1b202db9d5c3336bb75d)" />
@@ -5152,8 +5153,8 @@
 <Entry OldName="ap_site.&lt;&gt;c__DisplayClass2.&lt;BuildTree&gt;b__0(ap_siteview a)" NewName="ap_site.c931f5fd45f7a617d55d48a0fa48fab92.&lt;BuildTree&gt;b__0(ap_siteview a)" />
 <Entry OldName="ap_site.&lt;&gt;c__DisplayClass5..ctor()" NewName="ap_site.c8423a41b0e5da23457f4542e03096bbe..ctor()" />
 <Entry OldName="ap_site.&lt;&gt;c__DisplayClass5.&lt;BuildSubTree&gt;b__4(ap_siteview a)" NewName="ap_site.c8423a41b0e5da23457f4542e03096bbe.&lt;BuildSubTree&gt;b__4(ap_siteview a)" />
-<Entry OldName="ap_site.&lt;&gt;c__DisplayClassb..ctor()" NewName="ap_site.c78f72330d7b44bdefa986e00c2cf7efc..ctor()" />
-<Entry OldName="ap_site.&lt;&gt;c__DisplayClassb.&lt;Update&gt;b__8(ap_site a)" NewName="ap_site.c78f72330d7b44bdefa986e00c2cf7efc.&lt;Update&gt;b__8(ap_site a)" />
+<Entry OldName="ap_site.&lt;&gt;c__DisplayClass8..ctor()" NewName="ap_site.cfb2a1ef94ba9b84be42d5a9d3a1c042a..ctor()" />
+<Entry OldName="ap_site.&lt;&gt;c__DisplayClass8.&lt;UpdateSite&gt;b__7(ap_site a)" NewName="ap_site.cfb2a1ef94ba9b84be42d5a9d3a1c042a.&lt;UpdateSite&gt;b__7(ap_site a)" />
 <Entry OldName="ap_clustersite2site.&lt;Update&gt;b__5(ap_clustersite2site a)" NewName="ap_clustersite2site.c06a4c673d9c3af6b2424f5db7029f7d1(ap_clustersite2site cb0a3c4c735584f25f7692ca7afc96145)" />
 <Entry OldName="NBWSP.nbwslivedata.&lt;&gt;c__DisplayClass0..ctor()" NewName="NBWSP.nbwslivedata.caa329be5886699f2a63c091261ab1292..ctor()" />
 <Entry OldName="NBWSP.Default.InitBenchmarkData()" NewName="NBWSP.Default.cbd14779533041fb2bb3d735af15a0783()" />
@@ -5485,7 +5486,7 @@
 <Entry OldName="NBWSP.nbwsgen+&lt;&gt;c__DisplayClass21a" NewName="NBWSP.nbwsgen+c822378ab1a4c2376f89855375c71ca80" />
 <Entry OldName="ap_site+&lt;&gt;c__DisplayClass2" NewName="ap_site+c931f5fd45f7a617d55d48a0fa48fab92" />
 <Entry OldName="ap_site+&lt;&gt;c__DisplayClass5" NewName="ap_site+c8423a41b0e5da23457f4542e03096bbe" />
-<Entry OldName="ap_site+&lt;&gt;c__DisplayClassb" NewName="ap_site+c78f72330d7b44bdefa986e00c2cf7efc" />
+<Entry OldName="ap_site+&lt;&gt;c__DisplayClass8" NewName="ap_site+cfb2a1ef94ba9b84be42d5a9d3a1c042a" />
 <Entry OldName="ap_sitecustomizedinfo+&lt;&gt;c__DisplayClass0" NewName="ap_sitecustomizedinfo+ce8145075a88a681065f8777a163ca81b" />
 <Entry OldName="ap_sitecustomizedinfo+&lt;&gt;c__DisplayClass3" NewName="ap_sitecustomizedinfo+c39879e2e139200c1340c5ff0fa074be2" />
 <Entry OldName="ap_objectfilepathinfo+&lt;&gt;c__DisplayClass1" NewName="ap_objectfilepathinfo+cbea4f6114b49c1e1d6649cbda93443cb" />
@@ -5589,7 +5590,7 @@
 <Entry OldName="NBWSP.fileportal+StearmType" NewName="NBWSP.fileportal+cadcf81872b74daeb39a0a6aecedc9f7e" />
 <Entry OldName="NBWSP.fileportal+UploadData" NewName="NBWSP.fileportal+c603c401d915dde995b1498e57f36e4f7" />
 <Entry OldName="NBWSP.fileportal+EchoResult" NewName="NBWSP.fileportal+c1773ed2618ab81ab53ff53fc3180102a" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{136AA713-F5A5-4D17-A5E4-242B97541E95}" NewName="A.c55c55dc0f77cfe6ab2dd4cffbbc638ea" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}" NewName="A.c78124e671651b44093e3dcacdabcc2e8" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClass9" NewName="NBWSP.nbwsl3+c243c9ae521e9c87e316523ef678e8bed" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassb" NewName="NBWSP.nbwsl3+cef9f2bda372233432bf87a3a9411b90b" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassd" NewName="NBWSP.nbwsl3+c972d314becf623e13c921596669cb4c1" />

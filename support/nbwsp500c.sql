@@ -115,11 +115,10 @@ CREATE TRIGGER site_dt
   
   
   
-  CREATE OR REPLACE FUNCTION site_update(r site, parent_id integer)
+CREATE OR REPLACE FUNCTION site_update(r site, parent_id integer)
   RETURNS integer AS
 $BODY$
 declare	
-	s2s_id integer;
 	ds_id integer;
 BEGIN		
 	select id into ds_id from site where name=r.name and sitemanagerid=r.sitemanagerid;
@@ -210,17 +209,8 @@ BEGIN
 			  where id = ds_id;		
 	end if;
 
-	select id into s2s_id from site2site where siteid=ds_id and parentid=parent_id;
-	if s2s_id IS NULL THEN
-		insert into site2site(
-			  siteid,
-			  parentid
-			  )
-			  values( 
-			  ds_id,
-			  parent_id
-			  );			
-	end if;
+        delete from site2site where siteid=ds_id;
+        insert into site2site(siteid,parentid)values( ds_id,parent_id);        
 
 	return ds_id;
 EXCEPTION

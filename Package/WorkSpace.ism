@@ -1154,6 +1154,7 @@
 		<row><td>nbwslivedata.asmx</td><td>Files</td><td>nbwslivedata.asmx</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\nbwslivedata.asmx</td><td>1</td><td/></row>
 		<row><td>nbwsp.dll</td><td>AssemblyFiles</td><td>NBWSP.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\bin\NBWSP.dll</td><td>1</td><td>bin</td></row>
 		<row><td>nbwsplib.dll</td><td>NBWSPLib.dll</td><td>NBWSPLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_bin&gt;\NBWSPLib.dll</td><td>1</td><td/></row>
+		<row><td>nbwsplib.tlb</td><td>NBWSPLib.dll</td><td>NBWSPLib.tlb</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_bin&gt;\NBWSPLib.tlb</td><td>1</td><td/></row>
 		<row><td>nbwsuser.asmx</td><td>Files</td><td>nbwsuser.asmx</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\nbwsuser.asmx</td><td>1</td><td/></row>
 		<row><td>ndbm.py</td><td>Files</td><td>ndbm.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\dbm\ndbm.py</td><td>1</td><td>dbm</td></row>
 		<row><td>ndptableutil.py</td><td>Files</td><td>ndptableutil.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Python\nblib\ndptableutil.py</td><td>1</td><td>nblib</td></row>

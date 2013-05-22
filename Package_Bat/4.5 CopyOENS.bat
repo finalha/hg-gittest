@@ -17,8 +17,8 @@ set "NB_ES_SetupFiles=%NB_ES%\SetupFiles"
 set "RemoteDir=\\10.10.10.6"
 set "RemoteDir_USER=netbrain"
 set "RemoteDir_PWD=netbrain"
-set "OEDIR=%RemoteDir%\Netbrain-Setup\OE5.0\"
-set "NSDIR=%RemoteDir%\Netbrain-Setup\NS5.0\"
+set "OEDIR=%RemoteDir%\Netbrain-Setup\OE5.1\"
+set "NSDIR=%RemoteDir%\Netbrain-Setup\NS5.1\"
 
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

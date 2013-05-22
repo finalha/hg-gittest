@@ -2776,6 +2776,7 @@
 		<row><td>SetupFile126</td><td>win7installnetframework35.bat</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\win7installnetframework35.bat</td></row>
 		<row><td>SetupFile127</td><td>WiToAnsi.vbs</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\WiToAnsi.vbs</td></row>
 		<row><td>SetupFile128</td><td>nbwsp500c.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\nbwsp500c.sql</td></row>
+		<row><td>SetupFile129</td><td>nbwsp510.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\nbwsp510.sql</td></row>
 		<row><td>SetupFile13</td><td>c_checkcurusersright.bat</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\c_checkcurusersright.bat</td></row>
 		<row><td>SetupFile14</td><td>c_InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\c_InstallGw.bat</td></row>
 		<row><td>SetupFile147</td><td>ws_oi.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\ws_oi.sql</td></row>

@@ -108,6 +108,7 @@
 		<row><td>ESData</td><td>{114E93B4-3078-4BDB-87E5-80A5F1BC88B3}</td><td>ESDATA</td><td>16</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Files</td><td>{339F7BA0-2D36-4E83-B732-F8DB950E7236}</td><td>WEBSERVER</td><td>0</td><td/><td>fileportal.ashx</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Files1</td><td>{BC25BDA3-37C6-4B97-A1C2-0F3E102D9FA4}</td><td>BIN</td><td>8</td><td/><td>boost_python3_vc90_mt_1_48.d</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Files2</td><td>{20C07A12-1F7E-4146-9051-4236131A72D8}</td><td>SYSTEMDATA1</td><td>0</td><td/><td>guid.ini</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Help</td><td>{2A0F7078-7CF0-47C1-92EA-BA0E3489C72F}</td><td>NEW_DIRECTORY1</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NBAP</td><td>{9A399002-942F-4C83-A0A8-9A7F5DFBAC05}</td><td>CONF</td><td>16</td><td/><td/><td>10769</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NBBSGateway</td><td>{9AD40C22-FA0E-4644-B656-1E43B378D4A5}</td><td>CONF</td><td>16</td><td/><td/><td>10769</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -277,6 +278,7 @@
 		<row><td>STP</td><td>SWITCH</td><td>STP</td><td/><td>0</td><td/></row>
 		<row><td>SUPPORTDIR</td><td/><td>Support Folder</td><td/><td>0</td><td/></row>
 		<row><td>SWITCH</td><td>PROCEDURE</td><td>Switch</td><td/><td>0</td><td/></row>
+		<row><td>SYSTEMDATA1</td><td>USERDATA</td><td>SystemData</td><td/><td>0</td><td/></row>
 		<row><td>StartMenuFolder</td><td/><td>Start Menu</td><td/><td>3</td><td/></row>
 		<row><td>StartupFolder</td><td/><td>Startup</td><td/><td>3</td><td/></row>
 		<row><td>TABS</td><td>IMAGES1</td><td>tabs</td><td/><td>0</td><td/></row>
@@ -345,6 +347,7 @@
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>ESData</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files1</td></row>
+		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files2</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Help</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>NBAP</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>NBBSGateway</td></row>
@@ -724,6 +727,7 @@
 		<row><td>download.jpg</td><td>Files</td><td>download.jpg</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\images\download.jpg</td><td>1</td><td>images1</td></row>
 		<row><td>driver.py</td><td>Files</td><td>driver.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\pgen2\driver.py</td><td>1</td><td>pgen2</td></row>
 		<row><td>dumb.py</td><td>Files</td><td>dumb.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\dbm\dumb.py</td><td>1</td><td>dbm</td></row>
+		<row><td>dummy</td><td>Temp</td><td>dummy</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_UserData&gt;\temp\dummy</td><td>1</td><td/></row>
 		<row><td>dummy_threading.py</td><td>Files</td><td>dummy_threading.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\dummy_threading.py</td><td>1</td><td>Lib</td></row>
 		<row><td>dump.py</td><td>Files</td><td>dump.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\sqlite3\test\dump.py</td><td>1</td><td>test3</td></row>
 		<row><td>dump.py1</td><td>Files</td><td>dump.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\sqlite3\dump.py</td><td>1</td><td>sqlite3</td></row>
@@ -878,6 +882,7 @@
 		<row><td>grammar.py</td><td>Files</td><td>grammar.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\pgen2\grammar.py</td><td>1</td><td>pgen2</td></row>
 		<row><td>grammar.txt</td><td>Files</td><td>Grammar.txt</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\Grammar.txt</td><td>1</td><td>lib2to3</td></row>
 		<row><td>grepdialog.py</td><td>Files</td><td>GrepDialog.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\idlelib\GrepDialog.py</td><td>1</td><td>idlelib</td></row>
+		<row><td>guid.ini</td><td>Files2</td><td>Guid.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_UserData&gt;\systemdata\Guid.ini</td><td>1</td><td/></row>
 		<row><td>gzip.py</td><td>Files</td><td>gzip.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\gzip.py</td><td>1</td><td>Lib</td></row>
 		<row><td>handler.py</td><td>Files</td><td>handler.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\xml\sax\handler.py</td><td>1</td><td>sax</td></row>
 		<row><td>handlers.py</td><td>Files</td><td>handlers.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\logging\handlers.py</td><td>1</td><td>logging</td></row>
@@ -2116,6 +2121,7 @@
 		<row><td>ESData</td><td/><td/><td>_239A0B04_5823_4438_A2FE_0C865798F7A9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Files</td><td/><td/><td>_E8A582C6_E6F6_4D6D_88E5_AACC4CACC54F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Files1</td><td/><td/><td>_B3BD5653_71F2_48CC_8365_9EA172A89A5C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Files2</td><td/><td/><td>_ED0A3ECF_0DEB_4622_AD4C_C31B20675CEA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Help</td><td/><td/><td>_7208F1BC_203B_41CC_8EDB_825C5DA33162_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NBAP</td><td/><td/><td>_56551F07_1C54_44CB_B278_6AA2EF2FD5BA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NBBSGateway</td><td/><td/><td>_20125BDA_15B5_4FE6_97C3_92C158415EC5_FILTER</td><td/><td/><td/><td/></row>

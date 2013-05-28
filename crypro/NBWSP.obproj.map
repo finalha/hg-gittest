@@ -40,10 +40,10 @@
 <Entry OldName="NBWSP.SiteNavigation.CS$&lt;&gt;9__CachedAnonymousMethodDelegate9" NewName="NBWSP.SiteNavigation.c1a8806868c1a3e1bb5a80d4629bac16c" />
 <Entry OldName="StartPageOptionManager.m_SkilledUserMapZipPath" NewName="StartPageOptionManager.cb38f197b86a3c67bd777d4faca326559" />
 <Entry OldName="StartPageOptionManager.m_TrialUserMapZipPath" NewName="StartPageOptionManager.cc0d7a80386dd5f7c3132469a7e4b5b0a" />
-<Entry OldName="NBWSP.IniFile.m_sFile" NewName="NBWSP.IniFile.cf390c7235863bd59e9057ec8d6e9e507" />
 <Entry OldName="StartPageOption.&lt;Option&gt;k__BackingField" NewName="StartPageOption.c8cd3fd78ff5acccb903068c808c38ff9" />
 <Entry OldName="StartPageOption.&lt;Value&gt;k__BackingField" NewName="StartPageOption.c7e4e4f06f2b58bc6be27930d4b139a8d" />
 <Entry OldName="StartPageOption.&lt;Version&gt;k__BackingField" NewName="StartPageOption.cc03ac1e220d3c04546d9b2fc59703ac1" />
+<Entry OldName="NBWSP.IniFile.m_sFile" NewName="NBWSP.IniFile.cf390c7235863bd59e9057ec8d6e9e507" />
 <Entry OldName="NBWSP.nbwsgen.log" NewName="NBWSP.nbwsgen.c32c5e1e254426a61e4fd1f94c924175b" />
 <Entry OldName="NBWSP.nbwsgen._nLinq" NewName="NBWSP.nbwsgen.ccf30c59835734f2aa4b9b9aa521f73f5" />
 <Entry OldName="NBWSP.nbwsgen.CS$&lt;&gt;9__CachedAnonymousMethodDelegate3" NewName="NBWSP.nbwsgen.c5d4550c4a5cf564d87623ce1fa1c02ad" />
@@ -3178,8 +3178,8 @@
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpXmlPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cebb01543ef45d954074a5a1c466d2afd" />
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpZipPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cc11a83d67138afd9e77d4a36fafc9368" />
 <Entry OldName="NBWSP.fileportal.UploadData.mParameterObj" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.c6361e65a9801fe6c79a5dfeaae65e71b" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}.$$method0x6000297-1" NewName="A.c78124e671651b44093e3dcacdabcc2e8.c89e00b770d4143ebfcb71ce6d79e8337" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}.$$method0x6000e45-1" NewName="A.c78124e671651b44093e3dcacdabcc2e8.c84f845d8128c422d7e8c358b1dd89fd1" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}.$$method0x6000297-1" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8.c89e00b770d4143ebfcb71ce6d79e8337" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}.$$method0x6000e45-1" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8.c84f845d8128c422d7e8c358b1dd89fd1" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mXml" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mXml" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mTargetFolderPath" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mTargetFolderPath" />
 <Entry OldName="NBWSP.fileportal.EchoResult.&lt;Type&gt;k__BackingField" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.c55848145ef0682df7235dd508610a07b" />
@@ -3385,6 +3385,7 @@
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.page" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.page" />
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.&lt;&gt;c__DisplayClass5.CS$&lt;&gt;8__locals4" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.c273e5d72ec6ba4e88d69cb6a6fa2e1d0.CS$&lt;&gt;8__locals4" />
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.&lt;&gt;c__DisplayClass5.a" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.c273e5d72ec6ba4e88d69cb6a6fa2e1d0.a" />
+<Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass8.client_each_version" NewName="NBWSP.UserHandler.c04c968192a4dc553fa1bb47c288d54f6.client_each_version" />
 <Entry OldName="NBWSP.clicop.cluserop.log" NewName="NBWSP.clicop.cluserop.c32c5e1e254426a61e4fd1f94c924175b" />
 <Entry OldName="NBWSP.clicop.cluserop.LoginWorkspaceWebPageOperationCompleted" NewName="NBWSP.clicop.cluserop.cda2b462d855515cc707012e99da55ad6" />
 <Entry OldName="NBWSP.clicop.cluserop.CanUseGlobalTeLNetOperationCompleted" NewName="NBWSP.clicop.cluserop.ce6f72ed4b7d752f9d640569b9cd8e551" />
@@ -3620,12 +3621,14 @@
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass6.icon" NewName="NBWSP.DeviceIconManagement.c0ce72101dada3ce17f6ee08c906be5c4.icon" />
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass8.CS$&lt;&gt;8__locals7" NewName="NBWSP.DeviceIconManagement.c626b1ff335bcf4f3d6d8ad4bdb4f8aa6.CS$&lt;&gt;8__locals7" />
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass8.objecttpe" NewName="NBWSP.DeviceIconManagement.c626b1ff335bcf4f3d6d8ad4bdb4f8aa6.objecttpe" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.objecttype" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.objecttype" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.filetype" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.filetype" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.sGuid" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.sGuid" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.of" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.of" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.UserID" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.UserID" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.PathID" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.PathID" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.objecttype" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.objecttype" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.filetype" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.filetype" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.sGuid" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.sGuid" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.of" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.of" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.UserID" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.UserID" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.PathID" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.PathID" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass9.CS$&lt;&gt;8__locals8" NewName="NBWSP.ObjectFileInfoFileManagement.c02c8adae3dde7dad3d2a389dd36f6fdb.CS$&lt;&gt;8__locals8" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass9.sitename" NewName="NBWSP.ObjectFileInfoFileManagement.c02c8adae3dde7dad3d2a389dd36f6fdb.sitename" />
 <Entry OldName="NBWSP.DataSetHelper.ds" NewName="NBWSP.DataSetHelper.cebcc5b536e342d05140433cea1d37055" />
 <Entry OldName="NBWSP.DataSetHelper.m_FieldInfo" NewName="NBWSP.DataSetHelper.c8a8efbf83a52981b93a84531877c4f3d" />
 <Entry OldName="NBWSP.DataSetHelper.m_FieldList" NewName="NBWSP.DataSetHelper.cc9952812ca6e229c1f0caac40cd7571d" />
@@ -4548,8 +4551,7 @@
 <Entry OldName="ap_sitecluster.site2sitecluster_Detach(ap_site2sitecluster entity)" NewName="ap_sitecluster.c0b6c47fadbfd4dd372218eb124e05155(ap_site2sitecluster c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_sitecluster.sitecluster2device_Attach(ap_sitecluster2device entity)" NewName="ap_sitecluster.c6901f3f7624b0d5b5c5a1282cefd2ed6(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_sitecluster.sitecluster2device_Detach(ap_sitecluster2device entity)" NewName="ap_sitecluster.cf29f4a192244f3ad653e8ff8f398e159(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_sitecluster.&lt;Update&gt;b__2(ap_sitecluster a)" NewName="ap_sitecluster.c6b3e8e86aac390eafe92d9110d2c44e1(ap_sitecluster cb0a3c4c735584f25f7692ca7afc96145)" />
-<Entry OldName="ap_sitecluster.&lt;Update&gt;b__3(ap_sitecluster2device a)" NewName="ap_sitecluster.c3ef22f8e4a3efd8b652fb4cfcfe997d6(ap_sitecluster2device cb0a3c4c735584f25f7692ca7afc96145)" />
+<Entry OldName="ap_sitecluster.&lt;Update&gt;b__2(ap_sitecluster2device a)" NewName="ap_sitecluster.c6b3e8e86aac390eafe92d9110d2c44e1(ap_sitecluster2device cb0a3c4c735584f25f7692ca7afc96145)" />
 <Entry OldName="ap_globalborderinterfacecalculateresult.BuildXML_Interface(Int32 siteManagerID, GlobalBorderInterfaceType ifType)" NewName="ap_globalborderinterfacecalculateresult.cd11d83816cd26f13bc61fa23babf657d(Int32 c3e627b816fa42123b8f42b20b57e1b57, GlobalBorderInterfaceType c84cfa0afc86fdb689610c812d1f4b463)" />
 <Entry OldName="ap_globalborderinterfacecalculateresult.ReadXML_Interface(XElement xml, GlobalBorderInterfaceType ifType, Int32 siteManagerID)" NewName="ap_globalborderinterfacecalculateresult.c6d6140bd3a1680aaf7bde9b0aaf786de(XElement ce66ae53ad26a5f425243341464b66962, GlobalBorderInterfaceType c84cfa0afc86fdb689610c812d1f4b463, Int32 c3e627b816fa42123b8f42b20b57e1b57)" />
 <Entry OldName="ap_globalborderinterfacecalculateresult.&lt;&gt;c__DisplayClass0..ctor()" NewName="ap_globalborderinterfacecalculateresult.c72bd21d661057bf2579c02c5d66cf105..ctor()" />
@@ -4881,6 +4883,8 @@
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.&lt;CanAccessPage&gt;b__2(FunctionalModules2Page a)" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.&lt;CanAccessPage&gt;b__2(FunctionalModules2Page a)" />
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.&lt;&gt;c__DisplayClass5..ctor()" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.c273e5d72ec6ba4e88d69cb6a6fa2e1d0..ctor()" />
 <Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass3.&lt;&gt;c__DisplayClass5.&lt;CanAccessPage&gt;b__1(ESiteFunctionalModules b)" NewName="NBWSP.UserHandler.c11c6daddfda19a5e8bbe6ac2252c5bbb.c273e5d72ec6ba4e88d69cb6a6fa2e1d0.&lt;CanAccessPage&gt;b__1(ESiteFunctionalModules b)" />
+<Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass8..ctor()" NewName="NBWSP.UserHandler.c04c968192a4dc553fa1bb47c288d54f6..ctor()" />
+<Entry OldName="NBWSP.UserHandler.&lt;&gt;c__DisplayClass8.&lt;CanAccess_LoginInterface&gt;b__7(String a)" NewName="NBWSP.UserHandler.c04c968192a4dc553fa1bb47c288d54f6.&lt;CanAccess_LoginInterface&gt;b__7(String a)" />
 <Entry OldName="NBWSP.clicop.cluserop.OnLoginWorkspaceWebPageOperationCompleted(Object arg)" NewName="NBWSP.clicop.cluserop.c6358e0ba914bde206ad38a66ba7cc5d3(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSP.clicop.cluserop.OnCanUseGlobalTeLNetOperationCompleted(Object arg)" NewName="NBWSP.clicop.cluserop.cdf050100a51634f5c7f5761aa820a955(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSP.clicop.cluserop.OnGetUserSessionInfoIDOperationCompleted(Object arg)" NewName="NBWSP.clicop.cluserop.c6a00742db616dfb863b5c84b9c54a492(Object c41649b43911fed230d0a1304f5f8ab03)" />
@@ -5037,10 +5041,12 @@
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass4..ctor()" NewName="NBWSP.DeviceIconManagement.c36ce91126a73951fbf33d2f79d205728..ctor()" />
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass6..ctor()" NewName="NBWSP.DeviceIconManagement.c0ce72101dada3ce17f6ee08c906be5c4..ctor()" />
 <Entry OldName="NBWSP.DeviceIconManagement.&lt;&gt;c__DisplayClass8..ctor()" NewName="NBWSP.DeviceIconManagement.c626b1ff335bcf4f3d6d8ad4bdb4f8aa6..ctor()" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5..ctor()" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4..ctor()" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.&lt;ValidateObjectFile&gt;b__0(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.&lt;ValidateObjectFile&gt;b__0(ap_objectfileinfo a)" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.&lt;ValidateObjectFile&gt;b__1(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.&lt;ValidateObjectFile&gt;b__1(ap_objectfileinfo a)" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass5.&lt;ValidateObjectFile&gt;b__2(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.c152af0496f4027fd71b745186c75eec4.&lt;ValidateObjectFile&gt;b__2(ap_objectfileinfo a)" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7..ctor()" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5..ctor()" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.&lt;ValidateObjectFile&gt;b__0(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.&lt;ValidateObjectFile&gt;b__0(ap_objectfileinfo a)" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.&lt;ValidateObjectFile&gt;b__1(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.&lt;ValidateObjectFile&gt;b__1(ap_objectfileinfo a)" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.&lt;ValidateObjectFile&gt;b__2(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.&lt;ValidateObjectFile&gt;b__2(ap_objectfileinfo a)" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass7.&lt;ValidateObjectFile&gt;b__3(ap_objectfileinfo a)" NewName="NBWSP.ObjectFileInfoFileManagement.cd502f850d9a129c8d60aa108dfea2fd5.&lt;ValidateObjectFile&gt;b__3(ap_objectfileinfo a)" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement.&lt;&gt;c__DisplayClass9..ctor()" NewName="NBWSP.ObjectFileInfoFileManagement.c02c8adae3dde7dad3d2a389dd36f6fdb..ctor()" />
 <Entry OldName="NBWSP.DataSetHelper.ColumnEqual(Object objectA, Object objectB)" NewName="NBWSP.DataSetHelper.c3f081a0f6cbbe282adf6b05a9851d325(Object c4ef988bfe0c585c384c42d81a8744ead, Object c08dc9bbcf5878c84e42b005c8531c851)" />
 <Entry OldName="NBWSP.DataSetHelper.RowEqual(DataRow rowA, DataRow rowB, DataColumnCollection columns)" NewName="NBWSP.DataSetHelper.c430c11b1b2aefd7ced4240b7a07de0c0(DataRow c6ff54d45e4b4f12982c5d4c1c6111440, DataRow c8bf38fd46c73a90b5364a7464c3234f3, DataColumnCollection c77039d333848587b7529528455448095)" />
 <Entry OldName="NBWSP.DataSetHelper.ParseFieldList(String fieldList, Boolean allowRelation)" NewName="NBWSP.DataSetHelper.c7ff022eae4a1e9f8d031348399e91644(String cf8f96ef56b72dec02f5314842b9bbe86, Boolean ccfeddf0bf7be2571124e7782f931bfc2)" />
@@ -5258,6 +5264,7 @@
 <Entry OldName="NBLM" NewName="A.c9d022e6c6ccb4f81d25c8042a82a1d75" />
 <Entry OldName="NBWSP.UserHandler+&lt;&gt;c__DisplayClass3+&lt;&gt;c__DisplayClass5" NewName="NBWSP.UserHandler+c11c6daddfda19a5e8bbe6ac2252c5bbb+c273e5d72ec6ba4e88d69cb6a6fa2e1d0" />
 <Entry OldName="NBWSP.UserHandler+&lt;&gt;c__DisplayClass3" NewName="NBWSP.UserHandler+c11c6daddfda19a5e8bbe6ac2252c5bbb" />
+<Entry OldName="NBWSP.UserHandler+&lt;&gt;c__DisplayClass8" NewName="NBWSP.UserHandler+c04c968192a4dc553fa1bb47c288d54f6" />
 <Entry OldName="NBWSP.License+&lt;&gt;c__DisplayClass2" NewName="NBWSP.License+cb4efddfab428c996b270258fa3b0e483" />
 <Entry OldName="NBWSP.SiteNavigation+TDCell" NewName="NBWSP.SiteNavigation+cb5a2bae6bd4dafe80f4e4c8c42caab9e" />
 <Entry OldName="NBWSP.SiteNavigation+&lt;&gt;c__DisplayClassa" NewName="NBWSP.SiteNavigation+c7a033938f7423aecffe77db3c2e2f415" />
@@ -5514,7 +5521,8 @@
 <Entry OldName="NBWSP.nbwsbg+&lt;&gt;c__DisplayClass3c" NewName="NBWSP.nbwsbg+cce5f8194cf9025d3ce5a4f91e9b081c9" />
 <Entry OldName="NBWSP.nbwsbg+&lt;&gt;c__DisplayClass3f" NewName="NBWSP.nbwsbg+c69e71e151a151e9fc2cb3be323c59025" />
 <Entry OldName="&lt;&gt;f__AnonymousType0`2" NewName="A.cfe9d5cddda71ec14e7f8dd6dd273af4f`2" />
-<Entry OldName="NBWSP.ObjectFileInfoFileManagement+&lt;&gt;c__DisplayClass5" NewName="NBWSP.ObjectFileInfoFileManagement+c152af0496f4027fd71b745186c75eec4" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement+&lt;&gt;c__DisplayClass7" NewName="NBWSP.ObjectFileInfoFileManagement+cd502f850d9a129c8d60aa108dfea2fd5" />
+<Entry OldName="NBWSP.ObjectFileInfoFileManagement+&lt;&gt;c__DisplayClass9" NewName="NBWSP.ObjectFileInfoFileManagement+c02c8adae3dde7dad3d2a389dd36f6fdb" />
 <Entry OldName="NBWSP.FileManagement+&lt;&gt;c__DisplayClass0" NewName="NBWSP.FileManagement+c1eb0543a90f6dd2c78c1ca1fbed7b8df" />
 <Entry OldName="NBWSP.FileManagement+&lt;&gt;c__DisplayClass2" NewName="NBWSP.FileManagement+c46c368bad682bf0768367606d3cc67dd" />
 <Entry OldName="NBWSP.FileManagement+&lt;&gt;c__DisplayClass4" NewName="NBWSP.FileManagement+c9aab3879228a0293f19cdf807b7f0e1e" />
@@ -5590,7 +5598,7 @@
 <Entry OldName="NBWSP.fileportal+StearmType" NewName="NBWSP.fileportal+cadcf81872b74daeb39a0a6aecedc9f7e" />
 <Entry OldName="NBWSP.fileportal+UploadData" NewName="NBWSP.fileportal+c603c401d915dde995b1498e57f36e4f7" />
 <Entry OldName="NBWSP.fileportal+EchoResult" NewName="NBWSP.fileportal+c1773ed2618ab81ab53ff53fc3180102a" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{F2CA59E2-86A5-41DF-A3AA-9A0A272D4DE0}" NewName="A.c78124e671651b44093e3dcacdabcc2e8" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClass9" NewName="NBWSP.nbwsl3+c243c9ae521e9c87e316523ef678e8bed" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassb" NewName="NBWSP.nbwsl3+cef9f2bda372233432bf87a3a9411b90b" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassd" NewName="NBWSP.nbwsl3+c972d314becf623e13c921596669cb4c1" />

@@ -224,25 +224,6 @@ END;
 ALTER FUNCTION site_update(site, integer) OWNER TO postgres;
 
 
-
-
-CREATE OR REPLACE FUNCTION site_delete(mid integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from site2site where siteid in (select id from site where sitemanagerid=mid);
-	delete from site where sitemanagerid=mid;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION site_delete(integer) OWNER TO postgres;
-
-
 DROP FUNCTION view_site_retrieve(integer, integer, timestamp without time zone, character varying);
 DROP VIEW siteview;
 CREATE OR REPLACE VIEW siteview AS 
@@ -284,30 +265,6 @@ END;
   ROWS 1000;
 ALTER FUNCTION view_site_retrieve(integer, integer, timestamp without time zone, character varying) OWNER TO postgres;
 
-
-
-
-CREATE OR REPLACE FUNCTION site_503upgrade()
-  RETURNS SETOF integer AS
-$BODY$
-declare
-	r integer;
-	dg_id integer;
-BEGIN		
-        for r in select id from site  LOOP
-		select id into dg_id from site2site where parentid = r;
-		if dg_id is null then
-			update site set class=1 where id=r;			
-		end if;
-	end loop;	
-	
-END;
-
-  $BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100
-  ROWS 1000;
-ALTER FUNCTION site_503upgrade() OWNER TO postgres;
 
 --------- site ---------
 
@@ -404,22 +361,6 @@ CREATE OR REPLACE VIEW devicesitedeviceview2 AS
  select devicesitedevice.*,devices.strname, devices.isubtype,site.sitemanagerid from devicesitedevice, devices,site where devicesitedevice.deviceid = devices.id and devicesitedevice.siteid=site.id;
 ALTER TABLE devicesitedeviceview2 OWNER TO postgres;
 
-
-
-CREATE OR REPLACE FUNCTION devicesitedevice_delete(site_id integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from devicesitedevice where siteid= site_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION devicesitedevice_delete(integer) OWNER TO postgres;
 
 
 CREATE OR REPLACE FUNCTION devicesitedevice_update(site_id integer, devtype integer[], devnames character varying[])
@@ -648,21 +589,6 @@ CREATE INDEX fki_sitecluster2device_device
 ALTER TABLE sitecluster2deviceview OWNER TO postgres;
 
 
-CREATE OR REPLACE FUNCTION sitecluster2device_delete(mid integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from sitecluster2device where siteclusterid in (select id from  sitecluster where sitemanagerid=mid);
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION sitecluster2device_delete(integer) OWNER TO postgres;
-
 
 CREATE OR REPLACE FUNCTION sitecluster2device_update(cluster_id integer, devnames character varying[])
   RETURNS boolean AS
@@ -790,7 +716,7 @@ CREATE TABLE globalborderinterface_calculateresult
   "type" integer NOT NULL, -- calculate /add/exclude
   lasttimestamp timestamp without time zone NOT NULL DEFAULT now(),  
   CONSTRAINT globalborderinterface_calculateresult_pk PRIMARY KEY (id),
-  CONSTRAINT globalborderinterface_calculateresult_un UNIQUE (sitemanagerid,devicename, interfacename)
+  CONSTRAINT globalborderinterface_calculateresult_un UNIQUE (sitemanagerid,devicename, interfacename,ip)
 )
 WITH (
   OIDS=FALSE
@@ -1089,32 +1015,19 @@ ALTER FUNCTION clustersite2site_update(integer, character varying[]) OWNER TO po
 
 
 
-
-CREATE OR REPLACE FUNCTION sitecluster_olddelete(clusternames character varying[])
+CREATE OR REPLACE FUNCTION site_olddelete(sitenames character varying[],site_mid integer)
   RETURNS boolean AS
 $BODY$
 
 BEGIN
-	delete from sitecluster where clustername <> all(clusternames);
-	return true;
-EXCEPTION    
-	WHEN OTHERS THEN   
-		return false;
-END;
-
-  $BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION sitecluster_olddelete(character varying[]) OWNER TO postgres;
-
-
-
-CREATE OR REPLACE FUNCTION site_olddelete(sitenames character varying[])
-  RETURNS boolean AS
-$BODY$
-
-BEGIN
-	delete from site where "name" <> all(sitenames);	
+	delete from clustersite2site where clustersiteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2sitecluster where siteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2site where siteid in  (select id from site where sitemanagerid= site_mid);
+	delete from devicesitedevice where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from object_customized_attribute where objectid=5 and objectid in (select id from site where sitemanagerid= site_mid);
+	delete from object_file_info where object_type=0 and object_id in (select id from site where sitemanagerid= site_mid);
+	delete from site where "name" <> all(sitenames);
 	return true;
 EXCEPTION    
 	WHEN OTHERS THEN   
@@ -1124,96 +1037,49 @@ END;
   $BODY$
   LANGUAGE 'plpgsql' VOLATILE
   COST 100;
-ALTER FUNCTION site_olddelete(character varying[]) OWNER TO postgres;
+ALTER FUNCTION site_olddelete(character varying[],integer) OWNER TO postgres;
 
 
 
-CREATE OR REPLACE FUNCTION sitecluster2device_delete(cluster_id integer)
-  RETURNS boolean AS
+CREATE OR REPLACE FUNCTION upgrade_site_to_503()
+  RETURNS SETOF integer AS
 $BODY$
-BEGIN	 
-	delete from sitecluster2device where siteclusterid =cluster_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
+declare
+	r integer;
+	dg_id integer;
+BEGIN		
+        for r in select id from site  LOOP
+		    update site set searchcondition='',searchcontainer=-1 where id=r;
+			select id into dg_id from site2site where parentid = r;
+			if dg_id is null then
+                                
+				update site set class=1 where id=r;					
+		    else
+			    update devicesitedevice set siteid=(select id from site where name='Entire Network') where siteid=r;
+			    update site set class=0 where id=r;	
+			end if;
+		end loop;
+        update site set class=0 where name='Entire Network';
+	
 END;
-$BODY$
+
+  $BODY$
   LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION sitecluster2device_delete(integer) OWNER TO postgres;
-
-
-CREATE OR REPLACE FUNCTION site_customized_borderinterface_delete(site_id integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from site_customized_borderinterface where siteid =site_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION site_customized_borderinterface_delete(integer) OWNER TO postgres;
-
-
-CREATE OR REPLACE FUNCTION site_customized_attribute_delete(site_id integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from object_customized_attribute where objectid=5 and objectid=site_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION site_customized_attribute_delete(integer) OWNER TO postgres;
-
-
-CREATE OR REPLACE FUNCTION site2sitecluster_delete(site_id integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from site2sitecluster where siteid=site_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION site2sitecluster_delete(integer) OWNER TO postgres;
-
-
-CREATE OR REPLACE FUNCTION clustersite2site_delete(site_id integer)
-  RETURNS boolean AS
-$BODY$
-BEGIN	 
-	delete from clustersite2site where clustersiteid=site_id;
-    RETURN true;
-EXCEPTION
-    WHEN OTHERS THEN 
-	RETURN false;    
-END;
-$BODY$
-  LANGUAGE 'plpgsql' VOLATILE
-  COST 100;
-ALTER FUNCTION clustersite2site_delete(integer) OWNER TO postgres;
-
-
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION upgrade_site_to_503() OWNER TO postgres;
+select * from upgrade_site_to_503();
+DROP FUNCTION upgrade_site_to_503();
 
 
 INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, lasttimestamp)VALUES ( -1, 11, 0, 'SiteActionPane.xml', 'e61f01xfwg64a8aa17wefwtsg066e124.xml', now(), -1,now());
 
 
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'Serial;ATM;POS;Multilink;Dialer', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Serial', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'ATM', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'POS', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Multilink', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Dialer', now());
 
 
 ALTER TABLE sys_option ADD COLUMN op_strvalue character varying(256);

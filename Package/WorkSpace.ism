@@ -109,6 +109,7 @@
 		<row><td>Files</td><td>{339F7BA0-2D36-4E83-B732-F8DB950E7236}</td><td>WEBSERVER</td><td>0</td><td/><td>fileportal.ashx</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Files1</td><td>{BC25BDA3-37C6-4B97-A1C2-0F3E102D9FA4}</td><td>BIN</td><td>8</td><td/><td>boost_python3_vc90_mt_1_48.d</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Files2</td><td>{20C07A12-1F7E-4146-9051-4236131A72D8}</td><td>SYSTEMDATA1</td><td>0</td><td/><td>guid.ini</td><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Fix_conf</td><td>{397793A2-5FBB-426B-9FBF-6C48B66AA782}</td><td>CONF</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Help</td><td>{2A0F7078-7CF0-47C1-92EA-BA0E3489C72F}</td><td>NEW_DIRECTORY1</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NBAP</td><td>{9A399002-942F-4C83-A0A8-9A7F5DFBAC05}</td><td>CONF</td><td>16</td><td/><td/><td>10769</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NBBSGateway</td><td>{9AD40C22-FA0E-4644-B656-1E43B378D4A5}</td><td>CONF</td><td>16</td><td/><td/><td>10769</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -348,6 +349,7 @@
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files1</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Files2</td></row>
+		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Fix_conf</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Help</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>NBAP</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>NBBSGateway</td></row>
@@ -784,9 +786,9 @@
 		<row><td>fix_basestring.py</td><td>Files</td><td>fix_basestring.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_basestring.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_buffer.py</td><td>Files</td><td>fix_buffer.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_buffer.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_callable.py</td><td>Files</td><td>fix_callable.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_callable.py</td><td>1</td><td>fixes</td></row>
-		<row><td>fix_clicdprule.xml</td><td>Files</td><td>fix_CliCdpRule.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_CliCdpRule.xml</td><td>1</td><td>conf</td></row>
-		<row><td>fix_climacrule.xml</td><td>Files</td><td>fix_CliMacRule.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_CliMacRule.xml</td><td>1</td><td>conf</td></row>
-		<row><td>fix_configfilehiding.ini</td><td>Files</td><td>fix_ConfigFileHiding.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_ConfigFileHiding.ini</td><td>1</td><td>conf</td></row>
+		<row><td>fix_clicdprule.xml1</td><td>Fix_conf</td><td>fix_CliCdpRule.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_CliCdpRule.xml</td><td>1</td><td/></row>
+		<row><td>fix_climacrule.xml1</td><td>Fix_conf</td><td>fix_CliMacRule.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_CliMacRule.xml</td><td>1</td><td/></row>
+		<row><td>fix_configfilehiding.ini1</td><td>Fix_conf</td><td>fix_ConfigFileHiding.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_ConfigFileHiding.ini</td><td>1</td><td/></row>
 		<row><td>fix_dict.py</td><td>Files</td><td>fix_dict.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_dict.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_except.py</td><td>Files</td><td>fix_except.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_except.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_exec.py</td><td>Files</td><td>fix_exec.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_exec.py</td><td>1</td><td>fixes</td></row>
@@ -794,13 +796,13 @@
 		<row><td>fix_exitfunc.py</td><td>Files</td><td>fix_exitfunc.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_exitfunc.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_explicit.py</td><td>Files</td><td>fix_explicit.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\tests\data\fixers\myfixes\fix_explicit.py</td><td>1</td><td>myfixes</td></row>
 		<row><td>fix_filter.py</td><td>Files</td><td>fix_filter.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_filter.py</td><td>1</td><td>fixes</td></row>
-		<row><td>fix_filtermac.def</td><td>Files</td><td>fix_FilterMac.def</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_FilterMac.def</td><td>1</td><td>conf</td></row>
-		<row><td>fix_filterport.def</td><td>Files</td><td>fix_FilterPort.def</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_FilterPort.def</td><td>1</td><td>conf</td></row>
+		<row><td>fix_filtermac.def1</td><td>Fix_conf</td><td>fix_FilterMac.def</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_FilterMac.def</td><td>1</td><td/></row>
+		<row><td>fix_filterport.def1</td><td>Fix_conf</td><td>fix_FilterPort.def</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_FilterPort.def</td><td>1</td><td/></row>
 		<row><td>fix_first.py</td><td>Files</td><td>fix_first.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\tests\data\fixers\myfixes\fix_first.py</td><td>1</td><td>myfixes</td></row>
 		<row><td>fix_funcattrs.py</td><td>Files</td><td>fix_funcattrs.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_funcattrs.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_future.py</td><td>Files</td><td>fix_future.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_future.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_getcwdu.py</td><td>Files</td><td>fix_getcwdu.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_getcwdu.py</td><td>1</td><td>fixes</td></row>
-		<row><td>fix_graphics.ini</td><td>Files</td><td>fix_Graphics.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_Graphics.ini</td><td>1</td><td>conf</td></row>
+		<row><td>fix_graphics.ini1</td><td>Fix_conf</td><td>fix_Graphics.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_Graphics.ini</td><td>1</td><td/></row>
 		<row><td>fix_has_key.py</td><td>Files</td><td>fix_has_key.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_has_key.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_idioms.py</td><td>Files</td><td>fix_idioms.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_idioms.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_import.py</td><td>Files</td><td>fix_import.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_import.py</td><td>1</td><td>fixes</td></row>
@@ -813,7 +815,7 @@
 		<row><td>fix_itertools.py</td><td>Files</td><td>fix_itertools.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_itertools.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_itertools_imports.py</td><td>Files</td><td>fix_itertools_imports.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_itertools_imports.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_last.py</td><td>Files</td><td>fix_last.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\tests\data\fixers\myfixes\fix_last.py</td><td>1</td><td>myfixes</td></row>
-		<row><td>fix_log.property</td><td>Files</td><td>fix_log.property</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_log.property</td><td>1</td><td>conf</td></row>
+		<row><td>fix_log.property1</td><td>Fix_conf</td><td>fix_log.property</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer_conf&gt;\fix_log.property</td><td>1</td><td/></row>
 		<row><td>fix_long.py</td><td>Files</td><td>fix_long.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_long.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_map.py</td><td>Files</td><td>fix_map.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_map.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_metaclass.py</td><td>Files</td><td>fix_metaclass.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_metaclass.py</td><td>1</td><td>fixes</td></row>
@@ -2122,6 +2124,7 @@
 		<row><td>Files</td><td/><td/><td>_E8A582C6_E6F6_4D6D_88E5_AACC4CACC54F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Files1</td><td/><td/><td>_B3BD5653_71F2_48CC_8365_9EA172A89A5C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Files2</td><td/><td/><td>_ED0A3ECF_0DEB_4622_AD4C_C31B20675CEA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Fix_conf</td><td/><td/><td>_6416BED9_47F0_45CD_9823_9FC4D25020C9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Help</td><td/><td/><td>_7208F1BC_203B_41CC_8EDB_825C5DA33162_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NBAP</td><td/><td/><td>_56551F07_1C54_44CB_B278_6AA2EF2FD5BA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NBBSGateway</td><td/><td/><td>_20125BDA_15B5_4FE6_97C3_92C158415EC5_FILTER</td><td/><td/><td/><td/></row>

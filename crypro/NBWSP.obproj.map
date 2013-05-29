@@ -3178,8 +3178,8 @@
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpXmlPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cebb01543ef45d954074a5a1c466d2afd" />
 <Entry OldName="NBWSP.fileportal.UploadData.mTmpZipPath" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.cc11a83d67138afd9e77d4a36fafc9368" />
 <Entry OldName="NBWSP.fileportal.UploadData.mParameterObj" NewName="NBWSP.fileportal.c603c401d915dde995b1498e57f36e4f7.c6361e65a9801fe6c79a5dfeaae65e71b" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}.$$method0x6000297-1" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8.c89e00b770d4143ebfcb71ce6d79e8337" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}.$$method0x6000e45-1" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8.c84f845d8128c422d7e8c358b1dd89fd1" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C43499EA-36CE-4DBF-96A2-E9A65941FD45}.$$method0x6000297-1" NewName="A.c2ae21953ec71afae98fef586ff1052d1.c89e00b770d4143ebfcb71ce6d79e8337" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C43499EA-36CE-4DBF-96A2-E9A65941FD45}.$$method0x6000e46-1" NewName="A.c2ae21953ec71afae98fef586ff1052d1.c56949cd105eead03225988bb9ae5bd38" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mXml" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mXml" />
 <Entry OldName="NBWSP.fileportal.EchoResult.mTargetFolderPath" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.mTargetFolderPath" />
 <Entry OldName="NBWSP.fileportal.EchoResult.&lt;Type&gt;k__BackingField" NewName="NBWSP.fileportal.c1773ed2618ab81ab53ff53fc3180102a.c55848145ef0682df7235dd508610a07b" />
@@ -3584,10 +3584,11 @@
 <Entry OldName="ap_sitecluster.&lt;&gt;c__DisplayClass0.siteManagerID" NewName="ap_sitecluster.c5c041a310e099f511b71ed4c4187e9bc.siteManagerID" />
 <Entry OldName="ap_globalborderinterface.ConditionArray.mValues" NewName="ap_globalborderinterface.cc6becc09c61bd80f4d8cd6d7765bdcde.ca4c545fdf1de957618ce554236bed1a2" />
 <Entry OldName="ap_globalborderinterface.ConditionArray.&lt;Type&gt;k__BackingField" NewName="ap_globalborderinterface.cc6becc09c61bd80f4d8cd6d7765bdcde.c55848145ef0682df7235dd508610a07b" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass1.siteManagerID" NewName="ap_globalborderinterface.c1ea7992fc0142cc278f1e8f62944d652.siteManagerID" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass4.CS$&lt;&gt;8__locals2" NewName="ap_globalborderinterface.cfcf010acb90f6a10f93eadf173dd0632.CS$&lt;&gt;8__locals2" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass4.item" NewName="ap_globalborderinterface.cfcf010acb90f6a10f93eadf173dd0632.item" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass8.siteManagerID" NewName="ap_globalborderinterface.ce2f7fbde1d2a0f28aa1073b4488d789d.siteManagerID" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass0.siteManagerID" NewName="ap_globalborderinterface.c81b807ae95b2436370bc4782b2656f7d.siteManagerID" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass3.siteManagerID" NewName="ap_globalborderinterface.ce04d9424da13c3d93e6c2bde5b0b0a85.siteManagerID" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass6.CS$&lt;&gt;8__locals4" NewName="ap_globalborderinterface.c03ca315398367b590f244f13bfd20ef2.CS$&lt;&gt;8__locals4" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass6.item" NewName="ap_globalborderinterface.c03ca315398367b590f244f13bfd20ef2.item" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClassa.siteManagerID" NewName="ap_globalborderinterface.c84654eafd55e418241b581a5c11034bb.siteManagerID" />
 <Entry OldName="NBWSP.DataStoreType2BgObjectType.&lt;StoreType&gt;k__BackingField" NewName="NBWSP.DataStoreType2BgObjectType.c87404b2066b67199859e72b8e095f185" />
 <Entry OldName="NBWSP.DataStoreType2BgObjectType.&lt;BGObjectType&gt;k__BackingField" NewName="NBWSP.DataStoreType2BgObjectType.c8fd371a4c5b6add08cf82d10768d7d6f" />
 <Entry OldName="NBWSP.CPlusPlus_DataStoreType.syncRoot" NewName="NBWSP.CPlusPlus_DataStoreType.c717a7cceae2a78c006ede8ea61e1659a" />
@@ -4038,14 +4039,14 @@
 <Entry OldName="ap_devices.nat_Detach(ap_nat entity)" NewName="ap_devices.cd225a64de5cdc8226f1d3da227f20254(ap_nat c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.natinterface_Attach(ap_natinterface entity)" NewName="ap_devices.c513f5b2e63d9bb6d2c3aaf54457eb00a(ap_natinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.natinterface_Detach(ap_natinterface entity)" NewName="ap_devices.cfc84ae308d22878d4199a2d7500ae11f(ap_natinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_devices.sitecluster2device_Attach(ap_sitecluster2device entity)" NewName="ap_devices.c6901f3f7624b0d5b5c5a1282cefd2ed6(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_devices.sitecluster2device_Detach(ap_sitecluster2device entity)" NewName="ap_devices.cf29f4a192244f3ad653e8ff8f398e159(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.swtichgroupdevice_Attach(ap_swtichgroupdevice entity)" NewName="ap_devices.cdd249a67d064193bf6afd25642a4899a(ap_swtichgroupdevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.swtichgroupdevice_Detach(ap_swtichgroupdevice entity)" NewName="ap_devices.c0d0a6dec0c428fa64f029c2e34b8d681(ap_swtichgroupdevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.systemdevicegroupdevice_Attach(ap_systemdevicegroupdevice entity)" NewName="ap_devices.ce75d9276947774faacb8ac1bcf22580c(ap_systemdevicegroupdevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.systemdevicegroupdevice_Detach(ap_systemdevicegroupdevice entity)" NewName="ap_devices.ca09af74bce3ac3e7f25f61d188862985(ap_systemdevicegroupdevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.userdevicesetting_Attach(ap_userdevicesetting entity)" NewName="ap_devices.c420e94c8889a11f5fbf9d1083d287b0b(ap_userdevicesetting c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_devices.userdevicesetting_Detach(ap_userdevicesetting entity)" NewName="ap_devices.c1c8a4e12acad311a0a24cafa6d6e8485(ap_userdevicesetting c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_devices.sitecluster2device_Attach(ap_sitecluster2device entity)" NewName="ap_devices.c6901f3f7624b0d5b5c5a1282cefd2ed6(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_devices.sitecluster2device_Detach(ap_sitecluster2device entity)" NewName="ap_devices.cf29f4a192244f3ad653e8ff8f398e159(ap_sitecluster2device c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="NBWSP.Site1.CheckSessionTimeout()" NewName="NBWSP.Site1.c54e889cdde9cc27c9924de29f850218d()" />
 <Entry OldName="NBWSP.SiteNavigation.get_IntervalTD()" NewName="NBWSP.SiteNavigation.get_cce010e1a2667223d2987e6d1900b4579()" />
 <Entry OldName="NBWSP.SiteNavigation.Init_DefualtCellList()" NewName="NBWSP.SiteNavigation.c2e60a35c4e7740d668c039d8d0d1084a()" />
@@ -4116,6 +4117,10 @@
 <Entry OldName="ap_site.ConvertSiteView(ap_siteview siteview, Int32 parentid, Int32&amp; index, String parentguid)" NewName="ap_site.ca3582d51df7023bcd92dd666df44c35a(ap_siteview ceec1ab9798389a48a7d59475935c64a2, Int32 cae5fbf9fbb359ab862e75db7dfdb7837, Int32&amp; c0c7786f85c783871bbd8b33219c7ec26, String c68efc0d2369a6bc6faf5f12a3459637d)" />
 <Entry OldName="ap_site.BuildSubTree(List`1 siteviews, Int32 parentid, Int32&amp; index, String parentguid)" NewName="ap_site.cbdfc6b2e5ca8163ed56e92f10998f832(List`1 c73728591770563955bf76ae4749a9d1c, Int32 cae5fbf9fbb359ab862e75db7dfdb7837, Int32&amp; c0c7786f85c783871bbd8b33219c7ec26, String c68efc0d2369a6bc6faf5f12a3459637d)" />
 <Entry OldName="ap_site.UpdateSite(List`1 entites, Int32 siteManagerID, String parentGuid, Int32 parentID, ap_nbwsp nLinq)" NewName="ap_site.c2aabc1066ec59741ec2c5ec5bac07bb1(List`1 c6e8f444dd990519f845597de21877f98, Int32 c3e627b816fa42123b8f42b20b57e1b57, String c9b7dc8602001d6b9f38f3c14131f0c15, Int32 c1ad3fa85d6839b5b64a3bd9982639a81, ap_nbwsp cbbe083672a40ad36137720af093f1df8)" />
+<Entry OldName="ap_site.clustersite2site_Attach(ap_clustersite2site entity)" NewName="ap_site.cc51629e53e3aab1c524a2d5b0c4bc6ca(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.clustersite2site_Detach(ap_clustersite2site entity)" NewName="ap_site.c85586cee368520c30a5a31eb9fffd1f8(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.clustersite2site1_Attach(ap_clustersite2site entity)" NewName="ap_site.ccf4969c0242d7064ab504d3815697f07(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.clustersite2site1_Detach(ap_clustersite2site entity)" NewName="ap_site.ce7a0652b010273901bcd7baeb210dc28(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.devicegroupsite_Attach(ap_devicegroupsite entity)" NewName="ap_site.c4523ec573725c370cd5a99de9108a661(ap_devicegroupsite c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.devicegroupsite_Detach(ap_devicegroupsite entity)" NewName="ap_site.cf5f2687989f28296ab2770be0748eea0(ap_devicegroupsite c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.devicesitedevice_Attach(ap_devicesitedevice entity)" NewName="ap_site.c3fad6cb04c08a07bf98398cb48c2239c(ap_devicesitedevice c86d6b1444a6c1b202db9d5c3336bb75d)" />
@@ -4128,16 +4133,12 @@
 <Entry OldName="ap_site.showcommandbenchmarktasksitedetail_Detach(ap_showcommandbenchmarktasksitedetail entity)" NewName="ap_site.c0e1b0bef0c2bf5fa54512f6617f0fd5b(ap_showcommandbenchmarktasksitedetail c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.site2site_Attach(ap_site2site entity)" NewName="ap_site.ca5e3f6383a212da57acb28e0e80368e9(ap_site2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.site2site_Detach(ap_site2site entity)" NewName="ap_site.c48cc090049c9351dd1900babe5fd0d65(ap_site2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.sitecustomizedinfo_Attach(ap_sitecustomizedinfo entity)" NewName="ap_site.c28d379a63725a169e384eb5f7a704407(ap_sitecustomizedinfo c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.sitecustomizedinfo_Detach(ap_sitecustomizedinfo entity)" NewName="ap_site.caa359e388bdb0f0530a5d586bb7d4e49(ap_sitecustomizedinfo c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.sitecustomizedborderinterface_Attach(ap_sitecustomizedborderinterface entity)" NewName="ap_site.c0598bc4f3805db4767f110dc9e5eb046(ap_sitecustomizedborderinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.sitecustomizedborderinterface_Detach(ap_sitecustomizedborderinterface entity)" NewName="ap_site.ca477e4c6f6f395c986e5c7660e130000(ap_sitecustomizedborderinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.site2sitecluster_Attach(ap_site2sitecluster entity)" NewName="ap_site.c02b215b3222c49539b3d74323a3ba5fa(ap_site2sitecluster c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.site2sitecluster_Detach(ap_site2sitecluster entity)" NewName="ap_site.c0b6c47fadbfd4dd372218eb124e05155(ap_site2sitecluster c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.clustersite2site_Attach(ap_clustersite2site entity)" NewName="ap_site.cc51629e53e3aab1c524a2d5b0c4bc6ca(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.clustersite2site_Detach(ap_clustersite2site entity)" NewName="ap_site.c85586cee368520c30a5a31eb9fffd1f8(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.clustersite2site1_Attach(ap_clustersite2site entity)" NewName="ap_site.ccf4969c0242d7064ab504d3815697f07(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
-<Entry OldName="ap_site.clustersite2site1_Detach(ap_clustersite2site entity)" NewName="ap_site.ce7a0652b010273901bcd7baeb210dc28(ap_clustersite2site c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.sitecustomizedborderinterface_Attach(ap_sitecustomizedborderinterface entity)" NewName="ap_site.c0598bc4f3805db4767f110dc9e5eb046(ap_sitecustomizedborderinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.sitecustomizedborderinterface_Detach(ap_sitecustomizedborderinterface entity)" NewName="ap_site.ca477e4c6f6f395c986e5c7660e130000(ap_sitecustomizedborderinterface c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.sitecustomizedinfo_Attach(ap_sitecustomizedinfo entity)" NewName="ap_site.c28d379a63725a169e384eb5f7a704407(ap_sitecustomizedinfo c86d6b1444a6c1b202db9d5c3336bb75d)" />
+<Entry OldName="ap_site.sitecustomizedinfo_Detach(ap_sitecustomizedinfo entity)" NewName="ap_site.caa359e388bdb0f0530a5d586bb7d4e49(ap_sitecustomizedinfo c86d6b1444a6c1b202db9d5c3336bb75d)" />
 <Entry OldName="ap_site.&lt;Update&gt;b__a(ap_site a)" NewName="ap_site.c9716eba1fdc974c0f53f81a079dec4de(ap_site cb0a3c4c735584f25f7692ca7afc96145)" />
 <Entry OldName="NBWSP.nbwsgen.&lt;&gt;c__DisplayClass0..ctor()" NewName="NBWSP.nbwsgen.cb0cdf5ba22378ebd4c3a66f7a1062c2c..ctor()" />
 <Entry OldName="ap_nompappliance.devicesetting_Attach(ap_devicesetting entity)" NewName="ap_nompappliance.cdfc53fb003a86be616a0bd99de4d4eed(ap_devicesetting c86d6b1444a6c1b202db9d5c3336bb75d)" />
@@ -5013,11 +5014,12 @@
 <Entry OldName="ap_globalborderinterface.ConditionArray.set_Type(Int32 value)" NewName="ap_globalborderinterface.cc6becc09c61bd80f4d8cd6d7765bdcde.set_Type(Int32 value)" />
 <Entry OldName="ap_globalborderinterface.ConditionArray.get_Values()" NewName="ap_globalborderinterface.cc6becc09c61bd80f4d8cd6d7765bdcde.get_Values()" />
 <Entry OldName="ap_globalborderinterface.ConditionArray.SetValue(String val)" NewName="ap_globalborderinterface.cc6becc09c61bd80f4d8cd6d7765bdcde.SetValue(String val)" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass1..ctor()" NewName="ap_globalborderinterface.c1ea7992fc0142cc278f1e8f62944d652..ctor()" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass4..ctor()" NewName="ap_globalborderinterface.cfcf010acb90f6a10f93eadf173dd0632..ctor()" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass4.&lt;BuildXML&gt;b__0(ConditionArray a)" NewName="ap_globalborderinterface.cfcf010acb90f6a10f93eadf173dd0632.&lt;BuildXML&gt;b__0(cc6becc09c61bd80f4d8cd6d7765bdcde a)" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass8..ctor()" NewName="ap_globalborderinterface.ce2f7fbde1d2a0f28aa1073b4488d789d..ctor()" />
-<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass8.&lt;ReadXML&gt;b__6(ap_globalborderinterface a)" NewName="ap_globalborderinterface.ce2f7fbde1d2a0f28aa1073b4488d789d.&lt;ReadXML&gt;b__6(ap_globalborderinterface a)" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass0..ctor()" NewName="ap_globalborderinterface.c81b807ae95b2436370bc4782b2656f7d..ctor()" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass3..ctor()" NewName="ap_globalborderinterface.ce04d9424da13c3d93e6c2bde5b0b0a85..ctor()" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass6..ctor()" NewName="ap_globalborderinterface.c03ca315398367b590f244f13bfd20ef2..ctor()" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClass6.&lt;BuildXML&gt;b__2(ConditionArray a)" NewName="ap_globalborderinterface.c03ca315398367b590f244f13bfd20ef2.&lt;BuildXML&gt;b__2(cc6becc09c61bd80f4d8cd6d7765bdcde a)" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClassa..ctor()" NewName="ap_globalborderinterface.c84654eafd55e418241b581a5c11034bb..ctor()" />
+<Entry OldName="ap_globalborderinterface.&lt;&gt;c__DisplayClassa.&lt;ReadXML&gt;b__8(ap_globalborderinterface a)" NewName="ap_globalborderinterface.c84654eafd55e418241b581a5c11034bb.&lt;ReadXML&gt;b__8(ap_globalborderinterface a)" />
 <Entry OldName="NBWSP.CPlusPlus_DataStoreType.LoadType()" NewName="NBWSP.CPlusPlus_DataStoreType.cc5207aaa338b5b70713b23a9ccf205ac()" />
 <Entry OldName="NBWSP.FileManagement.&lt;&gt;c__DisplayClass0..ctor()" NewName="NBWSP.FileManagement.c1eb0543a90f6dd2c78c1ca1fbed7b8df..ctor()" />
 <Entry OldName="NBWSP.FileManagement.&lt;&gt;c__DisplayClass2..ctor()" NewName="NBWSP.FileManagement.c46c368bad682bf0768367606d3cc67dd..ctor()" />
@@ -5598,7 +5600,7 @@
 <Entry OldName="NBWSP.fileportal+StearmType" NewName="NBWSP.fileportal+cadcf81872b74daeb39a0a6aecedc9f7e" />
 <Entry OldName="NBWSP.fileportal+UploadData" NewName="NBWSP.fileportal+c603c401d915dde995b1498e57f36e4f7" />
 <Entry OldName="NBWSP.fileportal+EchoResult" NewName="NBWSP.fileportal+c1773ed2618ab81ab53ff53fc3180102a" />
-<Entry OldName="&lt;PrivateImplementationDetails&gt;{C78CE2CB-1B1E-491B-B5F0-1F008126ADE0}" NewName="A.c80d2a043e18faeeb7f90e2bbfdab0de8" />
+<Entry OldName="&lt;PrivateImplementationDetails&gt;{C43499EA-36CE-4DBF-96A2-E9A65941FD45}" NewName="A.c2ae21953ec71afae98fef586ff1052d1" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClass9" NewName="NBWSP.nbwsl3+c243c9ae521e9c87e316523ef678e8bed" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassb" NewName="NBWSP.nbwsl3+cef9f2bda372233432bf87a3a9411b90b" />
 <Entry OldName="NBWSP.nbwsl3+&lt;&gt;c__DisplayClassd" NewName="NBWSP.nbwsl3+c972d314becf623e13c921596669cb4c1" />
@@ -5663,9 +5665,10 @@
 <Entry OldName="NBWSP.nbwsbm+&lt;&gt;c__DisplayClass6" NewName="NBWSP.nbwsbm+c398ce366f9bb5a3ea8ed85887b9bfeaf" />
 <Entry OldName="NBWSP.nbwsbm+&lt;&gt;c__DisplayClassa" NewName="NBWSP.nbwsbm+cda08fff2dee39f80cfc1af073d20df7b" />
 <Entry OldName="ap_globalborderinterface+ConditionArray" NewName="ap_globalborderinterface+cc6becc09c61bd80f4d8cd6d7765bdcde" />
-<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass1" NewName="ap_globalborderinterface+c1ea7992fc0142cc278f1e8f62944d652" />
-<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass4" NewName="ap_globalborderinterface+cfcf010acb90f6a10f93eadf173dd0632" />
-<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass8" NewName="ap_globalborderinterface+ce2f7fbde1d2a0f28aa1073b4488d789d" />
+<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass0" NewName="ap_globalborderinterface+c81b807ae95b2436370bc4782b2656f7d" />
+<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass3" NewName="ap_globalborderinterface+ce04d9424da13c3d93e6c2bde5b0b0a85" />
+<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClass6" NewName="ap_globalborderinterface+c03ca315398367b590f244f13bfd20ef2" />
+<Entry OldName="ap_globalborderinterface+&lt;&gt;c__DisplayClassa" NewName="ap_globalborderinterface+c84654eafd55e418241b581a5c11034bb" />
 <Entry OldName="ap_site2sitecluster+&lt;&gt;c__DisplayClass0" NewName="ap_site2sitecluster+cb70c69c3e13ba8b7daa4c14e294c397a" />
 <Entry OldName="ap_site2sitecluster+&lt;&gt;c__DisplayClass3" NewName="ap_site2sitecluster+c01b4eba945f2534743ff28d824162244" />
 <Entry OldName="NBWSP.DataSetHelper+FieldInfo" NewName="NBWSP.DataSetHelper+c498367681ed97d11ee48ef763d880625" />

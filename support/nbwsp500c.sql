@@ -46,7 +46,7 @@ ALTER TABLE site ALTER COLUMN description SET STORAGE EXTENDED;
 
 ALTER TABLE site ADD COLUMN isclosegroup boolean;
 ALTER TABLE site ALTER COLUMN isclosegroup SET STORAGE PLAIN;
-update site set isclosegroup=true;
+update site set isclosegroup=false;
 ALTER TABLE site ALTER COLUMN isclosegroup SET NOT NULL;
 
 
@@ -1075,11 +1075,11 @@ DROP FUNCTION upgrade_site_to_503();
 INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, lasttimestamp)VALUES ( -1, 11, 0, 'SiteActionPane.xml', 'e61f01xfwg64a8aa17wefwtsg066e124.xml', now(), -1,now());
 
 
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Serial', now());
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'ATM', now());
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'POS', now());
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Multilink', now());
-INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 1, 'Dialer', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'Serial', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'ATM', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'POS', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'Multilink', now());
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, 0, 'Dialer', now());
 
 
 ALTER TABLE sys_option ADD COLUMN op_strvalue character varying(256);
@@ -1089,5 +1089,8 @@ ALTER TABLE sys_option ALTER COLUMN op_strvalue SET STORAGE EXTENDED;
 INSERT INTO sys_option(op_name, op_value, op_strvalue)VALUES ('startpageoption',0, '');
 
 
+INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, -2, '0', now());
+
+ALTER TABLE devicesitedevice DROP CONSTRAINT devicesitedevice_uniq_deviceid;
 
 update system_info set ver=503;

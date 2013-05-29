@@ -126,7 +126,7 @@ NUMBER  nvOld2Multitenant;
 #define REGKEY_ROOTDIR 		"EAPDataDirRoot"
 #define REGKEY_ES_VERSION   "EAPCurrentVersion"
 
-#define MSG_ERR_UNINSTALL_FIRST 	"The NetBrain Enterprise Server has already been installed.\nPlease uninstall the old one at frist."
+#define MSG_ERR_UNINSTALL_FIRST 	"The NetBrain Enterprise Server has already been installed.\nPlease uninstall the old one at first."
 #define MSG_ERR_NEED_2003SERVER 	"The NetBrain Enterprise Server can be only installed in the Windows 2003 Server. The installation will be terminated."
 #define MSG_ERR_NEED_IIS 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n Control Panel >> Add or Remove Programs >> Add/Remove Window Components \n check \"Application Server\" box)."
 #define MSG_ERR_NEED_IIS2008 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n My Computer >> right-click >> Manange >> Roles >> Add Roles >> Next >> \n check \"Webserver(IIS)\" box)."

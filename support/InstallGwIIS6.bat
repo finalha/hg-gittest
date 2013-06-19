@@ -1,12 +1,12 @@
 
 @echo off
 
-@set nret=0
-@set SiteIndex=%~1
-@set AppPool=%~2
-@set Vdir=%~3
-@set PhysicalPath=%~4
-@set DisableFolderList=%~5
+@set "nret=0"
+@set "SiteIndex=%~1"
+@set "AppPool=%~2"
+@set "Vdir=%~3"
+@set "PhysicalPath=%~4"
+@set "DisableFolderList=%~5"
 
 @set VdirRoot=%~6
 
@@ -60,9 +60,9 @@ cscript.exe %IISVdir% /create W3SVC/%SiteIndex%/ROOT "%Vdir%" "%PhysicalPath%"
 )
 
 if "%Vdir%" == "Workspaces" (
-mkdir "%USERPROFILE%\netbrain"
-call InstallUser.bat  "%USERPROFILE%\netbrain"
-cscript.exe %IISVdir% /create W3SVC/%SiteIndex%/ROOT "Workspace" "%USERPROFILE%\netbrain"
+mkdir "%ALLUSERSPROFILE%\netbrain"
+call InstallUser.bat  "%ALLUSERSPROFILE%\netbrain"
+cscript.exe %IISVdir% /create W3SVC/%SiteIndex%/ROOT "Workspace" "%ALLUSERSPROFILE%\netbrain"
 @if %errorlevel% == 0 (
 @echo Succeed to create virtual dir Workspace   %errorlevel%
 )else (

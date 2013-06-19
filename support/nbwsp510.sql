@@ -43,4 +43,17 @@ INSERT INTO objtimestamp(typename, modifytime) VALUES ('Observer_DeviceXml', now
 INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp, licguid)VALUES (-1, 14, 0, 'Default.bmp', '4ecaec3965cd41519f6ed952c3abe950.bmp', now(), -1, '', now(), '');
 
 
+CREATE TABLE benchmark2cmdproce
+(
+  id serial NOT NULL,
+  cmdproce_objectfileid integer NOT NULL,
+  CONSTRAINT benchmark2cmdproce_pk PRIMARY KEY (id),
+  CONSTRAINT benchmark2cmdproce_un UNIQUE (cmdproce_objectfileid)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE benchmark2cmdproce OWNER TO postgres;
+
+
 update system_info set ver=510;

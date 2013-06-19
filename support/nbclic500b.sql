@@ -13,7 +13,7 @@ ALTER TABLE serverauthenticationtype ALTER COLUMN connectpwd type character vary
 
 UPDATE "role" SET name='Admins' WHERE name='Admin';
 UPDATE "role" SET name='PowerUsers' WHERE name='PowerUser';
-UPDATE "role" SET name='Engineer' WHERE name='Engineers';
+UPDATE "role" SET name='Engineers' WHERE name='Engineer';
 UPDATE "role" SET name='Guests' WHERE name='Guest';
 
 

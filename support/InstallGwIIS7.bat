@@ -1,18 +1,18 @@
 
 @echo off
 
-@set SiteName=%~1
-@set AppPoolname=%~2
-@set Vdirname=%~3
-@set PhysicalPath=%~4
-@set DisableFolderList=%~5
+@set "SiteName=%~1"
+@set "AppPoolname=%~2"
+@set "Vdirname=%~3"
+@set "PhysicalPath=%~4"
+@set "DisableFolderList=%~5"
 
-@set Vdirroot=%~6
+@set "Vdirroot=%~6"
 
-@set nret=0
-@set appcommand=%Systemroot%\system32\inetsrv\appcmd.exe
-@set Framework64=%Systemroot%\Microsoft.NET\Framework64\v3.5
-@set Framework=%Systemroot%\Microsoft.NET\Framework\v3.5
+@set "nret=0"
+@set "appcommand=%Systemroot%\system32\inetsrv\appcmd.exe"
+@set "Framework64=%Systemroot%\Microsoft.NET\Framework64\v3.5"
+@set "Framework=%Systemroot%\Microsoft.NET\Framework\v3.5"
 
 @if NOT exist %appcommand% (
 	echo can not find %appcommand%
@@ -72,9 +72,9 @@
 
 if not "%Vdirroot%" == "" (
 
-mkdir "%USERPROFILE%\netbrain"
-call InstallUser.bat  "%USERPROFILE%\netbrain"
-%appcommand% add vdir /app.name:"%SiteName%/" /path:/%Vdirroot%  /physicalPath:"%USERPROFILE%\netbrain" 
+mkdir "%ALLUSERSPROFILE%\netbrain"
+call InstallUser.bat  "%ALLUSERSPROFILE%\netbrain"
+%appcommand% add vdir /app.name:"%SiteName%/" /path:/%Vdirroot%  /physicalPath:"%ALLUSERSPROFILE%\netbrain" 
 @if %errorlevel% == 0 (
 @echo Succeed to assignappPooltoweb
 )else (

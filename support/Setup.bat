@@ -75,7 +75,7 @@ set pghost=127.0.0.1
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: 		Get DB info from Reg
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-set rPath=HKEY_LOCAL_MACHINE\SOFTWARE\netbrain
+set "rPath=HKEY_LOCAL_MACHINE\SOFTWARE\netbrain"
 
 call :get_value_from_reg "%rPath%" "EAPPostgresDataPort"                                                                                                
 if %errorlevel% == 0 (

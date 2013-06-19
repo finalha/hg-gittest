@@ -121,9 +121,10 @@ $BODY$
 declare	
 	ds_id integer;
 BEGIN		
-	select id into ds_id from site where name=r.name and sitemanagerid=r.sitemanagerid;
+	select id into ds_id from site where id=r.id and sitemanagerid=r.sitemanagerid;
 	if ds_id IS NULL THEN
-		insert into site(			  
+		insert into site(
+			  id,
 			  name,			  
 			  region,			  
 			  location_address,			  
@@ -144,7 +145,8 @@ BEGIN
 			  searchcontainertype,
 			  matchtype				  
 			  )
-			  values( 			  
+			  values( 
+			  r.id,			  
 			  r.name,			  
 			  r.region,			  
 			  r.location_address,			  
@@ -165,7 +167,7 @@ BEGIN
 			  r.searchcontainertype,
 			  r.matchtype	
 			  );
-		select lastval() into ds_id;		
+		
 	else
 		update site set(
 			  name,			  
@@ -206,13 +208,13 @@ BEGIN
 			  r.matchtype,
 			  r.searchcontainertype
 			  ) 
-			  where id = ds_id;		
+			  where id = r.id;		
 	end if;
 
-        delete from site2site where siteid=ds_id;
-        insert into site2site(siteid,parentid)values( ds_id,parent_id);        
+        delete from site2site where siteid=r.id;
+        insert into site2site(siteid,parentid)values( r.id,parent_id);        
 
-	return ds_id;
+	return r.id;
 EXCEPTION
 	WHEN OTHERS THEN 
 		RETURN -2;	
@@ -222,6 +224,10 @@ END;
   LANGUAGE 'plpgsql' VOLATILE
   COST 100;
 ALTER FUNCTION site_update(site, integer) OWNER TO postgres;
+
+
+
+
 
 
 DROP FUNCTION view_site_retrieve(integer, integer, timestamp without time zone, character varying);
@@ -285,7 +291,7 @@ CREATE TABLE site_customized_borderinterface
   CONSTRAINT site_customized_borderinterface_site FOREIGN KEY (siteid)
       REFERENCES site (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE CASCADE,
-  CONSTRAINT site_customized_borderinterface_un UNIQUE (siteid, devicename,interfacename)
+  CONSTRAINT site_customized_borderinterface_un UNIQUE (siteid, devicename,interfacename, inetfaceip)
 )
 WITH (
   OIDS=FALSE
@@ -305,7 +311,7 @@ $BODY$
 declare	
 	ds_id integer;
 BEGIN		
-	select id into ds_id from site_customized_borderinterface where siteid=r.siteid and devicename=r.devicename and interfacename=r.interfacename ;
+	select id into ds_id from site_customized_borderinterface where siteid=r.siteid and devicename=r.devicename and interfacename=r.interfacename and inetfaceip=r.inetfaceip;
 	if ds_id IS NULL THEN
 		insert into site_customized_borderinterface(
 			  siteid,
@@ -716,7 +722,7 @@ CREATE TABLE globalborderinterface_calculateresult
   "type" integer NOT NULL, -- calculate /add/exclude
   lasttimestamp timestamp without time zone NOT NULL DEFAULT now(),  
   CONSTRAINT globalborderinterface_calculateresult_pk PRIMARY KEY (id),
-  CONSTRAINT globalborderinterface_calculateresult_un UNIQUE (sitemanagerid,devicename, interfacename,ip)
+  CONSTRAINT globalborderinterface_calculateresult_un UNIQUE (sitemanagerid,devicename, interfacename,ip, type)
 )
 WITH (
   OIDS=FALSE
@@ -746,7 +752,7 @@ $BODY$
 declare	
 	ds_id integer;
 BEGIN		
-	select id into ds_id from globalborderinterface_calculateresult where sitemanagerid=r.sitemanagerid and interfacename=r.interfacename and devicename=r.devicename;
+	select id into ds_id from globalborderinterface_calculateresult where sitemanagerid=r.sitemanagerid and interfacename=r.interfacename and devicename=r.devicename and ip=r.ip and "type"=r."type";
 	if ds_id IS NULL THEN
 		insert into globalborderinterface_calculateresult(
 			  interfaceid,
@@ -1015,7 +1021,7 @@ ALTER FUNCTION clustersite2site_update(integer, character varying[]) OWNER TO po
 
 
 
-CREATE OR REPLACE FUNCTION site_olddelete(sitenames character varying[],site_mid integer)
+CREATE OR REPLACE FUNCTION site_olddelete(siteids integer[], site_mid integer)
   RETURNS boolean AS
 $BODY$
 
@@ -1024,10 +1030,9 @@ BEGIN
 	delete from site2sitecluster where siteid in  (select id from site where sitemanagerid= site_mid);
 	delete from site2site where siteid in  (select id from site where sitemanagerid= site_mid);
 	delete from devicesitedevice where siteid in (select id from site where sitemanagerid= site_mid);
-	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid= site_mid);
-	delete from object_customized_attribute where objectid=5 and objectid in (select id from site where sitemanagerid= site_mid);
-	delete from object_file_info where object_type=0 and object_id in (select id from site where sitemanagerid= site_mid);
-	delete from site where "name" <> all(sitenames);
+	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid= site_mid);	
+	delete from site_customized_info where objectid in (select id from site where sitemanagerid= site_mid);
+	delete from site where id <> all(siteids);
 	return true;
 EXCEPTION    
 	WHEN OTHERS THEN   
@@ -1037,7 +1042,7 @@ END;
   $BODY$
   LANGUAGE 'plpgsql' VOLATILE
   COST 100;
-ALTER FUNCTION site_olddelete(character varying[],integer) OWNER TO postgres;
+ALTER FUNCTION site_olddelete(integer[], integer) OWNER TO postgres;
 
 
 
@@ -1092,5 +1097,423 @@ INSERT INTO sys_option(op_name, op_value, op_strvalue)VALUES ('startpageoption',
 INSERT INTO globalborderinterface(sitemanagerid, fieldtype, fieldvalue, lasttimestamp) VALUES (0, -2, '0', now());
 
 ALTER TABLE devicesitedevice DROP CONSTRAINT devicesitedevice_uniq_deviceid;
+
+
+INSERT INTO sys_option(op_name, op_value) VALUES ('globalborderinterfaceisdisable', 0);
+
+ALTER TABLE site ALTER COLUMN id SET DEFAULT null;
+
+
+DROP VIEW siteviewsimple;
+
+CREATE OR REPLACE VIEW siteviewsimple AS 
+ SELECT site.id, site2site.parentid, site.name, ( SELECT count(*) AS count
+           FROM devicesitedeviceview
+          WHERE devicesitedeviceview.siteid = site.id) AS irefcount,site.class
+   FROM site2site, site
+  WHERE site2site.siteid = site.id
+  ORDER BY site.id;
+
+ALTER TABLE siteviewsimple OWNER TO postgres;
+
+update site set name='My Network' where name='Entire Network';
+
+
+
+
+DROP FUNCTION site_customized_infoview_upsert(site_customized_infoview);
+DROP FUNCTION view_site_customized_info_retrieve(integer, integer, timestamp without time zone, character varying);
+DROP FUNCTION view_devicegroupsiteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying);
+DROP FUNCTION view_devicesitedeviceview_retrieve(integer, integer, timestamp without time zone, character varying);
+DROP FUNCTION view_linkgroup_dev_siteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying);
+DROP FUNCTION view_linkgroupsiteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying);
+DROP FUNCTION view_site_retrieve(integer, integer, timestamp without time zone, character varying);
+DROP VIEW clustersite2siteview;
+DROP VIEW site2siteclusterview;
+DROP VIEW site_customized_infoview2;
+DROP VIEW siteview;
+DROP VIEW linkgroupsiteview;
+DROP VIEW linkgroup_dev_siteview;
+DROP VIEW devicegroupsiteview;
+DROP VIEW site_customized_infoview;
+DROP VIEW siteviewsimple;
+DROP VIEW devicesitedeviceview;
+
+
+
+ALTER TABLE site ALTER COLUMN "name" type text;
+
+
+
+CREATE OR REPLACE VIEW clustersite2siteview AS 
+ SELECT clustersite2site.id, clustersite2site.clustersiteid, clustersite2site.siteid, clustersite2site.lasttimestamp, ( SELECT site.name
+           FROM site
+          WHERE site.id = clustersite2site.clustersiteid) AS clustersitename, ( SELECT site.name
+           FROM site
+          WHERE site.id = clustersite2site.siteid) AS sitename, ( SELECT site.sitemanagerid
+           FROM site
+          WHERE site.id = clustersite2site.clustersiteid) AS sitemanagerid
+   FROM clustersite2site;
+
+ALTER TABLE clustersite2siteview OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW site2siteclusterview AS 
+ SELECT site2sitecluster.id, site2sitecluster.siteid, site2sitecluster.clusterid, site2sitecluster.lasttimestamp, sitecluster.clustername, site.name AS sitename, site.sitemanagerid
+   FROM site2sitecluster, sitecluster, site
+  WHERE site2sitecluster.clusterid = sitecluster.id AND site2sitecluster.siteid = site.id;
+
+ALTER TABLE site2siteclusterview OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW site_customized_infoview2 AS 
+ SELECT site_customized_info.id, site_customized_info.objectid, site_customized_info.attributeid, site_customized_info.attribute_value, site_customized_info.lasttimestamp, object_customized_attribute.name, object_customized_attribute.alias, object_customized_attribute.allow_export, object_customized_attribute.type, object_customized_attribute.allow_modify_exported, site.name AS sitename, site.sitemanagerid
+   FROM site_customized_info, object_customized_attribute, site
+  WHERE site_customized_info.attributeid = object_customized_attribute.id AND object_customized_attribute.objectid = 5 AND site_customized_info.objectid = site.id;
+
+ALTER TABLE site_customized_infoview2 OWNER TO postgres;
+
+
+
+CREATE OR REPLACE VIEW linkgroupsiteview AS 
+ SELECT linkgroup.id, linkgroupsite.siteid, ( SELECT site.name
+           FROM site
+          WHERE site.id = linkgroupsite.siteid) AS sitename, linkgroupsite.sitechild
+   FROM linkgroup, linkgroupsite
+  WHERE linkgroupsite.groupid = linkgroup.id;
+
+ALTER TABLE linkgroupsiteview OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION view_linkgroupsiteview_retrieve(ibegin integer, imax integer, dt timestamp without time zone, uid integer, stypename character varying, sguid character varying)
+  RETURNS SETOF linkgroupsiteview AS
+$BODY$
+declare
+	r linkgroupsiteview%rowtype;
+	t timestamp without time zone;
+BEGIN	
+	if uid=-1 then
+		select modifytime into t from objtimestamp where typename=stypename;
+	else
+		select modifytime into t from objprivatetimestamp where typename=stypename and userid=uid and licguid=sguid;
+	end if;
+	
+	if t is null or t>dt then
+		if imax <0 then
+			if uid=-1 then
+				for r in select * from linkgroupsiteview where id in (SELECT id FROM linkgroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id) order by id loop
+				return next r;
+				end loop;
+			else
+				for r in select * from linkgroupsiteview where id in (SELECT id FROM linkgroup where id>ibegin and userid=uid and licguid=sguid order by id) order by id loop
+				return next r;
+				end loop;
+			end if;			
+		else
+			if uid=-1 then
+				for r in select * from linkgroupsiteview where id in (SELECT id FROM linkgroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id limit imax) order by id loop			
+				return next r;
+				end loop;
+			else
+				for r in select * from linkgroupsiteview where id in (SELECT id FROM linkgroup where id>ibegin and userid=uid and licguid=sguid order by id limit imax) order by id loop			
+				return next r;
+				end loop;
+			end if;			
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_linkgroupsiteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying) OWNER TO postgres;
+
+
+
+CREATE OR REPLACE VIEW linkgroup_dev_siteview AS 
+ SELECT linkgroup_dev_site.id, linkgroup_dev_site.groupid AS linkgroupid, ( SELECT linkgroup.strname
+           FROM linkgroup
+          WHERE linkgroup.id = linkgroup_dev_site.groupid) AS linkgroupname, linkgroup_dev_site.siteid, ( SELECT site.name
+           FROM site
+          WHERE site.id = linkgroup_dev_site.siteid) AS sitename, linkgroup_dev_site.sitechild
+   FROM linkgroup_dev_site;
+
+ALTER TABLE linkgroup_dev_siteview OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION view_linkgroup_dev_siteview_retrieve(ibegin integer, imax integer, dt timestamp without time zone, uid integer, stypename character varying, sguid character varying)
+  RETURNS SETOF linkgroup_dev_siteview AS
+$BODY$
+declare
+	r linkgroup_dev_siteview%rowtype;
+	t timestamp without time zone;
+BEGIN
+	if uid=-1 then
+		select modifytime into t from objtimestamp where typename=stypename;
+	else
+		select modifytime into t from objprivatetimestamp where typename=stypename and userid=uid and licguid=sguid;
+	end if;
+	
+	if t is null or t>dt then
+		if imax <0 then
+			if uid=-1 then
+				for r in select * from linkgroup_dev_siteview where linkgroupid in (SELECT id FROM linkgroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id) order by linkgroupid loop
+				return next r;
+				end loop;
+			else
+				for r in select * from linkgroup_dev_siteview where linkgroupid in (SELECT id FROM linkgroup where id>ibegin and userid=uid and licguid=sguid order by id) order by linkgroupid loop
+				return next r;
+				end loop;
+			end if;			
+		else
+			if uid=-1 then
+				for r in select * from linkgroup_dev_siteview where linkgroupid in (SELECT id FROM linkgroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id limit imax) order by linkgroupid loop			
+				return next r;
+				end loop;
+			else
+				for r in select * from linkgroup_dev_siteview where linkgroupid in (SELECT id FROM linkgroup where id>ibegin and userid=uid and licguid=sguid order by id limit imax) order by linkgroupid loop			
+				return next r;
+				end loop;
+			end if;			
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_linkgroup_dev_siteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying) OWNER TO postgres;
+
+
+
+CREATE OR REPLACE VIEW devicegroupsiteview AS 
+ SELECT devicegroupsite.id, devicegroupsite.groupid AS devicegroupid, ( SELECT devicegroup.strname
+           FROM devicegroup
+          WHERE devicegroup.id = devicegroupsite.groupid) AS devicegroupname, devicegroupsite.siteid AS devicegroupsiteid, ( SELECT site.name
+           FROM site
+          WHERE site.id = devicegroupsite.siteid) AS devicegroupsitename, devicegroupsite.sitechild
+   FROM devicegroupsite;
+
+ALTER TABLE devicegroupsiteview OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION view_devicegroupsiteview_retrieve(ibegin integer, imax integer, dt timestamp without time zone, uid integer, stypename character varying, sguid character varying)
+  RETURNS SETOF devicegroupsiteview AS
+$BODY$
+declare
+	r devicegroupsiteview%rowtype;
+	t timestamp without time zone;
+BEGIN
+	if uid=-1 then
+		select modifytime into t from objtimestamp where typename=stypename;
+	else
+		select modifytime into t from objprivatetimestamp where typename=stypename and userid=uid and licguid=sguid;
+	end if;
+	
+	if t is null or t>dt then
+		if imax <0 then
+			if uid=-1 then
+				for r in select * from devicegroupsiteview where devicegroupid in (SELECT id FROM devicegroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id) order by devicegroupid loop
+				return next r;
+				end loop;
+			else
+				for r in select * from devicegroupsiteview where devicegroupid in (SELECT id FROM devicegroup where id>ibegin and userid=uid and licguid=sguid order by id) order by devicegroupid loop
+				return next r;
+				end loop;
+			end if;			
+		else
+			if uid=-1 then
+				for r in select * from devicegroupsiteview where devicegroupid in (SELECT id FROM devicegroup where id>ibegin and userid=uid and (licguid=sguid or licguid='-1') order by id limit imax) order by devicegroupid loop			
+				return next r;
+				end loop;
+			else
+				for r in select * from devicegroupsiteview where devicegroupid in (SELECT id FROM devicegroup where id>ibegin and userid=uid and licguid=sguid order by id limit imax) order by devicegroupid loop			
+				return next r;
+				end loop;
+			end if;			
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_devicegroupsiteview_retrieve(integer, integer, timestamp without time zone, integer, character varying, character varying) OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW site_customized_infoview AS 
+ SELECT site_customized_info.id, site_customized_info.objectid, site_customized_info.attributeid, site_customized_info.attribute_value, site_customized_info.lasttimestamp, site.name AS sitename
+   FROM site_customized_info, site
+  WHERE site_customized_info.objectid = site.id;
+
+ALTER TABLE site_customized_infoview OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION view_site_customized_info_retrieve(ibegin integer, imax integer, dt timestamp without time zone, stypename character varying)
+  RETURNS SETOF site_customized_infoview AS
+$BODY$
+declare
+	r site_customized_infoview%rowtype;
+	t timestamp without time zone;
+BEGIN
+	select modifytime into t from objtimestamp where typename=stypename;
+	
+	if t is null or t>dt then
+		if imax <0 then
+			for r in SELECT * FROM site_customized_infoview where id>ibegin and lasttimestamp>dt order by id loop
+			return next r;
+			end loop;
+		else
+			for r in SELECT * FROM site_customized_infoview where id>ibegin and lasttimestamp>dt order by id limit imax loop
+			return next r;
+			end loop;
+
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_site_customized_info_retrieve(integer, integer, timestamp without time zone, character varying) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION site_customized_infoview_upsert(dciv site_customized_infoview)
+  RETURNS integer AS
+$BODY$
+declare		
+	t_id integer;
+BEGIN	
+	select id into t_id from site_customized_infoview where objectid=dciv.objectid and attributeid=dciv.attributeid ;
+	if t_id IS NULL THEN		
+		insert into site_customized_info(
+			objectid,
+			attributeid,
+			attribute_value
+			)
+			values ( 
+			dciv.objectid,
+			dciv.attributeid,
+			dciv.attribute_value
+		);
+
+		return lastval();
+	ELSE
+		update site_customized_info set ( attribute_value)=( dciv.attribute_value ) where id = t_id;
+		return t_id;
+	end if;
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_customized_infoview_upsert(site_customized_infoview) OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW devicesitedeviceview AS 
+         SELECT devicesitedevice.siteid, devicesitedevice.deviceid, 1 AS id, ( SELECT devices.strname
+                   FROM devices
+                  WHERE devices.id = devicesitedevice.deviceid) AS devicename, ( SELECT site.name
+                   FROM site
+                  WHERE site.id = devicesitedevice.siteid) AS sitename, ( SELECT devices.isubtype
+                   FROM devices
+                  WHERE devices.id = devicesitedevice.deviceid) AS isubtype
+           FROM devicesitedevice
+UNION ALL 
+         SELECT 1 AS siteid, devices.id AS deviceid, 1 AS id, devices.strname AS devicename, ( SELECT site.name
+                   FROM site
+                  WHERE site.id = 1) AS sitename, devices.isubtype
+           FROM devices
+          WHERE NOT (devices.id IN ( SELECT devicesitedevice.deviceid
+                   FROM devicesitedevice));
+
+ALTER TABLE devicesitedeviceview OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW siteviewsimple AS 
+ SELECT site.id, site2site.parentid, site.name, ( SELECT count(*) AS count
+           FROM devicesitedeviceview
+          WHERE devicesitedeviceview.siteid = site.id) AS irefcount, site.class
+   FROM site2site, site
+  WHERE site2site.siteid = site.id
+  ORDER BY site.id;
+
+ALTER TABLE siteviewsimple OWNER TO postgres;
+
+
+
+CREATE OR REPLACE FUNCTION view_devicesitedeviceview_retrieve(ibegin integer, imax integer, dt timestamp without time zone, stypename character varying)
+  RETURNS SETOF devicesitedeviceview AS
+$BODY$
+declare
+	r devicesitedeviceview%rowtype;
+	t timestamp without time zone;
+BEGIN
+		
+	if t is null or t>dt then
+		if imax <0 then
+			for r in select * from devicesitedeviceview where siteid in (SELECT id FROM site where id>ibegin order by id) order by siteid loop
+			return next r;
+			end loop;
+		else
+			for r in select * from devicesitedeviceview where siteid in (SELECT id FROM site where id>ibegin order by id limit imax) order by siteid loop			
+			return next r;
+			end loop;
+
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_devicesitedeviceview_retrieve(integer, integer, timestamp without time zone, character varying) OWNER TO postgres;
+
+
+CREATE OR REPLACE VIEW siteview AS 
+ SELECT site.id, site.name, site.region, site.location_address, site.employee_number, site.contact_name, site.phone_number, site.email, site.type, site.color, site.comment, site.lasttimestamp, site.searchcondition, site.searchcontainer, site.sitemanagerid, site.matchtype, site.searchcontainertype, site.class, site.description, site.isclosegroup, site2site.parentid, ( SELECT count(*) AS count
+           FROM devicesitedeviceview
+          WHERE devicesitedeviceview.siteid = site.id) AS irefcount
+   FROM site2site, site
+  WHERE site2site.siteid = site.id;
+
+ALTER TABLE siteview OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION view_site_retrieve(ibegin integer, imax integer, dt timestamp without time zone, stypename character varying)
+  RETURNS SETOF siteview AS
+$BODY$
+declare
+	r siteview%rowtype;
+	t timestamp without time zone;
+BEGIN
+	select modifytime into t from objtimestamp where typename=stypename;
+	
+	if t is null or t>dt then
+		if imax <0 then
+			for r in SELECT * FROM siteview where id>ibegin order by id loop
+			return next r;
+			end loop;
+		else
+			for r in SELECT * FROM siteview where id>ibegin order by id limit imax loop
+			return next r;
+			end loop;
+
+		end if;	
+	end if;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION view_site_retrieve(integer, integer, timestamp without time zone, character varying) OWNER TO postgres;
+
+
 
 update system_info set ver=503;

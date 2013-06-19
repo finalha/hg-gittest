@@ -201,3 +201,5 @@ UPDATE objtimestamp SET modifytime=now() WHERE typename='DeviceSetting';
 UPDATE objtimestamp SET modifytime=now() WHERE typename='L2Switch';
 UPDATE objtimestamp SET modifytime=now() WHERE typename='ConfigFile';
 UPDATE objtimestamp SET modifytime=now() WHERE typename='IpPhone';
+
+update system_info set ver=501;

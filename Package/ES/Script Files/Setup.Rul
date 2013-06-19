@@ -377,11 +377,21 @@ begin
     
     if !(svCurrentVersion = "") then 
 		FormatVer(svCurrentVersion,svCurrentVer); 
-		nCompareFlag = VERSION;
+		nCompareFlag = VERSION; 
+		nResult = VerCompare (svCurrentVer, "4.1.0.0", nCompareFlag);
+		if (nResult = LESS_THAN) then  
+			MessageBox("Detect that last version is too old,installation will abort.",WARNING);
+			abort;
+		endif;
+		nResult = VerCompare (svCurrentVer, "4.2.0.0", nCompareFlag);
+		if (nResult = EQUALS) then  
+			MessageBox("Detect that last one is version 4.2,installation will abort.",WARNING);
+			abort;
+		endif;
 		nResult = VerCompare (svCurrentVer, MULTITANANTVER, nCompareFlag); 
 		WriteLogFile("CurrentVer:"+svCurrentVer);
 		if (nResult = LESS_THAN) then 	
-			nvOld2Multitenant=1;	
+			nvOld2Multitenant=1;
 		endif; 
 	endif;
 	

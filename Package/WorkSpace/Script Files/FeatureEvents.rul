@@ -24,7 +24,7 @@ begin
    	
    	NumToStr(svReturn,nvReturn);
    	
-   	WriteLogFile("NBWSPLib.dll:"+svReturn);
+   	WriteLogFile("NBWSPLib.dll: "+svReturn);
    	
    	szWebconf=TARGETDIR^"WebServer"^"Web.config";
    	

@@ -249,9 +249,10 @@ begin
 	RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE);
 	nvType = REGDB_STRING; 
 	nvSize = -1;   
-	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "1" ,nvSize);   
-	if (nvOld2Multitenant = 1) then  	
-		RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataSetupTime",nvType,svDateTime,nvSize); 
+	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "1" ,nvSize);
+	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataSetupTime",nvType,svDateTime,nvSize);   
+	if (nvOld2Multitenant = 1) then  
+		RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "0" ,nvSize);		 
 	endif;
 	  
    	WriteLogFile ("Update begin:");
@@ -262,6 +263,9 @@ begin
     
    	RunApplication( SUPPORTDIR^"echo.bat" ," \""+szOEpath+ "\" \""+ svGWInstalldir^"WSfiles"^"OEpath" +"\"",FALSE, TRUE);
 	RunApplication( SUPPORTDIR^"echo.bat" ," \""+szNSpath+ "\" \""+ svGWInstalldir^"WSfiles"^"NSpath" +"\"",FALSE, TRUE); 
+	
+	//ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuild=0","NeedRebuild=1" );
+	//ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuildCacheFiles=0","NeedRebuildCacheFiles=1" );
 	
 	if (nvOld2Multitenant=1) then  
 		SdShowMsg ("Installing Workspace: "+svWSPName+" ,  please wait...", TRUE);

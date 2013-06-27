@@ -329,7 +329,10 @@ begin
  	
  	GetDefaultSiteIPPort();
  	svLICSiteName=svDefaultSiteName;
- 	svGWSiteName=svDefaultSiteName;
+ 	svGWSiteName=svDefaultSiteName;   
+ 	
+ 	
+ 	
  	       
  	
  	//RunApplication("echo"," \"test\" >\""+SUPPORTDIR^"netbrainlogfile"+"\"",FALSE,TRUE);   	
@@ -729,7 +732,19 @@ Dlg_install:
     	if (NOTEXISTS = ExistsDir(INSTALLDIR ^"Enterprise Server" ^ "ESData")) then 
     	   MessageBox("Can not find old ESData under "+INSTALLDIR, SEVERE); 
     	   abort;  
-    	endif;     
+    	endif;  
+    	
+    	if (NOTEXISTS = ExistsDir(svPostgreDbDataDir)) then 
+    		MessageBox("Can not find old database folder: "+svPostgreDbDataDir, SEVERE); 
+    		abort;
+    	endif; 	   
+    endif;  
+    
+    if ( nvInstallDataDir = 1 ) then  
+    	if (NOTEXISTS = ExistsDir(svPostgreDbDataDir)) then 
+    		MessageBox("Can not find old database folder: "+svPostgreDbDataDir, SEVERE); 
+    		abort;
+    	endif; 
     endif;
     
 	Disable( LOGGING ); 

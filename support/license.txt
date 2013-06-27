@@ -1,8 +1,8 @@
 END USER LICENSE AGREEMENT (EULA)
 Licensor: 
-NetBrain Technologies, Inc. 
-23 Third Avenue
-Burlington, MA 01803 USA
+65 Network Drive
+1st Floor
+Burlington, MA 01803
 
  * * * PLEASE READ CAREFULLY * * * 
 This End User License Agreement ("EULA") is a legally binding agreement between you ("you" or the "Customer") and NetBrain Technologies, Inc., a Delaware corporation ("NetBrain").   By clicking the "I AGREE" button, you acknowledge that (1) you are authorized to enter into this EULA, and are doing so, and (2) you have read and understand and agree that you shall be bound by the terms and conditions of this EULA and the limited warranty and limitation of liability set out in it.  In addition, by downloading, installing, copying or otherwise using, for any purpose, any of the software programs from NetBrain (as more fully defined herein, "Program(s)"), you are agreeing to be bound by the terms and conditions of this EULA. If you are accepting these terms on behalf of another person or a company or other legal entity, you represent and warrant that you have full authority to act for and to bind that person, company, or legal entity to these terms.

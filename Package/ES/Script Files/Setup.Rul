@@ -740,7 +740,7 @@ Dlg_install:
     	endif; 	   
     endif;  
     
-    if ( nvInstallDataDir = 1 ) then  
+    if ( nvInstallDataDir != 1 ) then  
     	if (NOTEXISTS = ExistsDir(svPostgreDbDataDir)) then 
     		MessageBox("Can not find old database folder: "+svPostgreDbDataDir, SEVERE); 
     		abort;

@@ -169,7 +169,6 @@
 <Entry OldName="NBCLIC.VirtualFunctionHelper.functionrelationlist" NewName="NBCLIC.VirtualFunctionHelper.c72f1b5ad1cba934c2f2ec86cc0d87434" />
 <Entry OldName="NBCLIC.VirtualFunctionHelper.syncRoot" NewName="NBCLIC.VirtualFunctionHelper.c717a7cceae2a78c006ede8ea61e1659a" />
 <Entry OldName="NBCLIC.VirtualFunctionHelper._VirtualFunctionHelper" NewName="NBCLIC.VirtualFunctionHelper.c853577e368b70d50a8b34df1dd6b8bec" />
-<Entry OldName="NBCLIC.VirtualFunctionHelper.linq" NewName="NBCLIC.VirtualFunctionHelper.c9b56425bed6add520026c5df18f8b337" />
 <Entry OldName="NBCLIC.VirtualFunctionHelper.CS$&lt;&gt;9__CachedAnonymousMethodDelegatef" NewName="NBCLIC.VirtualFunctionHelper.c61f79f4f8626be757e85d7d6ba5bc6e9" />
 <Entry OldName="NBCLIC.VirtualFunctionHelper.&lt;&gt;c__DisplayClass0.userid" NewName="NBCLIC.VirtualFunctionHelper.ce361bd0de0f059c6c0f871128222da97.userid" />
 <Entry OldName="NBCLIC.VirtualFunctionHelper.&lt;&gt;c__DisplayClass0.wsguid" NewName="NBCLIC.VirtualFunctionHelper.ce361bd0de0f059c6c0f871128222da97.wsguid" />
@@ -736,7 +735,7 @@
 <Entry OldName="NBCLIC.Workspace1.set_SelectedWorkspace(CurrentSelectedWorkspace value)" NewName="NBCLIC.Workspace1.set_c26301a60d1d51e5dc1be6758675db7fd(CurrentSelectedWorkspace cea07bd1cae6a28c56ff7d9c78104cb64)" />
 <Entry OldName="NBCLIC.Workspace1.get_Tmp_AllRole_To_User()" NewName="NBCLIC.Workspace1.get_c5b02673aa2771a10a8a0194923094694()" />
 <Entry OldName="NBCLIC.Workspace1.set_Tmp_AllRole_To_User(List`1 value)" NewName="NBCLIC.Workspace1.set_c5b02673aa2771a10a8a0194923094694(List`1 cea07bd1cae6a28c56ff7d9c78104cb64)" />
-<Entry OldName="NBCLIC.Workspace1.SetGridViewBackColor(GridView gv, Int32 index)" NewName="NBCLIC.Workspace1.c622b72a7135992958c3cbded6b07e35c(GridView cd95e451ad9ed10c5f4cf7daac3821b0b, Int32 c0c7786f85c783871bbd8b33219c7ec26)" />
+<Entry OldName="NBCLIC.Workspace1.SetGridViewBackColor(GridView gv, Int32 index, UpdatePanel up)" NewName="NBCLIC.Workspace1.c622b72a7135992958c3cbded6b07e35c(GridView cd95e451ad9ed10c5f4cf7daac3821b0b, Int32 c0c7786f85c783871bbd8b33219c7ec26, UpdatePanel c0e48a3d86fba0a871807ac1f05c101ac)" />
 <Entry OldName="NBCLIC.Workspace1.SetWorkspaceServerGridRowStyls()" NewName="NBCLIC.Workspace1.c5f1fc543ec06098338d5d9f9039e36ec()" />
 <Entry OldName="NBCLIC.Workspace1.DataBindWorkspaceServer(String workspaceServerGUID)" NewName="NBCLIC.Workspace1.c582add3236833bc7bd33650fcaae9f28(String c4c8f5d5e34f14c22be4dbb7fe1e13615)" />
 <Entry OldName="NBCLIC.Workspace1.InitializeWorkspaceServerProperty(String wssGuid)" NewName="NBCLIC.Workspace1.cb7e8cfb79e95c7546b067b825337989c(String c30ffdc36ea9513c9ed52d1c3c0fe0a17)" />

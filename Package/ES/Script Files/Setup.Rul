@@ -782,11 +782,12 @@ end;
 function OnFirstUIAfter()
     STRING  szTitle,szMsg1, szMsg2, szOption1, szOption2;   //SdFinish variable 
     NUMBER  bOpt1, bOpt2, nResult;                          //SdFinish variable
-    NUMBER  nvResult;
+    NUMBER  nvResult; 
+    STRING  svResult;
     NUMBER  nvRet;    
-    STRING szCaption;  
-    STRING svNSfile,svOEfile;  
-    STRING svCurrentDir;
+    STRING 	szCaption;  
+    STRING 	svNSfile,svOEfile;  
+    STRING 	svCurrentDir;
 begin
    Disable(STATUSEX);  
     
@@ -806,7 +807,16 @@ begin
    //   MessageBox ("Can not find the file: OESetup.exe in the current directory.", WARNING); 
    //else 
    //   CopyFileToDes(svCurrentDir^"OESetup.exe",INSTALLDIR^"Enterprise Server"^"SetupFiles\\OESetup.exe");  
-   //endif;  
+   //endif;   
+   
+   
+   nvResult=ServiceStartService ("seclogon","");
+   if (nvResult >=ISERR_SUCCESS) then 
+   	NumToStr(svResult,nvResult); 
+  	WriteLogFile("Service : Secondary logon started successfully "+svResult);			
+   else 
+    WriteLogFile("Failed to start service: Secondary logon "+FormatMessage(nvResult));
+   endif;
     
                                                                  
     szMsg1 = "";

@@ -1,0 +1,59 @@
+ 
+//---------------------------------------------------------------------------
+// The Installed event is sent after the feature DefaultFeature
+// is installed.
+//---------------------------------------------------------------------------
+ 
+export prototype DefaultFeature_Installed();
+function DefaultFeature_Installed()  
+STRING szOEtmp,szNStmp,szOEpath,szNSpath;  
+STRING szWebconf; 
+NUMBER nvReturn;
+STRING svReturn;
+begin 
+	//SdShowMsg ("Installing WorkSpace Server, please wait...", TRUE);  
+	StrRemoveLastSlash (TARGETDIR);
+	
+	
+	szOEtmp="/files/OESetup.exe";
+   	szNStmp="/files/NSSetup.exe";
+   	//szOEpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"OESetup.exe";
+   	//szNSpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"NSSetup.exe";  
+   	
+   	nvReturn=RunApplication(WINDIR^"Microsoft.NET\\Framework\\v2.0.50727\\RegAsm.exe"," \""+TARGETDIR^"WebServer\\bin\\NBWSPLib.dll"+"\""+" /codebase",FALSE,TRUE);
+   	
+   	NumToStr(svReturn,nvReturn);
+   	
+   	WriteLogFile("NBWSPLib.dll: "+svReturn);
+   	
+   	szWebconf=TARGETDIR^"WebServer"^"Web.config";
+   	
+   	RunApplication("cscript.exe"," \""+SUPPORTDIR ^"replacefiletext.vbs"+"\" \""+szWebconf+"\" \""+szOEtmp+"\" \""+OEfile+"\" \""+szWebconf+"\"",FALSE,TRUE);    
+   	 
+	RunApplication(SUPPORTDIR ^ "InstallUserRight.bat"," \""+TARGETDIR+"\"", FALSE, TRUE ); 
+	
+	RunApplication("cscript.exe"," \""+SUPPORTDIR ^"replacefiletext.vbs"+"\" \""+szWebconf+"\" \""+szNStmp+"\" \""+NSfile+"\" \""+szWebconf+"\"",FALSE,TRUE);
+	
+   	RunApplication( SUPPORTDIR ^ "Setup.bat"," \"" +"-install"+"\" \""+WSsite+"\" \""+workspace+"\" \""+TARGETDIR+"\" \""+DBName+"\" \""+AppPool+"\" \""+Vdir+"\" \""+Log+"\" >>\""+ LOGFILE +"\" 2>>&1 ",FALSE, TRUE);  	
+	//SdShowMsg ("", FALSE);  
+	BenchmarklogUpdate();	
+	EAPInstall();
+end;
+//---------------------------------------------------------------------------
+// The UnInstalling event is sent just before the feature 
+// DefaultFeature is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype DefaultFeature_UnInstalling();
+function DefaultFeature_UnInstalling()
+begin 
+
+ 	WriteLogFile( workspace+" "+TARGETDIR+" "+InfoFile+" "+Log+" "+LOGFILE );
+	
+	StrRemoveLastSlash (TARGETDIR);
+	 
+	RunApplication( SUPPORTDIR ^ "Setup.bat"," \"" +"-Uninstall"+"\" \""+WSsite+"\" \""+workspace+"\" \""+TARGETDIR+"\" \""+DBName+"\" \""+AppPool+"\" \""+Vdir+"\" \""+Log+"\" >>\""+ LOGFILE +"\" 2>>&1 ",FALSE, TRUE);
+	if (nResult != 0) then
+		WriteLogFile( "WS EAPUninstall.bat error!" ); 
+	endif;
+end;

@@ -1,0 +1,54 @@
+#define DLG_MYDLG "CMSGDLG" //MyDlg是我们的对话框名字
+#define COKBTN 12 //12就是我们那个按钮的Control Identifer属性值
+
+prototype NUMBER MyMSGDlg(BYREF STRING); 
+
+
+function NUMBER MyMSGDlg(msg)
+     HWND    hDlg;      
+     NUMBER nId, nResult; 
+    NUMBER nControl;
+    BOOL bDone;
+begin
+    //初始对话框函数
+     if (EzDefineDialog( DLG_MYDLG,ISUSER , "CMSGDLG", 0 ) = DLG_ERR) then  
+     //if (EzDefineDialog( DLG_MYDLG,"" , "CMSGDLG", 0 ) = DLG_ERR) then       
+     	return ISERR_GEN_FAILURE;
+     endif;
+  
+    bDone = FALSE;
+    //循环
+    while (!bDone)
+        nId = WaitOnDialog( DLG_MYDLG ); //获得对话框的消息    
+       switch (nId) 
+        case DLG_INIT: 
+       		SetTitle ("installshield message", 24, 0);
+       		CtrlSetText(DLG_MYDLG, 11, msg);
+    
+        case COKBTN:
+            //MessageBox(msg,WARNING);
+            bDone=TRUE;                                        
+        case DLG_ERR:        
+            nId   = ISERR_GEN_FAILURE;
+            SdError(nId, DLG_MYDLG);
+            bDone = TRUE;    
+            
+        case DLG_CLOSE:              
+            SdCloseDlg(hDlg, nId, bDone);   
+            bDone=TRUE;
+        case IDCANCEL:
+        	bDone=TRUE;
+        default:
+            // check standard handling
+            if (SdIsStdButton(nId) && SdDoStdButton(nId)) then
+                bDone = TRUE;
+            endif;                                             
+        endswitch;
+    endwhile;
+    EndDialog(DLG_MYDLG);
+    ReleaseDialog(DLG_MYDLG);    
+    return NEXT;  
+end;   
+
+
+

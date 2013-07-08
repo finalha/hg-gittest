@@ -1,0 +1,432 @@
+ 
+//---------------------------------------------------------------------------
+// The Installed event is sent after the feature Postgresql
+// is installed.
+//---------------------------------------------------------------------------
+ 
+export prototype Postgresql_Installed();
+function Postgresql_Installed() 
+NUMBER nvResult;
+begin 
+	Disable (CANCELBUTTON); 
+	WriteLogFile("Try to uninstall postgres");
+   	PostgresUninstall( ); 
+   	StrRemoveLastSlash (svPostgreDbDataDir);
+    SdShowMsg ("Installing postgresql 8.4, please wait...", TRUE);
+    WriteLogFile("Installing postgresql 8.4, please wait...");  
+    nvResult = 0;
+    if( nvInstallDataDir = 1 )  then 
+    	WriteLogFile("Restore DB");   
+		nvResult=PostgresInstall1();  
+	endif;
+	WriteLogFile("Install Postgres");                        
+	PostgresInstall2();  
+    SdShowMsg ("", FALSE);       
+	WriteLogFile( MSG_INFO_STEP_OUT_INSTALLPG );        
+    DeleteFile ( LOGFILE_PATH+"postgrespasswd.txt" ); 
+    
+    if (nvOld2Multitenant = 1) then
+    SdShowMsg ("Updating database, please wait...", TRUE); 
+    nvResult = RunApplication( SUPPORTDIR ^ "UpdateOldDB.bat", " \"" + svPGHost + "\" \"" + svDBPort + "\" \"" +"nbws"+"\" \""+ svPGUserName + "\" \"" + svPGPassWord+"\" >>\""+ LOGFILE_PATH ^ LOGFILE_NAME + "\" 2>>&1" , FALSE, TRUE);
+	if( nvResult != 0 ) then  
+ 		WriteLogFile( "Error: Failed in updating old DB!" ); 
+ 	else
+ 		WriteLogFile( "Succeed in updating old DB!" );
+	endif;
+	SdShowMsg ("", FALSE); 
+	endif;
+	   
+    Enable (CANCELBUTTON);
+end;
+//---------------------------------------------------------------------------
+// The UnInstalling event is sent just before the feature 
+// Postgresql is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype Postgresql_UnInstalling();
+function Postgresql_UnInstalling() 
+NUMBER nResult;
+begin  
+	Disable (CANCELBUTTON);
+	PostgresUninstall();
+	Enable (CANCELBUTTON);	
+end;
+//---------------------------------------------------------------------------
+// The Installed event is sent after the feature LicenseServer
+// is installed.
+//---------------------------------------------------------------------------
+ 
+export prototype LicenseServer_Installed();
+function LicenseServer_Installed()  
+NUMBER nvRet,nvResult,nResult,nRet;   
+STRING szGUID1,szGUID2;   
+NUMBER nResult1 , nResult2;    
+STRING szOEtmp,szNStmp;  
+STRING szWebconf; 
+STRING svResult; 
+STRING svReturnLine;
+NUMBER nvLineNumber;  
+begin   
+	Disable (CANCELBUTTON);
+	SdShowMsg ("Installing License Server, please wait...", TRUE); 
+		
+	nResult = RunApplication( SUPPORTDIR ^ "Buildpgdb4Lic.bat", " \"" + svPGHost + "\" \"" + svDBPort + "\" \"" +svLICDBname+"\" \""+ svPGUserName + "\" \"" + svPGPassWord+"\" >>\""+ LOGFILE_PATH ^ LOGFILE_NAME + "\" 2>>&1" , FALSE, TRUE);
+	if( nResult != 0 ) then
+ 		nRet = -1;  
+ 		WriteLogFile( MSG_ERR_BUILD_PDDB );
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_BUILD_PDDB );  
+    
+    if (nvOld2Multitenant = 1) then 
+    	
+    	nResult=RunApplication(SUPPORTDIR^"RunSql.bat"," \""+"127.0.0.1"+"\" \""+svDBPort+"\" \""+"nbws"+"\" \""+svDBUserName+"\" \""+svDBPwd+"\" \""+"delete_nbclic_user_trigger.sql"+"\" >\""+ SUPPORTDIR^"sqltmp2.txt" +"\" 2>>&1",FALSE, TRUE);	 
+    	if ( nResult != 0 ) then
+   			NumToStr(svResult,nResult); 
+ 			WriteLogFile( "Failed to update license server DB when running delete_nbclic_user_trigger.sql! "+svResult );
+ 			MessageBox( "Some errors occurred during database upgrading(delete DB trigger for user table). Please contact NetBrain for assistance after the installation finished! ", SEVERE);
+ 		else
+ 			nvResult = FileGrep( SUPPORTDIR^"sqltmp2.txt","ERROR:",svReturnLine,nvLineNumber,CONTINUE);
+ 			NumToStr(svResult,nvResult);
+ 			if ( nvResult = 0 ) then 
+ 				WriteLogFile( "Failed to update license server DB when running delete_nbclic_user_trigger.sql! "+svResult );
+ 				MessageBox( "Some errors occurred during database upgrading(delete DB trigger for user table). Please contact NetBrain for assistance after the installation finished! ", SEVERE);
+ 			else
+ 				WriteLogFile( "Successd to update license server DB when delete user trigger! "+svResult ); 	
+ 			endif;
+		endif;
+    	 
+   		nResult = RunApplication( SUPPORTDIR ^ "UPNBCLIC.exe"," >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   		if ( nResult != 0 ) then
+   			NumToStr(svResult,nResult); 
+ 			WriteLogFile( "Failed to update license server DB!"+svResult );
+ 			MessageBox( "Some errors occurred during database upgrading(update license DB). Please contact NetBrain for assistance after the installation finished! ", SEVERE);
+ 		else
+ 			NumToStr(svResult,nResult); 
+ 			WriteLogFile( "Successd to update license server DB!"+svResult ); 
+		endif; 
+		
+		nResult=RunApplication(SUPPORTDIR^"RunSql.bat"," \""+"127.0.0.1"+"\" \""+svDBPort+"\" \""+"nbws"+"\" \""+svDBUserName+"\" \""+svDBPwd+"\" \""+"create_nbclic_user_trigger.sql"+"\" >\""+ SUPPORTDIR^"sqltmp3.txt" +"\" 2>>&1",FALSE, TRUE);	 
+    	if ( nResult != 0 ) then
+   			NumToStr(svResult,nResult); 
+ 			WriteLogFile( "Failed to update license server DB when running create_nbclic_user_trigger.sql! "+svResult );
+ 			MessageBox( "Some errors occurred during database upgrading(create DB trigger for user table). Please contact NetBrain for assistance after the installation finished! ", SEVERE);
+ 		else 
+ 			nvResult = FileGrep( SUPPORTDIR^"sqltmp3.txt","ERROR:",svReturnLine,nvLineNumber,CONTINUE); 
+ 			NumToStr(svResult,nvResult);
+ 			if ( nvResult = 0 ) then 
+ 				WriteLogFile( "Failed to update license server DB when running create_nbclic_user_trigger.sql! "+svResult );
+ 				MessageBox( "Some errors occurred during database upgrading(create DB trigger for user table). Please contact NetBrain for assistance after the installation finished! ", SEVERE);	
+ 			else
+ 				WriteLogFile( "Successd to update license server DB when create user trigger! "+svResult ); 
+ 			endif;
+		endif; 
+		
+		CopyFileToDes( SUPPORTDIR^"delete_nbclic_user_trigger.sql",LOGFILE_PATH^"netbrain_delete_nbclic_user_trigger.sql" );
+		CopyFileToDes( SUPPORTDIR^"create_nbclic_user_trigger.sql",LOGFILE_PATH^"netbrain_create_nbclic_user_trigger.sql" ); 
+		CopyFileToDes( SUPPORTDIR^"log.txt",LOGFILE_PATH^"netbrain_update.log"); 
+		CopyFileToDes( SUPPORTDIR^"sqltmp2.txt",LOGFILE_PATH^"netbrain_sqllog1.log");
+		CopyFileToDes( SUPPORTDIR^"sqltmp3.txt",LOGFILE_PATH^"netbrain_sqllog2.log");
+			
+   		WriteLogFile( "Step out Update NBCLIC" ); 
+	endif;
+		 
+   	nResult = RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +svLICInstalldir+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   	if( nResult != 0 ) then
+ 		WriteLogFile( "Failed add network service right to license server!" ); 
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_IIS ); 
+   	
+   	RunApplication(SUPPORTDIR ^ "InstallUserRight.bat"," \""+svLICInstalldir+"\"", FALSE, TRUE );
+   	
+	EAPInstall();
+	
+	RunApplication(SUPPORTDIR ^"ProcessLICGUID.bat"," \""+SUPPORTDIR^"guid.vbs"+" \" \""+SUPPORTDIR^"replacefiletext.vbs"+"\" \""+szWPSxmlPath+"\" \""+szGUIDwps+"\"",FALSE,TRUE);
+   	RunApplication(SUPPORTDIR ^"ProcessLICGUID.bat"," \""+SUPPORTDIR^"guid.vbs"+" \" \""+SUPPORTDIR^"replacefiletext.vbs"+"\" \""+szCLICxmlPath+"\" \""+szGUIDclic+"\"",FALSE,TRUE);
+   	
+   	szOEtmp="/files/ITESetup.exe";
+   	szNStmp="/files/NSSetup.exe";
+ 
+   	szWebconf=svLICInstalldir^"Web.config";
+   	
+   	RunApplication("cscript.exe"," \""+SUPPORTDIR ^"replacefiletext.vbs"+"\" \""+szWebconf+"\" \""+szOEtmp+"\" \""+szOEpath+"\" \""+szWebconf+"\"",FALSE,TRUE);    
+   	
+   	nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	nResult2 = FeatureIsItemSelected (MEDIA,"WorkspaceServer");
+	
+	RunApplication("cscript.exe"," \""+SUPPORTDIR ^"replacefiletext.vbs"+"\" \""+szWebconf+"\" \""+szNStmp+"\" \""+szNSpath+"\" \""+szWebconf+"\"",FALSE,TRUE);
+   	
+ 	if (nResult1 = 1) && (nResult2 = 1)   then
+ 	 	if nvCheckWorkSpace=TRUE then		      
+			ReplaceLineOfFile( FALSE, svLICInstalldir^"Conf\\", "UpdateRebuild.ini", "HasWorkspace=0","HasWorkspace=1" );
+        endif;
+    endif;  
+    
+    if (nvOld2Multitenant = 1) then    
+		ReplaceLineOfFile( FALSE, svLICInstalldir^"Conf\\", "UpdateRebuild.ini", "V41m2Upgrade=0","V41m2Upgrade=1" );		
+	endif;  
+    
+   	nResult = RunApplication( SUPPORTDIR ^ "InstallGW.bat"," \"" +svLICSiteIndex+"\" \""+svLICSiteName+"\" \""+svLICAppPool+"\" \""+svLICVdir+"\" \""+svLICInstalldir+"\" \"" +svLICDisableFolderList+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	if( nResult != 0 ) then
+ 		nRet = -1;
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_IIS );
+    
+    GetDefaultSiteIPPort();
+    CreateHomeShortCut();   
+
+	SdShowMsg ("", FALSE); 
+	Enable (CANCELBUTTON);  
+end;
+//---------------------------------------------------------------------------
+// The UnInstalling event is sent just before the feature 
+// LicenseServer is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype LicenseServer_UnInstalling();
+function LicenseServer_UnInstalling()   
+NUMBER nResult;
+begin  	
+	Disable (CANCELBUTTON);
+	nResult=RunApplication( SUPPORTDIR ^ "EAPUninstall.bat" ," \""+svLICHost+"\" \"" + svLICSiteIndex + "\" \"" + svLICSiteName + "\" \"" + svLICAppPool +"\" \"" + svLICVdir + "\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	
+	if (nResult != 0) then
+		WriteLogFile( "EAPUninstall.bat error!" ); 
+	endif;  
+	Enable (CANCELBUTTON);	
+end;
+//---------------------------------------------------------------------------
+// The Installed event is sent after the feature GateWayServer
+// is installed.
+//---------------------------------------------------------------------------
+ 
+export prototype GateWayServer_Installed();
+function GateWayServer_Installed()  
+NUMBER  nResult, nRet,nvLineNumber,nvResult; 
+STRING InstanceGuid; 
+STRING  svLine, szNewString, svReturnLine, szMsg;    
+LIST listworksapce;  
+NUMBER nvInfo;
+STRING svDateTime,svDate,svTime;  
+NUMBER nvSize,nvType; 
+NUMBER nCompareFlag; 
+STRING svCurrentVer; 
+NUMBER nResult1,nResult2;
+begin 
+	Disable (CANCELBUTTON);
+	SdShowMsg ("Installing Workspace Server, please wait...", TRUE);
+		   
+	RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +svGWInstalldir+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	
+	nResult = RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +svGWInstalldir+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   	if( nResult != 0 ) then
+ 		WriteLogFile( "Failed add network service right to license server!" ); 
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_IIS );   
+   	
+   	RunApplication(SUPPORTDIR ^ "InstallUserRight.bat"," \""+svGWInstalldir+"\"", FALSE, TRUE );  
+   	
+   	RunApplication(SUPPORTDIR ^"ProcessLICGUID.bat"," \""+SUPPORTDIR^"guid.vbs"+" \" \""+SUPPORTDIR^"replacefiletext.vbs"+"\" \""+szWPSxmlPath+"\" \""+szGUIDwps+"\"",FALSE,TRUE);
+   	RunApplication(SUPPORTDIR ^"ProcessLICGUID.bat"," \""+SUPPORTDIR^"guid.vbs"+" \" \""+SUPPORTDIR^"replacefiletext.vbs"+"\" \""+szCLICxmlPath+"\" \""+szGUIDclic+"\"",FALSE,TRUE);
+    
+    if(SYSINFO.WINNT.bWinVista_Server2008=TRUE)then
+       RunApplication( SUPPORTDIR ^ "addflag2NBBS.bat"," \""+svGWInstalldir^"conf"^"NBBSGateway.conf"+"\"",FALSE, TRUE);
+    endif;
+    
+    if(SYSINFO.WINNT.bWin7_Server2008R2=TRUE) then 
+       RunApplication( SUPPORTDIR ^ "addflag2NBBS.bat"," \""+svGWInstalldir^"conf"^"NBBSGateway.conf"+"\"",FALSE, TRUE);
+    endif;
+   	
+	nResult = RunApplication( SUPPORTDIR ^ "InstallGW.bat"," \"" +svGWSiteIndex+"\" \""+svGWSiteName+"\" \""+svGWAppPool+"\" \""+svGWVdir+"\" \""+svGWInstalldir+"\" \"" +svGWDisableFolderList+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	if( nResult != 0 ) then
+ 		nRet = -1;
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_IIS ); 
+   	
+	GetSystemInfo( DATE, nvInfo, svDate );  
+	GetSystemInfo( TIME, nvInfo, svTime );
+	svDateTime = svDate +" "+ svTime;
+	WriteLogFile ("SetupDateTime: "+svDateTime); 
+	RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE);
+	nvType = REGDB_STRING; 
+	nvSize = -1;   
+	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "1" ,nvSize);
+	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataSetupTime",nvType,svDateTime,nvSize);   
+	if (nvOld2Multitenant = 1) then  
+		RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "0" ,nvSize);		 
+	endif;
+	  
+   	WriteLogFile ("Update begin:");
+    if (nvOld2Multitenant = 1) then
+   		WPSUpdate4To5(); 
+   	endif;  
+   	WriteLogFile ("Update end:");
+    
+   	RunApplication( SUPPORTDIR^"echo.bat" ," \""+szOEpath+ "\" \""+ svGWInstalldir^"WSfiles"^"OEpath" +"\"",FALSE, TRUE);
+	RunApplication( SUPPORTDIR^"echo.bat" ," \""+szNSpath+ "\" \""+ svGWInstalldir^"WSfiles"^"NSpath" +"\"",FALSE, TRUE); 
+	
+	//ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuild=0","NeedRebuild=1" );
+	//ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuildCacheFiles=0","NeedRebuildCacheFiles=1" );
+	
+	if (nvOld2Multitenant=1) then  
+		SdShowMsg ("Installing Workspace: "+svWSPName+" ,  please wait...", TRUE);
+		RunApplication( svGWInstalldir^"WSfiles" ^ "Install.bat" ," \""+"WorkSpace="+svWSPName+"\" \"" +"TargetDir="+svWSPDir^svWSPName +"\" \""+"xmlfile="+szWPSxmlPath+"\" \""+"SiteName="+svGWSiteName+"\" \""+"DBName=nbws"+ "\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+		
+		ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuild=0","NeedRebuild=1" );
+		ReplaceLineOfFile( FALSE, svWSPDir^svWSPName^"WebServer\\conf\\", "UpdateRebuild.ini", "NeedRebuildCacheFiles=0","NeedRebuildCacheFiles=1" );
+		
+		goto nextstep;	
+	endif; 
+	
+	listworksapce=ListCreate (STRINGLIST); 
+	nvResult = FileGrep(szWPSxmlPath,"<WorkspaceName>",svReturnLine,nvLineNumber,RESTART); 
+	if (nvResult<0) then
+	
+		 ListAddString (listworksapce, svWSPName, AFTER);    
+		 
+	else  
+		while (nvResult != END_OF_FILE)   
+			StrReplace(svReturnLine,"<WorkspaceName>","",0); 
+			StrReplace(svReturnLine,"</WorkspaceName>","",0);
+			StrTrim(svReturnLine);
+			ListAddString (listworksapce, svReturnLine, AFTER);	 
+			nvResult = FileGrep(szWPSxmlPath,"<WorkspaceName>",svReturnLine,nvLineNumber,CONTINUE);
+	    endwhile;
+	endif;
+	
+	if !(svCurrentVersion = "") then 
+		FormatVer(svCurrentVersion,svCurrentVer); 
+		nCompareFlag = VERSION;
+		nResult1 = VerCompare (svCurrentVer, "5.0.1.0", nCompareFlag);
+		nResult2 = VerCompare (svCurrentVer, "5.2.1.0", nCompareFlag); 
+		WriteLogFile("CurrentVer:"+svCurrentVer);
+		if ( nResult1 = EQUALS ) || ( nResult2 = EQUALS ) then 	
+			nResult=RunApplication(SUPPORTDIR^"FindDB.bat"," \""+"127.0.0.1"+"\" \""+svDBPort+"\" \""+"nbws"+"\" \""+svDBUserName+"\" \""+svDBPwd+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);	
+			if ( nResult = 0 ) then 
+				ReplaceLineOfFile(FALSE,SystemFolder^"NetBrain"^"Common\\","WPS.xml","<DBName>workspace1</DBName>","<DBName>nbws</DBName>");
+			endif; 
+		endif; 
+	endif;
+	
+	
+	nResult = ListGetFirstString  (listworksapce, svWSPName); 
+	
+	while (nResult != END_OF_LIST)   	
+   		SdShowMsg ("", FALSE);
+   		SdShowMsg ("Installing Workspace: "+svWSPName+" ,  please wait...", TRUE);
+   		nResult=RunApplication( svGWInstalldir^"WSfiles" ^ "Install.bat" ," \""+"WorkSpace="+svWSPName+"\" \"" +"TargetDir="+svWSPDir^svWSPName +"\" \""+"xmlfile="+szWPSxmlPath+"\" \""+"SiteName="+svGWSiteName+ "\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   		nResult = ListGetNextString  (listworksapce, svWSPName);
+   	endwhile;
+   		
+   	ListDestroy (listworksapce); 
+    
+    nextstep:
+    
+   	BSInstall(); 
+   	GetDefaultSiteIPPort();
+   	CreateHomeShortCut4WSP();
+	SdShowMsg ("", FALSE);      
+	
+	Enable (CANCELBUTTON);
+end;
+//---------------------------------------------------------------------------
+// The UnInstalling event is sent just before the feature 
+// GateWayServer is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype GateWayServer_UnInstalling();
+function GateWayServer_UnInstalling()
+NUMBER nResult;  
+STRING InstanceGuid;   
+STRING flag;
+begin  
+	Disable (CANCELBUTTON); 
+	
+	BSUninstall();
+	 
+	nResult=RunApplication( SUPPORTDIR ^ "EAPUninstall.bat" ," \""+svGWHost+"\" \"" + svGWSiteIndex + "\" \"" + svGWSiteName + "\" \"" + svGWAppPool +"\" \"" + svGWVdir + "\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	if (nResult != 0) then
+		WriteLogFile( "GW EAPUninstall.bat error!" ); 
+	endif;
+	
+	if( nvCheckDeleteAllData = TRUE ) then   
+		flag="DelAll=Yes";     	
+	else 
+		flag="DelAll=No";
+	endif;
+   	
+   	nResult=RunApplication( svGWInstalldir^"WSfiles"^ "DelAllWorkSpace.bat" ," \""+szWPSxmlPath+"\" \"" +flag+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   	RunApplication( SUPPORTDIR^ "deleteiis6vidr.bat" ," >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   	
+   	
+   	Enable (CANCELBUTTON);	
+end;
+//---------------------------------------------------------------------------
+// The UnInstalled event is sent after the feature Postgresql
+// is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype Postgresql_UnInstalled();
+function Postgresql_UnInstalled()
+NUMBER nResult;
+STRING szFileName,szString;  
+LIST listID;
+NUMBER nvType,nvSize;
+begin 
+    Disable (CANCELBUTTON);
+	if( nvCheckDeleteAllData = TRUE ) then  	 
+		DeleteFolder(svPGInstallDir);	
+			
+		nvType = REGDB_STRING;
+		RegDBSetDefaultRoot ( HKEY_LOCAL_MACHINE );   
+		RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_DATADIR,nvType,svPostgreDbDataDir,nvSize);
+	 	if( svPostgreDbDataDir != "" ) then 
+	    	DeleteFolder(svPostgreDbDataDir);
+	   	endif;   
+		
+		DeleteRegistryPostgres(); 
+		
+		DeleteFolder(INSTALLDIR ^ "Enterprise Server");  
+		 
+		
+	endif; 
+	Enable (CANCELBUTTON);
+end;
+//---------------------------------------------------------------------------
+// The UnInstalled event is sent after the feature LicenseServer
+// is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype LicenseServer_UnInstalled();
+function LicenseServer_UnInstalled()
+NUMBER nResult;
+STRING szFileName,szString;  
+LIST listID;
+begin 
+    DeleteFile(LICSHORTCUT);
+    Disable (CANCELBUTTON);
+	if( nvCheckDeleteAllData = TRUE ) then  
+		DeleteFolder(svLICInstalldir);  
+		RunApplication( SUPPORTDIR^ "NSWST.exe" ,"",FALSE, TRUE); 
+		RunApplication( SUPPORTDIR^ "DropDB.bat" ," \""+svLICHost+"\" \""+svDBPort+"\" \""+svPGUserName+"\" \""+svLICDBname+"\"",FALSE, TRUE);
+	endif; 
+	Enable (CANCELBUTTON);
+end;
+//---------------------------------------------------------------------------
+// The UnInstalled event is sent after the feature WorkSpaceServer
+// is uninstalled.
+//---------------------------------------------------------------------------
+ 
+export prototype WorkSpaceServer_UnInstalled();
+function WorkSpaceServer_UnInstalled()
+NUMBER nResult;
+STRING szFileName,szString;
+LIST listID;
+begin  
+	DeleteFile(WPSSHORTCUT);
+	
+	Disable (CANCELBUTTON);
+	if( nvCheckDeleteAllData = TRUE ) then  	
+		DeleteFolder(svGWInstalldir);	
+	endif; 	
+	Enable (CANCELBUTTON);
+end;

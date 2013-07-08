@@ -1,0 +1,2197 @@
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            
+//  File Name:	Setup.rul                                                   
+//                                                                            
+//  Description:	InstallShield script                                        
+//                                                                            
+//  Comments:	This script was generated based on the selections you made in
+//           	the Project Wizard.  Refer to the help topic entitled "Modify      
+//           	the script that the Project Wizard generates" for information
+//				on possible next steps.
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+
+// Include header files
+    
+#include "ifx.h"
+#include "CMSGDLG.rul"
+
+////////////////////// STRING defines ////////////////////////////
+#define VERSION_ES_PACKAGE_DATE "ES v5.0.0 "
+//////////////////// installation declarations ///////////////////
+  
+prototype StrIsNums( STRING );
+prototype PostgresInstall1();
+prototype PostgresInstall2();
+prototype PostgresUninstall();
+prototype WriteoneFile(STRING, STRING, STRING);
+prototype InputPostgresDbDataDir();    
+prototype InputPostgresInfo();
+prototype BSInstall();
+prototype BSUninstall();
+prototype EAPInstall();
+prototype CheckIIS();
+prototype CheckEAP();
+prototype WriteRegistryWeb();  
+prototype WriteRegistryPostgres();
+prototype DeleteRegistryWeb();  
+prototype DeleteRegistryPostgres();
+prototype ReplaceContentOfFile( STRING, STRING, STRING, STRING);  
+prototype ReplaceLineOfFile( BOOL, STRING, STRING, STRING , STRING);   
+prototype RunApplication( STRING , STRING, BOOL, BOOL);    
+prototype DeleteLogFile();   
+prototype WriteLogFile( STRING );
+prototype WriteConnectFile( STRING );  
+prototype STRING ReadConnectFile();
+prototype STRING GetEncyptConnStr(STRING);
+prototype AddOrReplaceLineOfFile( BOOL, STRING, STRING, STRING,STRING, STRING ) ;
+prototype CheckEAP2008();
+prototype CheckPathSpecChar(STRING);
+prototype GetSysInfo(); 
+prototype CheckNeedInstallNetFx3();  
+prototype STRING GetTEMPDIRNAME();    
+prototype STRING ReadString(STRING,STRING,BOOL);
+prototype CreateHomeShortCut(); 
+prototype CreateHomeShortCut4WSP();
+prototype GetDefaultSiteIPPort();
+prototype GetIIS7Configs(); 
+prototype CheckAspnetState();  
+prototype CheckIIS7FeaturesNeed();  
+prototype STRING RecordTimeLog();
+//prototype IsSameLargeVersion3();
+prototype SignSetupexe();   
+prototype DeleteFolder(STRING);   
+prototype OnCheckProgramRun(); 
+prototype CopyFileToDes(STRING,STRING);  
+prototype LICUpdate4To5();
+prototype WPSUpdate4To5(); 
+prototype FormatVer(STRING,BYREF STRING);
+
+STRING svPostgreDbDataDir;          
+STRING svDBUserName, svDBPwd, svDBPort;
+STRING svPassworDir;  
+STRING svUserName, szCompany;
+NUMBER nvInstallDataDir; 
+NUMBER nvCheckDeleteAllData;
+BOOL nvCheckWorkSpace; 
+NUMBER nvCheck;
+STRING svDataSetupTime;
+STRING svDataDirRoot;
+STRING svLogFile;
+STRING svTempVal;
+STRING svOSVer; 
+STRING LOGFILE_PATH;
+STRING svDefaultSiteIP;
+STRING svDefaultSitePort;
+STRING svDefaultSiteName;
+STRING svCurrentVersion;         
+
+STRING szOEpath,szNSpath;
+
+STRING svPGInstallDir,svPGUserName,svPGPassWord,svPGDBdir,svPGHost;  
+STRING LOGFILE;
+
+STRING svLICSiteIndex,svLICSiteName,svLICHost,svLICPort,svLICDBname,svLICDBpwd,svLICInstalldir,svLICAppPool,svLICVdir,svLICDisableFolderList;
+
+STRING svGWSiteIndex,svGWSiteName,svGWHost,svGWPort,svGWDBname,svGWDBpwd,svGWInstalldir,svGWAppPool,svGWVdir,svGWDisableFolderList;
+
+STRING svWSPName,svWSPDir;     
+
+STRING szWPSxmlPath,szCLICxmlPath;  
+
+STRING	szGUIDwps;
+STRING	szGUIDclic; 
+NUMBER  nvOld2Multitenant;
+
+#define LICSHORTCUT FOLDER_PROGRAMS^"NetBrain\\netbrain enterprise server\\License Home Page.url"
+#define WPSSHORTCUT FOLDER_PROGRAMS^"NetBrain\\netbrain enterprise server\\Workspace Home Page.url"
+
+#define REGNETFX35 "SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v3.5"                   
+#define LOGFILE_NAME "nbesinstall.log"   
+#define CONNECTFILE_SRC_NAME "consrc.dat"
+#define CONNECTFILE_DES_NAME "condes.dat" 
+#define DISKSPACE_G 1024      
+#define MULTITANANTVER "5.0.0.0"
+                  
+#define REGPATH_WEBSERVER 	"SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer"
+#define REGKEY_INSTALLDIR 	"netbrainDir"
+#define REGPATH_DBINFO	 	"SOFTWARE\\NetBrain"
+#define REGKEY_PG_DATADIR 	"EAPPostgresDataDir"
+#define REGKEY_PG_USERNAME 	"EAPPostgresDataUserName"
+#define REGKEY_PG_PASSWORD 	"EAPPostgresDataPwd"
+#define REGKEY_PG_PORT 		"EAPPostgresDataPort"
+#define REGKEY_PG_SETTIME 	"EAPDataSetupTime"
+#define REGKEY_ROOTDIR 		"EAPDataDirRoot"
+#define REGKEY_ES_VERSION   "EAPCurrentVersion"
+
+#define MSG_ERR_UNINSTALL_FIRST 	"The NetBrain Enterprise Server has already been installed.\nPlease uninstall the old one fristly."
+#define MSG_ERR_NEED_2003SERVER 	"The NetBrain Enterprise Server can be only installed in the Windows 2003 Server. The installation will be terminated."
+#define MSG_ERR_NEED_IIS 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n Control Panel >> Add or Remove Programs >> Add/Remove Window Components \n check \"Application Server\" box)."
+#define MSG_ERR_NEED_IIS2008 		"Please install Internet Information Server(IIS) in this machine first, then run NetBrain setup again. \n( To install IIS, go to \n My Computer >> right-click >> Manange >> Roles >> Add Roles >> Next >> \n check \"Webserver(IIS)\" box)."
+#define MSG_ERR_NEED_IISASPNET   "Failed to check IIS, please install ASP.NET feature in Web Server (IIS)"
+#define MSG_ERR_NEED_IISCommon   "Failed to check IIS, please reinstall Web Server (IIS)" //Common HTTP Features in 
+#define MSG_OK_CHECK_SYSTEM 		"Succeed to check operation system and IIS."
+#define MSG_INFO_NEED_INSTALLDATA 	"Need to install the data."
+#define MSG_INFO_OLDPATH_EXISTS 	"The old root path has already existed."
+#define MSG_INFO_BUILD_SETUPTIME 	"Need to save the timestamp of building data."
+#define MSG_INFO_FINISH_CHECK_OLDDATA 	"Finish to check the old data successfully."
+#define MSG_INFO_STEP_OUT_WELCOME 	"Step out: Welcome."
+#define MSG_ERRO_CHECK_ADMIN	 	"You don't have enough privilege to continue the installation, please contact the administrator. If this is Windows 2008, maybe you need rerun the installation program by menu 'Run as administrator'."
+#define MSG_ERRO_CHECK_SP_VER	 	"Your Windows Service Pack is not up to date, please update."
+#define MSG_INFO_STEP_OUT_SYSINFO 	"Step out: System information"
+#define MSG_INFO_STEP_OUT_LICENSE 	"Step out: License"
+#define MSG_INFO_STEP_OUT_CUSTOMERINFO 	"Step out: Customer information"
+#define MSG_ERR_PGINFO_EMPTY	 	"The Port,Username and Password cannot be empty."
+#define MSG_ERR_PGINFO_INVALID_CHAR	"A Password cannot contain any of the following characters: <>&\'\";"
+#define MSG_ERR_PGINFO_INVALID_CHAR_SPACE "A Password cannot contain spaces "
+#define MSG_ERR_PGINFO_PORT_INVALID	"The port: %s is in use, please enter another."
+#define MSG_INFO_STEP_OUT_INPUT_PGINFO 	"Step out: Input postgres info"
+#define MSG_ERR_PATH_FORMAT	 	"The specified folder:\n'%s'\n is invalid,incomplete or write protected.Please type a full path with drive letter;for example'C:\\XXXX'."
+#define MSG_INFO_STEP_OUT_INPUT_ROOTDIR 	"Step out: Input root dir"
+#define MSG_INFO_STEP_OUT_INPUT_PGDIR 		"Step out: Input postgres database dir"
+#define MSG_ERRO_CHECK_PG_ADMIN	 	"You are not authorized to install the postgresql, please select a different destination folder."
+#define MSG_INFO_STEP_OUT_STARTCOPY 		"Step out: Start Copy"
+#define MSG_INFO_STEP_OUT_INSTALLPG 		"Step out: Install postgresql"
+#define MSG_ERR_BUILD_PDDB	 			"Failed to build postgres"
+#define MSG_INFO_STEP_OUT_BUILD_PDDB 		"Step out: build postgres"
+#define MSG_ERR_EXE_SQL_WS3 			"Failed to execute the ws3.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3 		"Step out: execute the ws3.sql"
+#define MSG_ERR_EXE_SQL_WS3_1 			"Failed to execute the ws3-1.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_1 	"Step out: execute the ws3-1.sql"
+#define MSG_ERR_EXE_SQL_WS3_2 			"Failed to execute the ws3-2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_2 	"Step out: execute the ws3-2.sql"
+#define MSG_ERR_EXE_SQL_WS3_2_2 		"Failed to execute the ws3-2-2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_2_2 	"Step out: execute the ws3-2-2.sql"
+#define MSG_ERR_EXE_SQL_WS3_3 		"Failed to execute the ws3-3.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_3 	"Step out: execute the ws3-3.sql"
+#define MSG_ERR_EXE_SQL_WS3_4 		"Failed to execute the ws3-4.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS3_4 	"Step out: execute the ws3-4.sql"  
+#define MSG_ERR_EXE_SQL_WS311 		"Failed to execute the ws311.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS311 	"Step out: execute the ws311.sql"
+#define MSG_ERR_EXE_SQL_WS32 		"Failed to execute the ws3.2.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS32 	"Step out: execute the ws3.2.sql"
+
+#define MSG_ERR_EXE_SQL_WSVM 		"Failed to execute the wsvm.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WSVM 	"Step out: execute the wsvm.sql"
+#define MSG_ERR_EXE_SQL_WS31c 		"Failed to execute the ws31c.sql"
+#define MSG_INFO_STEP_OUT_EXE_SQL_WS31c 	"Step out: execute the ws31c.sql"
+#define MSG_ERR_CONF_FIX_GRAPHICS 		"Failed to replace fix_Graphics.ini"
+#define MSG_INFO_STEP_OUT_CONF_FIX_GRAPHICS 	"Step out: replace fix_Graphics.ini"
+#define MSG_ERR_CONF_WEB_CONFIG 		"Failed to replace web.config."
+#define MSG_INFO_STEP_OUT_CONF_WEB_CONFIG 	"Step out: replace web.config."
+#define MSG_ERR_CONF_FIX_LOG 			"Failed to replace fix_log.property."
+#define MSG_INFO_STEP_OUT_CONF_FIX_LOG 		"Step out: replace fix_log.property."
+#define MSG_ERR_CONF_ASPNET_STATE 		"Failed to set aspnet_state service status."
+#define MSG_INFO_STEP_OUT_ASPNET_STATE 		"Step out: set aspnet_state service status."
+#define MSG_INFO_STEP_OUT_INSTALL_USER 		"Step out: add full control of config files to current user."
+#define MSG_INFO_STEP_OUT_INSTALL_IIS 		"Step out: install IIS virtual folder."                  
+#define MSG_ERR_PGINFO_PORT_CONVERT 		"Failed to convert the port."
+#define MSG_ERR_PGINFO_PORT_DIGIT	 		"The port should be an integer."
+#define MSG_ERR_PGINFO_PORT_RANGE 		"The port should be in 100 ~ 65535."
+#define MSG_ERR_PGINFO_PWD_LEN 			"The length of password should be in 6 ~ 12."
+#define MSG_ERR_PGINFO_DATADIR_EMPTY			"The specified database data folder must be empty."
+#define MSG_INFO_STEP_OUT_INSTALL_NBKF 		"Step out: install nbkf check nb10002.ini."
+#define MSG_ERR_CONF_NBKF 		"Failed to install nbkf check nb10002.ini ."  
+#define MSG_INFO_STEP_OUT_ADDREGNETWORKSERVICE "Step out: add network service in reg clsid"
+#define MSG_ERR_ADDREGNETWORKSERVICE "Failed to add network service in reg clsid"
+#define MSG_ERR_RENAME_OLD_DIR "Failed to rename directory Enterprise Server 3.0 "
+#define MSG_ERR_NEED_2008SERVER 	"The NetBrain Enterprise Server can be only installed in the Windows 2003 or 2008 Server. The installation will be terminated."
+#define MSG_INFO_NETBRAINCHECKER "Step out:NetbrainChecker"
+#define MSG_INFO_STEP_OUT_INSTALL_IISISAPI "Step out: set IIS ISAPI." 
+#define MSG_ERR_INSTALLWIN7NETFX3 "Failed to ocsetup NetFx3"
+#define DISKSPACENOTENOUGH "There is not enough disk space(at least 1G )."
+#define MSG_ERR_NETFX35_NOTEXISTS "Error:No DotNetFrameWork35"      
+#define MSG_NETFX35_EXISTS "OK:DotNetFrameWork35 Exists"
+#define MSG_INFO_STEP_NETSTAT "Step out:Run netstat to check port"
+#define MSG_ERR_CONNFILE_WRITE "Failed to write Connect File!"
+#define MSG_ERR_ENCRYPT_CONNSTR "Failed to run EncryptFile !"
+#define MSG_INFO_STEP_OUT_REGKEY_START_ASPNET_STATE_CHECK "check or add reg aspnet_state key :start"
+#define MSG_STEP_BEFORE_RUN_TSCHMOD "Running Tschmod" 
+#define MSG_ERR_PGINFO_DATADIR_DISKROOT "The specified database data folder can not be the system root partition."
+#define MSG_ERR_MODIFYPGPWD "Failed to change postgres pwd."
+#define MSG_INFO_SETP_MODIFYPGPWD "Step out:change postgres pwd."   
+#define MSG_INFO_STEP_OUT_UPGRADE_DATADIR 		"Step out: Upgrade data dir."
+
+#define PGPWDDEFAULT "postgres"  
+#define PGHOSTDEFAULT "127.0.0.1" 
+
+#define DEFAULTSITEINDEX "1"  
+#define DEFAULTSITENAME "Default Web Site"      
+
+ 
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnBegin
+//
+//  EVENT:      Begin event is always sent as the first event during installation.
+//
+//////////////////////////////////////////////////////////////////////////////
+function OnBegin()
+	NUMBER  nvType,nvSize;  
+	STRING szWPSINIpath;
+begin 
+
+	DialogSetInfo(DLG_INFO_ALTIMAGE, SUPPORTDIR ^ "setup_top.bmp", TRUE);  
+	
+	nvCheckWorkSpace=TRUE;
+	   
+	svDefaultSiteIP="localhost";   
+	svDefaultSitePort="80"; 
+	svDefaultSiteName="Default Web Site";   
+
+	LOGFILE_PATH = "c:\\";
+	StrSub (LOGFILE_PATH, WINDIR, 0, 3); 	
+	LOGFILE=LOGFILE_PATH^LOGFILE_NAME;
+	
+	if( DeleteLogFile() != 0 ) then
+		MessageBox( "Failed to delete the old log file:" + LOGFILE, INFORMATION);
+	endif; 
+	
+	szWPSxmlPath=SystemFolder^"NetBrain"^"Common"^"WPS.xml";
+	szCLICxmlPath=SystemFolder^"NetBrain"^"Common"^"CLIC.xml";  
+	szWPSINIpath=SystemFolder^"NetBrain"^"Common"^"WPS.ini";
+	MsiSetProperty(ISMSI_HANDLE, "ID_WPSXML", szWPSxmlPath);
+	MsiSetProperty(ISMSI_HANDLE, "ID_WPSINI", szWPSINIpath);
+	
+	szGUIDwps="{FC497978-CEE9-4d21-BA65-705A01DF6B21}";
+	szGUIDclic="{E736A1E7-96FA-4b08-BBD8-325AE7368374}";
+	     
+	svLICHost="127.0.0.1";
+	svLICSiteIndex=DEFAULTSITEINDEX;
+	svLICSiteName=DEFAULTSITENAME; 
+	svLICDBname="nbclic";  
+	svLICDBpwd="postgres"; 
+	svLICAppPool="netbrain";   
+	svLICVdir="netbrain" ;
+	svLICDisableFolderList="";
+	
+	svPGHost="127.0.0.1";  
+	svDBPort="54321"; 
+	svPGPassWord="postgres";
+	svPGUserName="postgres";
+	
+	svGWHost="127.0.0.1";
+	svGWSiteIndex=DEFAULTSITEINDEX;
+	svGWSiteName=DEFAULTSITENAME;
+	svGWDBpwd="postgres";
+	svGWAppPool="Workspaces";
+	svGWVdir="Workspaces";
+	svGWDisableFolderList="";
+	
+	svWSPName="Workspace1"; 
+	
+	nvOld2Multitenant=0;
+		
+	RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE);   	
+  	nvType = REGDB_STRING;
+  	svPostgreDbDataDir="";
+    svDataSetupTime="";
+  	nvInstallDataDir = 0;
+  	svDataDirRoot="";
+  	svCurrentVersion="";                                                             
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_DATADIR,nvType,svPostgreDbDataDir,nvSize);
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_USERNAME,nvType,svDBUserName, nvSize);
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PASSWORD,nvType,svDBPwd,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_SETTIME,nvType,svDataSetupTime,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ROOTDIR,nvType,svDataDirRoot,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ES_VERSION,nvType,svCurrentVersion,nvSize);
+ 	nvType = REGDB_NUMBER;
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PORT,nvType,svDBPort,nvSize);
+ 	
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_DATADIR + ":" + svPostgreDbDataDir ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_USERNAME + ":" + svDBUserName ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_PASSWORD + ":" + svDBPwd ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_SETTIME + ":" + svDataSetupTime ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_ROOTDIR + ":" + svDataDirRoot ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_PORT + ":" + svDBPort );  
+ 	
+ 	if( svDataDirRoot != "" ) then           
+   	 	INSTALLDIR=svDataDirRoot;  
+   	 	WriteLogFile( MSG_INFO_OLDPATH_EXISTS+INSTALLDIR );
+   	endif;
+ 	
+ 	svLICInstalldir=INSTALLDIR ^"Enterprise Server"^"License Server";  
+ 	svGWInstalldir=INSTALLDIR^"Enterprise Server" ^"Workspace Server"; 
+ 	svWSPDir=INSTALLDIR^"Enterprise Server" ^"Workspaces";
+ 	svPGInstallDir=INSTALLDIR^ "Postgresql 8.4";
+ 	
+ 	if( svPostgreDbDataDir = "" ) then
+ 		WriteLogFile( MSG_INFO_NEED_INSTALLDATA ); 
+   		nvInstallDataDir = 1;     
+   	endif;         
+   	     
+	svPGUserName=svDBUserName;
+ 	svPGPassWord=svDBPwd; 
+ 	
+ 	
+ 	GetDefaultSiteIPPort();
+ 	svLICSiteName=svDefaultSiteName;
+ 	svGWSiteName=svDefaultSiteName;
+ 	       
+ 	
+ 	//RunApplication("echo"," \"test\" >\""+SUPPORTDIR^"netbrainlogfile"+"\"",FALSE,TRUE);   	
+			
+end;   
+
+
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           
+//  FUNCTION:   OnFirstUIBefore                                            
+//                                                                           
+//  EVENT:      FirstUIBefore event is sent when installation is run for the first
+//              time on given machine. In the handler installation usually displays
+//              UI allowing end user to specify installation parameters. After this
+//              function returns, FeatureTransferData is called to perform file
+//              transfer.
+//                                                                           
+///////////////////////////////////////////////////////////////////////////////
+function OnFirstUIBefore()
+    NUMBER  nResult;                      	  //Every Dialog variable
+    STRING  szTitle, szMsg;               	  //Every Dialog variable
+    STRING  szLicenseFile;                    //SdLicense variable
+    NUMBER  bLicenseAccepted;    	 		  //SdLicense variable
+    STRING  szDir;                        	  //SdFeatureDialog variable
+    LIST    listData,listInfo;            	  //SdStartCopy and SdShowInfoList variable
+    NUMBER  listID,ServicePackID;             //SdShowInfoList variable
+    NUMBER  nvReturn1,nvReturn2,nvReturn3;	  //SdShowInfoList variable
+    STRING  svReturn,szInfo1,szInfo2,szInfo3; //SdShowInfoList variable
+    STRING  rightID, svSTRING;                //SdShowInfoList variable
+    NUMBER  nUser;							  //SdCustomerInformation variable 
+    STRING  svResult1,svResult2,svResult3;    //SdFeatureDialog variable 
+    NUMBER  nvType,nvSize;
+    NUMBER  nBack;     
+    STRING  svTmp;
+    NUMBER  iResult;  
+    STRING szCaption;  
+    NUMBER nResult1,nResult2;     
+    STRING svCheckWorkSpace;  
+    NUMBER nCompareFlag; 
+    STRING svCurrentVer;
+begin
+
+	nResult1=1;
+    nResult2=1;	
+    
+    if !(svCurrentVersion = "") then 
+		FormatVer(svCurrentVersion,svCurrentVer); 
+		nCompareFlag = VERSION;
+		nResult = VerCompare (svCurrentVer, MULTITANANTVER, nCompareFlag); 
+		WriteLogFile("CurrentVer:"+svCurrentVer);
+		if (nResult = LESS_THAN) then 	
+			nvOld2Multitenant=1;	
+		endif; 
+	endif;
+	
+    DeleteFile(SUPPORTDIR ^"builddatetime.txt");   
+	RunApplication(SUPPORTDIR ^"getsystemdatetime.bat","\""+SUPPORTDIR^"builddatetime.txt"+"\"",FALSE,TRUE);   	
+    WriteLogFile(VERSION_ES_PACKAGE_DATE + ReadString(SUPPORTDIR,"builddatetime.txt",FALSE));	
+    
+    SdShowMsg ("Checking system information", TRUE);     			   
+    GetSysInfo();
+    
+    RunApplication( SUPPORTDIR ^ "addnetfxlog.bat", "\""+LOGFILE+"\"",FALSE, TRUE);
+   	
+    SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	
+    szDir = INSTALLDIR;
+    svUserName    = "";
+    szCompany = "";
+       
+    if( CheckEAP() = 0 ) then
+   		abort;                  
+   	endif;      
+   	 
+   	WriteLogFile( MSG_OK_CHECK_SYSTEM ); 
+   	 
+   	if(CheckNeedInstallNetFx3()==1) then 
+   	    WriteLogFile( MSG_ERR_NETFX35_NOTEXISTS );  
+   	else
+   	    WriteLogFile( MSG_NETFX35_EXISTS );  
+   	endif;
+   	
+  	nvType = REGDB_STRING;
+  	svPostgreDbDataDir="";
+    svDataSetupTime="";
+  	nvInstallDataDir = 0;
+  	svDataDirRoot="";
+  	svCurrentVersion="";                                                             
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_DATADIR,nvType,svPostgreDbDataDir,nvSize);
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_USERNAME,nvType,svDBUserName, nvSize);
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PASSWORD,nvType,svDBPwd,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_SETTIME,nvType,svDataSetupTime,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ROOTDIR,nvType,svDataDirRoot,nvSize);
+   	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_ES_VERSION,nvType,svCurrentVersion,nvSize);
+ 	nvType = REGDB_NUMBER;
+ 	RegDBGetKeyValueEx(REGPATH_DBINFO,REGKEY_PG_PORT,nvType,svDBPort,nvSize);
+ 	
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_DATADIR + ":" + svPostgreDbDataDir ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_USERNAME + ":" + svDBUserName ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_PASSWORD + ":" + svDBPwd ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_SETTIME + ":" + svDataSetupTime ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_ROOTDIR + ":" + svDataDirRoot ); 
+ 	WriteLogFile( "REGVAL:" + REGKEY_PG_PORT + ":" + svDBPort );  
+ 	
+ 	if( svPostgreDbDataDir = "" ) then
+ 		WriteLogFile( MSG_INFO_NEED_INSTALLDATA ); 
+   		nvInstallDataDir = 1;     
+   	endif;         
+   	
+   	if( svDataDirRoot != "" ) then          
+   		WriteLogFile( MSG_INFO_OLDPATH_EXISTS ); 
+   	 	INSTALLDIR=svDataDirRoot;
+   	endif;
+   	                
+   	WriteLogFile( MSG_INFO_BUILD_SETUPTIME ); 
+   	GetSystemInfo( DATE, nvReturn1, svResult1 );  
+   	svDataSetupTime = svResult1;
+   	svDataSetupTime = svDataSetupTime + " ";
+   	GetSystemInfo( TIME, nvReturn1, svResult1 );
+   	svDataSetupTime = svDataSetupTime + svResult1;
+ 
+   	 WriteLogFile( MSG_INFO_FINISH_CHECK_OLDDATA ); 
+    
+Dlg_Start:
+  	SdShowMsg ("", FALSE); 
+Dlg_SdWelcome:
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdWelcome( szTitle, szMsg );
+    if (nResult = BACK) goto Dlg_Start;  
+    WriteLogFile( MSG_INFO_STEP_OUT_WELCOME );
+    
+Dlg_SdShowInfoList:
+ 	szTitle = "System detecting \n"+"  "+"Please read the following text.";
+    szMsg   = "The text below describes the system configuration."; 
+    listInfo = ListCreate (STRINGLIST); 
+    //get CPU information
+    GetSystemInfo (CPU, nvReturn1, svReturn);
+    if( nvReturn1 == IS_UNKNOWN ) then
+ 		szInfo1 = "CPU:Unknown";
+    else
+    	Sprintf(szInfo1, "CPU: %d", nvReturn1,svReturn);
+    endif;
+    GetSystemInfo (EXTENDEDMEMORY, nvReturn2, svReturn);
+    Sprintf(szInfo2, "Extended Memory: %d MB", nvReturn2/1024,svReturn);
+    if(SYSINFO.WINNT.bAdmin_Logged_On) then
+      	rightID = "Privileges : Administrative Privileges ";
+    else
+        rightID = "Privileges : You don't have enough privilege to continue the installation, please contact the administrator. If this is Windows 2008, maybe you need rerun the installation program by menu 'Run as administrator'.";
+    endif;
+     
+    ServicePackID = SYSINFO.WINNT.nServicePack;
+    NumToStr ( svSTRING, ServicePackID );    
+    
+	if(SYSINFO.WINNT.bWinServer2003) then
+    	szInfo3 = "Operating System: Windows 2003 Service Pack"+" "+svSTRING;
+        if(ServicePackID < 1 ) then
+            listID = 3;
+        endif;
+    endif;
+    if(SYSINFO.WINNT.bWinVista_Server2008=TRUE)then 
+    	szInfo3 = "Operating System: Windows 2008";
+    	if(ServicePackID >0 ) then
+    		szInfo3 =  szInfo3+" Service Pack "+   svSTRING;
+    	endif;
+    endif;
+    if(SYSINFO.WINNT.bWin7_Server2008R2=TRUE) then      
+   		szInfo3 = "Operating System: Windows 2008 R2";
+    	if(ServicePackID >0 ) then
+    		szInfo3 =  szInfo3+" Service Pack "+   svSTRING;
+    	endif;
+    endif;
+         
+    ListAddString(listInfo, szInfo1, AFTER);
+    ListAddString(listInfo, szInfo2, AFTER);
+    ListAddString(listInfo, szInfo3, AFTER);
+    ListAddString(listInfo, rightID, AFTER); 
+    
+    nResult = SdShowInfoList ( szTitle, szMsg, listInfo );
+    ListDestroy(listInfo);
+    if(nResult = BACK) goto Dlg_SdWelcome; 
+   
+ 
+    if(rightID = "Privileges : You don't have enough privilege to continue the installation, please contact the administrator. If this is Windows 2008, maybe you need rerun the installation program by menu 'Run as administrator'.") then
+    	WriteLogFile( MSG_ERRO_CHECK_ADMIN );
+    	MessageBox(MSG_ERRO_CHECK_ADMIN,WARNING);
+        abort;
+    endif;    
+       
+    if( listID=3 ) then                   
+    	WriteLogFile( MSG_ERRO_CHECK_SP_VER );
+    	MessageBox(MSG_ERRO_CHECK_SP_VER,INFORMATION);
+    endif;                                 
+    
+    WriteLogFile( MSG_INFO_STEP_OUT_SYSINFO );
+ 
+Dlg_SdLicense:
+    szLicenseFile = SUPPORTDIR ^ "license.txt";
+    szTitle    = "";
+    szMsg      = "";
+    nResult    = SdLicense( szTitle, szMsg, "", szLicenseFile ); 
+    if (nResult = BACK) goto Dlg_SdShowInfoList;  
+    WriteLogFile( MSG_INFO_STEP_OUT_LICENSE );
+     
+Dlg_SdCustomerInformation:
+	szTitle = "";
+	szMsg   = "";
+	nResult = SdCustomerInformation ( szTitle, svUserName, szCompany,nUser);
+	if (nResult = BACK) goto Dlg_SdLicense;      
+	WriteLogFile( MSG_INFO_STEP_OUT_CUSTOMERINFO + ":" + svUserName + ":" + szCompany   );          
+
+Dlg_SdFeatureTree:  
+	if (nvOld2Multitenant=0) then
+    szTitle    = "";
+    szMsg      = "";
+	nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+	if (nResult = BACK) goto Dlg_SdCustomerInformation;  
+	
+	nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	nResult2 = FeatureIsItemSelected (MEDIA,"WorkspaceServer"); 
+	if (nResult1 = 1) && (nResult2 = 1)   then		      
+	    szCaption= "Register to License Server";
+		szMsg  = "Do you want to register this Workspace Server to this Customer License Server?";  
+		SetDialogTitle ( DLG_ASK_OPTIONS, "Workspace Server" );
+		nResult=AskOptions ( NONEXCLUSIVE, szMsg, szCaption, nvCheckWorkSpace); 
+		if (nResult = BACK) goto Dlg_SdFeatureTree;   
+		NumToStr(svCheckWorkSpace,nvCheckWorkSpace);
+		WriteLogFile( "Workspace Server registered to License Server: "+svCheckWorkSpace );   
+    endif; 
+    endif;
+
+//new install begin
+if( nvInstallDataDir = 1 ) then 
+            
+Dlg_SdFeatureDialog:     
+	szTitle = "Choose Destination Location \n"+"  "+"Select folder where Setup will install files.";
+    szMsg   = "Setup will install %P in the following folder.\n\nTo install to this folder, click Next. To install to a different folder, click Browse and select another folder.";
+    nResult = SdAskDestPath2 ( szTitle, szMsg, INSTALLDIR);     
+    szDir = INSTALLDIR;
+    if (nResult = BACK) then
+   		goto Dlg_SdFeatureTree;  
+    endif;
+   	
+   	nResult=(szDir[1] = ":") && (szDir[2] = "\\");
+   	if(!nResult)then 
+   		Sprintf( svTempVal, MSG_ERR_PATH_FORMAT, szDir );
+   		WriteLogFile( svTempVal );
+    	MessageBox (svTempVal, WARNING);
+    	goto Dlg_SdFeatureDialog;
+    endif; 
+
+   	INSTALLDIR = szDir;   
+   	svDataDirRoot = INSTALLDIR;  
+   	
+   	svLICInstalldir=svDataDirRoot ^"Enterprise Server"^ "License Server";
+   	svGWInstalldir=svDataDirRoot ^"Enterprise Server"^"Workspace Server";
+   	svWSPDir=svDataDirRoot ^"Enterprise Server"^"Workspaces";
+   	svPGInstallDir=svDataDirRoot^ "Postgresql 8.4";
+   	
+   	if( svPostgreDbDataDir == "" ) then
+   		svPostgreDbDataDir=svDataDirRoot ^ "Postgresql 8.4\\Database";
+   	endif;   
+   	   	
+   	if( nvInstallDataDir == 1 ) then
+   		svPostgreDbDataDir=svDataDirRoot ^ "Postgresql 8.4\\Database";
+   	endif;
+   	  
+  	//dir lenth 
+  	if(StrLength(szDir)>100) then
+        MessageBox("The path is too long.", SEVERE);
+        goto Dlg_SdFeatureDialog;
+  	endif;
+  	
+  	if(CheckPathSpecChar(szDir)==0)then
+  		goto Dlg_SdFeatureDialog;
+  	endif;
+  	
+  	iResult = GetDiskSpaceEx(szDir, MBYTES);  
+  	if (iResult < DISKSPACE_G) then
+        MessageBox(DISKSPACENOTENOUGH, SEVERE);
+        goto Dlg_SdFeatureDialog;
+    endif;
+    
+   	WriteLogFile( MSG_INFO_STEP_OUT_INPUT_ROOTDIR + ":" + INSTALLDIR  );  
+  
+Dlg_InputPostgresInfo:
+   	if (0 = InputPostgresInfo()) goto Dlg_SdFeatureDialog;   
+   	
+   	WriteLogFile( MSG_INFO_STEP_OUT_INPUT_PGINFO  );
+
+Dlg_InputPostgresDbDataDir:
+ 	if (0 = InputPostgresDbDataDir()) goto Dlg_InputPostgresInfo;
+
+  	//dir lenth 
+  	if(StrLength(svPostgreDbDataDir)>100) then
+        MessageBox("The path is too long.", SEVERE);
+        goto Dlg_InputPostgresDbDataDir;
+  	endif;    	
+  	if(CheckPathSpecChar(svPostgreDbDataDir)==0)then
+  		goto Dlg_InputPostgresDbDataDir;
+  	endif;
+  	iResult = GetDiskSpaceEx(svPostgreDbDataDir, MBYTES);  
+  	if (iResult < DISKSPACE_G) then
+        MessageBox(DISKSPACENOTENOUGH, SEVERE);
+        goto Dlg_InputPostgresDbDataDir;
+    endif;
+ 	WriteLogFile( MSG_INFO_STEP_OUT_INPUT_PGDIR + ":" + svPostgreDbDataDir  );
+ 	
+	svTmp = svPostgreDbDataDir; 
+	StrRemoveLastSlash (svTmp);
+	SdShowMsg ("Checking file and directory permissions, please wait...", TRUE);  
+	RunApplication(SUPPORTDIR ^ "c_adduserright.bat","\""+LOGFILE_PATH + LOGFILE_NAME +"\" \""+ svPostgreDbDataDir+"\" \""+ szDir+"\"", FALSE, TRUE );
+	CreateDir ( szDir );
+	CreateDir ( svTmp );              
+	szDir = svTmp; 
+	svTmp = "\"" + svTmp + "\"";
+	RunApplication(SUPPORTDIR ^ "c_adduserright.bat","\""+LOGFILE_PATH + LOGFILE_NAME +"\" \""+ svPostgreDbDataDir+"\" \""+ svPostgreDbDataDir+"\"", FALSE, TRUE );
+	RunApplication(SUPPORTDIR ^ "Postgres84UserSetup.bat", svTmp, FALSE, TRUE );
+	RunApplication(SUPPORTDIR ^ "addtempdirright.bat","\""+LOGFILE_PATH + LOGFILE_NAME +"\"", FALSE, TRUE ); 
+
+	WriteLogFile(MSG_STEP_BEFORE_RUN_TSCHMOD);
+	RunApplication( SUPPORTDIR ^ "Tschmod.exe", svTmp, FALSE, TRUE );
+	         
+	DeleteDir ( szDir, ONLYDIR );
+	SdShowMsg ("", FALSE);  
+    nResult = LAAW_PARAMETERS.nLaunchResult;
+    if (nResult!=0) then                                                
+    	WriteLogFile( MSG_ERRO_CHECK_PG_ADMIN );
+    	MessageBox(MSG_ERRO_CHECK_PG_ADMIN,WARNING);
+        goto Dlg_InputPostgresDbDataDir;
+    endif;  	
+
+	endif;    
+   	//new install end  
+   	/**/                                                  
+   	if (CheckNeedInstallNetFx3()!=1)then 
+   		if(CheckAspnetState()==0)then
+   			SdShowMsg ("checking aspnet state service ...", TRUE);   
+   			if (svOSVer=="win08") then
+   				if(SYSINFO.WINNT.bWinVista_Server2008=TRUE) then
+   		    		RunApplication( SUPPORTDIR ^ "installaspnetiis7.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdvista.exe",FALSE, TRUE);	
+   				else
+   					RunApplication( SUPPORTDIR ^ "installaspnetiis7.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdr2.exe",FALSE, TRUE);	
+   				endif;   		
+   			endif;
+   			if(CheckAspnetState()==0)then
+   				RunApplication( SUPPORTDIR ^ "Installaspnet_regiis.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\"",FALSE, TRUE);
+   			endif;
+   			SdShowMsg ("", FALSE);		
+   		endif;
+    	nResult = RunApplication( SUPPORTDIR ^ "RegAspStateStartKey.exe", "",FALSE, TRUE);
+		WriteLogFile( MSG_INFO_STEP_OUT_REGKEY_START_ASPNET_STATE_CHECK ); 	 
+   		if(CheckAspnetState()==0)then 
+   			WriteLogFile("Failed to install aspnet state service!");
+   			MessageBox("aspnet state service was not installed correctly", SEVERE);
+   		endif;
+   	endif;
+   	/**/
+Dlg_SdStartCopy:
+    szTitle = "";
+    szMsg   = "";
+    listData = ListCreate( STRINGLIST );  
+    ListAddString(listData, "Destination Directory:", AFTER);
+    ListAddString(listData, "              " + INSTALLDIR, AFTER);
+    ListAddString (listData, "", AFTER);
+    ListAddString (listData, "User Information: ", AFTER);
+    ListAddString (listData, "              "+"User Name:" + svUserName, AFTER);
+    ListAddString (listData, "              "+"Company Name:" + szCompany, AFTER);
+    ListAddString (listData, "", AFTER);
+                                           
+    nResult = SdStartCopy( szTitle, szMsg, listData );	
+    ListDestroy(listData);
+    if (nResult = BACK) then    
+    	if ( nvInstallDataDir = 1 ) then
+ 			goto Dlg_InputPostgresDbDataDir;
+ 		else
+ 			goto Dlg_SdCustomerInformation;
+ 		endif;
+    endif;	
+   
+   	WriteLogFile( MSG_INFO_STEP_OUT_STARTCOPY );    
+Dlg_install: 
+
+
+	if ( nvOld2Multitenant = 1 ) then   
+    	if (NOTEXISTS = ExistsDir(INSTALLDIR ^"Enterprise Server" ^ "ESData")) then 
+    	   MessageBox("Can not find ", SEVERE); 
+    	   abort;  
+    	endif;     
+    endif; 
+                                  
+    svPGUserName=svDBUserName;
+ 	svPGPassWord=svDBPwd; 
+    
+	Disable( LOGGING );
+	if (nResult1 = 1) || (nResult2 = 1)   then 
+   	WriteRegistryWeb(); 
+   	WriteRegistryPostgres(); 
+   	endif;
+   	Enable( LOGGING );  
+   			        	
+    Enable(STATUSEX);   
+    
+    szOEpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"OESetup.exe";
+   	szNSpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"NSSetup.exe";  
+   	
+    MsiSetProperty(ISMSI_HANDLE, "ID_ESTOOLINSTALL", svGWInstalldir^"WSfiles"^"Install.bat");
+    MsiSetProperty(ISMSI_HANDLE, "ID_ESTOOLUNINSTLL", svGWInstalldir^"WSfiles"^"Uninstall.bat");  
+    
+    
+
+    
+    Disable( CANCELBUTTON );
+    
+    return 0;
+  
+end;   
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnFirstUIAfter
+//
+//  EVENT:      FirstUIAfter event is sent after file transfer, when installation 
+//              is run for the first time on given machine. In this event handler 
+//              installation usually displays UI that will inform end user that
+//              installation has been completed successfully.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnFirstUIAfter()
+    STRING  szTitle,szMsg1, szMsg2, szOption1, szOption2;   //SdFinish variable 
+    NUMBER  bOpt1, bOpt2, nResult;                          //SdFinish variable
+    NUMBER  nvResult;
+    NUMBER  nvRet;    
+    STRING szCaption;  
+    STRING svNSfile,svOEfile;  
+    STRING svCurrentDir;
+begin
+   Disable(STATUSEX);  
+    
+   RunApplication(SUPPORTDIR ^"startwebsite.bat"," \""+svLICSiteIndex+"\" \""+svLICSiteName+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE); 	
+    
+   GetCurrentDir(svCurrentDir);  
+   WriteLogFile("Current Folder1:"+svCurrentDir);
+   LongPathToQuote(svCurrentDir,FALSE);  
+   WriteLogFile("Current Folder2:"+svCurrentDir);
+   if (FindFile (svCurrentDir, "NSSetup.exe", svNSfile) < 0) then 
+      MessageBox ("Can not find the file: NSSetup.exe in the current directory.", WARNING); 
+   else 
+      CopyFileToDes(svCurrentDir^"NSSetup.exe",INSTALLDIR^"Enterprise Server"^"SetupFiles\\NSSetup.exe"); 
+   endif;
+   
+   if (FindFile (svCurrentDir, "OESetup.exe", svNSfile) < 0) then 
+      MessageBox ("Can not find the file: OESetup.exe in the current directory.", WARNING); 
+   else 
+      CopyFileToDes(svCurrentDir^"OESetup.exe",INSTALLDIR^"Enterprise Server"^"SetupFiles\\OESetup.exe");  
+   endif;  
+    
+                                                                 
+    szMsg1 = "";
+    szMsg2 = ""; 
+    szOption1 = "";
+    szOption2  = "";
+    // Display the SdFinish dialog box.
+    nResult=SdFinish (szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);    
+    
+      
+   if FeatureIsItemSelected (MEDIA,"LicenseServer") then 
+   	 RunApplication( INSTALLDIR^"Enterprise Server"^"LicenseTool\\bin\\LicenseTool.exe","",TRUE, TRUE);
+   	 RunApplication( SUPPORTDIR^"openfile.bat"," \""+LICSHORTCUT+"\"",FALSE ,FALSE);
+   endif; 
+    
+   if FeatureIsItemSelected (MEDIA,"LicenseServer")&& FeatureIsItemSelected (MEDIA,"WorkspaceServer")  then	
+    if (nvCheckWorkSpace=TRUE) then	      
+	RunApplication( INSTALLDIR^"Enterprise Server"^"SetupFiles\\NSSetup.exe","",TRUE, TRUE);
+	RunApplication( INSTALLDIR^"Enterprise Server"^"SetupFiles\\OESetup.exe","",TRUE, TRUE);  
+	endif;
+   endif; 
+   		
+end;
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMaintUIBefore
+//
+//  EVENT:      MaintUIBefore event is sent when end user runs installation that
+//              has already been installed on the machine. Usually this happens 
+//              through Add/Remove Programs applet. In the handler, installation 
+//              usually displays UI allowing end user to modify existing installation
+//              or uninstall application. After this function returns, 
+//              FeatureTransferData is called to perform file transfer.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMaintUIBefore()
+    NUMBER nResult, nType, nvSize, nvType;
+    STRING szTitle, szMsg, svResult, szCaption; 
+    STRING svResult1,svResult2,svResult3;    //SdFeatureDialog variable    
+    BOOL  bPrepareDB, bPrepareBS, bPrepareCMDB; 
+    NUMBER nvPostgresSelected;   
+    NUMBER nReturn;  
+    NUMBER nResult1,nResult2;     
+    NUMBER nResult1tmp,nResult2tmp;
+begin  
+   
+OnCheckProgramRun();
+	
+Dlg_Start:
+	 svOSVer="win03";
+	 CheckEAP2008();
+	 if(SYSINFO.WINNT.bAdmin_Logged_On == FALSE) then
+        WriteLogFile( MSG_ERRO_CHECK_ADMIN );
+    	MessageBox(MSG_ERRO_CHECK_ADMIN,WARNING);
+        abort;
+     endif;
+
+    Dlg_SdFeatureTree: 
+  	nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	nResult2 = FeatureIsItemSelected (MEDIA,"WorkspaceServer");
+   
+    szTitle    = "";
+    szMsg      = ""; 
+    Disable(BACKBUTTON);
+	nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+	if (nResult = BACK) goto Dlg_Start;  
+	
+	
+	nResult1tmp = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	nResult2tmp = FeatureIsItemSelected (MEDIA,"WorkspaceServer");
+    
+    if  ((nResult1tmp !=1) || (nResult2tmp !=1)) then
+	szCaption= "Delete all user data."; 
+	szMsg  = "Are you sure you want to remove the NetBrain Enterprise server?";
+ 
+	SetDialogTitle ( DLG_ASK_OPTIONS, "User Data" );
+	Enable(BACKBUTTON);
+	nResult= AskOptions ( NONEXCLUSIVE, szMsg, szCaption, nvCheckDeleteAllData);  
+    if (nResult = IDCANCEL) then 
+    	abort;
+    endif; 
+    
+    if (nResult = BACK) then 
+    	goto Dlg_SdFeatureTree;
+    endif;
+    endif; 
+         
+	Disable(CANCELBUTTON);
+    nResult = NEXT;  
+	SdShowMsg ("Removing, please wait...", TRUE); 
+	SdShowMsg ("", FALSE);   
+	NewFlag:
+	DeleteRegistryWeb();
+    Enable(STATUSEX);  
+    
+    MsiSetProperty(ISMSI_HANDLE, "ID_ESTOOLINSTALL", svGWInstalldir^"WSfiles"^"Install.bat");
+    MsiSetProperty(ISMSI_HANDLE, "ID_ESTOOLUNINSTLL", svGWInstalldir^"WSfiles"^"Uninstall.bat"); 
+    
+    szOEpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"OESetup.exe";
+   	szNSpath=INSTALLDIR ^"Enterprise Server"^"SetupFiles"^"NSSetup.exe"; 
+    
+    RunApplication(SUPPORTDIR ^"stopwebsite.bat"," \""+svLICSiteIndex+"\" \""+svLICSiteName+"\"  >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE);    	
+
+	Disable( CANCELBUTTON );
+end;
+            
+//---------------------------------------------------------------------------
+// OnMaintUIAfter
+//
+// The OnMaintUIAfter event called by the framework after the file transfer
+// of the setup when the setup is running in maintenance mode. By default
+// this event displays UI that informs the end user that the maintenance setup
+// has been completed successfully.
+//---------------------------------------------------------------------------
+function OnMaintUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2;  
+    STRING szFileName;
+    NUMBER bOpt1, bOpt2;    
+    NUMBER nResult, nvType, nvSize ,nReturn; 
+    LIST listID;
+    STRING szString;   
+    NUMBER nResult1,nResult2;
+begin
+	Disable(STATUSEX);  
+	 
+	RunApplication(SUPPORTDIR ^"startwebsite.bat"," \""+svLICSiteIndex+"\" \""+svLICSiteName+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE); 		
+    
+    szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);
+    szMsg1 = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+	bOpt1   = FALSE;
+    bOpt2   = FALSE;    
+    if ( BATCH_INSTALL ) then
+    	SdFinishReboot ( szTitle , szMsg1 , SYS_BOOTMACHINE , szMsg2 , 0 );
+    else    
+       	SdFinish ( szTitle , szMsg1 , szMsg2 , szOpt1 , szOpt2 , bOpt1 , bOpt2 );
+    endif;
+   
+    nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	nResult2 = FeatureIsItemSelected (MEDIA,"WorkspaceServer"); 
+	
+	if (nResult1=0) && (nResult2=0) then 
+		if( nvCheckDeleteAllData = TRUE ) then
+			DeleteFolder(ProgramFilesFolder^"Common Files\\NetBrain\\Enterpise Server");
+		endif;
+	endif;
+	
+   	DeleteDir(INSTALLDIR,ONLYDIR);    	
+end;
+
+ 
+ 
+ //---------------------------------------------------------------------------
+// OnEnd
+//
+// The OnEnd event is called at the end of the setup. This event is not
+// called if the setup is aborted.
+//---------------------------------------------------------------------------
+function OnEnd()   
+NUMBER nResult1;
+begin
+	SignSetupexe(); 
+	DeleteDir( FOLDER_PROGRAMS^"NetBrain\\netbrain enterprise server", ONLYDIR );
+	DeleteDir( FOLDER_PROGRAMS^"NetBrain", ONLYDIR );
+	
+	nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
+	if  (nResult1=0) then  
+		DeleteFolder(svLICInstalldir);
+	endif;	
+end;
+ 
+
+//uninstallsetupsign
+function SignSetupexe()
+begin
+	DeleteFile (ProgramFilesFolder ^ "InstallShield Installation Information"^PRODUCT_GUID^"setup.exe"); 
+
+	CopyFile(SUPPORTDIR ^ "setup.exe", ProgramFilesFolder ^ "InstallShield Installation Information"^PRODUCT_GUID^"setup.exe");          
+end; 
+
+function STRING RecordTimeLog()
+	number  nvReturn1;
+	string  svResult1,szDateTimetmp;
+begin   	
+	   	GetSystemInfo( DATE, nvReturn1, svResult1 );  
+   		szDateTimetmp = svResult1;
+   		szDateTimetmp = szDateTimetmp + " ";
+   		GetSystemInfo( TIME, nvReturn1, svResult1 );
+   		szDateTimetmp = szDateTimetmp + svResult1; 
+   		return szDateTimetmp;    		
+end;
+
+function CheckIIS7FeaturesNeed()
+STRING svIIS7aspnet,svIIS7aspnetrole; 
+number nindex;
+begin 
+	WriteLogFile("check whether iiswebserver Static Content installed");
+	DeleteFile(SUPPORTDIR^"iiswebserverstatic.xml");
+	RunApplication(SUPPORTDIR ^"IIS7Checkstatic.bat","\""+SUPPORTDIR^"iiswebserverstatic.xml"+"\"",FALSE,TRUE);
+	svIIS7aspnet = ""; 
+	svIIS7aspnet = ReadString(SUPPORTDIR,"iiswebserverstatic.xml",FALSE);
+	if(StrLength(svIIS7aspnet)<1)then 
+		WriteLogFile("iiswebserverstatic xml empty!");
+		return 0;
+	endif; 
+	svIIS7aspnetrole ="<RoleService DisplayName=\"Static Content\" Installed=\"true\"";
+	nindex = StrFind( svIIS7aspnet,svIIS7aspnetrole);	
+	if(nindex<0)then
+		return 1;
+	endif; 
+	svIIS7aspnetrole ="<RoleService DisplayName=\"Default Document\" Installed=\"true\"";
+	nindex = StrFind( svIIS7aspnet,svIIS7aspnetrole);	
+	if(nindex<0)then
+		return 1;
+	endif; 
+	svIIS7aspnetrole ="<RoleService DisplayName=\"Directory Browsing\" Installed=\"true\"";
+	nindex = StrFind( svIIS7aspnet,svIIS7aspnetrole);	
+	if(nindex<0)then
+		return 1;
+	endif;	
+           
+	return 0 ;
+end;
+ 
+function CreateHomeShortCut()
+begin      
+	WriteLogFile("create shortcut :License Home Page");
+	RunApplication("cscript.exe","\""+SUPPORTDIR ^"Create_URL.vbs"+"\" \""+LICSHORTCUT+"\" "+"http://"+svDefaultSiteIP+":"+svDefaultSitePort+"/netbrain",FALSE,TRUE);
+end;  
+
+function CreateHomeShortCut4WSP()
+begin      
+	WriteLogFile("create shortcut :Workspace Home Page");
+	RunApplication("cscript.exe","\""+SUPPORTDIR ^"Create_URL.vbs"+"\" \""+WPSSHORTCUT+"\" "+"http://"+svDefaultSiteIP+":"+svDefaultSitePort+"/Workspaces",FALSE,TRUE);
+end;
+
+function GetIIS7Configs() 
+STRING szConfigs;   
+STRING szConfigBindings;   
+NUMBER nindex,nindex1;
+NUMBER nFileHandletmp,nResult; 
+begin   
+	szConfigs = ""; 
+	RunApplication(SUPPORTDIR ^"IIS7Getconfigs.bat",SUPPORTDIR ^"defaultsiteconfig.txt",FALSE,TRUE);	
+	szConfigs = ReadString(SUPPORTDIR,"defaultsiteconfig.txt",TRUE);
+	if(StrLength(szConfigs)<1)then
+		return 0;
+	endif; 
+	//default web name
+	nindex = StrFind( szConfigs,"\"");	
+	if(nindex<0)then
+		return 0;
+	endif;
+	nindex1 = StrFindEx(szConfigs,"\"",nindex+1);
+	if(nindex1<0)then
+		return 0;
+	endif;
+	StrSub( svDefaultSiteName,szConfigs,nindex+1,nindex1-nindex-1);
+	//ip port
+	nindex = StrFind(szConfigs,"http/");
+	nindex1= StrFindEx(szConfigs,":",nindex+1);
+	nindex1= StrFindEx(szConfigs,":",nindex1+1); 	
+	if(nindex>0)&& (nindex1>nindex)then
+	    StrSub( szConfigBindings,szConfigs,nindex+5,nindex1-nindex+1-5);
+		DeleteFile(SUPPORTDIR ^"defaultsiteipport.txt"); 
+		OpenFileMode (FILE_MODE_APPEND);   
+ 		nResult = CreateFile(nFileHandletmp,SUPPORTDIR, "defaultsiteipport.txt" );   
+ 		if( nResult < 0 ) then 
+ 		  	return 0; 
+        endif;         
+        //Ð´Èë×Ö·û´®   
+        nResult = WriteLine(nFileHandletmp,"\""+szConfigBindings+"\"");   
+        nResult = WriteLine(nFileHandletmp,"\""+szConfigBindings+"\"");     
+        CloseFile(nFileHandletmp);		
+	else
+		return 0;
+	endif;	
+end;
+
+function GetDefaultSiteIPPort()  
+STRING szDefaultSite;
+int nindex,nindex1; 
+begin
+	DeleteFile(SUPPORTDIR ^"defaultsiteipport.txt");
+	RunApplication(SUPPORTDIR ^"getdefaultsiteipport.bat",SUPPORTDIR ^"defaultsiteipport.txt",FALSE,TRUE);
+	if(svOSVer!="win03")then
+		GetIIS7Configs();
+	endif;
+	
+	szDefaultSite = ReadString(SUPPORTDIR,"defaultsiteipport.txt",FALSE);
+	StrTrim (szDefaultSite);	  
+	nindex = StrFind( szDefaultSite,"\r\n");
+	if(nindex>-1)then	
+		StrSub(szDefaultSite,szDefaultSite,nindex+2,StrLength(szDefaultSite));
+		StrTrim (szDefaultSite);
+	else
+		return 0; 
+	endif;
+	nindex = StrFind( szDefaultSite,"\r\n");
+	if(nindex>-1)then
+		StrSub(szDefaultSite,szDefaultSite,0,nindex); 
+		StrTrim (szDefaultSite);
+	else
+		return 0;
+	endif;  
+	//ip
+	nindex = StrFind(szDefaultSite,":");	 
+	nindex1 = StrFindEx(szDefaultSite,":",nindex+1);
+	if(nindex>5)&&(nindex1>0)then
+		StrSub(svDefaultSiteIP,szDefaultSite,1,nindex-1);	
+	endif; 
+	//port
+	if(nindex1<0)||(nindex<0)then
+		return 0;
+	else 
+		StrSub(svDefaultSitePort,szDefaultSite,nindex+1,nindex1-nindex-1);	
+	endif;
+end;   
+
+
+function STRING ReadString(sStringDir ,sStringFile,bonlyline) 
+	STRING  svLine;
+	STRING  svResult;   
+    NUMBER   nFileHandle;  
+    NUMBER   nResult;    
+    NUMBER   nvResult;  
+begin           
+	nResult = FindFile ( sStringDir,  sStringFile, svResult ); 
+	if(0>nResult) then
+		return "";
+	endif;
+	if (bonlyline==TRUE) then 
+		OpenFileMode (FILE_MODE_NORMAL);    
+	else
+		OpenFileMode (FILE_MODE_BINARYREADONLY);
+	endif;
+	if(0>OpenFile(nFileHandle,sStringDir,sStringFile)) then
+		return "";                                                   		
+	endif;     
+	if (bonlyline==TRUE) then  
+	    if (GetLine (nFileHandle, svLine) != 0)  then 
+            svLine= "";    
+        endif;
+    else  
+    	GetFileInfo ( sStringDir + sStringFile, FILE_SIZE, nvResult, svResult ); 
+    	if (ReadBytes (nFileHandle, svLine, 0, nvResult) < 0) then 
+        	svLine= "";
+    	endif;
+	endif;    
+    CloseFile (nFileHandle);    
+    return svLine;
+end;  
+
+function StrIsNums( svStr )
+	NUMBER iLength, iVal; 
+begin
+	iVal = 0;
+	iLength = StrLength (svStr); 
+	while (iVal < iLength) 
+		if(  svStr[iVal] < '0' ||  svStr[iVal] > '9' ) then
+			return -1;                                                  
+		endif;
+		iVal++; 
+	endwhile;   
+	return 0;
+end;
+
+function RunApplication( cmd , param, bShow, bWait )
+    number nShowWindow;
+    number nOptions;
+begin                 
+	nShowWindow = SW_NORMAL;
+	nOptions = LAAW_OPTION_CHANGEDIRECTORY | LAAW_OPTION_FIXUP_PROGRAM;
+	if( bShow = FALSE ) then 
+		nShowWindow = SW_HIDE; 
+		nOptions |= LAAW_OPTION_HIDDEN;
+	endif;     
+	
+	if( bWait = TRUE ) then 
+		nOptions |= LAAW_OPTION_WAIT; 
+	else                           
+		nOptions |= LAAW_OPTION_NOWAIT; 
+	endif;
+	
+	LaunchApplication( cmd, param, "", nShowWindow, INFINITE, nOptions  );  
+	return LAAW_PARAMETERS.nLaunchResult;
+end;   
+
+function DeleteLogFile() 
+	NUMBER nvRet;
+begin
+    nvRet = DeleteFile ( LOGFILE_PATH + LOGFILE_NAME );
+    if( nvRet = 0 || nvRet = ISERR_FILE_NOT_FOUND  ) then 
+    	return 0;
+    else 
+    	return -1;
+    endif;
+end;
+
+function WriteLogFile( svContent )   
+ 	NUMBER   FileHandle;   
+	NUMBER   nResult;
+	STRING	 svResult;
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  LOGFILE_NAME, svResult ); 
+	
+	OpenFileMode (FILE_MODE_APPEND);  
+	if( nResult < 0 ) then
+		nResult = CreateFile(FileHandle, LOGFILE_PATH,  LOGFILE_NAME );  
+	else
+		nResult = OpenFile(FileHandle, LOGFILE_PATH,  LOGFILE_NAME );  
+	endif;
+	
+	if( nResult < 0 ) then  
+		return -1;
+	endif; 
+	//Ê±¼ä´Á  
+	nResult = WriteLine(FileHandle,"");
+	nResult = WriteLine(FileHandle,RecordTimeLog());
+    //Ð´Èë×Ö·û´®   
+    nResult = WriteLine(FileHandle,svContent);     
+    CloseFile(FileHandle);    
+    return 0;
+end;
+
+
+function  WriteoneFile(svPath, svFileName, svContent)   
+    NUMBER   nvResult;   
+    NUMBER   FileHandle;   
+    NUMBER   nResult;   
+begin                       
+    //Administrator
+    if(SYSINFO.WINNT.bAdmin_Logged_On) then
+    	DeleteFile ( svPath + svFileName );
+    	
+    	OpenFileMode (FILE_MODE_APPEND);   
+ 		nResult = CreateFile(FileHandle,svPath, svFileName );   
+ 		if( nResult < 0 ) then 
+ 		  	MessageBox ("CreateFile failed.", SEVERE);
+          	abort;  
+         endif;
+        
+        
+        nResult = WriteLine(FileHandle,svContent);     
+        CloseFile(FileHandle);
+    endif;   
+ end; 
+     
+
+function WriteConnectFile( svContent )
+	STRING	 svResult;  
+    NUMBER   nResult;   
+    NUMBER   nFileHandle;    
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  CONNECTFILE_SRC_NAME, svResult ); 
+
+	OpenFileMode (FILE_MODE_APPEND);  
+	if( nResult >= 0 ) then
+		DeleteFile(LOGFILE_PATH+CONNECTFILE_SRC_NAME);
+	endif;
+	
+	nResult = CreateFile(nFileHandle, LOGFILE_PATH,  CONNECTFILE_SRC_NAME ); 
+	
+	if( nResult < 0 ) then  
+		return -1;
+	endif;
+	
+    nResult = WriteLine(nFileHandle,svContent);     
+    CloseFile(nFileHandle);  
+    
+	if( nResult < 0 ) then 
+		return -1;
+	endif;
+	  
+    return 0;
+end;  
+
+
+function STRING ReadConnectFile() 
+	STRING  svLine;
+	STRING  svResult;   
+    NUMBER   nFileHandle;  
+    NUMBER   nResult;  
+begin           
+	nResult = FindFile ( LOGFILE_PATH,  CONNECTFILE_DES_NAME, svResult ); 
+	if(0>nResult) then
+		return "";
+	endif;
+	OpenFileMode (FILE_MODE_NORMAL);
+	if(0>OpenFile(nFileHandle,LOGFILE_PATH,CONNECTFILE_DES_NAME)) then
+		return "";                                                   		
+	endif;
+	if (GetLine (nFileHandle, svLine) != 0)  then 
+        svLine= "";    
+    endif;    
+    CloseFile (nFileHandle);    
+    return svLine;
+end;
+
+function STRING GetEncyptConnStr(svContent)
+STRING svLine;
+NUMBER nResult;
+begin
+	  if(0>WriteConnectFile(svContent)) then 
+	  		WriteLogFile(MSG_ERR_CONNFILE_WRITE);
+	   		return "";
+	   endif;
+	    
+	   nResult = RunApplication( SUPPORTDIR ^ "EncryptFile.exe"," "+LOGFILE_PATH+CONNECTFILE_SRC_NAME+" "+LOGFILE_PATH+CONNECTFILE_DES_NAME,FALSE,TRUE);
+	   if(nResult<0) then 
+	  		WriteLogFile(MSG_ERR_ENCRYPT_CONNSTR);
+	   		return "";        
+	   endif;	
+	   svLine= ReadConnectFile();
+	   
+	   DeleteFile ( LOGFILE_PATH + CONNECTFILE_SRC_NAME );
+       DeleteFile ( LOGFILE_PATH + CONNECTFILE_DES_NAME );
+       
+	   return svLine;
+end;
+
+function ReplaceContentOfFile( FilePath, FileName, sOldStr, sNewStr )
+    STRING svResult, szAttributes; 
+    NUMBER nvResult; 
+    STRING svString; 
+    NUMBER nvFileHandle; 
+begin      
+    OpenFileMode (FILE_MODE_BINARY); 
+    if (OpenFile (nvFileHandle, FilePath, FileName) < 0) then 
+        return 1;
+    endif;  
+        
+    GetFileInfo ( FilePath + FileName, FILE_SIZE, nvResult, svResult ); 
+
+    // Read the next twenty-eight bytes into svString. 
+    if (ReadBytes (nvFileHandle, svString, 0, nvResult) < 0) then 
+        return 1;
+    endif; 
+    CloseFile (nvFileHandle); 
+    
+    DeleteFile(FilePath + FileName );
+          
+	OpenFileMode (FILE_MODE_BINARY);           
+    if (CreateFile(nvFileHandle, FilePath, FileName) < 0) then 
+        return 1;
+    endif;   
+    
+    StrReplace( svString, sOldStr, sNewStr, 0 );  
+    if( WriteBytes( nvFileHandle, svString, 0, StrLength(svString) ) < 0 ) then
+    	return 1;
+    endif;
+    CloseFile (nvFileHandle); 
+    return 0;
+end;
+
+
+
+function ReplaceLineOfFile( bIsUnicode, szPath, szFile, szKey, szContent )
+    STRING  svReturnLine, szMsg, szInsertLine,svResultInsert;
+    NUMBER  nvLineNUMBER, nvResult,nvFileHandle;
+    NUMBER  nResult,nResultInsert;
+begin
+	if( bIsUnicode ) then 
+		OpenFileMode(FILE_MODE_APPEND_UNICODE);
+	else
+    	OpenFileMode(FILE_MODE_APPEND);
+    endif;
+    nvResult = OpenFile(nvFileHandle, szPath, szFile );
+    if(nvResult<0)then
+    	WriteLogFile(szFile + " OpenFile() error.");
+    endif;
+    
+    nvResult = FileGrep ( szPath + "\\" + szFile, szKey,svReturnLine, nvLineNUMBER, RESTART);
+    szInsertLine = szContent;
+    switch(nvResult)
+        case 0:
+        	nResultInsert = 0;
+            nResultInsert = FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, REPLACE);            
+            if(nResultInsert<0)then  
+            	NumToStr (svResultInsert, nResultInsert); 
+    			WriteLogFile(szFile + " FileInsertLine() error:"+svResultInsert);
+    		endif;    		
+            CloseFile(nvFileHandle);
+            return 0;
+        case FILE_NOT_FOUND:   
+        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+        case FILE_LINE_LENGTH:
+            // Report error; then abort.
+			WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+        case OTHER_FAILURE:
+            // Report error; then abort. 
+            NumToStr (svResultInsert, nvResult);                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep."+svResultInsert );
+        default:
+            // Report error; then abort. 
+            NumToStr (svResultInsert, nvResult);                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + "Default unknown failure on call to FileGrep."+svResultInsert );
+    endswitch;
+        
+    CloseFile(nvFileHandle);
+    return 1;
+end;
+
+function AddOrReplaceLineOfFile( bIsUnicode, szPath, szFile, szKey,szKeyBefore, szContent )
+    STRING  svReturnLine, szMsg, szInsertLine;
+    NUMBER  nvLineNUMBER, nvResult,nvFileHandle,nvResultBefore;
+    NUMBER  nResult;
+begin
+	if( bIsUnicode ) then 
+		OpenFileMode(FILE_MODE_APPEND_UNICODE);
+	else
+    	OpenFileMode(FILE_MODE_APPEND);
+    endif;
+    OpenFile(nvFileHandle, szPath, szFile );
+    nvResult = FileGrep ( szPath + "\\" + szFile, szKey,svReturnLine, nvLineNUMBER, RESTART);
+    szInsertLine = szContent;
+    switch(nvResult)
+        case 0:
+            FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, REPLACE);
+            CloseFile(nvFileHandle);
+            return 0; 
+        case END_OF_FILE:
+        	 nvResultBefore = FileGrep ( szPath + "\\" + szFile, szKeyBefore,svReturnLine, nvLineNUMBER, RESTART);
+             switch(nvResultBefore)
+             	case 0:
+            		FileInsertLine (szPath + "\\" + szFile,szInsertLine,nvLineNUMBER, BEFORE);
+            		CloseFile(nvFileHandle);
+            		return 0;
+		        case FILE_NOT_FOUND:   
+		        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+		        case FILE_LINE_LENGTH:
+					WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+		        case OTHER_FAILURE:                               
+		            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep." );
+		    endswitch;
+        case FILE_NOT_FOUND:   
+        	WriteLogFile(  "ReplaceLineOfFile:" + szFile + " not found." );
+        case FILE_LINE_LENGTH:
+            // Report error; then abort.
+			WriteLogFile(  "ReplaceLineOfFile:" + szFile + " lines too long." );
+        case OTHER_FAILURE:
+            // Report error; then abort.                               
+            WriteLogFile(  "ReplaceLineOfFile:" + szFile + " Unknown failure on call to FileGrep." );
+    endswitch;
+        
+    CloseFile(nvFileHandle);
+    return 1;
+end;               
+
+
+/////////////////////////   
+
+function InputPostgresInfo()
+	STRING szTitle,szMsg,szDriver,szNetstat;
+	NUMBER nResult;    
+	STRING svResult;
+	NUMBER nvPortVal;	
+begin
+InputPostgresInfo_Start:
+ 	szTitle = "";
+ 	szMsg   = "";
+ 	svDBUserName  ="postgres";
+ 		
+ 	nResult = SdShowDlgEdit3 ( szTitle, szMsg,"Port:","Username:" ,"Password:",svDBPort,svDBUserName, svDBPwd);  
+ 	if (nResult = BACK) then
+  		return 0;
+ 	endif;
+                   
+	if( StrFind (svDBPwd, ">") >= 0 
+	|| StrFind (svDBPwd, "<") >= 0 
+	|| StrFind (svDBPwd, "&") >= 0 
+	|| StrFind (svDBPwd, "\'") >= 0 
+	|| StrFind (svDBPwd, "\"") >= 0 
+	|| StrFind (svDBPwd, ";") >= 0  
+		) then         
+		WriteLogFile( MSG_ERR_PGINFO_INVALID_CHAR );
+    	MessageBox(MSG_ERR_PGINFO_INVALID_CHAR,WARNING);
+     	goto InputPostgresInfo_Start;
+	endif;
+    
+    if(StrFind (svDBPwd, " ") >= 0)then 
+    	WriteLogFile( MSG_ERR_PGINFO_INVALID_CHAR_SPACE );
+    	MessageBox(MSG_ERR_PGINFO_INVALID_CHAR_SPACE,WARNING);
+     	goto InputPostgresInfo_Start;
+    endif;
+    
+    if(svDBUserName ="" || svDBPwd ="" || svDBPort="") then
+    	WriteLogFile( MSG_ERR_PGINFO_EMPTY );
+    	MessageBox(MSG_ERR_PGINFO_EMPTY, WARNING);
+     	goto InputPostgresInfo_Start;
+    endif;   
+    
+    if( StrIsNums(  svDBPort ) != 0 ) then
+    	WriteLogFile( MSG_ERR_PGINFO_PORT_DIGIT );
+    	MessageBox(MSG_ERR_PGINFO_PORT_DIGIT, WARNING);
+     	goto InputPostgresInfo_Start;
+    endif;
+    
+    if( StrToNum(nvPortVal, svDBPort) < 0 ) then
+    	WriteLogFile( MSG_ERR_PGINFO_PORT_CONVERT );
+    	MessageBox(MSG_ERR_PGINFO_PORT_CONVERT, WARNING);
+     	goto InputPostgresInfo_Start;
+    endif; 
+    
+    if( nvPortVal > 65535 || nvPortVal < 100 ) then
+    	WriteLogFile( MSG_ERR_PGINFO_PORT_RANGE );
+    	MessageBox(MSG_ERR_PGINFO_PORT_RANGE, WARNING);
+     	goto InputPostgresInfo_Start;
+    endif;    
+    
+    NumToStr( svDBPort, nvPortVal );
+    
+    if( StrLength( svDBPwd ) > 12 || StrLength( svDBPwd ) < 6 ) then
+    	WriteLogFile( MSG_ERR_PGINFO_PWD_LEN );
+    	MessageBox(MSG_ERR_PGINFO_PWD_LEN, WARNING);
+     	goto InputPostgresInfo_Start;
+    endif;  
+    
+	RunApplication( SystemFolder ^ "cscript.exe", "\"" + SUPPORTDIR ^ "portcheck.vbs\" " + svDBPort + " "+LOGFILE_PATH + "netstat.txt", FALSE, TRUE );
+    nResult = LAAW_PARAMETERS.nLaunchResult;  
+    szNetstat = ReadString(LOGFILE_PATH, "netstat.txt",FALSE);
+    WriteLogFile(szNetstat);
+    if (nResult=0) then 
+    	Sprintf ( svResult, MSG_ERR_PGINFO_PORT_INVALID, svDBPort); 
+    	WriteLogFile( svResult );
+    	MessageBox(svResult,WARNING);
+    	goto InputPostgresInfo_Start;
+    endif;//LOGFILE_PATH = "c:\\";  
+    WriteLogFile(MSG_INFO_STEP_NETSTAT);
+    
+    WriteoneFile( LOGFILE_PATH, "postgrespasswd.txt", svDBPwd);
+	svPassworDir = LOGFILE_PATH+"postgrespasswd.txt";   
+	
+	
+	svPGPassWord=svDBPwd; 
+	svDBPort=svDBPort; 
+	return 1; 
+	
+end;  
+ 
+function InputPostgresDbDataDir() 
+	string svDir,szTitle,szMsg, svFileName;
+	number nResult; 
+	number iResult;
+	LIST   listDirs; 
+	STRING svDirtemp;
+begin  
+Dlg_SdAskDestPath:
+	svDir = svPostgreDbDataDir;
+	szTitle = "Choose Destination Location \n"+"  "+"Select folder where Setup will install database data.";
+    szMsg   = "Setup will install Database in the following folder.\n\nTo install to a different folder, click Browse and select another folder. The folder must be empty, and please do NOT select the root directory of Enterprise Server installation.";
+    nResult = SdAskDestPath ( szTitle, szMsg, svDir, 0 );     
+    if (nResult = BACK) then
+  		return 0;
+  	endif;
+    
+  	StrRemoveLastSlash (svDir);
+  	nResult = FindAllFiles( svDir, "*.*", svFileName, RESET ); 
+  	if( nResult == 0 ) then   
+  		MessageBox(  MSG_ERR_PGINFO_DATADIR_EMPTY, SEVERE);
+  		goto Dlg_SdAskDestPath;
+  	endif;
+  	
+  	listDirs = ListCreate (STRINGLIST);
+    nResult = FindAllDirs( svDir, INCLUDE_SUBDIR, listDirs); 
+  	if( nResult == 0 && ListCount( listDirs ) > 0 ) then   
+  		MessageBox(  MSG_ERR_PGINFO_DATADIR_EMPTY, SEVERE);
+  		goto Dlg_SdAskDestPath;
+  	endif;
+	  
+  	//if disk root 
+  	svDirtemp = svDir;
+  	StrReplace ( svDirtemp, "\\", " ", 0 );
+  	StrTrim (svDirtemp);
+  	if( StrLength(svDirtemp)==2) then  
+  	    MessageBox(  MSG_ERR_PGINFO_DATADIR_DISKROOT, SEVERE);
+  		goto Dlg_SdAskDestPath;
+  	endif;
+  	
+   	svDir = svDir+"\\";
+    svPostgreDbDataDir = svDir;
+    return 1;
+end;
+          
+
+function PostgresInstall1()
+	NUMBER  nResult;  
+	string  svTest;
+	
+begin              
+	return RunApplication( SUPPORTDIR ^ "c_PostgresInstall1.bat",   "\"" + INSTALLDIR^"Postgresql 8.4\" \"" + LOGFILE_PATH + LOGFILE_NAME + "\" " + svDBUserName + " \"" + svPassworDir + "\" \"" + svPostgreDbDataDir + "\" " + svDBPort,  FALSE, TRUE );	
+end;
+
+function PostgresInstall2()
+	NUMBER  nResult;  
+	string  svTest;
+	
+begin              
+	return RunApplication( SUPPORTDIR ^ "c_PostgresInstall2.bat",  "\"" + INSTALLDIR^"Postgresql 8.4\" \"" + svPostgreDbDataDir + "\" \"" + LOGFILE_PATH + LOGFILE_NAME + "\"",  FALSE, TRUE );	
+end;
+
+
+function PostgresUninstall()
+begin 
+	return RunApplication( SUPPORTDIR ^ "c_PostgresUninstall.bat", "\"" + INSTALLDIR^"Postgresql 8.4\" \"" + LOGFILE_PATH + LOGFILE_NAME + "\"",  FALSE, TRUE );	
+end;           
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+function BSInstall()
+    STRING  svReturnLine, szMsg, szInsertLine;
+    NUMBER  nvLineNUMBER, nvResult,nvFileHandle;
+    NUMBER  nResult;
+    NUMBER nvSize,nvType;
+begin
+    nResult = RunApplication(INSTALLDIR ^"Enterprise Server"^ "Workspace Server\\bin\\NBBS.exe","-remove",FALSE, TRUE);
+    nResult = RunApplication(INSTALLDIR ^"Enterprise Server"^ "Workspace Server\\bin\\NBBS.exe","-install",FALSE, TRUE);
+    nResult = RunApplication( SystemFolder ^ "net.exe", "start \"Netbrain Benchmark Schedule\"",FALSE, TRUE);	
+end;       
+
+function BSUninstall()
+begin 
+	LaunchAppAndWait( "taskkill" , "/F /IM NBBS.exe",WAIT|LAAW_OPTION_HIDDEN);   //Bug 43544
+	RunApplication( SystemFolder ^ "net.exe", "stop \"Netbrain Benchmark Schedule\"",FALSE, TRUE);	  
+	RunApplication(INSTALLDIR ^"Enterprise Server"^ "Workspace Server\\bin\\NBBS.exe","-Remove",FALSE, TRUE);
+	RunApplication(SUPPORTDIR ^"DeleteService.bat","NBBS",FALSE, TRUE);
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////   
+function EAPInstall()
+	NUMBER nResult, nRet;
+	STRING svPath,svResult;
+	STRING svConnectionGraphics,svConnectionWeb;   
+begin 
+	nRet = 0;
+                 
+  	svConnectionGraphics ="Provider=PostgreSQL OLE DB Provider;Password="+svDBPwd+";User ID="+svDBUserName+ ";Data Source=127.0.0.1:"+ svDBPort +";Location="+svLICDBname+";";
+  	   	
+  	svConnectionGraphics=GetEncyptConnStr(svConnectionGraphics);
+  	
+  	nResult = ReplaceLineOfFile( FALSE, INSTALLDIR ^"Enterprise Server"^ "License Server\\Conf\\", "fix_Graphics.ini", "CONNStr=", "CONNStr=\""+svConnectionGraphics+"\"" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_GRAPHICS );
+ 		nRet = -1;
+	endif;
+	nResult = AddOrReplaceLineOfFile( FALSE, INSTALLDIR ^ "Enterprise Server"^"License Server\\Conf\\", "fix_Graphics.ini", "CONNStrEn=", "CONNStr=", "CONNStrEn=1" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_GRAPHICS );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_FIX_GRAPHICS );
+
+    svConnectionWeb="server=127.0.0.1" + ";port=" + svDBPort + ";user id=" + svDBUserName + ";password=" + svDBPwd + ";database=nbclic;commandtimeout=600;"; 
+  	
+  	svConnectionWeb=GetEncyptConnStr(svConnectionWeb);
+  	
+  	nResult = ReplaceLineOfFile( TRUE, INSTALLDIR ^"Enterprise Server"^ "License Server\\", "web.config", "<dbConn connectionStr=", "<dbConn connectionStr=\"" + svConnectionWeb + "\" dll=\"Npgsql\" type=\"Npgsql.NpgsqlConnection\" CONNStrEn=\"1\"/>" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_WEB_CONFIG );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_WEB_CONFIG );
+
+    nResult = ReplaceContentOfFile( INSTALLDIR ^"Enterprise Server"^ "License Server\\Conf\\", "fix_log.property", "$(NB_ROOT)", INSTALLDIR ^ "Enterprise Server\\License Server" );
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_FIX_LOG );
+ 		nRet = -1;
+	endif;
+	WriteLogFile( MSG_INFO_STEP_OUT_CONF_FIX_LOG );
+    
+    
+	nResult = RunApplication( SUPPORTDIR ^ "nbkf.exe","-a check -f " + "\""+SystemFolder^"nbl\\nb10002.ini\"" + " -s 321789 -p Nb(Info@E)S",FALSE, TRUE);
+	if( nResult != 0 ) then
+ 		WriteLogFile( MSG_ERR_CONF_NBKF ); 
+ 		nRet = -1;
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_NBKF );
+       	 
+   	if(CheckNeedInstallNetFx3()==1) then 
+   	    WriteLogFile( MSG_ERR_NETFX35_NOTEXISTS );  
+   	else
+   	    WriteLogFile( MSG_NETFX35_EXISTS );  
+   	endif;
+   	
+   	return nRet;
+end;   
+               
+
+function CheckIIS()  
+	//No STRING  
+	STRING szValue;  
+	NUMBER nvSize,nvType;
+begin  
+	RegDBSetDefaultRoot ( HKEY_LOCAL_MACHINE );  
+	if (RegDBKeyExist ("System\\CurrentControlSet\\Services\\W3SVC" ) < 0 ) then  
+		return (0);  
+	endif;
+ 
+ 	nvType = REGDB_STRING;                                                             
+ 	if( RegDBGetKeyValueEx("System\\CurrentControlSet\\Services\\W3SVC","DisplayName",nvType,szValue,nvSize) < 0 ) then 
+ 		return (0) ;
+ 	endif;  
+ 	
+	return (1);  
+end;
+ 
+function CheckAspnetState()
+STRING szValue;  
+	NUMBER nvSize,nvType,nvValue;
+begin  
+	RegDBSetDefaultRoot ( HKEY_LOCAL_MACHINE );  
+	if (RegDBKeyExist ("System\\CurrentControlSet\\Services\\aspnet_state" ) < 0 ) then  
+		return (0);  
+	endif;
+    
+ 	nvType = REGDB_NUMBER;                                                             
+ 	if( RegDBGetKeyValueEx("System\\CurrentControlSet\\Services\\aspnet_state","Start",nvType,szValue,nvSize) < 0 ) then 
+ 		return (0) ;
+ 	endif;  
+ 	
+	return (1);  
+end; 
+
+function CheckEAP2008()
+	NUMBER nResult;
+begin
+   if((SYSINFO.WINNT.bWinVista_Server2008=TRUE) || (SYSINFO.WINNT.bWin7_Server2008R2=TRUE))&&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION) then      
+   		svOSVer="win08";
+   		return (1);
+   endif;
+   return (0);     
+end; 
+
+function CheckNeedInstallNetFx3()  
+	number nvType;
+    number nvSize;
+    string nvSP;
+    number nResult;
+begin    
+	nvType = REGDB_NUMBER;
+	nvSize = -1; 
+	nvSP = "-1";    
+ 	if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+ 		nResult = RegDBGetKeyValueEx( REGNETFX35, "SP",nvType,nvSP,nvSize); 
+  		if(nResult < 0) then
+  			return (1);
+    	endif;
+    endif;     
+    if(nvSP=="1")  then
+        return (0);
+    endif; 
+	return (1);
+end;
+
+function CheckEAP()
+	NUMBER nResult;
+	STRING szIISMSG;
+begin 
+	svOSVer="win03";
+	 if(SYSINFO.WINNT.bWinServer2003=FALSE)&&(CheckEAP2008()=0) then 
+
+     	SdShowMsg ("", FALSE);
+     	MessageBox( MSG_ERR_NEED_2008SERVER, SEVERE);
+     	WriteLogFile( MSG_ERR_NEED_2008SERVER );
+   		return (0);
+     endif;
+       
+   	 if (svOSVer=="win08") then
+   		if(SYSINFO.WINNT.bWinVista_Server2008=TRUE) then
+   		    RunApplication( SUPPORTDIR ^ "copyservermanagercmd.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdvista.exe",FALSE, TRUE);	
+   		else
+   			RunApplication( SUPPORTDIR ^ "copyservermanagercmd.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdr2.exe",FALSE, TRUE);	
+   		endif;   		
+   	 endif;
+
+  	 nResult = CheckIIS();
+  	 if (nResult = 0) then
+  	 	if (svOSVer=="win03") then
+  
+  	 		szIISMSG=  MSG_ERR_NEED_IIS; 
+  	 		SdShowMsg ("", FALSE);
+  	 		MyMSGDlg(szIISMSG);
+  	 	else
+ 
+  	 		szIISMSG=  MSG_ERR_NEED_IIS2008; 
+  	 		SdShowMsg ("", FALSE);
+  	 		MyMSGDlg(szIISMSG);
+  	 	endif;
+  	 	WriteLogFile( MSG_ERR_NEED_IIS );
+   		return (0);
+   	 else   
+	 	if (svOSVer=="win08") then
+	 	 	if(CheckIIS7FeaturesNeed()==1)then
+	 	 		SdShowMsg ("", FALSE);
+	 	 		MessageBox(MSG_ERR_NEED_IISCommon,SEVERE);
+	 	 		return (0);
+	 	 	endif;
+	 	endif;	 
+	 	return (1);
+	 endif;   
+   	    	 
+end;
+ 
+function GetSysInfo()     
+begin 
+	WriteLogFile( MSG_INFO_NETBRAINCHECKER );
+	RunApplication( SUPPORTDIR ^ "NetbrainChecker.bat", "\"" + LOGFILE + "\"",FALSE, TRUE);	
+end; 
+
+function CheckPathSpecChar(spathtocheck)
+begin  
+	//return (1);
+	//#$%^&@~`!;',
+	if(StrFind (spathtocheck, "#")>-1 ||StrFind (spathtocheck, "$")>-1 ||StrFind (spathtocheck, "%")>-1 ||StrFind (spathtocheck, "^")>-1 ||StrFind (spathtocheck, "&")>-1 ||StrFind (spathtocheck, "@")>-1||StrFind (spathtocheck, "~")>-1||StrFind (spathtocheck, "`")>-1||StrFind (spathtocheck, "!")>-1||StrFind (spathtocheck, ";")>-1||StrFind (spathtocheck, "'")>-1||StrFind (spathtocheck, ",")>-1)  then
+		MessageBox("The Path can not include any of the following characters: #$%^&@~`!;', ", SEVERE);
+		return (0);                            
+	endif; 
+	return (1);
+end;  
+        
+function WriteRegistryWeb()
+	NUMBER nvSize,nvType, nvReturn;
+	STRING svTemp, svResult;
+begin
+
+	nvType = REGDB_STRING; 
+    nvSize = -1;  
+    if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+    	RegDBSetKeyValueEx("SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer","user",nvType,svUserName,nvSize);
+   		RegDBSetKeyValueEx("SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer","company",nvType,szCompany,nvSize);
+   		RegDBSetKeyValueEx("SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer","netbrainDir",nvType,INSTALLDIR,nvSize);
+   		
+   	   	GetSystemInfo( DATE, nvReturn, svResult );  
+   		svTemp = svResult;
+   		svTemp = svTemp + " ";
+   		GetSystemInfo( TIME, nvReturn, svResult );
+   		svTemp = svTemp + svResult;
+   			
+   		RegDBSetKeyValueEx("SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer","InstallTime",nvType, svTemp ,nvSize);
+    endif;
+       
+end;     
+
+   
+//function IsSameLargeVersion3() 
+//	NUMBER nResult;
+//begin  
+//	  nResult=0;
+	  
+//      WriteLogFile("IsSameLargeVersion3 begin "); 
+//      WriteLogFile("RegCurrentVersion: "+svCurrentVersion); 
+//      WriteLogFile("ProductCurrentVersion: "+IFX_PRODUCT_VERSION);  
+      
+//	  if(svCurrentVersion=="")then
+//	      nResult=0;
+//	      return nResult;
+//	  endif;
+//	  if(StrLength(IFX_PRODUCT_VERSION)<4) || (StrLength(svCurrentVersion) <4) then
+//	  	  nResult = 0;
+//	      return nResult;
+//	  endif;
+	 	  
+//	  if(svCurrentVersion==IFX_PRODUCT_VERSION) then
+//	  		nResult = 1;
+//	  endif;
+//	  return nResult;
+//end; 
+
+
+function WriteRegistryPostgres()
+	NUMBER nvSize,nvType;  
+	STRING nvStrData;
+begin                 
+
+	nvType = REGDB_STRING; 
+    nvSize = -1;  
+    if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+   		RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPPostgresDataUserName",nvType,svDBUserName,nvSize);
+        RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPPostgresDataPwd",nvType,svDBPwd,nvSize);
+        RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPPostgresDataPort",nvType,svDBPort,nvSize);
+        RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPPostgresDataDir",nvType,svPostgreDbDataDir,nvSize);
+        //if(IsSameLargeVersion3()==0)then  //Bug 43074 
+        //	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataSetupTime",nvType,svDataSetupTime,nvSize);
+        //endif;
+        RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataDirRoot",nvType,svDataDirRoot,nvSize);
+        RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPCurrentVersion",nvType,IFX_PRODUCT_VERSION,nvSize);
+        
+        //if( nvInstallDataDir = 1 ) then
+        //	nvStrData="0";
+        //else 
+        //	nvStrData="1";
+        //endif;
+        //RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "0" ,nvSize);    
+    endif;
+    
+    
+       
+end; 
+
+        
+function DeleteRegistryWeb()
+
+begin
+	if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+    	RegDBDeleteKey ( "SOFTWARE\\NetBrain\\NetBrain Enterprise Server\\WebServer" );
+ 	endif;
+end;
+
+
+function DeleteRegistryPostgres()
+
+begin              
+	if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPPostgresDataDir" );
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPPostgresDataUserName" );
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPPostgresDataPwd" );
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPPostgresDataPort" );
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPDataSetupTime" );  
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPDataDirRoot" );  
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPCurrentVersion" );
+		RegDBDeleteValue( "SOFTWARE\\NetBrain","EAPUpgrade"); 
+ 	endif;
+end;      
+
+          
+// SdLicense2 ---------------------------------------------------------------
+function SdLicense2( szTitle, szOpt1, szOpt2, szLicenseFile, bLicenseAccepted )
+begin
+    return SdLicense2Ex( szTitle, szOpt1, szOpt2, szLicenseFile, bLicenseAccepted, FALSE );
+end;
+//---------------------------------------------------------------------------
+// OnAppSearch
+//
+// The OnAppSearch event is called after OnBegin and can be used to search
+// for previous versions of the current application. This event is called
+// only when the setup is running in first install mode.
+//---------------------------------------------------------------------------
+function OnAppSearch()
+NUMBER nResult,nvType,nvSize;
+begin 
+
+
+    nvType = REGDB_STRING; 
+    nvSize = -1;
+    if (RegDBSetDefaultRoot (HKEY_LOCAL_MACHINE) = 0) then
+ 		nResult = RegDBGetKeyValueEx( REGPATH_WEBSERVER, REGKEY_INSTALLDIR,nvType,INSTALLDIR,nvSize); 
+  		if(nResult = 0) then
+  			WriteLogFile( MSG_ERR_UNINSTALL_FIRST );
+  			MessageBox( MSG_ERR_UNINSTALL_FIRST, INFORMATION);
+    		abort;
+    	endif;		 	  
+     endif;   
+     
+end;
+
+function DeleteFolder(szFolderPath)   
+	NUMBER nResult;   
+	STRING szFileName;    
+	LIST listID;
+begin  
+	if (ExistsDir (szFolderPath)=EXISTS) then  
+	    nResult=FindAllFiles(szFolderPath,"*.*",szFileName,RESET);
+        while(nResult = 0)
+	        SetFileInfo (szFileName ,FILE_ATTRIBUTE , FILE_ATTR_NORMAL ,"" );
+	        nResult=FindAllFiles(szFolderPath,"*.*",szFileName,CONTINUE); 
+        endwhile;               
+        
+        DeleteAgain:
+        if DeleteDir(szFolderPath, ROOT)<0 then 
+        	WriteLogFile("Unable to delete "+szFolderPath);
+        	nResult=SdFilesInUse("","Unable to delete the folder below. Maybe some files inside the folder are in use. Please check!",szFolderPath,listID);    
+        	if (nResult = IDRETRY) then
+       			goto DeleteAgain;   
+       		endif;
+        endif;
+    endif;		
+end;
+//---------------------------------------------------------------------------
+// OnInstallFilesActionBefore
+//
+// The InstallFilesActionBefore event is called just before the standard MSI
+// action 'InstallFiles' is executed.
+//---------------------------------------------------------------------------
+function OnInstallFilesActionBefore()
+NUMBER nResult;
+begin 
+
+ 		if((SYSINFO.WINNT.bWin7_Server2008R2=TRUE) && (CheckNeedInstallNetFx3()==1)) then 
+ 		WriteLogFile("install net framework35");
+	    nResult = RunApplication( SUPPORTDIR ^ "c_win7installnetframework35.bat","\""+ LOGFILE_PATH + LOGFILE_NAME +"\"", FALSE, TRUE);
+	    if(nResult != 0) then
+  			WriteLogFile( MSG_ERR_INSTALLWIN7NETFX3 );
+    		if (AskYesNo(MSG_ERR_INSTALLWIN7NETFX3+" Would you like to continue? ", YES) = NO) then
+                abort;  
+           	endif;
+    	endif;	
+	endif;
+	
+end;
+//---------------------------------------------------------------------------
+// OnMoved
+//
+// The OnMoved event is called just before the InstallShield action 
+// 'GeneratedMSIScript' is executed.
+//---------------------------------------------------------------------------
+function OnMoved()
+begin 
+ 	
+	 	
+end;
+//---------------------------------------------------------------------------
+// OnInstallFilesActionAfter
+//
+// The InstallFilesActionAfter event is called just after the standard MSI
+// action 'InstallFiles' is executed.
+//---------------------------------------------------------------------------
+function OnInstallFilesActionAfter()   
+NUMBER nResult,nRet;
+begin  
+	 
+	if (svOSVer=="win08") then 
+		WriteLogFile("install asp net for iis7");
+   		if(SYSINFO.WINNT.bWinVista_Server2008=TRUE) then
+   		    RunApplication( SUPPORTDIR ^ "installaspnetiis7.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdvista.exe",FALSE, TRUE);	
+   		else
+   			RunApplication( SUPPORTDIR ^ "installaspnetiis7.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\" ServerManagerCmdr2.exe",FALSE, TRUE);	
+   		endif;   		
+   	endif;
+   
+    nResult = RunApplication( SUPPORTDIR ^ "c_InstallGwIIS7Isapi.bat", "^%windir^% \"" + LOGFILE_PATH + LOGFILE_NAME + "\" \"" +svOSVer+"\"",FALSE, TRUE);
+	if( nResult != 0 ) then
+ 		nRet = -1;
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_INSTALL_IISISAPI ); 
+   	
+   	nResult = RunApplication( SUPPORTDIR ^ "RegAspStateStartKey.exe", "",FALSE, TRUE);
+	WriteLogFile( MSG_INFO_STEP_OUT_REGKEY_START_ASPNET_STATE_CHECK );
+	    
+    nResult = RunApplication( SUPPORTDIR ^ "aspnetstateauto.bat", "\"" + LOGFILE_PATH + LOGFILE_NAME + "\"",FALSE, TRUE);
+	if( nResult != 0 ) then 
+		WriteLogFile( MSG_ERR_CONF_ASPNET_STATE );
+	endif;
+   	WriteLogFile( MSG_INFO_STEP_OUT_ASPNET_STATE ); 
+    
+   RunApplication( SUPPORTDIR ^ "ComponentRegistration.bat"," >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+	
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +INSTALLDIR^"Enterprise Server"^"SetupFiles"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE); 
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"KEYLIB32.dll"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"NBAppData.ini"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"libpq.dll"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"pgoledb.dll"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"netbrain_uap.ini"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"netbrain_uap01.ini"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"cmdlib.wsc"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"\" \"" +SystemFolder^"IIsScHlp.wsc"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +SystemFolder^"nbl"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   RunApplication( SUPPORTDIR ^ "InstallUser.bat"," \"" +SystemFolder^"NetBrain"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE, TRUE);
+   		   	
+   	nResult = RunApplication( SUPPORTDIR ^ "RegCLSIDNetworkService.exe", "",FALSE, TRUE);
+	if( nResult != 0 ) then 
+		 WriteLogFile( MSG_ERR_ADDREGNETWORKSERVICE ); 
+ 		nRet = -1;
+	endif;
+   	WriteLogFile(MSG_INFO_STEP_OUT_ADDREGNETWORKSERVICE );	 
+   	
+   	WriteLogFile("Try stop web site: "+svLICSiteIndex+" "+svLICSiteName );
+   	RunApplication(SUPPORTDIR ^"stopwebsite.bat"," \""+svLICSiteIndex+"\" \""+svLICSiteName+"\"  >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE);    	
+
+end;   
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnCheckProgramRun
+//
+//  EVENT:      OnCheckProgramRun event is that check the program whether 
+//				is running. 
+///////////////////////////////////////////////////////////////////////////////
+function OnCheckProgramRun()
+	LIST 	listID;
+	number  nResult; 
+begin
+     	listID = ListCreate(STRINGLIST);
+  		if (listID = LIST_NULL) then
+        	MessageBox("Unable to create list.", SEVERE);
+        	abort;
+    	endif;
+
+        ListAddString(listID, "Add Shared Workspace", AFTER); //Delete Share Workspace
+        ListAddString(listID, "Delete Shared Workspace", AFTER);   
+    
+    AskAgain:
+    
+	if (Is(FILE_LOCKED, svGWInstalldir ^ "wsfiles"^"ES5WpsTool.exe")) then
+    	nResult = SdFilesInUse("","One of following programs is running , please close it and continue.", "", listID);
+    	if (nResult = IDRETRY) then 
+            goto AskAgain; 
+        else
+        	abort;
+    	endif;
+     endif;                  
+    ListDestroy(listID);
+
+end;  
+
+
+function CopyFileToDes(szSourcefile,szDestfile)
+    NUMBER nResult; 
+begin 
+    WriteLogFile ("Copy "+szSourcefile+" to "+szDestfile);
+    
+    nResult = CopyFile(szSourcefile, szDestfile); 
+    
+    // Report the results of the copy operation. 
+    switch (nResult) 
+        case 0: 
+            WriteLogFile ("Files successfully copied."); 
+        case COPY_ERR_CREATEDIR: 
+            WriteLogFile ("A target directory could not be created."); 
+        case COPY_ERR_MEMORY: 
+            WriteLogFile ("Insufficient memory."); 
+        case COPY_ERR_NODISKSPACE: 
+            WriteLogFile ("Insufficint disk space.");
+        case COPY_ERR_OPENINPUT: 
+            WriteLogFile ("Unable to open the input files in "+ szSourcefile); 
+        case COPY_ERR_OPENOUTPUT: 
+            WriteLogFile ("Unable to copy the source files."); 
+        case COPY_ERR_TARGETREADONLY: 
+            WriteLogFile ("A target file already exists and cannot be overwritten."); 
+        default:
+            WriteLogFile ("An unspecified error occurred. "+FormatMessage(nResult)); 
+    endswitch; 
+end;   
+
+//function LICUpdate4To5()
+//	NUMBER nResult, nCompareFlag;  
+	//svDataDirRoot svLICInstalldir svGWInstalldir svWSPDir^svWSPName
+//begin   
+//	nCompareFlag = VERSION;
+//	nResult = VerCompare (svCurrentVersion, MULTITANANTVER, nCompareFlag);
+//	if (nResult = LESS_THAN) then 	
+//    	 if (ExistsDir(svDataDirRoot^"Enterprise Server\\LicenseTool\\conf") = EXISTS) then
+//    	 	//XCopyFile (svDataDirRoot^"Enterprise Server\\LicenseTool\\conf"^"*.*",svLICInstalldir);
+//    	 endif;	
+//	endif;		
+//end;    
+
+function WPSUpdate4To5() 
+	NUMBER nResult, nCompareFlag;
+begin   
+	WriteLogFile (INSTALLDIR^"Enterprise Server\\ESData"); 	 
+	
+	WriteLogFile (" \""+INSTALLDIR^"Enterprise Server\\ESData"+"\" \""+svWSPDir^svWSPName+"\" >>\""+ LOGFILE +"\" 2>>&1");
+		if (ExistsDir(INSTALLDIR^"Enterprise Server\\ESData") = EXISTS) then
+			nResult = RunApplication( SUPPORTDIR ^ "movef.bat"," \""+INSTALLDIR^"Enterprise Server\\ESData"+"\" \""+svWSPDir^svWSPName+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE);
+			if (nResult = 0) then
+			    WriteLogFile ("Update ESData successful"); 
+			else 	            
+			    WriteLogFile ("Update ESData failed");
+			endif;
+		endif; 	
+	
+	CopyFileToDes(INSTALLDIR^"Enterprise Server\\WebServer"^"conf"^"NBBSGateway.conf",svGWInstalldir^"conf"^"NBBSGateway.conf");
+
+	WriteLogFile (INSTALLDIR^"Enterprise Server\\WebServer");  
+	WriteLogFile (INSTALLDIR^"Enterprise Server\\WebServer"+"\" \""+svWSPDir^svWSPName+"\" >>\""+ LOGFILE +"\" 2>>&1");
+		if (ExistsDir(INSTALLDIR^"Enterprise Server\\WebServer") = EXISTS) then
+			nResult=RunApplication( SUPPORTDIR ^ "xcopyf.bat"," \""+INSTALLDIR^"Enterprise Server\\WebServer"+"\" \""+svWSPDir^svWSPName^"WebServer"+"\" >>\""+ LOGFILE +"\" 2>>&1",FALSE,TRUE);
+			if (nResult = 0) then 
+				DeleteDir (INSTALLDIR^"Enterprise Server\\WebServer",ROOT);
+			    WriteLogFile ("Update WebServer successful"); 
+			else 	            
+			    WriteLogFile ("Update WebServer failed");
+			endif;
+		endif; 	
+	
+end;
+
+function FormatVer(szVer,svVer) 
+	LIST   listID;  
+	NUMBER nvNum,iCount; 
+	NUMBER nvReturn;
+begin	
+	listID = ListCreate (STRINGLIST);
+	if (listID = LIST_NULL) then 
+		return -1;
+	endif; 
+	
+	nvReturn = StrGetTokens (listID, szVer, ".");
+	
+	if ( nvReturn = 0 ) then   
+		nvNum = ListCount (listID);
+		ListSetIndex (listID, LISTLAST);
+		 
+		for iCount = nvNum to 4-1  
+			ListAddString (listID,"0",AFTER); 
+		endfor;  
+		
+		nvReturn = StrPutTokens (listID,svVer,".",FALSE);
+	endif;
+	
+	ListDestroy (listID);
+    
+    return nvReturn;
+    	
+end; 
+
+
+#include "featureevents.rul"

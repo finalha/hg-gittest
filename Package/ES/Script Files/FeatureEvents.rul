@@ -251,9 +251,9 @@ begin
 	nvSize = -1;   
 	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "1" ,nvSize);
 	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPDataSetupTime",nvType,svDateTime,nvSize);   
-	if (nvOld2Multitenant = 1) then  
-		RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "0" ,nvSize);		 
-	endif;
+	//if (nvOld2Multitenant = 1) then  
+	//	RegDBSetKeyValueEx("SOFTWARE\\NetBrain","EAPUpgrade",nvType, "0" ,nvSize);		 
+	//endif;
 	  
    	WriteLogFile ("Update begin:");
     if (nvOld2Multitenant = 1) then

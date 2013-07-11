@@ -13,13 +13,17 @@ set "NB_ES_NBWSPLib=%NB_ES%\NBWSPLib"
 
 set "NB_ES_CLIC_PRODUCTS=%NB_ES_CLIC%\Products"
 set "NB_ES_NBWSP_PRODUCTS=%NB_ES_NBWSP%\Products"
+set "NB_ES_NBWSPGW_PRODUCTS=%NB_ES_NBWSPGW%\Products"
 
 set "NB_ES_CLIC_PRODUCTS_Current=%NB_ES_CLIC%\Products\ITE"
 set "NB_ES_NBWSP_PRODUCTS_Current=%NB_ES_NBWSP%\Products\ITE"
+set "NB_ES_NBWSPGW_PRODUCTS_Current=%NB_ES_NBWSPGW%\Products\ITE"
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
-xcopy "%NB_ES_CLIC_PRODUCTS_Current%" "%NB_ES_CLIC%"      /Y /S /F
+xcopy "%NB_ES_CLIC_PRODUCTS_Current%"       "%NB_ES_CLIC%"               /Y /S /F
 
-xcopy "%NB_ES_NBWSP_PRODUCTS_Current%" "%NB_ES_NBWSP%"    /Y /S /F
+xcopy "%NB_ES_NBWSP_PRODUCTS_Current%"      "%NB_ES_NBWSP%"              /Y /S /F
+
+xcopy "%NB_ES_NBWSPGW_PRODUCTS_Current%"    "%NB_ES_NBWSPGW%"            /Y /S /F

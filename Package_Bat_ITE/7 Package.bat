@@ -34,7 +34,7 @@ set "RemoteDir_PWD=netbrain"
 set "ESDIR=%RemoteDir%\Netbrain-Setup\ITE_ES5.1\"
 
 set "MailTO=QA@networkbrain.com;dev@networkbrain.com"
-set "MailCC=fgan@networkbrain.com;yzhao@networkbrain.com;zwang@networkbrain.com"
+set "MailCC=wbi@networkbrain.com;fgan@networkbrain.com;yzhao@networkbrain.com;zwang@networkbrain.com"
 set "MailSubject=Build Server:%COMPUTERNAME%, %VersionInfo% setup package %date:~0,10% %time:~0,8%"
 set "MailText=%VersionInfo% Release SetUp Package can be downloaded and installed. %ErrMessage% %DesPath%"
 set "Mail=%CurrentPATH%SendEMail.vbs"

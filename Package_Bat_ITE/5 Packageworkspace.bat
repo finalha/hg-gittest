@@ -13,7 +13,7 @@ set "NB_ES_NBWSPLib=%NB_ES%\NBWSPLib"
 set "NB_ES_LicenseTool=%NB_ES%\LicenseTool"
 
 set "NB_ESinstall_WSfiles=%NB_ESinstall%\WSfiles"
-set "NB_ESinstall_Package=%NB_ESinstall%\Package"
+set "NB_ESinstall_Package=%NB_ESinstall%\Package_ITE"
 set "Pro_WorkSpace=%NB_ESinstall_Package%\WorkSpace.ism"
 set "SetupFile_WorkSpace_sou=%NB_ESinstall_Package%\WorkSpace\Media\Release 2\Package\WorkSpace.exe"
 

@@ -158,6 +158,13 @@ if %dbver% LSS 510 (
 echo nbwsp510.sql >&2
 )
 
+call :GetDBVersion "dbver"
+if %dbver% LSS 511 (
+"%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -d %dbname%< uuid-ossp.sql
+"%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -v nbwsp=%dbname%< nbwsp511.sql
+echo nbwsp511.sql >&2
+)
+
 
 
 "%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -v nbwsp=%dbname%< ws_oi.sql

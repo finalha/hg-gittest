@@ -111,9 +111,261 @@ ALTER TABLE benchmark2cmdproce OWNER TO postgres;
 update site set description="comment" where "comment"<>'' and (description is null or description='' );
 
 
-INSERT INTO object_file_path_info(path, lasttimestamp, path_update_time, object_type) VALUES ('CommandProcedure', now(), now(), 10);
-INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Check Interfaces.qapp', 'btte74591a2bbaa1a818tt4r05d37axxdebxcv.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='CommandProcedure'),'');
-INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Route Protocols.qapp', 'be4te74591a2bbaa1a818tt4r0ddd23veg34t34.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='CommandProcedure'),'');
+INSERT INTO object_file_path_info(path, lasttimestamp, path_update_time, object_type) VALUES ('EsCommandProcedureFolder_Built_in', now(), now(), 10);
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'BGP Neighbors.qapp', 'btte74591a2bbaa1a818tt4r05d37axxdebxcv.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'EIGRP Neighbors.qapp', 'be4te74591a2bbaa1a818tt4r0ddd23veg34t34.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'IS-IS Neighbors.qapp', 'btte74591a2bbaa1a818tt4r05d37axxdebx11.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'LDP Neighbors.qapp', 'be4te74591a2bbaa1a818tt4r0ddd23veg34t22.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'OSPF Neighbors.qapp', 'btte74591a2bbaa1a818tt4r05d37axxde555.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'PIM Neighbors.qapp', 'be4te74591a2bbaa1a818tt4r0dddbbbrrg.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Cisco Nexus VDC.qapp', 'b74te74591a2bbaa1avvvvt4r0dddbbbrr1111.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Interface Information Brief.qapp', 'b999974591a2bbaa1avvvvt4r0dddbbbrr1111.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Cisco IOS NAT Table.qapp', 'b777474591a2bbaa1avvvvt4r0dddbbbrr1111.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Virtual Server Table.qapp', 'b889954474591a2bbtyimehttrbbrbguil.qapp', now(), -1, '', now(),(select id from object_file_path_info where path='EsCommandProcedureFolder_Built_in'),'');
+
+
+INSERT INTO object_file_path_info(path, lasttimestamp, path_update_time, object_type) VALUES ('EsProfiles', now(), now(), 10);
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'BGP Routing.monprofile', 'c24c0da0efa74e23858ed4496bc0882b.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'IS-IS Routing.monprofile', '2125ed3bfd264baabe200e46dfdd002b.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Multicast Monitoring for Specified Group.monprofile', 'd7a378cb04d6453e80c4f29458814879.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Multicast Monitoring without Specified Group.monprofile', '6e883136230d4e85b2ca6f63e13b75db.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'OSPF Routing.monprofile', 'a8e326c9df924375986d45f051dbdd0c.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'Interface Error Check.monprofile', '217b080f49d244e89bf2ba6828d396ea.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'RIP Routing.monprofile', '3f396991a0d547da8ec536ff45fe01ea.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'STP Monitoring.monprofile', '3yy396991w0d547bxec536ff45fe01111.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'General Routes.monprofile', 'aty39ehe991wdfge47bxdgs6ff45werwv.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'EIGRP Routing.monprofile', '3xx396991w0d547bxec536ff45nn333.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp,path_id, licguid)VALUES (-1, 10, 0, 'QoS Monitoring.monprofile', '444fer91w0d547bxec536ff45n444.monprofile', now(), -1, '', now(),(select id from object_file_path_info where path='EsProfiles'),'');
+
+
+DROP FUNCTION site_olddelete(integer[], integer);
+CREATE OR REPLACE FUNCTION site_olddelete(siteids integer[], site_mid integer)
+  RETURNS boolean AS
+$BODY$
+
+BEGIN
+	delete from clustersite2site where clustersiteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2sitecluster where siteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2site where siteid in  (select id from site where sitemanagerid= site_mid);
+	delete from devicesitedevice where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid= site_mid);	
+	delete from site_customized_info where objectid in (select id from site where sitemanagerid= site_mid);
+	delete from site where sitemanagerid=site_mid;
+	return true;
+EXCEPTION    
+	WHEN OTHERS THEN   
+		return false;		
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_olddelete(integer[], integer) OWNER TO postgres;
+
+
+CREATE OR REPLACE FUNCTION site_customized_info_check(atrrnames character varying[])
+  RETURNS boolean AS
+$BODY$
+declare	
+        attr_id integer;	
+BEGIN		
+	for r in  1..array_length(atrrnames,1) loop
+		select id into attr_id from object_customized_attribute where name=atrrnames[r] and objectid=5;
+		if attr_id IS NULL THEN
+			insert into object_customized_attribute (objectid,name,alias,allow_export,type,allow_modify_exported,lasttimestamp) values (5,atrrnames[r],atrrnames[r],'true',2,'true',now());			
+		end if;		
+	end loop;		
+	return true;
+EXCEPTION
+	WHEN OTHERS THEN 
+		RETURN false;	
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_customized_info_check(character varying[]) OWNER TO postgres;
+
+
+
+CREATE OR REPLACE FUNCTION set_local_cli_settings_for_ite_user_automatically(new_user_id integer, temp_user_id integer)
+  RETURNS boolean AS
+$BODY$
+declare
+	jumpbox nomp_jumpbox%rowtype;	
+	telnet nomp_telnetinfo%rowtype;	
+	userdevice userdevicesetting%rowtype;
+	tmp_id integer;
+	jumpbox_id integer;
+BEGIN	
+	for jumpbox in select * from nomp_jumpbox where userid =temp_user_id loop
+		select id into tmp_id from nomp_jumpbox where strname= jumpbox.strname and licguid=jumpbox.licguid and userid=new_user_id;
+		if tmp_id IS NULL then
+			insert into nomp_jumpbox(
+			  strname,
+			  itype,
+			  stripaddr,
+			  iport,
+			  imode,
+			  strusername,
+			  strpasswd,
+			  strloginprompt,
+			  strpasswdprompt,
+			  strcommandprompt,
+			  stryesnoprompt,
+			  bmodified,
+			  strenablecmd,
+			  strenablepasswordprompt,
+			  strenablepassword,
+			  strenableprompt,
+			  ipri,
+			  userid,
+			  licguid
+			  )
+			  values( 
+			  jumpbox.strname,
+			  jumpbox.itype,
+			  jumpbox.stripaddr,
+			  jumpbox.iport,
+			  jumpbox.imode,
+			  jumpbox.strusername,
+			  jumpbox.strpasswd,
+			  jumpbox.strloginprompt,
+			  jumpbox.strpasswdprompt,
+			  jumpbox.strcommandprompt,
+			  jumpbox.stryesnoprompt,
+			  jumpbox.bmodified,
+			  jumpbox.strenablecmd,
+			  jumpbox.strenablepasswordprompt,
+			  jumpbox.strenablepassword,
+			  jumpbox.strenableprompt,
+			  jumpbox.ipri,
+			  new_user_id,
+			  jumpbox.licguid
+			  );
+		end if;	
+		select id into jumpbox_id from nomp_jumpbox where strname= jumpbox.strname and licguid=jumpbox.licguid and userid=new_user_id;
+	end loop;
+
+
+	for telnet in select * from nomp_telnetinfo where userid =temp_user_id loop
+		select id into tmp_id from nomp_telnetinfo where stralias= telnet.stralias and licguid=telnet.licguid and userid=new_user_id;
+		if tmp_id IS NULL then
+			insert into nomp_telnetinfo(
+			  stralias,
+			  idevicetype,
+			  strusername,
+			  strpasswd,
+			  bmodified,
+			  userid,
+			  ipri,
+			  licguid
+			  )
+			  values( 
+			  telnet.stralias,
+			  telnet.idevicetype,
+			  telnet.strusername,
+			  telnet.strpasswd,
+			  telnet.bmodified,
+			  new_user_id,
+			  telnet.ipri,
+			  telnet.licguid
+			  );
+		end if;	
+	end loop;
+
+
+	for userdevice in select * from userdevicesetting where userid =temp_user_id loop
+		select id into tmp_id from userdevicesetting where deviceid= userdevice.deviceid and licguid=userdevice.licguid and userid=new_user_id;
+		if tmp_id IS NULL then
+			insert into userdevicesetting(
+			  deviceid,
+			  userid,
+			  managerip,
+			  telnetusername,
+			  telnetpwd,
+			  dtstamp,
+			  jumpboxid,
+			  licguid
+			  )
+			  values( 
+			  userdevice.deviceid,
+			  new_user_id,
+			  userdevice.managerip,
+			  userdevice.telnetusername,
+			  userdevice.telnetpwd,
+			  userdevice.dtstamp,
+			  jumpbox_id,
+			  userdevice.licguid
+			  );
+		end if;	
+	end loop;
+		
+	
+	return true;
+EXCEPTION
+	WHEN OTHERS THEN 
+		RETURN false;	
+END;
+$BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION set_local_cli_settings_for_ite_user_automatically(integer, integer) OWNER TO postgres;
+
+
+
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e0.ob', 'ac2659e7789e44fda0aa60c9de1e813e.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e1.ob', '353705a3912f4f78b4757f384b34bdaf.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e2.ob', '884677fc2d84459e95978f2216f17aa9.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e3.ob', 'c4cbae8008274ed69cd61aa845fc9917.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e4.ob', 'a418e92704f142108876eb9bee44583a.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e5.ob', '2e901ed31ed04a0cb27750e4bd4dec43.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e6.ob', '60ca0239b0c8469ebbaa8d0d7abfe3d1.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e7.ob', '794286b4b265413e82e2b398f441ead9.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093e8.ob', 'b8594ff9732f4d998e694c3492099136.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093fc.ob', '24c5a55d2eb34e1387f8005395827074.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093fd.ob', '1d12683564924ed6b07d80a15c95b489.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093fe.ob', '1eb6af7c91b143e486998c60621b90d0.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e0000000093ff.ob', 'cd4d0d9a8c9f4222a5465142a344f8cb.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009413.ob', '2aa3171701d24621b715eccb39ab2668.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009414.ob', '9361b76a1e884dccaeb7ef846d17a93d.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009415.ob', 'c1eef061e3934e01aff5cf344046d948.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009416.ob', 'b8d2ad5e03cd4a079f407430c1d7b9bd.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009417.ob', '61472901d620440888a7870a1b599195.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009418.ob', '7feb052765594a068c3b9e43e46447be.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e000000009419.ob', '811b96c0e61745e8adcce2418fd4b3f6.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp)VALUES ( -1, 14, 0, '9e00000000941a.ob', 'c56e598bae594c3281e0787241ee934f.ob', now(), -1, '', now());
+INSERT INTO object_file_info(object_id, object_type, file_type, file_real_name, file_save_name, file_update_time, file_update_userid, user_property, lasttimestamp, licguid)VALUES (-1, 15, 0, 'ApplyTo.xml', '66b4d6cbd9e343ce98e53c9b96954f3a.xml', now(), -1, '', now(),'');
+
+
+
+ALTER TABLE site DROP CONSTRAINT site_uniq_name;
+
+
+DROP FUNCTION site_olddelete(integer[], integer);
+
+CREATE OR REPLACE FUNCTION site_olddelete(siteids integer[], site_mid integer)
+  RETURNS boolean AS
+$BODY$
+
+BEGIN
+	delete from clustersite2site where clustersiteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2sitecluster where siteid in  (select id from site where sitemanagerid= site_mid);
+	delete from site2site where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from devicesitedevice where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from site_customized_borderinterface where siteid in (select id from site where sitemanagerid= site_mid);
+	delete from site_customized_info where objectid in (select id from site where sitemanagerid= site_mid);
+	delete from site where sitemanagerid=site_mid and id <> all(siteids);
+	return true;
+EXCEPTION    
+	WHEN OTHERS THEN   
+		return false;		
+END;
+
+  $BODY$
+  LANGUAGE 'plpgsql' VOLATILE
+  COST 100;
+ALTER FUNCTION site_olddelete(integer[], integer) OWNER TO postgres;
 
 
 

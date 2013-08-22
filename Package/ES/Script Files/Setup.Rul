@@ -2129,6 +2129,7 @@ end;
 function CopyFileToDes(szSourcefile,szDestfile)
     NUMBER nResult; 
 begin 
+	Disable(LOGGING);
     WriteLogFile ("Copy "+szSourcefile+" to "+szDestfile);
     
     nResult = CopyFile(szSourcefile, szDestfile); 
@@ -2151,7 +2152,8 @@ begin
             WriteLogFile ("A target file already exists and cannot be overwritten."); 
         default:
             WriteLogFile ("An unspecified error occurred. "+FormatMessage(nResult)); 
-    endswitch; 
+    endswitch;  
+    Enable(LOGGING);
 end;   
 
 //function LICUpdate4To5()

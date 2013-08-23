@@ -2790,6 +2790,7 @@
 		<row><td>SetupFile13</td><td>c_checkcurusersright.bat</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\c_checkcurusersright.bat</td></row>
 		<row><td>SetupFile130</td><td>nbwsp511.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\nbwsp511.sql</td></row>
 		<row><td>SetupFile131</td><td>uuid-ossp.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\uuid-ossp.sql</td></row>
+		<row><td>SetupFile132</td><td>nbwsp512.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\nbwsp512.sql</td></row>
 		<row><td>SetupFile14</td><td>c_InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\c_InstallGw.bat</td></row>
 		<row><td>SetupFile147</td><td>ws_oi.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\ws_oi.sql</td></row>
 		<row><td>SetupFile148</td><td>ws_tpp.sql</td><td/><td>0</td><td>0</td><td>&lt;WS_SUPPORT&gt;\ws_tpp.sql</td></row>

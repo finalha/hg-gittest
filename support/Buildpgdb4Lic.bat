@@ -136,6 +136,11 @@ if %dbver% LSS 511 (
 "%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%"  < nbclic511.sql
 )
 
+if %dbver% LSS 512 (
+"%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%"  < nbclic512.sql
+)
+
+
 echo %date% %time%
 
 exit /b %ERRORLEVEL%

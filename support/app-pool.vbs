@@ -9,6 +9,7 @@ function AppPoolExists(strAppPool)
 	end if
 end function 
 
+
 function CreateNewAppPool(AppPoolName)
 	dim AppPools, newAppPool
 	err = 0

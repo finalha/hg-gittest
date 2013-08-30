@@ -1,5 +1,4 @@
-﻿<Mappings><Entry OldName="NBWSPGW.gwuseracc._Uac" NewName="NBWSPGW.gwuseracc.cc64f072529c0dc80340fb25725f7cce6" />
-<Entry OldName="NBWSPGW.clicuser.cluseracc.HWOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c06522108fe8634a48401678a1a0b5909" />
+﻿<Mappings><Entry OldName="NBWSPGW.clicuser.cluseracc.HWOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c06522108fe8634a48401678a1a0b5909" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.HW2OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c13e33775cf17a3f96316bf2bbd2e0a99" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.GetServerSVNVersionOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c0a59872be77186db700a74124903aa27" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.LoginOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c59b3dcaecf3279bd1791c6a0c969b37e" />
@@ -9,6 +8,8 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login5OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.cd7f43f994fbf6f4c4af93db7d2d28804" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login6OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c0693d76421294334b48573549446dab7" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login7OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c22c1312916d55f835a52bd64a4fd0cbe" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.Login8OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.ca538d224b9fa6b8a627b5c0c054b2119" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.Login9OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c3e871782ef53c5f2765c02617969b7c8" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.LogoutOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c410c84bb9e1dd6f37e229f8a2d2f6bd5" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.KeepAliveOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c447da79a6204b990295ca07f2fc361d6" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.FunctionCheckOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c42b9289bd1b67ceae14d98ca744d7a58" />
@@ -26,6 +27,8 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.GetUserCountOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.ccca81d19da383006cd7600148a5e14cf" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.GetUserCount2OperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.cfc7b727ffddae628669050853573c1f6" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.SetLastSyncWspTimeOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c23758f34f6af57afa31e329943641522" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.LockSiteManagerOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.c6847604345efecbc78dea3802569484e" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.UnLockSiteManagerOperationCompleted" NewName="NBWSPGW.clicuser.cluseracc.ced03894f48cc7707227ab474270042c0" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.useDefaultCredentialsSetExplicitly" NewName="NBWSPGW.clicuser.cluseracc.c164492eee46482d47c39d9db57e49763" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.HWCompleted" NewName="NBWSPGW.clicuser.cluseracc.c598528e3800e502340880cbe95ca520f" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.HW2Completed" NewName="NBWSPGW.clicuser.cluseracc.c38e32d71ce62e251b4010c07e4ba1975" />
@@ -37,6 +40,8 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login5Completed" NewName="NBWSPGW.clicuser.cluseracc.c89c78159e42945ab9a950017127a3372" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login6Completed" NewName="NBWSPGW.clicuser.cluseracc.c6fcdc081f713c0d2729b38d295293343" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.Login7Completed" NewName="NBWSPGW.clicuser.cluseracc.c840d770a0f3c74eb21fd5bb86d42d220" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.Login8Completed" NewName="NBWSPGW.clicuser.cluseracc.cadc2a1de83738ea5cb17d2141cd03d70" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.Login9Completed" NewName="NBWSPGW.clicuser.cluseracc.c86c1c9853b62f9c77866382317679c40" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.LogoutCompleted" NewName="NBWSPGW.clicuser.cluseracc.ce7b6631011abaf73fbb89605b3a3d630" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.KeepAliveCompleted" NewName="NBWSPGW.clicuser.cluseracc.cde76e4375da3ad11805cfb31e0dc1727" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.FunctionCheckCompleted" NewName="NBWSPGW.clicuser.cluseracc.c0e69ddf9d9b3ff6fb5d84fbc6d3c63d5" />
@@ -54,6 +59,93 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.GetUserCountCompleted" NewName="NBWSPGW.clicuser.cluseracc.c25070161dfbc51eb449893e2c32dc0f5" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.GetUserCount2Completed" NewName="NBWSPGW.clicuser.cluseracc.cabdceccb885444bb2f1e017b7e35d105" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.SetLastSyncWspTimeCompleted" NewName="NBWSPGW.clicuser.cluseracc.c87058b574f84647d88ff9a079455bc18" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.LockSiteManagerCompleted" NewName="NBWSPGW.clicuser.cluseracc.c190ee5250a619a907a40e7136d2d0d3c" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.UnLockSiteManagerCompleted" NewName="NBWSPGW.clicuser.cluseracc.c8d55db3c7265fefb8f31147db40f41a2" />
+<Entry OldName="NBWSPGW.clicuser.HWCompletedEventArgs.results" NewName="NBWSPGW.clicuser.HWCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.HW2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.HW2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.LoginCompletedEventArgs.results" NewName="NBWSPGW.clicuser.LoginCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login3CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login3CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login4CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login4CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login5CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login5CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login6CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login6CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login7CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login7CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login8CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login8CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Login9CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login9CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs.results" NewName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs.results" NewName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetFunctions2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetFunctions2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.ChangePwdCompletedEventArgs.results" NewName="NBWSPGW.clicuser.ChangePwdCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetOLCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetOLCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.Refresh4OLCompletedEventArgs.results" NewName="NBWSPGW.clicuser.Refresh4OLCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetAllowReserveLicenseMaxTimeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetAllowReserveLicenseMaxTimeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.ReserveLicenseInfoCompletedEventArgs.results" NewName="NBWSPGW.clicuser.ReserveLicenseInfoCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.CheckoutLocNodeSizeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.CheckoutLocNodeSizeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.CheckFunctionUsageTimesCompletedEventArgs.results" NewName="NBWSPGW.clicuser.CheckFunctionUsageTimesCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.RecordFunctionUsageCompletedEventArgs.results" NewName="NBWSPGW.clicuser.RecordFunctionUsageCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetPreInfoCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetPreInfoCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.LockSiteManagerCompletedEventArgs.results" NewName="NBWSPGW.clicuser.LockSiteManagerCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.clicuser.UnLockSiteManagerCompletedEventArgs.results" NewName="NBWSPGW.clicuser.UnLockSiteManagerCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.XmlFileName" NewName="NBWSPGW.CustomLicenseServer.cea7cc433d65b1fa9dd68cd4ae051e5df" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.ClicSection" NewName="NBWSPGW.CustomLicenseServer.cdf1df57f25608963ec46bb76d36bc22d" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Guid" NewName="NBWSPGW.CustomLicenseServer.c5e5244f3935bebcd6fbe858a91bd9e7b" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_IP" NewName="NBWSPGW.CustomLicenseServer.c77e0c3d781ec8c2493ad6bb51c49bf4f" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Port" NewName="NBWSPGW.CustomLicenseServer.cacad111d0ad1e620127ea36ad8c63c53" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Https" NewName="NBWSPGW.CustomLicenseServer.cc5e82970fec8c4f78137064423f6401d" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.syncRoot" NewName="NBWSPGW.CustomLicenseServer.c717a7cceae2a78c006ede8ea61e1659a" />
+<Entry OldName="NBWSPGW.CustomLicenseServer._CustomLicenseServer" NewName="NBWSPGW.CustomLicenseServer.cf919eff4368c966c7b6460524c391568" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.guid" NewName="NBWSPGW.CustomLicenseServer.c304f0a1466851f61e352e46b26410fdf" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.ip" NewName="NBWSPGW.CustomLicenseServer.c5339dfc6f39cff4a12a08823a394f1f9" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.port" NewName="NBWSPGW.CustomLicenseServer.c8b9c18247b54c3f50d9a7b4cb7182851" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.https" NewName="NBWSPGW.CustomLicenseServer.cf14804c7cb8818777761ac0e5bba5bc7" />
+<Entry OldName="NBWSPGW.Workspace.&lt;GUID&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca3f5be29304a31bace12bed488ae41ff" />
+<Entry OldName="NBWSPGW.Workspace.&lt;Name&gt;k__BackingField" NewName="NBWSPGW.Workspace.c2bc3f3feb6cc93062f3699cd993d82a2" />
+<Entry OldName="NBWSPGW.Workspace.&lt;IISVirtualPathName&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca063a10a469471a4bee0e4c4b5b33f14" />
+<Entry OldName="NBWSPGW.Workspace.&lt;IsBeforeMT&gt;k__BackingField" NewName="NBWSPGW.Workspace.c34cf7fc732806d12dc60d50de3b9ff74" />
+<Entry OldName="NBWSPGW.Workspace.&lt;NodeCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cbf127720eb0add18a9f412bfc3154d25" />
+<Entry OldName="NBWSPGW.Workspace.&lt;MaxSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.c6cbcb34d4bfb9398117794d681bac964" />
+<Entry OldName="NBWSPGW.Workspace.&lt;MinSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cd328331014f52024e75b2a9e9f89382d" />
+<Entry OldName="NBWSPGW.Workspace.&lt;Location&gt;k__BackingField" NewName="NBWSPGW.Workspace.c9b93fdc7b32485b7e3d4e59b907b3456" />
+<Entry OldName="NBWSPGW.WorkspaceServer.XmlFileName" NewName="NBWSPGW.WorkspaceServer.cea7cc433d65b1fa9dd68cd4ae051e5df" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_GUID" NewName="NBWSPGW.WorkspaceServer.c22d38cecdd7d72e7123c81495fb21d70" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Version" NewName="NBWSPGW.WorkspaceServer.cdb5a84aeae4fb9ebe6cf0c0a74222f3c" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Description" NewName="NBWSPGW.WorkspaceServer.c97dd085f5380baab54f55cc848699b97" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceList" NewName="NBWSPGW.WorkspaceServer.cd53a45ddea173df70c1415fb8f077ab9" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Workspace" NewName="NBWSPGW.WorkspaceServer.c4f9281f76ecb3ad309eed9ea71819b02" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceGUID" NewName="NBWSPGW.WorkspaceServer.cfeda9a13068af9fe1d5213ef52feafdc" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceName" NewName="NBWSPGW.WorkspaceServer.c0da518015b6b7ba7d28dec7a92176a6b" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceVirtualDir" NewName="NBWSPGW.WorkspaceServer.ccc547394d7dc9f272ebec2ea505273b0" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_IsBeforeMT" NewName="NBWSPGW.WorkspaceServer.c6de963b8bea3565b0e2bd2e0dca78d1d" />
+<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Location" NewName="NBWSPGW.WorkspaceServer.cd0c58e1af0cb9e8cfba32edcb019ef46" />
+<Entry OldName="NBWSPGW.WorkspaceServer.syncRoot" NewName="NBWSPGW.WorkspaceServer.c717a7cceae2a78c006ede8ea61e1659a" />
+<Entry OldName="NBWSPGW.WorkspaceServer._WorkspaceServer" NewName="NBWSPGW.WorkspaceServer.c915ec655b8a38a76c47579ab3281a376" />
+<Entry OldName="NBWSPGW.WorkspaceServer._GUID" NewName="NBWSPGW.WorkspaceServer.c48de47c69f09df3be0369df3c754bc1e" />
+<Entry OldName="NBWSPGW.WorkspaceServer._Description" NewName="NBWSPGW.WorkspaceServer.c8cb49fc15cf67b44051dee37f83ecfdc" />
+<Entry OldName="NBWSPGW.WorkspaceServer._Version" NewName="NBWSPGW.WorkspaceServer.c064f8b88706e6956292f667542c0717b" />
+<Entry OldName="NBWSPGW.WorkspaceServer._WorkspaceList" NewName="NBWSPGW.WorkspaceServer.c628c79b642282bdd2990ec4915441a16" />
+<Entry OldName="NBWSPGW.LogHelper.log" NewName="NBWSPGW.LogHelper.c32c5e1e254426a61e4fd1f94c924175b" />
+<Entry OldName="NBWSPGW.LogHelper.syncRoot" NewName="NBWSPGW.LogHelper.c717a7cceae2a78c006ede8ea61e1659a" />
+<Entry OldName="NBWSPGW.LogHelper._LogHelper" NewName="NBWSPGW.LogHelper.c479dc7957bbc415c8fd045f94709e808" />
+<Entry OldName="NBWSPGW.LogHelper.mErrMessage" NewName="NBWSPGW.LogHelper.cb008972e6812fc1f14a585e0537836e4" />
+<Entry OldName="NBWSPGW.gwwspinfo._wfi" NewName="NBWSPGW.gwwspinfo.c8e07192a8a8359eba8800d381af500e5" />
+<Entry OldName="NBWSPGW.gwwspinfo.CS$&lt;&gt;9__CachedAnonymousMethodDelegate2" NewName="NBWSPGW.gwwspinfo.c24e9569d91a9475fb25d06381ccca6d4" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.sGuid" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.sGuid" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicenseServerGUIDOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.ca7cf028055cdd77b12495fc7a99dd469" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.HWOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c06522108fe8634a48401678a1a0b5909" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicWspsDataOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c6641008814482d72b48523e9079fcb05" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicNodeRatioOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c0e4156f62b2ea583d25f2288a7d3441c" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetWorkspaceOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c2955701d09dc44186679c41d3c6f2114" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.useDefaultCredentialsSetExplicitly" NewName="NBWSPGW.clic.clwspinfo.c164492eee46482d47c39d9db57e49763" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicenseServerGUIDCompleted" NewName="NBWSPGW.clic.clwspinfo.c7ec0d7c987901e4dffda40f1479120d6" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.HWCompleted" NewName="NBWSPGW.clic.clwspinfo.c598528e3800e502340880cbe95ca520f" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicWspsDataCompleted" NewName="NBWSPGW.clic.clwspinfo.c43faa5b9eac94451b3dd1d209c6ed44c" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicNodeRatioCompleted" NewName="NBWSPGW.clic.clwspinfo.c9b9b25d238adbc7a1d25e2721993d9a8" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.GetWorkspaceCompleted" NewName="NBWSPGW.clic.clwspinfo.c77bbb66d21cbd55252a2ecdf6505ecbb" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.initialized" NewName="A.c036420d1be0881c5648f11bbd6354124.cf758e347a139341859a19d0ec3d553ba" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~1" NewName="A.c036420d1be0881c5648f11bbd6354124.c5f1ff97f5e58e19682db0ffaea0e13ac" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~1" NewName="A.c036420d1be0881c5648f11bbd6354124.cc5af1afdf43533aaa0c69405d8667b5a" />
@@ -79,130 +171,96 @@
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~11" NewName="A.c036420d1be0881c5648f11bbd6354124.c6a04721b626ba2e5268358e8c3682a39" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~12" NewName="A.c036420d1be0881c5648f11bbd6354124.ce5efd4ee30adbc1309073322af37b746" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~12" NewName="A.c036420d1be0881c5648f11bbd6354124.cb51142ef27d1d46f344b2776457ec878" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~35" NewName="A.c036420d1be0881c5648f11bbd6354124.cd25460543d618b4c14996fec949ac9d8" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~35" NewName="A.c036420d1be0881c5648f11bbd6354124.cb414f77a694b490d2b1fc11d5f688883" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~13" NewName="A.c036420d1be0881c5648f11bbd6354124.c12d980645d5d944c9861231534896419" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~13" NewName="A.c036420d1be0881c5648f11bbd6354124.c45fa9c271418311d6d4e889be64875f8" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~14" NewName="A.c036420d1be0881c5648f11bbd6354124.c1b036c0d43228638f56bc053bd8a3663" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~14" NewName="A.c036420d1be0881c5648f11bbd6354124.c85f325f88650f6c48a366898d9ebc4d6" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~36" NewName="A.c036420d1be0881c5648f11bbd6354124.c3c95abf2363acff9673f34765c30b750" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~36" NewName="A.c036420d1be0881c5648f11bbd6354124.c4e794807b80ccdeff250abbabb7859c6" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~15" NewName="A.c036420d1be0881c5648f11bbd6354124.cf61bf38722820129c0ab1dca9102e54a" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~15" NewName="A.c036420d1be0881c5648f11bbd6354124.ccc0df0d0ba7944617d4b6c560aea4dc4" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~37" NewName="A.c036420d1be0881c5648f11bbd6354124.c1e27b29ab097488c8315bd8bfc6ef85b" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~37" NewName="A.c036420d1be0881c5648f11bbd6354124.c3c814b90cc850dca70cfaf78d9596ed8" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~16" NewName="A.c036420d1be0881c5648f11bbd6354124.ca6bbc01c7bbb4e0b09e6fee6522bbdc8" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~16" NewName="A.c036420d1be0881c5648f11bbd6354124.cdd203c6c5fb1ef5ae3dbc36f8b5752ba" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~38" NewName="A.c036420d1be0881c5648f11bbd6354124.c1a3715c5d715893b4e2067145190217e" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~38" NewName="A.c036420d1be0881c5648f11bbd6354124.c02442079f7c608aa632039263e343e5b" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~17" NewName="A.c036420d1be0881c5648f11bbd6354124.c52e7e05bce1fe43d9d685b3955c7918c" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~17" NewName="A.c036420d1be0881c5648f11bbd6354124.cb10eff55496eb6ec9dfbe70d99d2765c" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~39" NewName="A.c036420d1be0881c5648f11bbd6354124.c699be691aef275c6fbab4b1a28764205" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~39" NewName="A.c036420d1be0881c5648f11bbd6354124.cc791fdcaab091ad313255cb68e46de3f" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~18" NewName="A.c036420d1be0881c5648f11bbd6354124.cfb57490caaad0e79678664c08e1ef3d7" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~18" NewName="A.c036420d1be0881c5648f11bbd6354124.cde2255b29a42e0ce164c5d5379dd8da9" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~40" NewName="A.c036420d1be0881c5648f11bbd6354124.c352a6b3dfa304ad63fb46fbf19098759" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~40" NewName="A.c036420d1be0881c5648f11bbd6354124.ccc129f134ea4593311336f99814f89df" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~19" NewName="A.c036420d1be0881c5648f11bbd6354124.c62e11131ebc5e1cb21f3d7527b3e00e4" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~19" NewName="A.c036420d1be0881c5648f11bbd6354124.c5179733ba1c02dfe1ab2064160ed0155" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~41" NewName="A.c036420d1be0881c5648f11bbd6354124.c7203913b31940c88222e9de682e1eab3" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~41" NewName="A.c036420d1be0881c5648f11bbd6354124.c84d1a2453bfb93ae7cf7a6295101af93" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~20" NewName="A.c036420d1be0881c5648f11bbd6354124.ce15b19dc8871b8ae7fa7d9ba83b83469" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~20" NewName="A.c036420d1be0881c5648f11bbd6354124.c5a4850ecacfd8070e0db5e5310af468f" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~42" NewName="A.c036420d1be0881c5648f11bbd6354124.c4c69432afc221eadb9adbdcfec076c7c" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~42" NewName="A.c036420d1be0881c5648f11bbd6354124.ca2672a8edd5e5fd809e823eba5f138d0" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~21" NewName="A.c036420d1be0881c5648f11bbd6354124.cc32dbadb8b9943901f5598fe88f29a4b" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~21" NewName="A.c036420d1be0881c5648f11bbd6354124.c05985b0bbf5da748861e6724417d1ea1" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~43" NewName="A.c036420d1be0881c5648f11bbd6354124.c787679fcef5263bdccb42feea4c5796d" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~43" NewName="A.c036420d1be0881c5648f11bbd6354124.ce4faae5a4a3789c2a6b2018bdf321e1f" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~39" NewName="A.c036420d1be0881c5648f11bbd6354124.c699be691aef275c6fbab4b1a28764205" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~39" NewName="A.c036420d1be0881c5648f11bbd6354124.cc791fdcaab091ad313255cb68e46de3f" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~22" NewName="A.c036420d1be0881c5648f11bbd6354124.c0411de49754a893ff7e2c0d5ca06db11" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~22" NewName="A.c036420d1be0881c5648f11bbd6354124.cced11ff016c28ee79cbe49f74440c042" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~44" NewName="A.c036420d1be0881c5648f11bbd6354124.c9f9938cdc57eaff77c75fa1bbbeb4cab" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~44" NewName="A.c036420d1be0881c5648f11bbd6354124.c5e5b77025ce16b826eda25641de752df" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~23" NewName="A.c036420d1be0881c5648f11bbd6354124.c94445bb0684a4bd0f304e5501a767166" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~23" NewName="A.c036420d1be0881c5648f11bbd6354124.c35e8bfdb59b830df7a038cf2110848c4" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~45" NewName="A.c036420d1be0881c5648f11bbd6354124.c779f6875a0811fd6965d88c1a83e655d" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~45" NewName="A.c036420d1be0881c5648f11bbd6354124.c42fc4397042f6ae715068ffa99f75609" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~40" NewName="A.c036420d1be0881c5648f11bbd6354124.c352a6b3dfa304ad63fb46fbf19098759" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~40" NewName="A.c036420d1be0881c5648f11bbd6354124.ccc129f134ea4593311336f99814f89df" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~24" NewName="A.c036420d1be0881c5648f11bbd6354124.c8504640f58bf10559b9c05d4fb9295b9" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~24" NewName="A.c036420d1be0881c5648f11bbd6354124.c968cc15d2d4ea81b1bafdd88b2b5d94d" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~46" NewName="A.c036420d1be0881c5648f11bbd6354124.cfa16f7fb4040ba25043af50af501f617" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~46" NewName="A.c036420d1be0881c5648f11bbd6354124.ccdf393be493579223ff7f3a45a372c14" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~41" NewName="A.c036420d1be0881c5648f11bbd6354124.c7203913b31940c88222e9de682e1eab3" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~41" NewName="A.c036420d1be0881c5648f11bbd6354124.c84d1a2453bfb93ae7cf7a6295101af93" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~25" NewName="A.c036420d1be0881c5648f11bbd6354124.cc7dfd9f71dc11f2a662682c5ad8afe09" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~25" NewName="A.c036420d1be0881c5648f11bbd6354124.c3eebb76258d1c07b327e6591424c4558" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~42" NewName="A.c036420d1be0881c5648f11bbd6354124.c4c69432afc221eadb9adbdcfec076c7c" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~42" NewName="A.c036420d1be0881c5648f11bbd6354124.ca2672a8edd5e5fd809e823eba5f138d0" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~26" NewName="A.c036420d1be0881c5648f11bbd6354124.c73a195141b77c9c95e41fa6b3538674b" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~26" NewName="A.c036420d1be0881c5648f11bbd6354124.c799703ca99bd2eda5508fe7f8a8996f1" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~43" NewName="A.c036420d1be0881c5648f11bbd6354124.c787679fcef5263bdccb42feea4c5796d" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~43" NewName="A.c036420d1be0881c5648f11bbd6354124.ce4faae5a4a3789c2a6b2018bdf321e1f" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~27" NewName="A.c036420d1be0881c5648f11bbd6354124.ccb959b2ef50eef52dfe617d310b72254" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~27" NewName="A.c036420d1be0881c5648f11bbd6354124.cc28262602270d73326bd0242ab21803b" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~44" NewName="A.c036420d1be0881c5648f11bbd6354124.c9f9938cdc57eaff77c75fa1bbbeb4cab" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~44" NewName="A.c036420d1be0881c5648f11bbd6354124.c5e5b77025ce16b826eda25641de752df" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~28" NewName="A.c036420d1be0881c5648f11bbd6354124.c97479d4221239d432c4b9b3fa3611532" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~28" NewName="A.c036420d1be0881c5648f11bbd6354124.c22a175ba167939ee76d6a2cc7ffeea38" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~45" NewName="A.c036420d1be0881c5648f11bbd6354124.c779f6875a0811fd6965d88c1a83e655d" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~45" NewName="A.c036420d1be0881c5648f11bbd6354124.c42fc4397042f6ae715068ffa99f75609" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~29" NewName="A.c036420d1be0881c5648f11bbd6354124.c84a8704afe65e0eec899802baa0a296b" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~29" NewName="A.c036420d1be0881c5648f11bbd6354124.cae5db9928c768f0919202e1d8acefa80" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~46" NewName="A.c036420d1be0881c5648f11bbd6354124.cfa16f7fb4040ba25043af50af501f617" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~46" NewName="A.c036420d1be0881c5648f11bbd6354124.ccdf393be493579223ff7f3a45a372c14" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~30" NewName="A.c036420d1be0881c5648f11bbd6354124.cc387d611fa7bb4d2a1b267954fd96f8c" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~30" NewName="A.c036420d1be0881c5648f11bbd6354124.c87a2cc1371197b93554116cc67ba13d5" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~47" NewName="A.c036420d1be0881c5648f11bbd6354124.c2e19ad922f97ae40cab36e49be73fd1d" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~47" NewName="A.c036420d1be0881c5648f11bbd6354124.ce87c1d437da7eecc9777e533f6098a0f" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~31" NewName="A.c036420d1be0881c5648f11bbd6354124.c67b9c9456d55644900875d6abd7ff6b9" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~31" NewName="A.c036420d1be0881c5648f11bbd6354124.c1d45ea81f22b530bd565b716bbe985b0" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~48" NewName="A.c036420d1be0881c5648f11bbd6354124.ce80b39094a96c2040aaca159ad23e0d3" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~48" NewName="A.c036420d1be0881c5648f11bbd6354124.c9177cd8843b36065f174519faf72aabc" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~32" NewName="A.c036420d1be0881c5648f11bbd6354124.c0e42e35af229ddfc7aea6880b06a622d" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~32" NewName="A.c036420d1be0881c5648f11bbd6354124.c18bcbe6c31e55309ee6d96fa70ad68e4" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~49" NewName="A.c036420d1be0881c5648f11bbd6354124.cc7559e1666c0290f857ec1513796b334" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~49" NewName="A.c036420d1be0881c5648f11bbd6354124.ce47f15262b53cb10cd9ff0c4e189e438" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~33" NewName="A.c036420d1be0881c5648f11bbd6354124.ce67ee657c1dcd00d4a8e3f92474551c3" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~33" NewName="A.c036420d1be0881c5648f11bbd6354124.c5d237659ab699ec7dc29301274cc8db7" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~50" NewName="A.c036420d1be0881c5648f11bbd6354124.c1ce11e6e70fe7a964d6976982f279468" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~50" NewName="A.c036420d1be0881c5648f11bbd6354124.c83fc2ed036ba2e8ea7c3b2b4a8819423" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~34" NewName="A.c036420d1be0881c5648f11bbd6354124.c196b0702cb2664459f9f5526bff6ea29" />
 <Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~34" NewName="A.c036420d1be0881c5648f11bbd6354124.c7e1791605eaabad4b2f60a0e0e4e690c" />
-<Entry OldName="NBWSPGW.WorkspaceServer.XmlFileName" NewName="NBWSPGW.WorkspaceServer.cea7cc433d65b1fa9dd68cd4ae051e5df" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_GUID" NewName="NBWSPGW.WorkspaceServer.c22d38cecdd7d72e7123c81495fb21d70" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Version" NewName="NBWSPGW.WorkspaceServer.cdb5a84aeae4fb9ebe6cf0c0a74222f3c" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Description" NewName="NBWSPGW.WorkspaceServer.c97dd085f5380baab54f55cc848699b97" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceList" NewName="NBWSPGW.WorkspaceServer.cd53a45ddea173df70c1415fb8f077ab9" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_Workspace" NewName="NBWSPGW.WorkspaceServer.c4f9281f76ecb3ad309eed9ea71819b02" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceGUID" NewName="NBWSPGW.WorkspaceServer.cfeda9a13068af9fe1d5213ef52feafdc" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceName" NewName="NBWSPGW.WorkspaceServer.c0da518015b6b7ba7d28dec7a92176a6b" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_WorkspaceVirtualDir" NewName="NBWSPGW.WorkspaceServer.ccc547394d7dc9f272ebec2ea505273b0" />
-<Entry OldName="NBWSPGW.WorkspaceServer.KEY_IsBeforeMT" NewName="NBWSPGW.WorkspaceServer.c6de963b8bea3565b0e2bd2e0dca78d1d" />
-<Entry OldName="NBWSPGW.WorkspaceServer.syncRoot" NewName="NBWSPGW.WorkspaceServer.c717a7cceae2a78c006ede8ea61e1659a" />
-<Entry OldName="NBWSPGW.WorkspaceServer._WorkspaceServer" NewName="NBWSPGW.WorkspaceServer.c915ec655b8a38a76c47579ab3281a376" />
-<Entry OldName="NBWSPGW.WorkspaceServer._GUID" NewName="NBWSPGW.WorkspaceServer.c48de47c69f09df3be0369df3c754bc1e" />
-<Entry OldName="NBWSPGW.WorkspaceServer._Description" NewName="NBWSPGW.WorkspaceServer.c8cb49fc15cf67b44051dee37f83ecfdc" />
-<Entry OldName="NBWSPGW.WorkspaceServer._Version" NewName="NBWSPGW.WorkspaceServer.c064f8b88706e6956292f667542c0717b" />
-<Entry OldName="NBWSPGW.WorkspaceServer._WorkspaceList" NewName="NBWSPGW.WorkspaceServer.c628c79b642282bdd2990ec4915441a16" />
-<Entry OldName="NBWSPGW.Global.log" NewName="NBWSPGW.Global.c32c5e1e254426a61e4fd1f94c924175b" />
-<Entry OldName="NBWSPGW.Global.CS$&lt;&gt;9__CachedAnonymousMethodDelegate1" NewName="NBWSPGW.Global.c6702b7b429d913d39821a2ac3b256ff0" />
-<Entry OldName="NBWSPGW.Workspace.&lt;GUID&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca3f5be29304a31bace12bed488ae41ff" />
-<Entry OldName="NBWSPGW.Workspace.&lt;Name&gt;k__BackingField" NewName="NBWSPGW.Workspace.c2bc3f3feb6cc93062f3699cd993d82a2" />
-<Entry OldName="NBWSPGW.Workspace.&lt;IISVirtualPathName&gt;k__BackingField" NewName="NBWSPGW.Workspace.ca063a10a469471a4bee0e4c4b5b33f14" />
-<Entry OldName="NBWSPGW.Workspace.&lt;IsBeforeMT&gt;k__BackingField" NewName="NBWSPGW.Workspace.c34cf7fc732806d12dc60d50de3b9ff74" />
-<Entry OldName="NBWSPGW.Workspace.&lt;NodeCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cbf127720eb0add18a9f412bfc3154d25" />
-<Entry OldName="NBWSPGW.Workspace.&lt;MaxSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.c6cbcb34d4bfb9398117794d681bac964" />
-<Entry OldName="NBWSPGW.Workspace.&lt;MinSeatCount&gt;k__BackingField" NewName="NBWSPGW.Workspace.cd328331014f52024e75b2a9e9f89382d" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicenseServerGUIDOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.ca7cf028055cdd77b12495fc7a99dd469" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.HWOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c06522108fe8634a48401678a1a0b5909" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicWspsDataOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c6641008814482d72b48523e9079fcb05" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicNodeRatioOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c0e4156f62b2ea583d25f2288a7d3441c" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetWorkspaceOperationCompleted" NewName="NBWSPGW.clic.clwspinfo.c2955701d09dc44186679c41d3c6f2114" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.useDefaultCredentialsSetExplicitly" NewName="NBWSPGW.clic.clwspinfo.c164492eee46482d47c39d9db57e49763" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicenseServerGUIDCompleted" NewName="NBWSPGW.clic.clwspinfo.c7ec0d7c987901e4dffda40f1479120d6" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.HWCompleted" NewName="NBWSPGW.clic.clwspinfo.c598528e3800e502340880cbe95ca520f" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicWspsDataCompleted" NewName="NBWSPGW.clic.clwspinfo.c43faa5b9eac94451b3dd1d209c6ed44c" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetLicNodeRatioCompleted" NewName="NBWSPGW.clic.clwspinfo.c9b9b25d238adbc7a1d25e2721993d9a8" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.GetWorkspaceCompleted" NewName="NBWSPGW.clic.clwspinfo.c77bbb66d21cbd55252a2ecdf6505ecbb" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~35" NewName="A.c036420d1be0881c5648f11bbd6354124.cf08ba5961092685ac11a5c0fa029952e" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~35" NewName="A.c036420d1be0881c5648f11bbd6354124.cb414f77a694b490d2b1fc11d5f688883" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~36" NewName="A.c036420d1be0881c5648f11bbd6354124.ce7fbc72087aa7906192475b67fbb6adb" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~36" NewName="A.c036420d1be0881c5648f11bbd6354124.c4e794807b80ccdeff250abbabb7859c6" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~37" NewName="A.c036420d1be0881c5648f11bbd6354124.cab0f69f9e96e5cbff3e3dddb879f84dc" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~37" NewName="A.c036420d1be0881c5648f11bbd6354124.c3c814b90cc850dca70cfaf78d9596ed8" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~51" NewName="A.c036420d1be0881c5648f11bbd6354124.c07a6cf8a47679d8320e2bd6e213baef4" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~51" NewName="A.c036420d1be0881c5648f11bbd6354124.c7397530713aaf838a1b3a8b99b278833" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBLogAttribute~38" NewName="A.c036420d1be0881c5648f11bbd6354124.c622eda8c0b1de1eba4166ce2d4e7178f" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~38" NewName="A.c036420d1be0881c5648f11bbd6354124.c02442079f7c608aa632039263e343e5b" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.NBWSPGW.NBCheckUserAttribute~52" NewName="A.c036420d1be0881c5648f11bbd6354124.ce7482a345818a1b7fcb6e6efce6722d2" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1.~targetMethod~52" NewName="A.c036420d1be0881c5648f11bbd6354124.ce69bee1f8c17f10db31026e83a618983" />
 <Entry OldName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs.results" NewName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clic.HWCompletedEventArgs.results" NewName="NBWSPGW.clic.HWCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs.results" NewName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs.results" NewName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
 <Entry OldName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs.results" NewName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.XmlFileName" NewName="NBWSPGW.CustomLicenseServer.cea7cc433d65b1fa9dd68cd4ae051e5df" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.ClicSection" NewName="NBWSPGW.CustomLicenseServer.cdf1df57f25608963ec46bb76d36bc22d" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Guid" NewName="NBWSPGW.CustomLicenseServer.c5e5244f3935bebcd6fbe858a91bd9e7b" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_IP" NewName="NBWSPGW.CustomLicenseServer.c77e0c3d781ec8c2493ad6bb51c49bf4f" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Port" NewName="NBWSPGW.CustomLicenseServer.cacad111d0ad1e620127ea36ad8c63c53" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.KEY_Https" NewName="NBWSPGW.CustomLicenseServer.cc5e82970fec8c4f78137064423f6401d" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.syncRoot" NewName="NBWSPGW.CustomLicenseServer.c717a7cceae2a78c006ede8ea61e1659a" />
-<Entry OldName="NBWSPGW.CustomLicenseServer._CustomLicenseServer" NewName="NBWSPGW.CustomLicenseServer.cf919eff4368c966c7b6460524c391568" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.guid" NewName="NBWSPGW.CustomLicenseServer.c304f0a1466851f61e352e46b26410fdf" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.ip" NewName="NBWSPGW.CustomLicenseServer.c5339dfc6f39cff4a12a08823a394f1f9" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.port" NewName="NBWSPGW.CustomLicenseServer.c8b9c18247b54c3f50d9a7b4cb7182851" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.https" NewName="NBWSPGW.CustomLicenseServer.cf14804c7cb8818777761ac0e5bba5bc7" />
-<Entry OldName="NBWSPGW.gwwspinfo._wfi" NewName="NBWSPGW.gwwspinfo.c8e07192a8a8359eba8800d381af500e5" />
-<Entry OldName="NBWSPGW.gwwspinfo.CS$&lt;&gt;9__CachedAnonymousMethodDelegate2" NewName="NBWSPGW.gwwspinfo.c24e9569d91a9475fb25d06381ccca6d4" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.sGuid" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.sGuid" />
+<Entry OldName="NBWSPGW.gwwspop.log" NewName="NBWSPGW.gwwspop.c32c5e1e254426a61e4fd1f94c924175b" />
+<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;guid&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.ccda119456ee860d131f53aa45e632494" />
+<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;wsplist&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.c83ce1a9afe83bce64887cc5c6e3fffc0" />
+<Entry OldName="NBWSPGW.Global.log" NewName="NBWSPGW.Global.c32c5e1e254426a61e4fd1f94c924175b" />
+<Entry OldName="NBWSPGW.Global.CS$&lt;&gt;9__CachedAnonymousMethodDelegate1" NewName="NBWSPGW.Global.c6702b7b429d913d39821a2ac3b256ff0" />
 <Entry OldName="NBWSPGW.SessionEndModule.m_strServerNBC" NewName="NBWSPGW.SessionEndModule.c0a494f23e81e542a0c773ac23a9ebb13" />
 <Entry OldName="NBWSPGW.DeCompressionPageFilter.app" NewName="NBWSPGW.DeCompressionPageFilter.c279ee7d32831589254b2c55fbd4aa34a" />
 <Entry OldName="NBWSPGW.DeCompressionPageFilter.sEncoding" NewName="NBWSPGW.DeCompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
@@ -220,38 +278,10 @@
 <Entry OldName="NBWSPGW.CompressionPageFilter.sEncoding" NewName="NBWSPGW.CompressionPageFilter.c51e1caa0323012456e77eb6e041d012e" />
 <Entry OldName="NBWSPGW.CompressionPageFilter._sink" NewName="NBWSPGW.CompressionPageFilter.cbc81284d909df4bede7f846c3fa68c21" />
 <Entry OldName="NBWSPGW.CompressionPageFilter._position" NewName="NBWSPGW.CompressionPageFilter.c0f757b15a6dbc6e278beee3251aee4c6" />
-<Entry OldName="NBWSPGW.gwwspop.log" NewName="NBWSPGW.gwwspop.c32c5e1e254426a61e4fd1f94c924175b" />
-<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;guid&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.ccda119456ee860d131f53aa45e632494" />
-<Entry OldName="NBWSPGW.gwwspop.oWorkspaceServer.&lt;wsplist&gt;k__BackingField" NewName="NBWSPGW.gwwspop.oWorkspaceServer.c83ce1a9afe83bce64887cc5c6e3fffc0" />
 <Entry OldName="NBWSPGW.GlobalSet.syncobj" NewName="NBWSPGW.GlobalSet.c932efefb046bfe57c5eb823d35ec68c2" />
 <Entry OldName="NBWSPGW.GlobalSet._GlobalSet" NewName="NBWSPGW.GlobalSet.c736c637ad9130f25064abfce1b2b1755" />
-<Entry OldName="NBWSPGW.clicuser.HWCompletedEventArgs.results" NewName="NBWSPGW.clicuser.HWCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.HW2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.HW2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.LoginCompletedEventArgs.results" NewName="NBWSPGW.clicuser.LoginCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login3CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login3CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login4CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login4CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login5CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login5CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login6CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login6CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Login7CompletedEventArgs.results" NewName="NBWSPGW.clicuser.Login7CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs.results" NewName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs.results" NewName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetFunctions2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetFunctions2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.ChangePwdCompletedEventArgs.results" NewName="NBWSPGW.clicuser.ChangePwdCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetOLCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetOLCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.Refresh4OLCompletedEventArgs.results" NewName="NBWSPGW.clicuser.Refresh4OLCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetAllowReserveLicenseMaxTimeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetAllowReserveLicenseMaxTimeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.ReserveLicenseInfoCompletedEventArgs.results" NewName="NBWSPGW.clicuser.ReserveLicenseInfoCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.CheckoutLocNodeSizeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.CheckoutLocNodeSizeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.CheckFunctionUsageTimesCompletedEventArgs.results" NewName="NBWSPGW.clicuser.CheckFunctionUsageTimesCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.RecordFunctionUsageCompletedEventArgs.results" NewName="NBWSPGW.clicuser.RecordFunctionUsageCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetPreInfoCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetPreInfoCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.results" NewName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.results" NewName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs.cb98bc462fdca19839daa2d0c4c66e094" />
-<Entry OldName="NBWSPGW.gwuseracc.get_UserAcc()" NewName="NBWSPGW.gwuseracc.get_cf6b7fdfe9d83b57937a33407be92c240()" />
+<Entry OldName="NBWSPGW.gwuseracc.pdv" NewName="NBWSPGW.gwuseracc.c1e7611f55af91580bb6fa4dcabd370ac" />
+<Entry OldName="NBWSPGW.gwuseracc._Uac" NewName="NBWSPGW.gwuseracc.cc64f072529c0dc80340fb25725f7cce6" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnHWOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.ce087cad8db992af0b3cff051de0bb6bf(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnHW2OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c79b0321ea6d7b50df3cafb3fead5880e(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnGetServerSVNVersionOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c873b1162c09b0b3e4b5d8e3e050df8c5(Object c41649b43911fed230d0a1304f5f8ab03)" />
@@ -262,6 +292,8 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogin5OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cd86e43dddd866fdf14fe429672b3ace9(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogin6OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c7bc41bdd293fdc892a309df4ff30c28e(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogin7OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c3ccdd6cf25c84e01af4fe887b16f7402(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogin8OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c4ea69ada443c30b88b6c174dfc41a553(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogin9OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c328285a0efa77938b8e2a381b02a9b5e(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnLogoutOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cd204d05905c027c626fb52bfa9912326(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnKeepAliveOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c0a2acb2b30931b776f023223c447a373(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnFunctionCheckOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c1c41a4f7293c53552217de6c446be8d2(Object c41649b43911fed230d0a1304f5f8ab03)" />
@@ -279,33 +311,9 @@
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnGetUserCountOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cf432585ac28a052f37c7bc17b0b3339b(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnGetUserCount2OperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cdc03245018a69cc15e5df9d3ea721c08(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.OnSetLastSyncWspTimeOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cdd7e09438e09387dfec314159c7c7490(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.OnLockSiteManagerOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.c7a074286e92ba543567fc196128175e8(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clicuser.cluseracc.OnUnLockSiteManagerOperationCompleted(Object arg)" NewName="NBWSPGW.clicuser.cluseracc.cbd2e66533401be08ff55fa79aa91b93a(Object c41649b43911fed230d0a1304f5f8ab03)" />
 <Entry OldName="NBWSPGW.clicuser.cluseracc.IsLocalFileSystemWebService(String url)" NewName="NBWSPGW.clicuser.cluseracc.ce0cdaeaa7d5138f341e883b7cb8ce367(String c3ff5eb308de91ed948f8fd5daa195744)" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1..cctor()" NewName="A.c036420d1be0881c5648f11bbd6354124..cctor()" />
-<Entry OldName="NBWSPGW.NBLogAttribute.GetClientIP(WebService webservice)" NewName="NBWSPGW.NBLogAttribute.ced4a8ac39f91bfc076c27578d36b7c27(WebService cd5e9045c1223dfafc7bc440b6c61de08)" />
-<Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_Compress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.c4911e892cfb5bd6b498ff2464509f8a4(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
-<Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_DeCompress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.cfaae65aeacbb6a523564585bac84b749(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
-<Entry OldName="NBWSPGW.WorkspaceServer.LoadWorkspace()" NewName="NBWSPGW.WorkspaceServer.c089b006803208c45516cd8d424343884()" />
-<Entry OldName="NBWSPGW.Global.&lt;Application_Start&gt;b__0(Object A_0, X509Certificate A_1, X509Chain A_2, SslPolicyErrors A_3)" NewName="NBWSPGW.Global.cc9ef2a8485078e59e4c8a3d223c2af75(Object c504a4e45848e4eae5713800525a99b91, X509Certificate c4875760c49d6dc8d7021c6995a7d7042, X509Chain cde1b10b215f3be6af337a6b9efb61ec0, SslPolicyErrors c9f57a694ad2517a5876fb1dfb39d1636)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicenseServerGUIDOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cb4ce53a391bd577e3405afc6cfa077a8(Object c41649b43911fed230d0a1304f5f8ab03)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.OnHWOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.ce087cad8db992af0b3cff051de0bb6bf(Object c41649b43911fed230d0a1304f5f8ab03)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicWspsDataOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.c0db1c0feb791c154faf55d987f62a529(Object c41649b43911fed230d0a1304f5f8ab03)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicNodeRatioOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cb677cda4dfd11ed81ccb12698a58abd6(Object c41649b43911fed230d0a1304f5f8ab03)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetWorkspaceOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cc6192f12fafa561077b974ed0c03e1e4(Object c41649b43911fed230d0a1304f5f8ab03)" />
-<Entry OldName="NBWSPGW.clic.clwspinfo.IsLocalFileSystemWebService(String url)" NewName="NBWSPGW.clic.clwspinfo.ce0cdaeaa7d5138f341e883b7cb8ce367(String c3ff5eb308de91ed948f8fd5daa195744)" />
-<Entry OldName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.clic.HWCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.HWCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="NBWSPGW.CustomLicenseServer.SetValue(String key, String value)" NewName="NBWSPGW.CustomLicenseServer.c21b721bf01a3641d6d45fb9c7a914c86(String c9ab8319f5ba59033aee038e4fc0ec55b, String cea07bd1cae6a28c56ff7d9c78104cb64)" />
-<Entry OldName="NBWSPGW.gwwspinfo.get_LicWspInfo()" NewName="NBWSPGW.gwwspinfo.get_cb674b356a654d4caf74a59e910ab0397()" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;GetLicWspsData&gt;b__0(WorkspaceServer a)" NewName="NBWSPGW.gwwspinfo.c2c9791b3f9ff387c85f0ce5f0d622eb3(WorkspaceServer cb0a3c4c735584f25f7692ca7afc96145)" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3..ctor()" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd..ctor()" />
-<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.&lt;GetLicWspsData&gt;b__1(Workspace a)" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.&lt;GetLicWspsData&gt;b__1(Workspace a)" />
-<Entry OldName="NBWSPGW.SessionEndModule.m_HttpApplication_PostReleaseRequestState(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c2b6626cb4d1f532d1e48ed1f87992744(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
-<Entry OldName="NBWSPGW.SessionEndModule.OnPreRequestHandlerExecute(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c6a57d54888273c4e3f3fb00a0d0e6f01(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
-<Entry OldName="NBWSPGW.NBEnHttpRequestCreator.System.Net.IWebRequestCreate.Create(Uri uri)" NewName="NBWSPGW.NBEnHttpRequestCreator.c4dc29dc03e7dc832aa64fa8c14c758e3(Uri c8c2f06f35c194a7a188b4f16c22bfacb)" />
-<Entry OldName="NBWSPGW.Utils.FieldCopy(Object source, Object target)" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0.FieldCopy(Object source, Object target)" />
 <Entry OldName="NBWSPGW.clicuser.HWCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.HWCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.HW2CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.HW2CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetServerSVNVersionCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
@@ -316,6 +324,8 @@
 <Entry OldName="NBWSPGW.clicuser.Login5CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.Login5CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.Login6CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.Login6CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.Login7CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.Login7CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clicuser.Login8CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.Login8CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clicuser.Login9CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.Login9CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.KeepAliveCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.FunctionCheckCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetFunctionsCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
@@ -332,25 +342,41 @@
 <Entry OldName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetUserCountCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.GetUserCount2CompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
 <Entry OldName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.SetLastSyncWspTimeCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
-<Entry OldName="&lt;&gt;AspectsImplementationDetails_1" NewName="A.c036420d1be0881c5648f11bbd6354124" />
+<Entry OldName="NBWSPGW.clicuser.LockSiteManagerCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.LockSiteManagerCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clicuser.UnLockSiteManagerCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clicuser.UnLockSiteManagerCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.CustomLicenseServer.SetValue(String key, String value)" NewName="NBWSPGW.CustomLicenseServer.c21b721bf01a3641d6d45fb9c7a914c86(String c9ab8319f5ba59033aee038e4fc0ec55b, String cea07bd1cae6a28c56ff7d9c78104cb64)" />
+<Entry OldName="NBWSPGW.NBEnHttpRequestCreator.System.Net.IWebRequestCreate.Create(Uri uri)" NewName="NBWSPGW.NBEnHttpRequestCreator.c4dc29dc03e7dc832aa64fa8c14c758e3(Uri c8c2f06f35c194a7a188b4f16c22bfacb)" />
+<Entry OldName="NBWSPGW.WorkspaceServer.LoadWorkspace()" NewName="NBWSPGW.WorkspaceServer.c089b006803208c45516cd8d424343884()" />
+<Entry OldName="NBWSPGW.LogHelper.get_GetTmpZipPath()" NewName="NBWSPGW.LogHelper.get_cf85c26cf34d4954cfe9eee0fba579ae0()" />
+<Entry OldName="NBWSPGW.LogHelper.GetLogZip()" NewName="NBWSPGW.LogHelper.cf8d4d36dbf226bdfb953e38cb58ef58f()" />
+<Entry OldName="NBWSPGW.LogHelper.BuildZip(ZipFile zip)" NewName="NBWSPGW.LogHelper.c947c615c38eef8fb28968a4d1645039d(ZipFile c0dd1b665be6ba9486b0a9e69665c7642)" />
+<Entry OldName="NBWSPGW.gwwspinfo.get_LicWspInfo()" NewName="NBWSPGW.gwwspinfo.get_cb674b356a654d4caf74a59e910ab0397()" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;GetLicWspsData&gt;b__0(WorkspaceServer a)" NewName="NBWSPGW.gwwspinfo.c2c9791b3f9ff387c85f0ce5f0d622eb3(WorkspaceServer cb0a3c4c735584f25f7692ca7afc96145)" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3..ctor()" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd..ctor()" />
+<Entry OldName="NBWSPGW.gwwspinfo.&lt;&gt;c__DisplayClass3.&lt;GetLicWspsData&gt;b__1(Workspace a)" NewName="NBWSPGW.gwwspinfo.c0f460661776d23897910ab2af92d6ebd.&lt;GetLicWspsData&gt;b__1(Workspace a)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicenseServerGUIDOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cb4ce53a391bd577e3405afc6cfa077a8(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.OnHWOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.ce087cad8db992af0b3cff051de0bb6bf(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicWspsDataOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.c0db1c0feb791c154faf55d987f62a529(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetLicNodeRatioOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cb677cda4dfd11ed81ccb12698a58abd6(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.OnGetWorkspaceOperationCompleted(Object arg)" NewName="NBWSPGW.clic.clwspinfo.cc6192f12fafa561077b974ed0c03e1e4(Object c41649b43911fed230d0a1304f5f8ab03)" />
+<Entry OldName="NBWSPGW.clic.clwspinfo.IsLocalFileSystemWebService(String url)" NewName="NBWSPGW.clic.clwspinfo.ce0cdaeaa7d5138f341e883b7cb8ce367(String c3ff5eb308de91ed948f8fd5daa195744)" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1..cctor()" NewName="A.c036420d1be0881c5648f11bbd6354124..cctor()" />
+<Entry OldName="NBWSPGW.NBLogAttribute.GetClientIP(WebService webservice)" NewName="NBWSPGW.NBLogAttribute.ced4a8ac39f91bfc076c27578d36b7c27(WebService cd5e9045c1223dfafc7bc440b6c61de08)" />
+<Entry OldName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicenseServerGUIDCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clic.HWCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.HWCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicWspsDataCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetLicNodeRatioCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] results, Exception exception, Boolean cancelled, Object userState)" NewName="NBWSPGW.clic.GetWorkspaceCompletedEventArgs..ctor(Object[] cb98bc462fdca19839daa2d0c4c66e094, Exception c762bd9ac3269ddb9c25f243bdc705129, Boolean c2bd8445af4d301451849b5114af46ad5, Object c6b20b7dd9135b733c99b7654a935da40)" />
+<Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_Compress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.c4911e892cfb5bd6b498ff2464509f8a4(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
+<Entry OldName="NBWSPGW.CPlusPlus_Global.GG_Zlib_DeCompress_GetData(Int32 handle, IntPtr&amp; byData, Int32&amp; count)" NewName="NBWSPGW.CPlusPlus_Global.cfaae65aeacbb6a523564585bac84b749(Int32 cb2756b56d7363ee2e182eb7237e38f8c, IntPtr&amp; c0a004fba765b828c34520436f137190d, Int32&amp; cd8c0447c16b34dce287ce35d087d8512)" />
+<Entry OldName="NBWSPGW.Global.&lt;Application_Start&gt;b__0(Object A_0, X509Certificate A_1, X509Chain A_2, SslPolicyErrors A_3)" NewName="NBWSPGW.Global.cc9ef2a8485078e59e4c8a3d223c2af75(Object c504a4e45848e4eae5713800525a99b91, X509Certificate c4875760c49d6dc8d7021c6995a7d7042, X509Chain cde1b10b215f3be6af337a6b9efb61ec0, SslPolicyErrors c9f57a694ad2517a5876fb1dfb39d1636)" />
+<Entry OldName="NBWSPGW.SessionEndModule.m_HttpApplication_PostReleaseRequestState(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c2b6626cb4d1f532d1e48ed1f87992744(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
+<Entry OldName="NBWSPGW.SessionEndModule.OnPreRequestHandlerExecute(Object sender, EventArgs e)" NewName="NBWSPGW.SessionEndModule.c6a57d54888273c4e3f3fb00a0d0e6f01(Object ca091d2f4e13e0347158a6ea4c186fb80, EventArgs c807b7b341b97f1de6aad239061a79402)" />
+<Entry OldName="NBWSPGW.Utils.FieldCopy(Object source, Object target)" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0.FieldCopy(Object source, Object target)" />
+<Entry OldName="NBWSPGW.gwuseracc.get_getErrorMessage()" NewName="NBWSPGW.gwuseracc.get_c9acb22892005bebf1a543e5179809a45()" />
+<Entry OldName="NBWSPGW.gwuseracc.get_getErrorCode()" NewName="NBWSPGW.gwuseracc.get_c8297eaa2cfb66fa3e158f022770edd90()" />
+<Entry OldName="NBWSPGW.gwuseracc.get_UserAcc()" NewName="NBWSPGW.gwuseracc.get_cf6b7fdfe9d83b57937a33407be92c240()" />
 <Entry OldName="NBWSPGW.gwwspinfo+&lt;&gt;c__DisplayClass3" NewName="NBWSPGW.gwwspinfo+c0f460661776d23897910ab2af92d6ebd" />
+<Entry OldName="&lt;&gt;AspectsImplementationDetails_1" NewName="A.c036420d1be0881c5648f11bbd6354124" />
 <Entry OldName="NBWSPGW.Utils" NewName="A.cd42965e8f479d4df8fad6ed4c4777fe0" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwuseracc.asmx.cs" NewName="File0" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\PartialClass.cs" NewName="File1" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Web References\clicuser\Reference.cs" NewName="File2" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBAOPAttribute.cs" NewName="File3" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\CPlusPlus_Global.cs" NewName="File4" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\WorkspaceServer.cs" NewName="File5" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Global.asax.cs" NewName="File6" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Default.aspx.cs" NewName="File7" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Web References\clic\Reference.cs" NewName="File8" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\Properties\Settings.Designer.cs" NewName="File9" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwwspinfo.asmx.cs" NewName="File10" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\SessionEndModule.cs" NewName="File11" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\gwwspop.asmx.cs" NewName="File12" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpWebRequest.cs" NewName="File13" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpRequestCreator.cs" NewName="File14" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\Utils.cs" NewName="File15" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\GlobalSet.cs" NewName="File16" />
-<Entry OldName="I:\Netbrain5.1\ES\NBWSPGW\BackCode\NBEnHttpWebResponse.cs" NewName="File17" />
 </Mappings>

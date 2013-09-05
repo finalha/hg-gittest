@@ -1735,7 +1735,7 @@ end;
 function CheckEAP2008()
 	NUMBER nResult;
 begin
-   if((SYSINFO.WINNT.bWinVista_Server2008=TRUE) || (SYSINFO.WINNT.bWin7_Server2008R2=TRUE))&&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION) then      
+   if((SYSINFO.WINNT.bWinVista_Server2008=TRUE) || (SYSINFO.WINNT.bWin7_Server2008R2=TRUE)) && ((SYSINFO.nOSMinor=1) || (SYSINFO.nOSMinor=0)) &&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION) then      
    		svOSVer="win08";
    		return (1);
    endif;
@@ -1768,7 +1768,7 @@ function CheckEAP()
 	STRING szIISMSG;
 begin 
 	svOSVer="win03";
-	 if(SYSINFO.WINNT.bWinServer2003=FALSE)&&(CheckEAP2008()=0) then 
+	 if(SYSINFO.WINNT.bWinServer2003=FALSE)&&(CheckEAP2008()=0) && (!((SYSINFO.nOSMajor=6)&&(SYSINFO.nOSMinor=2)&&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION))) then 
 
      	SdShowMsg ("", FALSE);
      	MessageBox( MSG_ERR_NEED_2008SERVER, SEVERE);
@@ -2119,6 +2119,7 @@ end;
 function CopyFileToDes(szSourcefile,szDestfile)
     NUMBER nResult; 
 begin 
+  Disable(LOGGING);
     WriteLogFile ("Copy "+szSourcefile+" to "+szDestfile);
     
     nResult = CopyFile(szSourcefile, szDestfile); 
@@ -2142,6 +2143,7 @@ begin
         default:
             WriteLogFile ("An unspecified error occurred. "+FormatMessage(nResult)); 
     endswitch; 
+  Enable(LOGGING);
 end;   
 
 //function LICUpdate4To5()

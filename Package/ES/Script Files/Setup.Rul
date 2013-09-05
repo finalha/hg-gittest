@@ -1745,7 +1745,7 @@ end;
 function CheckEAP2008()
 	NUMBER nResult;
 begin
-   if((SYSINFO.WINNT.bWinVista_Server2008=TRUE) || (SYSINFO.WINNT.bWin7_Server2008R2=TRUE)) && (SYSINFO.nOSMinor=1) &&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION) then      
+   if((SYSINFO.WINNT.bWinVista_Server2008=TRUE) || (SYSINFO.WINNT.bWin7_Server2008R2=TRUE)) && ((SYSINFO.nOSMinor=1) || (SYSINFO.nOSMinor=0)) &&(SYSINFO.nOSProductType!=VER_NT_WORKSTATION) then      
    		svOSVer="win08";
    		return (1);
    endif;

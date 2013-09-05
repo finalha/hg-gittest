@@ -1,5 +1,5 @@
 Option Explicit
-'On Error Resume Next
+On Error Resume Next
 
 Const cdoSendUsingPort = 2
 Const cdoSendUsingMethod = "http://schemas.microsoft.com/cdo/configuration/sendusing"
@@ -12,8 +12,9 @@ Dim WshShell, objArgs, objMsg, iConf, Flds
 Dim textFile, strTo, strCC, strFrom, strSubject
 Dim strAttachFile
 
-strFrom = MailFrom
-
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''''                 Pre-definition
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 Function ReadAllTextFile(filename)
   Const ForReading = 1, ForWriting = 2
   Dim fso, f
@@ -30,10 +31,16 @@ Function GetFilePath(filename)
    GetFilePath = f.Path
 End Function
 
+Function GetAnExtension(DriveSpec)
+   Dim fso
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   GetAnExtension = fso.GetExtensionName(Drivespec)
+End Function
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
 Set WshShell = CreateObject("WScript.Shell")
 
 Set objArgs = WScript.Arguments
-'No Argument then Quit
 If objArgs.Count < 3 Then
    WScript.Echo "No File Input or Mail Address!"
    WScript.Quit (1)
@@ -56,20 +63,31 @@ Set iConf = WScript.CreateObject("CDO.Configuration")
 
 Set Flds = iConf.Fields
 
+
 ' Set the configuration
 Flds(cdoSendUsingMethod) = cdoSendUsingPort
 Flds(cdoSMTPServer) = SmtpServer 'set smtp server
 Flds.Update
 
+strFrom = MailFrom
+
 objMsg.From = strFrom
 objMsg.To = strTo
 objMsg.Cc = strCC
 objMsg.Subject = strSubject
-objMsg.TextBody = ReadAllTextFile(textFile)
-objMsg.Configuration = iConf
-If Not IsNull(strAttachFile) And strAttachFile <> "" Then
-objMsg.AddAttachment(strAttachFile)
+
+If  UCase("html") = UCase(GetAnExtension(textFile)) Then
+  objMsg.CreateMHTMLBody "file://" & textFile
+Else
+  objMsg.TextBody = ReadAllTextFile(textFile)
 End If
+
+objMsg.Configuration = iConf
+
+If Not IsNull(strAttachFile) And strAttachFile <> "" Then
+  objMsg.AddAttachment(strAttachFile)
+End If
+
 objMsg.Send
 
 'delete boject

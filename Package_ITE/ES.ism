@@ -4030,6 +4030,7 @@
 		<row><td>features_sql_standard.html</td><td>AllOtherFiles22</td><td>FEATUR~1.HTM|features-sql-standard.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\doc\postgresql\html\features-sql-standard.html</td><td>1</td><td/></row>
 		<row><td>fiji</td><td>AllOtherFiles210</td><td>Fiji</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\share\timezone\Pacific\Fiji</td><td>1</td><td/></row>
 		<row><td>file.h</td><td>AllOtherFiles48</td><td>file.h</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\include\server\port\win32_msvc\sys\file.h</td><td>1</td><td/></row>
+		<row><td>fileportal.ashx</td><td>AllOtherFiles109</td><td>FILEPO~1.ASH|fileportal.ashx</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\fileportal.ashx</td><td>1</td><td/></row>
 		<row><td>finnish.stop</td><td>AllOtherFiles213</td><td>FINNIS~1.STO|finnish.stop</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\share\tsearch_data\finnish.stop</td><td>1</td><td/></row>
 		<row><td>first.gif</td><td>AllOtherFiles99</td><td>first.GIF</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\images\NavTool\first.GIF</td><td>1</td><td/></row>
 		<row><td>first_1.gif</td><td>AllOtherFiles99</td><td>first_1.GIF</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\images\NavTool\first_1.GIF</td><td>1</td><td/></row>
@@ -4769,6 +4770,7 @@
 		<row><td>nblm.xml</td><td>AllOtherFiles</td><td>nblm.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\nblm.xml</td><td>1</td><td/></row>
 		<row><td>nbtkit.dll</td><td>NBTkit.dll</td><td>NBTkit.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\bin\NBTkit.dll</td><td>1</td><td/></row>
 		<row><td>nbtree.h</td><td>AllOtherFiles30</td><td>nbtree.h</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\include\server\access\nbtree.h</td><td>1</td><td/></row>
+		<row><td>nbwsgen.asmx</td><td>AllOtherFiles109</td><td>NBWSGE~1.ASM|nbwsgen.asmx</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\nbwsgen.asmx</td><td>1</td><td/></row>
 		<row><td>nbwspgw.dll</td><td>NBWSPGW.dll</td><td>NBWSPGW.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\bin\NBWSPGW.dll</td><td>1</td><td/></row>
 		<row><td>nbwsplib.dll</td><td>NBWSPLib.dll</td><td>NBWSPLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_SYSTEM32_FILES&gt;\NBWSPLib.dll</td><td>1</td><td/></row>
 		<row><td>nbwsuser.asmx</td><td>AllOtherFiles</td><td>NBWSUS~1.ASM|nbwsuser.asmx</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\nbwsuser.asmx</td><td>1</td><td/></row>
@@ -6093,6 +6095,7 @@
 		<row><td>stackbuilder.mo6</td><td>AllOtherFiles223</td><td>STACKB~1.MO|StackBuilder.mo</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\StackBuilder\share\i18n\zh_CN\StackBuilder.mo</td><td>1</td><td/></row>
 		<row><td>stanley</td><td>AllOtherFiles200</td><td>Stanley</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\share\timezone\Atlantic\Stanley</td><td>1</td><td/></row>
 		<row><td>start_app_pool.vbs</td><td>AllOtherFiles119</td><td>START-~1.VBS|start-app-pool.vbs</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW_WSFILES&gt;\start-app-pool.vbs</td><td>1</td><td/></row>
+		<row><td>startpage_ite_local.zip</td><td>AllOtherFiles109</td><td>STARTP~1.ZIP|StartPage_ITE_Local.zip</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\StartPage_ITE_Local.zip</td><td>1</td><td/></row>
 		<row><td>statementclosedexception.htm</td><td>AllOtherFiles17</td><td>STATEM~1.HTM|StatementClosedException.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\doc\pljava\pljava\org\postgresql\pljava\jdbc\StatementClosedException.html</td><td>1</td><td/></row>
 		<row><td>stem_iso_8859_1_danish.h</td><td>AllOtherFiles54</td><td>STEM_I~1.H|stem_ISO_8859_1_danish.h</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\include\server\snowball\libstemmer\stem_ISO_8859_1_danish.h</td><td>1</td><td/></row>
 		<row><td>stem_iso_8859_1_dutch.h</td><td>AllOtherFiles54</td><td>STEM_I~1.H|stem_ISO_8859_1_dutch.h</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\include\server\snowball\libstemmer\stem_ISO_8859_1_dutch.h</td><td>1</td><td/></row>

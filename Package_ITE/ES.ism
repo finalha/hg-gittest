@@ -586,6 +586,7 @@
 		<row><td>OELogLibrary.XmlSerializers.dll</td><td>{4E128CF6-D3F3-4A89-8339-007B5E087B0E}</td><td>BIN1</td><td>8</td><td/><td>oeloglibrary.xmlserializers.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>OELogLibrary.dll</td><td>{EA93431D-E077-435B-A448-C11AEC52314B}</td><td>BIN1</td><td>8</td><td/><td>oeloglibrary.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>OESetup.exe</td><td>{8B168AD8-7887-4EE1-B7F6-C08CD7456DDD}</td><td>SETUPFILES</td><td>8</td><td/><td>itesetup.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PGshortcut</td><td>{82E0AC77-E1AC-442D-A789-677AD4543F08}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PostSharp.AspNet.dll</td><td>{D5D69BC8-1ECB-418A-B9A9-3BD6062310F5}</td><td>BIN1</td><td>8</td><td/><td>postsharp.aspnet.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PostSharp.AspNet.dll1</td><td>{D62065FC-5153-407A-B498-566BF797060E}</td><td>BIN2</td><td>8</td><td/><td>postsharp.aspnet.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PostSharp.Laos.dll</td><td>{1426E4FE-C11D-4514-8CC9-F66EFAB2195A}</td><td>BIN1</td><td>8</td><td/><td>postsharp.laos.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1121,6 +1122,7 @@
 		<row><td>I18N1</td><td>AllOtherFiles216</td></row>
 		<row><td>INFORMIX</td><td>AllOtherFiles24</td></row>
 		<row><td>INSTALLDIR</td><td>NewComponent3</td></row>
+		<row><td>INSTALLDIR</td><td>PGshortcut</td></row>
 		<row><td>INSTALLDIR</td><td>UninstallShortCut</td></row>
 		<row><td>IT</td><td>AllOtherFiles163</td></row>
 		<row><td>JA</td><td>AllOtherFiles165</td></row>
@@ -1521,8 +1523,6 @@
 		<row><td>_1563</td><td>BASE</td><td>11563</td><td/><td>0</td><td/></row>
 		<row><td>_1564</td><td>BASE</td><td>11564</td><td/><td>0</td><td/></row>
 		<row><td>_201</td><td>SystemFolder</td><td>3201</td><td/><td>0</td><td/></row>
-		<row><td>netbra_1_netbrain_enterprise_server</td><td>netbra_1_netbrain_technologies__inc.</td><td>NETBRA~1|NetBrain Enterprise Server</td><td/><td>1</td><td/></row>
-		<row><td>netbra_1_netbrain_technologies__inc.</td><td>ProgramMenuFolder</td><td>NETBRA~1|NetBrain Technologies, Inc.</td><td/><td>1</td><td/></row>
 		<row><td>netbrain_enterprise_server</td><td>newfolder1</td><td>NETBRA~1|Netbrain Enterprise Server</td><td/><td>1</td><td/></row>
 		<row><td>newfolder1</td><td>ProgramMenuFolder</td><td>##ID_STRING41##</td><td/><td>1</td><td/></row>
 		<row><td>newfolder2</td><td>ProgramMenuFolder</td><td>##ID_STRING56##</td><td/><td>1</td><td/></row>
@@ -2473,6 +2473,7 @@
 		<row><td>Postgresql</td><td>NSSetup.exe</td></row>
 		<row><td>Postgresql</td><td>NewComponent3</td></row>
 		<row><td>Postgresql</td><td>OESetup.exe</td></row>
+		<row><td>Postgresql</td><td>PGshortcut</td></row>
 		<row><td>Postgresql</td><td>UninstallShortCut</td></row>
 		<row><td>Postgresql</td><td>WPS.xml</td></row>
 		<row><td>Postgresql</td><td>_int.dll</td></row>
@@ -7097,6 +7098,7 @@
 		<row><td>OELogLibrary.XmlSerializers.dll</td><td/><td/><td>_865600BD_6DF4_4589_B217_DD41D1DEF9FF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>OELogLibrary.dll</td><td/><td/><td>_03F10199_B60E_4BF4_85CB_34360FFA96F4_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>OESetup.exe</td><td/><td/><td>_57A5D099_B060_4F50_AB41_D69093CD736E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PGshortcut</td><td/><td/><td>_179CE20A_92A5_455C_8AAD_F5ECF6284734_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PostSharp.AspNet.dll</td><td/><td/><td>_2E89BFB0_4BC0_4673_A965_A11E4B3AA8F0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PostSharp.AspNet.dll1</td><td/><td/><td>_126353D2_C40F_42E1_BD6E_F0FE03852660_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PostSharp.Laos.dll</td><td/><td/><td>_507CD50C_BF7D_4C91_AEAB_32395F4CB66F_FILTER</td><td/><td/><td/><td/></row>
@@ -7983,6 +7985,8 @@
 		<row><td>SetupFile195</td><td>nbclic500c.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic500c.sql</td></row>
 		<row><td>SetupFile196</td><td>nbclic510.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic510.sql</td></row>
 		<row><td>SetupFile197</td><td>nbclic511.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic511.sql</td></row>
+		<row><td>SetupFile198</td><td>uuid-ossp.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\uuid-ossp.sql</td></row>
+		<row><td>SetupFile199</td><td>nbclic512.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic512.sql</td></row>
 		<row><td>SetupFile2</td><td>RegCLSIDNetworkService.exe</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\RegCLSIDNetworkService.exe</td></row>
 		<row><td>SetupFile20</td><td>InstalldotnetFramework3.5.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstalldotnetFramework3.5.bat</td></row>
 		<row><td>SetupFile21</td><td>InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGw.bat</td></row>
@@ -9549,6 +9553,7 @@
 		<row><td>ID_ESTOOLUNINSTLL</td><td>1033</td><td>test</td><td>0</td><td/><td>1562429193</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td>NetBrain Enterprise Server</td><td>0</td><td/><td>-1600238065</td></row>
 		<row><td>ID_STRING10</td><td>1033</td><td>display-name</td><td>0</td><td/><td>-1281565674</td></row>
+		<row><td>ID_STRING100</td><td>1033</td><td>PGADMI~1|pgAdmin III</td><td>0</td><td/><td>1419896553</td></row>
 		<row><td>ID_STRING11</td><td>1033</td><td>NetBrain CMServer</td><td>0</td><td/><td>-1281565674</td></row>
 		<row><td>ID_STRING12</td><td>1033</td><td>context-param</td><td>0</td><td/><td>-1281565674</td></row>
 		<row><td>ID_STRING13</td><td>1033</td><td>param-name</td><td>0</td><td/><td>-1281565674</td></row>
@@ -9782,6 +9787,7 @@
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;PATH_TO_SUPPORT_FILES&gt;\interface\IconId_10000.ico</td><td>2</td></row>
 		<row><td>NewShortcut1_558CCC9257164BC2909B880A634DFD9A.exe</td><td/><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\bin\pgAdmin3.exe</td><td>0</td></row>
 		<row><td>NewShortcut1_63A472BA2F9A434C944411AEE1334313.exe</td><td/><td>&lt;PATH_TO_POSTGRES8.2_FILES&gt;\bin\pgAdmin3.exe</td><td>0</td></row>
+		<row><td>NewShortcut1_8335E73C3F99447A96D69A3F0765AE3C.exe</td><td/><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\bin\pgAdmin3.exe</td><td>0</td></row>
 		<row><td>NewShortcut1_F6AE087678B94C408D3D00D77936D505.exe</td><td/><td>&lt;PATH_TO_APINSTALL_FILES&gt;\licensetool\LicenseTool.exe</td><td>0</td></row>
 		<row><td>NewShortcut1_F6AE087678B94C408D3D00D77936D505_1.exe</td><td/><td>&lt;PATH_TO_LICENSETOOL_FILES&gt;\LicenseTool.exe</td><td>0</td></row>
 		<row><td>NewShortcut1_F6AE087678B94C408D3D00D77936D505_2.exe</td><td/><td>&lt;PATH_TO_LICENSETOOL_FILES&gt;\LicenseTool.exe</td><td>0</td></row>
@@ -9815,35 +9821,6 @@
 		<row><td>UNINST_Uninstall_N_C38D4FFD61BC4179918F1CFAB19D724C.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_ED39C58BE3D345BE89F87895B97129D9.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
-		<row><td>clusterdb.exe_ABAA2825D69349E48C381001E846563B.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>createdb.exe_01E38AB049FF4ABB911D93B91144DFDC.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>createlang.exe_D57D03D94DDA44BCA3FC69797161AE5D.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>createuser.exe_326373EB412D4B58A718646813F3D045.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>dropdb.exe_E205BEEFE95C4493ABD9FE4DB25605B1.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>droplang.exe_BA01B38C55D249139DC43445A532EFB9.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>dropuser.exe_23A2210DEF3F4D7FB2FF641DA4423BB8.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>ecpg.exe_BBF60FDC3DBC476F868CC4953211E781.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>initdb.exe_C943B887ED0E4183BC442ED21F59857B.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>oid2name.exe_3726E327D58643EC8D7BCC57245B29FA.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pgAdmin3.exe_E87E5B8CB5BF496889D3D3AE6B6657C1.exe</td><td/><td>I:\Netbrain5.1\ESinstall\Postgresql 8.4\bin\pgAdmin3.exe</td><td>0</td></row>
-		<row><td>pg_config.exe_1D97388688524A5E8AE1878206FE532C.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_controldata.exe_EAD9D25D9A744BA2A9760796DB392AEB.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_ctl.exe_16F9DC155CEA4841A286DD63CC69D0AF.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_dump.exe_705127DB6C624F2A83C69E9DB598AB9A.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_dumpall.exe_9EA238CCA91D4842829E977EC11F1E1E.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_regress.exe_AA11273051554D19AB3AF92322292FA0.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_regress_ecpg.ex_1178345BE40346388A35C6B36B3A4B51.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_resetxlog.exe_85E819D726B84DA484F50B20CCDB3459.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_restore.exe_01506DE70B0C480D9B2A27A302E81084.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pg_standby.exe_476B5A31C56346E4A107F9DF29083263.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>pgbench.exe_B64A93A148674072A0DA6CF9FB93FC0F.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>postgres.exe_0D70306EC2F34CAD93DBF813F38A9297.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>psql.exe_73E984223A7C4BE2AED7809EFF1D4271.exe</td><td/><td>I:\Netbrain5.1\ESinstall\Postgresql 8.4\bin\psql.exe</td><td>0</td></row>
-		<row><td>reindexdb.exe_BDE50B1D0C3C44359F43AA9F4B2BD8A0.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>stackbuilder.exe_1DC9133D2A784D488871F6AEA168114D.exe</td><td/><td>I:\Netbrain5.1\ESinstall\Postgresql 8.4\bin\stackbuilder.exe</td><td>0</td></row>
-		<row><td>vacuumdb.exe_631F540F01DE4174B7868F101836467E.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>vacuumlo.exe_0CBE20348D2745D294560303BD9CA5EB.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
-		<row><td>zic.exe_B8260F5FC97A48F893907A6D5917192C.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -10457,40 +10434,12 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<col def="i2">InstallMode</col>
 		<row><td>FileKey1</td><td>clusterdb.exe</td><td/><td>netbra_1_netbrain_technologies__inc.</td><td>2</td></row>
 		<row><td>FileKey2</td><td>clusterdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
+		<row><td>NewShortcut1</td><td>pgAdmin3.exe</td><td/><td>newfolder2</td><td>2</td></row>
 		<row><td>NewShortcut2</td><td>LicenseTool.exe</td><td/><td>netbrain_enterprise_server</td><td>2</td></row>
 		<row><td>NewShortcut3</td><td>ES5WpsTool.exe</td><td/><td>netbrain_enterprise_server</td><td>2</td></row>
 		<row><td>NewShortcut4</td><td>KEYLIB32.dll</td><td/><td>newfolder3</td><td>2</td></row>
 		<row><td>NewShortcut5</td><td>ES5WpsTool.exe</td><td/><td>netbrain_enterprise_server</td><td>2</td></row>
 		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>UninstallShortCut</td><td/><td>netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>clusterdb.exe</td><td>clusterdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>createdb.exe</td><td>createdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>createlang.exe</td><td>createlang.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>createuser.exe</td><td>createuser.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>dropdb.exe</td><td>dropdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>droplang.exe</td><td>droplang.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>dropuser.exe</td><td>dropuser.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>ecpg.exe</td><td>ecpg.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>initdb.exe</td><td>initdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>oid2name.exe</td><td>oid2name.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pgAdmin3.exe</td><td>pgAdmin3.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_config.exe</td><td>pg_config.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_controldata.exe</td><td>pg_controldata.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_ctl.exe</td><td>pg_ctl.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_dump.exe</td><td>pg_dump.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_dumpall.exe</td><td>pg_dumpall.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_regress.exe</td><td>pg_regress.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_regress_ecpg.exe</td><td>pg_regress_ecpg.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_resetxlog.exe</td><td>pg_resetxlog.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_restore.exe</td><td>pg_restore.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pg_standby.exe</td><td>pg_standby.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>pgbench.exe</td><td>pgbench.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>postgres.exe</td><td>postgres.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>psql.exe</td><td>psql.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>reindexdb.exe</td><td>reindexdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>stackbuilder.exe</td><td>stackbuilder.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>vacuumdb.exe</td><td>vacuumdb.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>vacuumlo.exe</td><td>vacuumlo.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
-		<row><td>zic.exe</td><td>zic.exe</td><td/><td>netbra_1_netbrain_enterprise_server</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -10576,39 +10525,11 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>NewShortcut1</td><td>newfolder2</td><td>##ID_STRING100##</td><td>pgAdmin3.exe</td><td>Postgresql</td><td/><td/><td/><td>NewShortcut1_8335E73C3F99447A96D69A3F0765AE3C.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut2</td><td>netbrain_enterprise_server</td><td>##ID_STRING97##</td><td>LicenseTool.exe</td><td>[INSTALLDIR]Enterprise Server\LicenseTool\bin\LicenseTool.exe</td><td/><td/><td/><td>NewShortcut2_FBBA9D0AAEF54BB78D67ACB3D651EA2E.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>netbrain_enterprise_server</td><td>##ID_STRING98##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiInstall -b "[ID_ESTOOLINSTALL]" -x "[ID_WPSXML]" </td><td/><td/><td>NewShortcut3_0C4D45942909403B936D2AEA095FF888.exe</td><td>1</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>netbrain_enterprise_server</td><td>##ID_STRING99##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiUninstall -b "[ID_ESTOOLUNINSTLL]" -x "[ID_WPSXML]"</td><td/><td/><td>NewShortcut5_AF62DAAC7C9741CD8CCAE3EF02AEF072.exe</td><td>0</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>netbrain_enterprise_server</td><td>##UNINST|Maintain NetBrain Enterprise Server##</td><td>UninstallShortCut</td><td>[ProgramFilesFolder]InstallShield Installation Information\[ProductCode]\setup.exe</td><td>-runfromtemp </td><td/><td/><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>clusterdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>clusterdb.exe</td><td>Postgresql</td><td/><td/><td/><td>clusterdb.exe_ABAA2825D69349E48C381001E846563B.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>createdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>createdb.exe</td><td>Postgresql</td><td/><td/><td/><td>createdb.exe_01E38AB049FF4ABB911D93B91144DFDC.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>createlang.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>createlang.exe</td><td>Postgresql</td><td/><td/><td/><td>createlang.exe_D57D03D94DDA44BCA3FC69797161AE5D.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>createuser.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME4##</td><td>createuser.exe</td><td>Postgresql</td><td/><td/><td/><td>createuser.exe_326373EB412D4B58A718646813F3D045.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>dropdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME5##</td><td>dropdb.exe</td><td>Postgresql</td><td/><td/><td/><td>dropdb.exe_E205BEEFE95C4493ABD9FE4DB25605B1.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>droplang.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME6##</td><td>droplang.exe</td><td>Postgresql</td><td/><td/><td/><td>droplang.exe_BA01B38C55D249139DC43445A532EFB9.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>dropuser.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME7##</td><td>dropuser.exe</td><td>Postgresql</td><td/><td/><td/><td>dropuser.exe_23A2210DEF3F4D7FB2FF641DA4423BB8.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>ecpg.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME8##</td><td>ecpg.exe</td><td>Postgresql</td><td/><td/><td/><td>ecpg.exe_BBF60FDC3DBC476F868CC4953211E781.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>initdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME9##</td><td>initdb.exe</td><td>Postgresql</td><td/><td/><td/><td>initdb.exe_C943B887ED0E4183BC442ED21F59857B.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>oid2name.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME10##</td><td>oid2name.exe</td><td>Postgresql</td><td/><td/><td/><td>oid2name.exe_3726E327D58643EC8D7BCC57245B29FA.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pgAdmin3.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME11##</td><td>pgAdmin3.exe</td><td>Postgresql</td><td/><td/><td/><td>pgAdmin3.exe_E87E5B8CB5BF496889D3D3AE6B6657C1.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_config.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME13##</td><td>pg_config.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_config.exe_1D97388688524A5E8AE1878206FE532C.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_controldata.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME14##</td><td>pg_controldata.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_controldata.exe_EAD9D25D9A744BA2A9760796DB392AEB.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_ctl.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME15##</td><td>pg_ctl.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_ctl.exe_16F9DC155CEA4841A286DD63CC69D0AF.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_dump.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME16##</td><td>pg_dump.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_dump.exe_705127DB6C624F2A83C69E9DB598AB9A.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_dumpall.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME17##</td><td>pg_dumpall.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_dumpall.exe_9EA238CCA91D4842829E977EC11F1E1E.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_regress.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME18##</td><td>pg_regress.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_regress.exe_AA11273051554D19AB3AF92322292FA0.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_regress_ecpg.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME19##</td><td>pg_regress_ecpg.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_regress_ecpg.ex_1178345BE40346388A35C6B36B3A4B51.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_resetxlog.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME20##</td><td>pg_resetxlog.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_resetxlog.exe_85E819D726B84DA484F50B20CCDB3459.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_restore.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME21##</td><td>pg_restore.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_restore.exe_01506DE70B0C480D9B2A27A302E81084.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pg_standby.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME22##</td><td>pg_standby.exe</td><td>Postgresql</td><td/><td/><td/><td>pg_standby.exe_476B5A31C56346E4A107F9DF29083263.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>pgbench.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME12##</td><td>pgbench.exe</td><td>Postgresql</td><td/><td/><td/><td>pgbench.exe_B64A93A148674072A0DA6CF9FB93FC0F.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>postgres.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME23##</td><td>postgres.exe</td><td>Postgresql</td><td/><td/><td/><td>postgres.exe_0D70306EC2F34CAD93DBF813F38A9297.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>psql.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME24##</td><td>psql.exe</td><td>Postgresql</td><td/><td/><td/><td>psql.exe_73E984223A7C4BE2AED7809EFF1D4271.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>reindexdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME25##</td><td>reindexdb.exe</td><td>Postgresql</td><td/><td/><td/><td>reindexdb.exe_BDE50B1D0C3C44359F43AA9F4B2BD8A0.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>stackbuilder.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME26##</td><td>stackbuilder.exe</td><td>Postgresql</td><td/><td/><td/><td>stackbuilder.exe_1DC9133D2A784D488871F6AEA168114D.exe</td><td>1</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>vacuumdb.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME27##</td><td>vacuumdb.exe</td><td>Postgresql</td><td/><td/><td/><td>vacuumdb.exe_631F540F01DE4174B7868F101836467E.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>vacuumlo.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME28##</td><td>vacuumlo.exe</td><td>Postgresql</td><td/><td/><td/><td>vacuumlo.exe_0CBE20348D2745D294560303BD9CA5EB.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>zic.exe</td><td>netbra_1_netbrain_enterprise_server</td><td>##IDS_SHORTCUT_DISPLAY_NAME29##</td><td>zic.exe</td><td>Postgresql</td><td/><td/><td/><td>zic.exe_B8260F5FC97A48F893907A6D5917192C.exe</td><td>0</td><td>1</td><td>BIN</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

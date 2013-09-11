@@ -140,6 +140,10 @@ if %dbver% LSS 512 (
 "%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%"  < nbclic512.sql
 )
 
+if %dbver% LSS 513 (
+"%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%"  < nbclic513.sql
+)
+
 
 echo %date% %time%
 

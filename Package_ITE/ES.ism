@@ -7989,6 +7989,7 @@
 		<row><td>SetupFile199</td><td>nbclic512.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic512.sql</td></row>
 		<row><td>SetupFile2</td><td>RegCLSIDNetworkService.exe</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\RegCLSIDNetworkService.exe</td></row>
 		<row><td>SetupFile20</td><td>InstalldotnetFramework3.5.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstalldotnetFramework3.5.bat</td></row>
+		<row><td>SetupFile200</td><td>nbclic513.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic513.sql</td></row>
 		<row><td>SetupFile21</td><td>InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGw.bat</td></row>
 		<row><td>SetupFile22</td><td>InstallGwIIS6.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS6.bat</td></row>
 		<row><td>SetupFile23</td><td>InstallGwIIS7.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS7.bat</td></row>
@@ -10343,9 +10344,9 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{192C7CB0-7DAF-4FA5-83A8-0848FA02B256}</td><td/></row>
+		<row><td>ProductCode</td><td>{DCE9C229-078A-4DFE-BCD8-4B8FDB202620}</td><td/></row>
 		<row><td>ProductName</td><td>NetBrain Enterprise Server</td><td/></row>
-		<row><td>ProductVersion</td><td>5.3.1</td><td/></row>
+		<row><td>ProductVersion</td><td>5.3.2</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LICENSETOOL;SUPPORTDIR</td><td/></row>

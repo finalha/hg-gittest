@@ -519,7 +519,7 @@ END
 //
 // Icon
 //
-10001		ICON	"I:\\Netbrain\\ESinstall\\Icons\\a10.ico"
+10001		ICON	"I:\\Netbrain5.1\\ESinstall\\Icons\\a10.ico"
 10002		ICON	"D:\\Program Files\\InstallShield\\2010\\Script\\Dialogs\\IconId_10002.ico"
 10004		ICON	"D:\\Program Files\\InstallShield\\2010\\Script\\Dialogs\\IconId_10004.ico"
 
@@ -528,4 +528,4 @@ END
 //
 // Bitmaps
 //
-10002		BITMAP	"I:\\Netbrain\\ESinstall\\support\\interface\\setup_left.bmp"
+10002		BITMAP	"I:\\Netbrain5.1\\ESinstall\\support\\interface\\setup_left.bmp"

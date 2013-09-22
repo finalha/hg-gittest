@@ -514,6 +514,9 @@ Dlg_SdShowInfoList:
     		szInfo3 =  szInfo3+" Service Pack "+   svSTRING;
     	endif;
     endif;
+    if (SYSINFO.nOSMajor=6)&&(SYSINFO.nOSMinor=2) then      
+   		szInfo3 = "Operating System: Windows 2012";
+    endif;
          
     ListAddString(listInfo, szInfo1, AFTER);
     ListAddString(listInfo, szInfo2, AFTER);

@@ -68,6 +68,8 @@ if exist temp del /f /q temp
 ::IF exist IIS 7.0
 (reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp  /f "Version 7" /d) && (reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp  /f "IIS 7" /d) && (set IISver=7 & goto IIS7)
 
+(reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp  /f "Version 8" /d) && (reg query HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\InetStp  /f "IIS 8" /d) && (set IISver=7 & goto IIS7)
+
 :IIS6
 echo Try to stop AppPool: %AppPool% >> "%logfilepath%"
 @cscript.exe stop-app-pool.vbs "%AppPool%"  "test"

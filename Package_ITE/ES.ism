@@ -7352,15 +7352,12 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s255">ISMergeModule_</col>
 		<col key="yes" def="i2">Language_</col>
-		<row><td>LicenseServer</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
-		<row><td>Postgresql</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
-		<row><td>WorkspaceServer</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
@@ -7487,7 +7484,6 @@
 		<col def="s255">Name</col>
 		<col def="S255">Destination</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td><td>MSXML 4.0</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td><td>Visual C++ 9.0 ATL (x86) WinSXS MSM</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td><td>Visual C++ 9.0 CRT (x86) WinSXS MSM</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td><td>Visual C++ 9.0 MFC (x86) WinSXS MSM</td><td/><td/></row>
@@ -7990,6 +7986,7 @@
 		<row><td>SetupFile2</td><td>RegCLSIDNetworkService.exe</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\RegCLSIDNetworkService.exe</td></row>
 		<row><td>SetupFile20</td><td>InstalldotnetFramework3.5.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstalldotnetFramework3.5.bat</td></row>
 		<row><td>SetupFile200</td><td>nbclic513.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic513.sql</td></row>
+		<row><td>SetupFile201</td><td>nbclic514.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic514.sql</td></row>
 		<row><td>SetupFile21</td><td>InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGw.bat</td></row>
 		<row><td>SetupFile22</td><td>InstallGwIIS6.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS6.bat</td></row>
 		<row><td>SetupFile23</td><td>InstallGwIIS7.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS7.bat</td></row>
@@ -9819,9 +9816,9 @@
 		<row><td>UNINST_Uninstall_N_43D98C7A6F2E4B0A83B34115EEC826A4.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_43FDD25B9199416F979CCA4F0884FB21.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_4ADD74930F9D4699BE31D148622C10A5.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
+		<row><td>UNINST_Uninstall_N_521323FCE8B04AB7A0913A7ED53F6611.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_C38D4FFD61BC4179918F1CFAB19D724C.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_ED39C58BE3D345BE89F87895B97129D9.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -10346,7 +10343,7 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{DCE9C229-078A-4DFE-BCD8-4B8FDB202620}</td><td/></row>
 		<row><td>ProductName</td><td>NetBrain Enterprise Server</td><td/></row>
-		<row><td>ProductVersion</td><td>5.3.2</td><td/></row>
+		<row><td>ProductVersion</td><td>5.3.3</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LICENSETOOL;SUPPORTDIR</td><td/></row>
@@ -10530,7 +10527,7 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<row><td>NewShortcut2</td><td>netbrain_enterprise_server</td><td>##ID_STRING97##</td><td>LicenseTool.exe</td><td>[INSTALLDIR]Enterprise Server\LicenseTool\bin\LicenseTool.exe</td><td/><td/><td/><td>NewShortcut2_FBBA9D0AAEF54BB78D67ACB3D651EA2E.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>netbrain_enterprise_server</td><td>##ID_STRING98##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiInstall -b "[ID_ESTOOLINSTALL]" -x "[ID_WPSXML]" </td><td/><td/><td>NewShortcut3_0C4D45942909403B936D2AEA095FF888.exe</td><td>1</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>netbrain_enterprise_server</td><td>##ID_STRING99##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiUninstall -b "[ID_ESTOOLUNINSTLL]" -x "[ID_WPSXML]"</td><td/><td/><td>NewShortcut5_AF62DAAC7C9741CD8CCAE3EF02AEF072.exe</td><td>0</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>netbrain_enterprise_server</td><td>##UNINST|Maintain NetBrain Enterprise Server##</td><td>UninstallShortCut</td><td>[ProgramFilesFolder]InstallShield Installation Information\[ProductCode]\setup.exe</td><td>-runfromtemp </td><td/><td/><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>netbrain_enterprise_server</td><td>##UNINST|Maintain NetBrain Enterprise Server##</td><td>UninstallShortCut</td><td>[ProgramFilesFolder]InstallShield Installation Information\[ProductCode]\setup.exe</td><td>-runfromtemp </td><td/><td/><td>UNINST_Uninstall_N_521323FCE8B04AB7A0913A7ED53F6611.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

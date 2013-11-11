@@ -1,8 +1,8 @@
 
-set signname=%~1
-set filepath=%~2
+set "signname=%~1"
+set "filepath=%~2"
 
-set signexe=G:\SignTool\signcode.exe
+set "signexe=signcode.exe"
 
 set /a n=0
 

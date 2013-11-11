@@ -8,7 +8,8 @@ if not "%flag%" == "Package" (
 Color A
 echo Now start package %VersionInfo% setup file ,pls do not close this window
 if not exist "%~dp0Log" mkdir "%~dp0Log"
-"%~f0" "Package" 1>"%~dp0Log\ES_%date:~0,10%-%time::=-%.log" 2>&1
+call :formatdatetime now 
+"%~f0" "Package" 1>"%~dp0Log\ES_%now%.log" 2>&1
 goto :EOF
 ) 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -61,3 +62,17 @@ goto :EOF
 :Error
 cscript "%Mail%" "Failed! %MailSubject%" "%MailTextFile%" "%MailTO%" "%MailCC%"
 if exist "%MailTextFile%" del /f /q "%MailTextFile%"
+
+goto :EOF
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::		formate date time
+::    
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:formatdatetime
+set "var=%~1"
+
+FOR /F "usebackq" %%i IN (`showdatetime`) DO set "%var%=%%i" && goto :EOF
+
+goto :EOF

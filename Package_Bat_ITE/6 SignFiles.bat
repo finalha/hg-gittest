@@ -20,7 +20,7 @@ set "NB_ES_LicenseTool_bin=%NB_ES_LicenseTool%\bin"
 set "NB_ESinstall_WSfiles=%NB_ESinstall%\WSfiles"
 set "NB_ESinstall_WSfiles_ES5WpsTool=%NB_ESinstall_WSfiles%\ES5WpsTool.exe"
 set "NB_ES_LicenseTool_bin_LicenseTool=%NB_ES_LicenseTool_bin%\LicenseTool.exe"
-set "NB_ESinstall_Package=%NB_ESinstall%\Package"
+set "NB_ESinstall_Package=%NB_ESinstall%\Package_ITE"
 set "SetupFile_WorkSpace=%NB_ESinstall_WSfiles%\WorkSpace.exe"
 
 

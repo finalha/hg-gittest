@@ -6,12 +6,13 @@ set "NB_ROOT=%CurrentPATH%..\.."
 set "NB_ES=%NB_ROOT%\ES"
 
 set "LogFolder=%CurrentPATH%log"
-call :formatedatedtime now
+call :formatdatetime now
 set "LogFile=%LogFolder%\%now%.log"
 
-set "VSPATH=D:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE"
+set "VSPATH=C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE"
 set "devenv=%VSPATH%\devenv"
 set "SLNPATH=%NB_ES%\NBAP.sln"
+
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -26,22 +27,13 @@ goto :EOF
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::
 ::		formate date time
+::    
 ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:formatedatedtime
+:formatdatetime
 set "var=%~1"
 
-set "d=%date:~0,10%"
-set "d=%d:/=-%"
-set "d=%d::=-%"
-set "d=%d: =%"
-
-set "t=%time:~0,8%"
-set "t=%t:/=-%"
-set "t=%t::=-%"
-set "t=%t: =%"
-
-set "%var%=%d%_%t%"
+FOR /F "usebackq" %%i IN (`showdatetime`) DO set "%var%=%%i" && goto :EOF
 
 goto :EOF
 

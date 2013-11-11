@@ -9670,8 +9670,8 @@
 		<row><td>UNINST_Uninstall_N_43FDD25B9199416F979CCA4F0884FB21.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_4ADD74930F9D4699BE31D148622C10A5.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_C38D4FFD61BC4179918F1CFAB19D724C.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
+		<row><td>UNINST_Uninstall_N_D8CF3075D9634921912DDCB38641C932.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 		<row><td>UNINST_Uninstall_N_ED39C58BE3D345BE89F87895B97129D9.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td/><td>D:\Program Files\InstallShield\2010\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -10378,7 +10378,7 @@ UgBlAGwAZQBhAHMAZQAgADEAAQBQAHIAbwBkAHUAYwB0ACAAQwBvAG4AZgBpAGcAdQByAGEAdABpAG8A
 		<row><td>NewShortcut2</td><td>netbrain_enterprise_server</td><td>##ID_STRING97##</td><td>LicenseTool.exe</td><td>[INSTALLDIR]Enterprise Server\LicenseTool\bin\LicenseTool.exe</td><td/><td/><td/><td>NewShortcut2_FBBA9D0AAEF54BB78D67ACB3D651EA2E.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>netbrain_enterprise_server</td><td>##ID_STRING98##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiInstall -b "[ID_ESTOOLINSTALL]" -x "[ID_WPSXML]" </td><td/><td/><td>NewShortcut3_0C4D45942909403B936D2AEA095FF888.exe</td><td>1</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>netbrain_enterprise_server</td><td>##ID_STRING99##</td><td>ES5WpsTool.exe</td><td>[INSTALLDIR]Enterprise Server\Workspace Server\WSfiles\ES5WpsTool.exe</td><td>-m guiUninstall -b "[ID_ESTOOLUNINSTLL]" -x "[ID_WPSXML]"</td><td/><td/><td>NewShortcut5_AF62DAAC7C9741CD8CCAE3EF02AEF072.exe</td><td>0</td><td>1</td><td>WSFILES</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>netbrain_enterprise_server</td><td>##UNINST|Maintain NetBrain Enterprise Server##</td><td>UninstallShortCut</td><td>[ProgramFilesFolder]InstallShield Installation Information\[ProductCode]\setup.exe</td><td>-runfromtemp </td><td/><td/><td>UNINST_Uninstall_N_F4AD5D4446514E42AD0C0491D6861114.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_NetBrain_Enterprise_Server1</td><td>netbrain_enterprise_server</td><td>##UNINST|Maintain NetBrain Enterprise Server##</td><td>UninstallShortCut</td><td>[ProgramFilesFolder]InstallShield Installation Information\[ProductCode]\setup.exe</td><td>-runfromtemp </td><td/><td/><td>UNINST_Uninstall_N_D8CF3075D9634921912DDCB38641C932.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

@@ -25,8 +25,7 @@ set "SetupFile_ES=%NB_ESinstall_Package%\ES\Product Configuration 1\Release 1\Di
 set "Sign_File=%CurrentPATH%Sign_File.bat"
 set "Sign_Name=Netbrain Enterprise Server"
 
-set "ISCmdBld=D:\Program Files\InstallShield\2010\System\ISCmdBld.exe"
-set "NB_ESinstall_Package=%NB_ESinstall%\Package"
+set "ISCmdBld=C:\Program Files (x86)\InstallShield\2010\System\ISCmdBld.exe"
 set "Pro_ES=%NB_ESinstall_Package%\ES.ism"
 
 set "RemoteDir=\\10.10.10.6"
@@ -34,8 +33,8 @@ set "RemoteDir_USER=netbrain"
 set "RemoteDir_PWD=netbrain"
 set "ESDIR=%RemoteDir%\Netbrain-Setup\ES5.1\"
 
-set "MailTO=QA@networkbrain.com;dev@networkbrain.com"
-set "MailCC=wbi@networkbrain.com;fgan@networkbrain.com;yzhao@networkbrain.com;zwang@networkbrain.com"
+set "MailTO=wangzhiyuan@networkbrain.com"
+set "MailCC="
 set "MailSubject=Build Server:%COMPUTERNAME%, %VersionInfo% setup package %date:~0,10% %time:~0,8%"
 set "MailText=%VersionInfo% Release SetUp Package can be downloaded and installed. %ErrMessage% %DesPath%"
 set "Mail=%CurrentPATH%SendEMail.vbs"

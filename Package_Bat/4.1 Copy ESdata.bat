@@ -19,7 +19,7 @@ set "NB_ES_Drivers=%NB_ES_ESData%\Drivers"
 set "NB_ES_ZipDeviceTypes=%NB_ES_ESData%\ZipDeviceTypes"
 set "NB_ES_ZipDrivers=%NB_ES_ESData%\ZipDrivers"
 
-set "zipexe=E:\Program Files\7-Zip\7z.exe"
+set "zipexe=C:\Program Files\7-Zip\7z.exe"
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

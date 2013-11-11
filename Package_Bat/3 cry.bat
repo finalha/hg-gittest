@@ -13,7 +13,7 @@ set "NB_ES_NBWSPLib=%NB_ES%\NBWSPLib"
 
 set "CryproPath=%NB_ESinstall%\crypro"
 
-set "cryexe=D:\Program Files\LogicNP Software\Crypto Obfuscator For .Net 2010 R2\co.exe"
+set "cryexe=C:\Program Files (x86)\LogicNP Software\Crypto Obfuscator For .Net 2010 R2\co.exe"
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

@@ -17,7 +17,7 @@ set "NB_ESinstall_Package=%NB_ESinstall%\Package"
 set "Pro_WorkSpace=%NB_ESinstall_Package%\WorkSpace.ism"
 set "SetupFile_WorkSpace_sou=%NB_ESinstall_Package%\WorkSpace\Media\Release 2\Package\WorkSpace.exe"
 
-set "ISCmdBld=D:\Program Files\InstallShield\2010\System\ISCmdBld.exe"
+set "ISCmdBld=C:\Program Files (x86)\InstallShield\2010\System\ISCmdBld.exe"
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

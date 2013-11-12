@@ -3,6 +3,7 @@
 set "VersionInfo=ITE_ES5.1"
 
 set "CurrentPATH=%~dp0"
+pushd %CurrentPATH%
 set "NB_ROOT=%CurrentPATH%..\.."
 set "NB_ESinstall=%NB_ROOT%\ESinstall"
 set "NB_ES=%NB_ROOT%\ES"
@@ -35,12 +36,17 @@ set "ESDIR=%RemoteDir%\Netbrain-Setup\ITE_ES5.1\"
 
 set "MailTO=wangzhiyuan@networkbrain.com"
 set "MailCC="
-set "MailSubject=Build Server:%COMPUTERNAME%, %VersionInfo% setup package %date:~0,10% %time:~0,8%"
+call :formatdatetime now
+set "MailSubject=Build Server:%COMPUTERNAME%, %VersionInfo% setup package %now%"
 set "MailText=%VersionInfo% Release SetUp Package can be downloaded and installed. %ErrMessage% %DesPath%"
 set "Mail=%CurrentPATH%SendEMail.vbs"
 set "MailTextFile=%~dpn0MailText"
 
+set "ParseConf=%CurrentPATH%ParseConf.bat"
+
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+call "%ParseConf%"
 
 "%ISCmdBld%" -p "%Pro_ES%" -r "Release 1" -c COMP -a "Product Configuration 1"  2>"%MailTextFile%"   || goto Error
 
@@ -86,12 +92,58 @@ set "var=%~2"
 
 if not %tmppath:~-1% == \ set "tmppath=%tmppath%\"
 
-set /a n=0
+call :formatdate now
 
+set /a n=0
 :again
 set /a n+=1
-if exist "%tmppath%setup-%date:~0,10%-%n%.exe"  goto again 
+if exist "%tmppath%setup-%now%-%n%.exe"  goto again 
 
-set "%var%=%tmppath%setup-%date:~0,10%-%n%.exe"
+set "%var%=%tmppath%setup-%now%-%n%.exe"
 
 goto :EOF
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::		formate date time
+::    
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:formatdate
+set "var_date=%~1"
+
+FOR /F "usebackq delims=_" %%i IN (`showdatetime`) DO set "%var_date%=%%i" && goto :EOF
+
+goto :EOF
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::
+::		formate date time
+::    
+::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:formatdatetime
+set "var_datetime=%~1"
+
+FOR /F "usebackq" %%i IN (`showdatetime`) DO set "%var_datetime%=%%i" && goto :EOF
+
+goto :EOF
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+::       function StrTrim
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+:StrTrim
+set "str=%~1"
+set "var=%~2"
+
+:lTrim
+if "%str:~0,1%" == " " set "str=%str:~1%" && goto lTrim
+
+:rTrim
+if "%str:~-1%" == " " set "str=%str:~0,-1%" && goto rTrim
+
+set "%var%=%str%"
+
+goto :EOF
+
+

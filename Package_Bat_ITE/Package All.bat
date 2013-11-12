@@ -25,10 +25,13 @@ set "MailText=%VersionInfo% Release SetUp Package can be downloaded and installe
 set "Mail=%CurrentPATH%SendEMail.vbs"
 set "MailTextFile=%~dpn0MailText"
 
+set "ParseConf=%CurrentPATH%ParseConf.bat"
+
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
 pushd %CurrentPATH%
+call "%ParseConf%"
 
 call "1 UpdateWeb.bat"                              2>"%MailTextFile%"          || goto Error
 

@@ -21,11 +21,15 @@ set "NB_ES_LicenseTool_bin=%NB_ES_LicenseTool%\bin"
 set "NB_ES_NBWSPLib_bin=%NB_ES_NBWSPLib%\bin\Release"
 
 set "NB_DEV_conf=%NB_DEV%\conf"
+
 set "NB_ES_CLIC_conf=%NB_ES_CLIC%\conf"
 set "NB_ES_CLIC_log=%NB_ES_CLIC%\log"
 
 set "NB_ES_NBWSPGW_conf=%NB_ES_NBWSPGW%\conf"
 set "NB_ES_NBWSPGW_log=%NB_ES_NBWSPGW%\log"
+
+set "NB_ES_NBWSP_conf=%NB_ES_NBWSP%\conf"
+set "NB_ES_NBWSP_log=%NB_ES_NBWSP%\log"
 
 set "fix_ReleaseInfo=fix_ReleaseInfo.ini"
 
@@ -43,6 +47,8 @@ copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_CLIC_conf%\%fix_ReleaseInfo%"    
 copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_CLIC_log%\%fix_ReleaseInfo%"     /y  || goto end
 copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_NBWSPGW_conf%\%fix_ReleaseInfo%" /y  || goto end
 copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_NBWSPGW_log%\%fix_ReleaseInfo%"  /y  || goto end
+copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_NBWSP_conf%\%fix_ReleaseInfo%"   /y  || goto end
+copy "%NB_DEV_conf%\%fix_ReleaseInfo%" "%NB_ES_NBWSP_log%\%fix_ReleaseInfo%"    /y  || goto end
 
 :end
 exit /b %errorlevel%

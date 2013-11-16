@@ -7868,6 +7868,7 @@
 		<row><td>SetupFile199</td><td>nbclic513.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic513.sql</td></row>
 		<row><td>SetupFile2</td><td>RegCLSIDNetworkService.exe</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\RegCLSIDNetworkService.exe</td></row>
 		<row><td>SetupFile20</td><td>InstalldotnetFramework3.5.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstalldotnetFramework3.5.bat</td></row>
+		<row><td>SetupFile200</td><td>nbclic514.sql</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\nbclic514.sql</td></row>
 		<row><td>SetupFile21</td><td>InstallGw.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGw.bat</td></row>
 		<row><td>SetupFile22</td><td>InstallGwIIS6.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS6.bat</td></row>
 		<row><td>SetupFile23</td><td>InstallGwIIS7.bat</td><td/><td>0</td><td>0</td><td>&lt;PATH_TO_SUPPORT_FILES&gt;\InstallGwIIS7.bat</td></row>

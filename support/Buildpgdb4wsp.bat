@@ -178,6 +178,13 @@ echo nbwsp513.sql >&2
 )
 
 
+call :GetDBVersion "dbver"
+if %dbver% LSS 514 (
+"%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -v nbwsp=%dbname%< nbwsp514.sql
+echo nbwsp514.sql >&2
+)
+
+
 "%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -v nbwsp=%dbname%< ws_oi.sql
 echo ws_oi.sql >&2
 "%pgsqlfile%" -h "%pghost%" -p %pgport% -U "%pguser%" -v nbwsp=%dbname%< ws_tpp.sql

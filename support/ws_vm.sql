@@ -5591,7 +5591,7 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25506.11.2.48',3333,'H
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25506.11.2.49',3333,'HP(3Com)','hpA8805',0,'{53ACA81F-CE01-4841-BA91-4D1197F53E00}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25506.11.2.50',3333,'HP(3Com)','hpA8808',0,'{53ACA81F-CE01-4841-BA91-4D1197F53E00}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25506.11.2.51',3333,'HP(3Com)','hpA8812',0,'{53ACA81F-CE01-4841-BA91-4D1197F53E00}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6876.4.1',1004,'Vmware','vmwESX',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6876.4.1',2024,'Vmware','vmwESX',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.11.2.3.7.11.108',2011,'HP','ProCurve Switch 6120G/XG Blade (498358-B21)',0,'{5B6935E2-9407-4218-9CBD-BEA42BB3FB17}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.11.2.3.7.11.114',2011,'HP','ProCurve Switch 3500yl',0,'{5B6935E2-9407-4218-9CBD-BEA42BB3FB17}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.11.2.3.7.11.52',2011,'HP','ProCurve Switch 4204vl',0,'{5B6935E2-9407-4218-9CBD-BEA42BB3FB17}','','',1) ); 
@@ -5613,7 +5613,7 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.3224.1.52',2008,'Junip
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1317',2001,'Cisco','C3560CG8',0,'{B32A22CB-B302-4286-AA62-DE932A495379}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.1602.4.2',1004,'Canon','Pinter',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2636.1.1.1.2.59',102,'Juniper','EXXRE',0,'{7FE52196-68D6-4C07-A08D-82A71F514FD3}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2254.2.4',1004,'Delta','UPS',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2254.2.4',2024,'Delta','UPS',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1512',2004,'Cisco','USCC200',0,'{72D3DBCA-432F-4FD1-8C8E-AF641B68F78C}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.30065.1.3011.7124.3741.761',2013,'Arista','7124SX',0,'{4EACD2D4-0121-4CA0-A3B6-78B73E099360}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1367',2001,'Cisco','C2960C12pcL',0,'{B32A22CB-B302-4286-AA62-DE932A495379}','','',1) ); 
@@ -5632,10 +5632,10 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.4998.2.1',2013,'Arris'
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5596.10.6.4.1',2013,'Tandberg','880MXP',0,'{4EACD2D4-0121-4CA0-A3B6-78B73E099360}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.2',2130,'Palo Alto Networks','PA-4020',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1',1004,'F5','',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.1',1004,'Palo Alto Networks','PA-4050',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2272.38',1004,'Nortel','OPTeraMetro ESU 8010',0,'{52DD4B26-E849-4779-ABB8-1E543BDE230E}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.50',2013,'Tandberg','C2M200',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.78',2013,'Enterasys Networks','MatrixN5PoEGold',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.1',2130,'Palo Alto Networks','PA-4050',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2272.38',2110,'Nortel','OPTeraMetro ESU 8010',0,'{52DD4B26-E849-4779-ABB8-1E543BDE230E}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.50',2150,'Tandberg','C2M200',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.78',2150,'Enterasys Networks','MatrixN5PoEGold',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.3',2130,'Palo Alto Networks','PA-2050',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.4',2130,'Palo Alto Networks','PA-2020',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.5',2130,'Palo Alto Networks','PA-4060',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
@@ -5746,8 +5746,8 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.6.1.83.28.2',2001,'C
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2636.1.1.1.2.88',102,'Juniper','MX40',0,'{7FE52196-68D6-4C07-A08D-82A71F514FD3}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1537',2,'Cisco','CSR1000V',0,'{B2D313FE-43E6-4D5F-9189-B3AF6B71A83A}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.12.3.1.3.1063',2004,'Cisco','UCSFI6296UP',0,'{72D3DBCA-432F-4FD1-8C8E-AF641B68F78C}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.11',1004,'Palo Alto Networks','PA-5020',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.12',1004,'Palo Alto Networks','PA-200',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.11',2130,'Palo Alto Networks','PA-5020',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25461.2.3.12',2130,'Palo Alto Networks','PA-200',0,'{F1B3AF3A-39A9-4B1B-A618-BEEF8BD76F5C}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1198',2009,'Cisco','ASA5585-SSP-10',0,'{968644DE-5D06-4FBC-9F80-97FC3F196420}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6141.84',2140,'Ciena',' Switch',0,'{BAE9225F-9BE1-4087-A5E8-120D1260160A}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6141.1.80',2140,'Ciena','5150',0,'{BAE9225F-9BE1-4087-A5E8-120D1260160A}','','',1) ); 
@@ -5755,9 +5755,15 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6141.1.77',2140,'Ciena
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.45.3.72.1',2110,'Nortel','ERS 2500-26T',0,'{621BFFE5-7448-456B-898F-05DF840D55B8}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.45.3.72.3',2110,'Nortel','ERS 2500-50T',0,'{621BFFE5-7448-456B-898F-05DF840D55B8}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2636.1.1.1.2.76',2012,'Juniper','EX3300',0,'{D0604336-DD91-4FD7-B656-5357E39A25F3}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.25071.1',1004,'Dell','Precision R5400 Remote Access Host Card',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.1588.2.1.1.82',2061,'Brocade','BladeSystem VirtualConnect FC Switch',0,'{9E231017-2ECF-4C89-AD1B-A314432E52A8}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2385.3.1.27.1.1',1004,'Toshiba Corporation','',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.244.90',1004,'Lantronix','',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.244.91',1004,'Lantronix','',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.253.8.62.1.17.7.22.1',1004,'Xerox','Printer',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.132',2150,'Enterasys Networks','S4',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.128',2150,'EnterasysNetworks','SSAxT4068x0252',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
-select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.83',2150,'EnterasysNetworks','Matrix N1',0,'{C6110BF9-9810-4EC3-9393-A6A9062E1244}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.83',2150,'EnterasysNetworks','Matrix N1',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.130',2150,'EnterasysNetworks','SSAxG1018x0652',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.5624.2.1.171',2150,'EnterasysNetworks','EnterasysNetworks',0,'{D51851E4-1EB9-4083-B1AC-807B2E78C43F}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.6141.1.81',2140,'Ciena',' Switch',0,'{BAE9225F-9BE1-4087-A5E8-120D1260160A}','','',1) ); 
@@ -5815,6 +5821,12 @@ select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1408',2009,'Cisco'
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1246',2001,'Cisco','CGS-2520-16S-8PC',0,'{B32A22CB-B302-4286-AA62-DE932A495379}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.9.1.1249',2,'Cisco','892F',0,'{B2D313FE-43E6-4D5F-9189-B3AF6B71A83A}','','',1) ); 
 select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2636.1.1.1.2.90',102,'Juniper','MX5',0,'{7FE52196-68D6-4C07-A08D-82A71F514FD3}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.7779.1.1303',1004,'Infoblox','1550-A',0,'{4B5EC1B9-4309-43A4-9EE0-3CCDD19A791B}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.1991.1.3.36.10.4',2024,'Brocade','FastIron SX 800-PREM6',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.1991.1.3.54.1.4.1.1',2024,'Brocade','FCX624',0,'{83C13AFB-7DEA-47B1-A239-ADEE340D82FB}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.2636.1.1.1.4.82.1',2012,'Juniper','qfx3500s',0,'{D0604336-DD91-4FD7-B656-5357E39A25F3}','','',1) ); 
+select * from system_vendormodel_upsert( (0, '1.3.6.1.4.1.14823.1.1.32',2061,'Aruba','7210 wireless controller',0,'{9E231017-2ECF-4C89-AD1B-A314432E52A8}','','',1) ); 
+
 
 
 

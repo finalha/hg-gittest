@@ -3207,7 +3207,7 @@ Function IsOSSupported()
 	End if
 
 	Select Case OSVer
-	Case "5.0", "5.1", "5.2", "6.0", "6.1", "6.2"
+	Case "5.0", "5.1", "5.2", "6.0", "6.1", "6.2", "6.3"
 		IsOSSupported = True
 	Case Else
 		Call PrintMsg("")

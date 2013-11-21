@@ -31,7 +31,7 @@ set "Pro_ES=%NB_ESinstall_Package%\ES.ism"
 set "RemoteDir=\\10.10.10.6"
 set "RemoteDir_USER=netbrain"
 set "RemoteDir_PWD=netbrain"
-set "ESDIR=%RemoteDir%\Netbrain-Setup\ES5.1\"
+set "ESDIR=%RemoteDir%\Netbrain-Setup\Netbrain5.1c\ES"
 
 set "MailTO=wangzhiyuan@networkbrain.com"
 set "MailCC="

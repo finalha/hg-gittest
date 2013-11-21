@@ -116,6 +116,7 @@
 		<row><td>NBWSPLib.dll</td><td>{5D5FDE8D-E184-4165-BC2B-7DF45DCCB24A}</td><td>BIN</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Temp</td><td>{1059885E-A9F6-4CFB-9ECF-EF4527F8B2A8}</td><td>TEMP</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>UpdateRebuild</td><td>{77BBBA51-8ED1-49DD-AC26-CE393101567E}</td><td>CONF</td><td>16</td><td/><td/><td>10769</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>log</td><td>{70E916A6-9162-431F-83B9-7ECD3C46FD78}</td><td>LOG</td><td>0</td><td/><td/><td>51729</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Control">
@@ -238,6 +239,7 @@
 		<row><td>LIB</td><td>RESOURCE</td><td>Lib</td><td/><td>0</td><td/></row>
 		<row><td>LIB1</td><td>BUILTIN1</td><td>lib</td><td/><td>0</td><td/></row>
 		<row><td>LIB2TO3</td><td>LIB</td><td>lib2to3</td><td/><td>0</td><td/></row>
+		<row><td>LOG</td><td>WEBSERVER</td><td>log</td><td/><td>0</td><td/></row>
 		<row><td>LOGGING</td><td>LIB</td><td>logging</td><td/><td>0</td><td/></row>
 		<row><td>LWAP</td><td>VECTORGRAPH_GIF</td><td>LWAP</td><td/><td>0</td><td/></row>
 		<row><td>MACHOLIB</td><td>CTYPES</td><td>macholib</td><td/><td>0</td><td/></row>
@@ -356,6 +358,7 @@
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>NBWSPLib.dll</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>Temp</td></row>
 		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>UpdateRebuild</td></row>
+		<row><td>{532295A1-94D6-4FB9-BA2A-C6E7A7A459BB}</td><td>log</td></row>
 	</table>
 
 	<table name="File">
@@ -832,6 +835,8 @@
 		<row><td>fix_raise.py</td><td>Files</td><td>fix_raise.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_raise.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_raw_input.py</td><td>Files</td><td>fix_raw_input.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_raw_input.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_reduce.py</td><td>Files</td><td>fix_reduce.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_reduce.py</td><td>1</td><td>fixes</td></row>
+		<row><td>fix_releaseinfo.ini</td><td>Fix_conf</td><td>fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\conf\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
+		<row><td>fix_releaseinfo.ini1</td><td>log</td><td>fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\log\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
 		<row><td>fix_renames.py</td><td>Files</td><td>fix_renames.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_renames.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_repr.py</td><td>Files</td><td>fix_repr.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_repr.py</td><td>1</td><td>fixes</td></row>
 		<row><td>fix_set_literal.py</td><td>Files</td><td>fix_set_literal.py</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WS_ROOT_WebServer&gt;\resource\Lib\lib2to3\fixes\fix_set_literal.py</td><td>1</td><td>fixes</td></row>
@@ -2131,6 +2136,7 @@
 		<row><td>NBWSPLib.dll</td><td/><td/><td>_7B3B7695_2235_4770_A467_9AD048CB1A1A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Temp</td><td/><td/><td>_0F07B061_7436_43E2_A64F_0282833B7DB0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>UpdateRebuild</td><td/><td/><td>_BF6E05A4_3DB6_42C1_9C54_861CFBC2BDB5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>log</td><td/><td/><td>_A038912B_AFA5_4815_B4DD_685DADF0A1CE_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISComponentSubFolder">

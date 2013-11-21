@@ -17,15 +17,15 @@ set "NB_ES_SetupFiles=%NB_ES%\SetupFiles"
 set "RemoteDir=\\10.10.10.6"
 set "RemoteDir_USER=netbrain"
 set "RemoteDir_PWD=netbrain"
-set "OEDIR=%RemoteDir%\Netbrain-Setup\OE5.1\"
-set "NSDIR=%RemoteDir%\Netbrain-Setup\NS5.1\"
+set "OEDIR=%RemoteDir%\Netbrain-Setup\Netbrain5.1c\OE\"
+set "NSDIR=%RemoteDir%\Netbrain-Setup\Netbrain5.1c\NS\"
 
 
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 if not exist "%NB_ES_SetupFiles%" mkdir "%NB_ES_SetupFiles%"        || goto end
 
-net use %RemoteDir%\IPC$ %RemoteDir_PWD% /user:%RemoteDir_USER%     || goto end
+::net use %RemoteDir%\IPC$ %RemoteDir_PWD% /user:%RemoteDir_USER%     || goto end
 
 
 for /f "delims=" %%i in ('dir "%OEDIR%" /B /AD /TC /O-D') do (

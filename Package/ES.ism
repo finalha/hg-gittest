@@ -1125,8 +1125,6 @@
 		<row><td>KO</td><td>AllOtherFiles204</td></row>
 		<row><td>LICENSETOOL</td><td>AllOtherFiles120</td></row>
 		<row><td>LOCALE</td><td>AllOtherFiles191</td></row>
-		<row><td>LOG</td><td>AllOtherFiles102</td></row>
-		<row><td>LOG1</td><td>AllOtherFiles118</td></row>
 		<row><td>NB</td><td>AllOtherFiles206</td></row>
 		<row><td>NETBRAIN3</td><td>AllOtherFiles70</td></row>
 		<row><td>ORG</td><td>AllOtherFiles7</td></row>
@@ -3999,6 +3997,10 @@
 		<row><td>fix_configfilehiding.ini</td><td>AllOtherFiles80</td><td>FIX_CO~1.INI|fix_ConfigFileHiding.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_ConfigFileHiding.ini</td><td>1</td><td/></row>
 		<row><td>fix_graphics.ini</td><td>AllOtherFiles80</td><td>FIX_GR~1.INI|fix_Graphics.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_Graphics.ini</td><td>1</td><td/></row>
 		<row><td>fix_log.property</td><td>AllOtherFiles80</td><td>FIX_LO~1.PRO|fix_log.property</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_log.property</td><td>1</td><td/></row>
+		<row><td>fix_releaseinfo.ini</td><td>AllOtherFiles111</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW_CONF&gt;\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
+		<row><td>fix_releaseinfo.ini1</td><td>AllOtherFiles118</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\log\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
+		<row><td>fix_releaseinfo.ini2</td><td>AllOtherFiles80</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\conf\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
+		<row><td>fix_releaseinfo.ini3</td><td>AllOtherFiles102</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\log\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
 		<row><td>fki.html</td><td>AllOtherFiles65</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\cs_CZ\hints\fki.html</td><td>1</td><td/></row>
 		<row><td>fki.html1</td><td>AllOtherFiles67</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\de_DE\hints\fki.html</td><td>1</td><td/></row>
 		<row><td>fki.html2</td><td>AllOtherFiles154</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\en_US\hints\fki.html</td><td>1</td><td/></row>
@@ -7231,15 +7233,12 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s255">ISMergeModule_</col>
 		<col key="yes" def="i2">Language_</col>
-		<row><td>LicenseServer</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>LicenseServer</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
-		<row><td>Postgresql</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>Postgresql</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
-		<row><td>WorkspaceServer</td><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td></row>
 		<row><td>WorkspaceServer</td><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td></row>
@@ -7366,7 +7365,6 @@
 		<col def="s255">Name</col>
 		<col def="S255">Destination</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>MSXML.21206420_6BA8_4CFB_A48C_C72A6BFE80C0</td><td>1033</td><td>MSXML 4.0</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_ATL_x86.A46106C0_482A_3579_8B26_BEC332963AD3</td><td>0</td><td>Visual C++ 9.0 ATL (x86) WinSXS MSM</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_CRT_x86.644DE414_7746_31B5_908B_E938B4078584</td><td>0</td><td>Visual C++ 9.0 CRT (x86) WinSXS MSM</td><td/><td/></row>
 		<row><td>policy_9_0_Microsoft_VC90_MFC_x86.BB9D66C6_B5DA_3EA9_9844_872AA4030CE7</td><td>0</td><td>Visual C++ 9.0 MFC (x86) WinSXS MSM</td><td/><td/></row>
@@ -7963,7 +7961,7 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
-		<row><td>_3ABB21B9_E022_460A_B016_287C91B377A9_</td><td>&lt;ISProductFolder&gt;\SetupPrerequisites\Microsoft ASP.NET(Windows Feature).prq</td><td>3</td><td/><td/></row>
+		<row><td>_9ECC1412_B0A5_415C_B631_F6E3BDD15194_</td><td>&lt;ISProductFolder&gt;\SetupPrerequisites\Microsoft ASP.NET (Windows Feature).prq</td><td/><td/><td/></row>
 		<row><td>_D39B6BB3_8C85_4180_8C10_EA39DB3EE8D7_</td><td>&lt;ISProductFolder&gt;\SetupPrerequisites\Windows Web Server IIS 8 (Windows Feature).prq</td><td>0</td><td/><td/></row>
 		<row><td>_E53E5A20_AC40_49F8_A24B_61B127E14EEC_</td><td>&lt;ISProductFolder&gt;\SetupPrerequisites\Microsoft .NET Framework 3.5 SP1.prq</td><td>1</td><td/><td/></row>
 		<row><td>_E6129AD1_498E_4D33_8495_985FBE0512FF_</td><td>&lt;ISProductFolder&gt;\SetupPrerequisites\Microsoft .NET Framework 3.5 SP1 (Windows Feature).prq</td><td>2</td><td/><td/></row>

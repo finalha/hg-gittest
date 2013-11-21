@@ -46,7 +46,7 @@ set "MailTextFile=%~dpn0MailText"
 
 call Sign_File.bat "%Sign_Name%" "%SetupFile_ES%"                               2>"%MailTextFile%"   || goto Error
 
-net use %RemoteDir%\IPC$ %RemoteDir_PWD% /user:%RemoteDir_USER%                 2>"%MailTextFile%"   || goto Error
+::net use %RemoteDir%\IPC$ %RemoteDir_PWD% /user:%RemoteDir_USER%                 2>"%MailTextFile%"   || goto Error
 
 call :GenerateFileName "%ESDIR%" "ES_Des_Path"                                  2>"%MailTextFile%"   || goto Error 
 

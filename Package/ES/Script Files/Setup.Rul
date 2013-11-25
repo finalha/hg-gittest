@@ -962,9 +962,9 @@ begin
 	nResult2 = FeatureIsItemSelected (MEDIA,"WorkspaceServer"); 
 	
 	if (nResult1=0) && (nResult2=0) then 
-		if( nvCheckDeleteAllData = TRUE ) then
+		//if( nvCheckDeleteAllData = TRUE ) then
 			DeleteFolder(ProgramFilesFolder^"Common Files\\NetBrain\\Enterpise Server");
-		endif;
+		//endif;
 	endif;
 	
    	DeleteDir(INSTALLDIR,ONLYDIR);    	
@@ -987,7 +987,9 @@ begin
 	
 	nResult1 = FeatureIsItemSelected (MEDIA,"LicenseServer");
 	if  (nResult1=0) then  
-		DeleteFolder(svLICInstalldir);
+		if (nvCheckDeleteAllData=TRUE) then	
+			DeleteFolder(svLICInstalldir);
+		endif;
 	endif;	
 end;
  

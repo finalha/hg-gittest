@@ -33,14 +33,18 @@ set "RemoteDir_USER=netbrain"
 set "RemoteDir_PWD=netbrain"
 set "ESDIR=%RemoteDir%\Netbrain-Setup\Netbrain5.1c\ES"
 
-set "MailTO=wangzhiyuan@networkbrain.com"
-set "MailCC="
-set "MailSubject=Build Server:%COMPUTERNAME%, %VersionInfo% setup package %date:~0,10% %time:~0,8%"
-set "MailText=%VersionInfo% Release SetUp Package can be downloaded and installed. %ErrMessage% %DesPath%"
+set "MailTO=QA@networkbrain.com;dev@networkbrain.com"
+set "MailCC=wbi@networkbrain.com;fgan@networkbrain.com;yzhao@networkbrain.com;zwang@networkbrain.com"
+set "MailSubject=%VersionInfo% Build Server:%COMPUTERNAME%,setup package %date:~0,10% %time:~0,8%"
+set "MailText=%VersionInfo% Release Setup Package can be downloaded and installed. %DesPath%"
 set "Mail=%CurrentPATH%SendEMail.vbs"
 set "MailTextFile=%~dpn0MailText"
 
+set "ParseConf=%currentpath%ParseConf.bat"
+
 ::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+call "%ParseConf%"
 
 "%ISCmdBld%" -p "%Pro_ES%" -r "Release 1" -c COMP -a "Product Configuration 1"  2>"%MailTextFile%"   || goto Error
 

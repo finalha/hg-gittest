@@ -627,6 +627,7 @@
 		<row><td>euc_jp_and_sjis.dll</td><td>{B5658A97-8FF5-4B4C-8C5F-AFAEDD5539F9}</td><td>LIB1</td><td>8</td><td/><td>euc_jp_and_sjis.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>euc_kr_and_mic.dll</td><td>{2EA88837-9E46-4003-AD52-5A1CAB142455}</td><td>LIB1</td><td>8</td><td/><td>euc_kr_and_mic.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>euc_tw_and_big5.dll</td><td>{5DD4930A-710F-4AD1-B639-C740F4134E9A}</td><td>LIB1</td><td>8</td><td/><td>euc_tw_and_big5.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>fix_ReleaseInfo.ini</td><td>{4C757CFC-25C8-4434-9CA0-7AC0CB3711CB}</td><td>CONF1</td><td>0</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fuzzystrmatch.dll</td><td>{0AB5A591-90ED-4E76-AE86-1215A85C025D}</td><td>LIB1</td><td>8</td><td/><td>fuzzystrmatch.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>gssapi32.dll</td><td>{482348FD-63AE-4A17-AF85-DC0CC07E67A4}</td><td>BIN</td><td>8</td><td/><td>gssapi32.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>gssapi32.dll1</td><td>{E0F486F1-75D4-4404-8598-E6B9E604DD6B}</td><td>WSFILES</td><td>8</td><td/><td>gssapi32.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -2250,6 +2251,7 @@
 		<row><td>LicenseServer</td><td>WPS.xml</td></row>
 		<row><td>LicenseServer</td><td>boost_regex_vc90_mt_1_33_1.dll</td></row>
 		<row><td>LicenseServer</td><td>cmdlib</td></row>
+		<row><td>LicenseServer</td><td>fix_ReleaseInfo.ini</td></row>
 		<row><td>LicenseServer</td><td>libpng13.dll</td></row>
 		<row><td>LicenseServer</td><td>libpq.dll3</td></row>
 		<row><td>LicenseServer</td><td>log4cpp.dll</td></row>
@@ -3997,10 +3999,10 @@
 		<row><td>fix_configfilehiding.ini</td><td>AllOtherFiles80</td><td>FIX_CO~1.INI|fix_ConfigFileHiding.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_ConfigFileHiding.ini</td><td>1</td><td/></row>
 		<row><td>fix_graphics.ini</td><td>AllOtherFiles80</td><td>FIX_GR~1.INI|fix_Graphics.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_Graphics.ini</td><td>1</td><td/></row>
 		<row><td>fix_log.property</td><td>AllOtherFiles80</td><td>FIX_LO~1.PRO|fix_log.property</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBCLIC_CONF&gt;\fix_log.property</td><td>1</td><td/></row>
-		<row><td>fix_releaseinfo.ini</td><td>AllOtherFiles111</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW_CONF&gt;\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
 		<row><td>fix_releaseinfo.ini1</td><td>AllOtherFiles118</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW&gt;\log\fix_ReleaseInfo.ini</td><td>1</td><td/></row>
 		<row><td>fix_releaseinfo.ini2</td><td>AllOtherFiles80</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\conf\fix_ReleaseInfo.ini</td><td>17</td><td/></row>
 		<row><td>fix_releaseinfo.ini3</td><td>AllOtherFiles102</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;PATH_TO_ES_NBCLIC&gt;\log\fix_ReleaseInfo.ini</td><td>17</td><td/></row>
+		<row><td>fix_releaseinfo.ini4</td><td>fix_ReleaseInfo.ini</td><td>FIX_RE~1.INI|fix_ReleaseInfo.ini</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;PATH_TO_ES_NBWSPGW_CONF&gt;\fix_ReleaseInfo.ini</td><td>17</td><td/></row>
 		<row><td>fki.html</td><td>AllOtherFiles65</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\cs_CZ\hints\fki.html</td><td>1</td><td/></row>
 		<row><td>fki.html1</td><td>AllOtherFiles67</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\de_DE\hints\fki.html</td><td>1</td><td/></row>
 		<row><td>fki.html2</td><td>AllOtherFiles154</td><td>FKI~1.HTM|fki.html</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PATH_TO_POSTGRESQL 8.4_FIL&gt;\pgAdmin III\docs\en_US\hints\fki.html</td><td>1</td><td/></row>
@@ -7024,6 +7026,7 @@
 		<row><td>euc_jp_and_sjis.dll</td><td/><td/><td>_A252B2C5_C479_47BE_BA53_B2FB35E45E06_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>euc_kr_and_mic.dll</td><td/><td/><td>_83410A30_45DC_470B_9532_3260A0EB9907_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>euc_tw_and_big5.dll</td><td/><td/><td>_B18A1B3B_0F98_4BDD_A8FC_205518AC58C8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>fix_ReleaseInfo.ini</td><td/><td/><td>_ECEB1458_96E9_4D48_930F_DEC57CB78F2F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fuzzystrmatch.dll</td><td/><td/><td>_971F40B9_A9CF_4323_B813_414A2C5FC244_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>gssapi32.dll</td><td/><td/><td>_8149EC1C_A5D6_4BEC_BC86_9ED306DF2EFD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>gssapi32.dll1</td><td/><td/><td>_F135F163_E2BB_4BD9_9BA8_83D9637D9665_FILTER</td><td/><td/><td/><td/></row>
